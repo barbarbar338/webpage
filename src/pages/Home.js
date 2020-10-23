@@ -1,9 +1,16 @@
 import { Component } from "preact";
+import DocumentMeta from "react-document-meta";
 import Bio from "../components/Bio";
 import CurvedButton from "../components/CurvedButton";
 import CONFIG from "../config";
 
 export default class Home extends Component {
+    state = {
+        meta: {
+            title: "Barış DEMİRCİ - Home",
+            description: "It's Barış DEMİRCİ!"
+        }
+    }
     handleSocialMediaButtons() {
         const buttons = [];
         CONFIG.SOCIAL_MEDIA.forEach((socialMediaData) => {
@@ -18,12 +25,13 @@ export default class Home extends Component {
         return buttons;
     }
     render() {
-        document.title = "Barış DEMİRCİ - Home";
         return (
-            <div class="container centered text-center">
-                <Bio />
-                {this.handleSocialMediaButtons()}
-            </div>
+            <DocumentMeta {...this.state.meta}>
+                <div class="container centered text-center">
+                    <Bio />
+                    {this.handleSocialMediaButtons()}
+                </div>
+            </DocumentMeta>
         );
     }
 }
