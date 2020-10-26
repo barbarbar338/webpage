@@ -1,2 +1,2 @@
-# My Personal Webpage Source (WIP)
-- I just wanted to try [Preact](https://preactjs.com/)
+# 🔥 My Personal Web Page Source
+- Made with ❤️ using [React](https://reactjs.org/)
