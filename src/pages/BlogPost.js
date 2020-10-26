@@ -4,7 +4,8 @@ import Layout from "../components/Layout";
 import BlogHeader from "../components/Blog/Header";
 import PostHeader from "../components/Blog/PostHeader";
 import matter from "gray-matter";
-import md from "markdown";
+import remark from "remark";
+import html from "remark-html";
 
 export default class BlogPost extends Component {
     state = {
@@ -20,7 +21,10 @@ export default class BlogPost extends Component {
             .then((r) => r.text())
             .then(async (d) => {
                 const data = matter(d);
-                const contentHtml = md.parse(data.content);
+                const processedContent = await remark()
+                    .use(html)
+                    .process(data.content);
+                const contentHtml = processedContent.toString();
                 this.setState({
                     postContent: contentHtml,
                     postData: data.data,
