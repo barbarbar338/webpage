@@ -4,6 +4,7 @@ import Landing from "./pages/Landing";
 import NotFound from "./pages/NotFound";
 import Redirect from "./pages/Redirect";
 import BlogPost from "./pages/BlogPost";
+import OverlayCreator from "./pages/OverlayCreator";
 import CONFIG from "./config";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -93,6 +94,9 @@ export default class App extends Component {
                         </Route>
                         {this.handleRedirects()}
                         {this.handleBlogRedirects()}
+                        <Route path="/overlay-creator">
+                            <OverlayCreator />
+                        </Route>
                         <Route path="*">
                             <NotFound default />
                         </Route>

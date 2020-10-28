@@ -1842,6 +1842,14 @@ blockquote span img {
     margin-bottom: 15px;
 }
 
+div .overlay-box {
+    height: 330px;
+    width: 330px;
+    border: 0.2rem solid black;
+    border-radius: 0.5rem;
+    margin: auto;
+}
+
 #preloader {
     position: fixed;
     width: 100%;
