@@ -1850,6 +1850,14 @@ div .overlay-box {
     margin: auto;
 }
 
+div .achievement-box {
+    height: 100px;
+    width: 503px;
+    border: 0.2rem solid black;
+    border-radius: 0.5rem;
+    margin: auto;
+}
+
 #preloader {
     position: fixed;
     width: 100%;

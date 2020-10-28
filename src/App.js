@@ -5,6 +5,7 @@ import NotFound from "./pages/NotFound";
 import Redirect from "./pages/Redirect";
 import BlogPost from "./pages/BlogPost";
 import OverlayCreator from "./pages/OverlayCreator";
+import AchievementGenerator from "./pages/AchievementGenerator";
 import CONFIG from "./config";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -109,8 +110,11 @@ export default class App extends Component {
                         <Route path="/overlay-creator">
                             <OverlayCreator />
                         </Route>
+                        <Route path="/achievement-generator">
+                            <AchievementGenerator />
+                        </Route>
                         <Route path="*">
-                            <NotFound default />
+                            <NotFound />
                         </Route>
                     </Switch>
                 </Router>

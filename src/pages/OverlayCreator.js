@@ -1,8 +1,6 @@
 import { Component } from "react";
-//import CONFIG from "../config";
 import Layout from "../components/Layout";
-import Main from "../components/OverlayCreator/Main";
-//import { toast } from "react-toastify";
+import CreatorSection from "../components/OverlayCreator/index";
 
 export default class OverlayCreator extends Component {
     state = {
@@ -11,11 +9,10 @@ export default class OverlayCreator extends Component {
             description: "Add an overlay to your avatar!",
         },
     };
-
     render() {
         return (
             <Layout meta={this.state.meta}>
-                <Main />
+                <CreatorSection />
             </Layout>
         );
     }

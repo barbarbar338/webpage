@@ -3,8 +3,9 @@ import Header from "./Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
+import CONFIG from "../../config";
 
-export default class Main extends Component {
+export default class CreatorSection extends Component {
     state = {
         imageURL: "",
         overlay: "vulpix",
@@ -21,10 +22,20 @@ export default class Main extends Component {
         });
     };
     handleCreateButton = (e) => {
+        if (!this.state.imageURL)
+            return toast.error("⛔ Please specify an image url...", {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         this.testImage(this.state.imageURL)
             .then(() => {
                 this.setState({
-                    backgroundURL: `https://api.bariscodes.me/v2/canvas/overlay?overlay=${this.state.overlay}&imageURL=${this.state.imageURL}`,
+                    backgroundURL: `${CONFIG.PINKIE_API}/canvas/overlay?overlay=${this.state.overlay}&imageURL=${this.state.imageURL}`,
                 });
             })
             .catch(() => {
@@ -79,7 +90,7 @@ export default class Main extends Component {
                                     id="overlay"
                                     onChange={this.handleOverlayInput}
                                 >
-                                    ,<option value="vulpix">Vulpix</option>
+                                    <option value="vulpix">Vulpix</option>
                                     <option value="charmender">
                                         Charmender
                                     </option>
