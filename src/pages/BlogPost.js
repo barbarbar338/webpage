@@ -18,21 +18,27 @@ export default class BlogPost extends Component {
         },
     };
     async makeDataRequest() {
-        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/blog${this.props.itemURL}`);
-        if (!response.ok) return toast.error("⛔ An error occurred while fetching blog data...", {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+        const response = await fetch(
+            `${CONFIG.DEFAULT_REPO_URL}/blog${this.props.itemURL}`,
+        );
+        if (!response.ok)
+            return toast.error(
+                "⛔ An error occurred while fetching blog data...",
+                {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                },
+            );
         const data = await response.text();
         const matterResult = matter(data);
         const processedContent = await remark()
-                .use(html)
-                .process(matterResult.content);
+            .use(html)
+            .process(matterResult.content);
         const contentHtml = processedContent.toString();
         return this.setState({
             postContent: contentHtml,

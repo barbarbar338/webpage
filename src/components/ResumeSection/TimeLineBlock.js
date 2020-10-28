@@ -21,19 +21,25 @@ export default class TimeLineBlock extends Component {
         return [left, right];
     }
     async makeDataRequest() {
-        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/timelines.json`);
-        if (!response.ok) return toast.error("⛔ An error occurred while fetching timeline data...", {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+        const response = await fetch(
+            `${CONFIG.DEFAULT_REPO_URL}/timelines.json`,
+        );
+        if (!response.ok)
+            return toast.error(
+                "⛔ An error occurred while fetching timeline data...",
+                {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                },
+            );
         const data = await response.json();
         return this.setState({
-            timelines: data
+            timelines: data,
         });
     }
     componentDidMount() {

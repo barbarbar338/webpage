@@ -19,18 +19,22 @@ export default class SkillsBlock extends Component {
     }
     async getSkillData() {
         const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/skills.json`);
-        if (!response.ok) return toast.error("⛔ An error occurred while fetching skills data...", {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+        if (!response.ok)
+            return toast.error(
+                "⛔ An error occurred while fetching skills data...",
+                {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                },
+            );
         const data = await response.json();
         return this.setState({
-            skillsData: data
+            skillsData: data,
         });
     }
     componentDidMount() {

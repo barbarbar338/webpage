@@ -17,19 +17,25 @@ export default class ContactSection extends Component {
         return contactItems;
     }
     async makeDataRequest() {
-        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/contact_items.json`);
-        if (!response.ok) return toast.error("⛔ An error occurred while fetching contact items...", {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+        const response = await fetch(
+            `${CONFIG.DEFAULT_REPO_URL}/contact_items.json`,
+        );
+        if (!response.ok)
+            return toast.error(
+                "⛔ An error occurred while fetching contact items...",
+                {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                },
+            );
         const data = await response.json();
         return this.setState({
-            contactItems: data
+            contactItems: data,
         });
     }
     componentDidMount() {

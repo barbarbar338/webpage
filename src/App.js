@@ -38,35 +38,47 @@ export default class App extends Component {
         return redirects;
     }
     async makeDataRequest() {
-        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/redirects.json`);
-        if (!response.ok) return toast.error("⛔ An error occurred while fetching redirects...", {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+        const response = await fetch(
+            `${CONFIG.DEFAULT_REPO_URL}/redirects.json`,
+        );
+        if (!response.ok)
+            return toast.error(
+                "⛔ An error occurred while fetching redirects...",
+                {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                },
+            );
         const data = await response.json();
         return this.setState({
-            redirects: data
+            redirects: data,
         });
     }
     async makeBlogDataRequest() {
-        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/blog_items.json`);
-        if (!response.ok) return toast.error("⛔ An error occurred while fetching blog redirects...", {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+        const response = await fetch(
+            `${CONFIG.DEFAULT_REPO_URL}/blog_items.json`,
+        );
+        if (!response.ok)
+            return toast.error(
+                "⛔ An error occurred while fetching blog redirects...",
+                {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                },
+            );
         const data = await response.json();
         return this.setState({
-            posts: data
+            posts: data,
         });
     }
     componentDidMount() {

@@ -9,19 +9,25 @@ export default class InformationBlock extends Component {
         information: null,
     };
     async makeDataRequest() {
-        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/information.json`);
-        if (!response.ok) return toast.error("⛔ An error occurred while fetching information...", {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+        const response = await fetch(
+            `${CONFIG.DEFAULT_REPO_URL}/information.json`,
+        );
+        if (!response.ok)
+            return toast.error(
+                "⛔ An error occurred while fetching information...",
+                {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                },
+            );
         const data = await response.json();
         return this.setState({
-            information: data.information
+            information: data.information,
         });
     }
     componentDidMount() {

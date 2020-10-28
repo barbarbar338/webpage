@@ -12,7 +12,10 @@ export default function HomeSection() {
             <div className="copy">
                 <p>
                     {new Date().getFullYear()} © Barış DEMIRCI. All Right
-                    Reserved. Made with ❤️ using <a href="https://reactjs.org/" className="text-primary">React</a>
+                    Reserved. Made with ❤️ using{" "}
+                    <a href="https://reactjs.org/" className="text-primary">
+                        React
+                    </a>
                 </p>
             </div>
         </section>

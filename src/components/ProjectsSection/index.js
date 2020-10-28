@@ -25,20 +25,26 @@ export default class ProjectsSection extends Component {
         return items;
     }
     async makeDataRequest() {
-        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/projects.json`);
-        if (!response.ok) return toast.error("⛔ An error occurred while fetching projects data...", {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+        const response = await fetch(
+            `${CONFIG.DEFAULT_REPO_URL}/projects.json`,
+        );
+        if (!response.ok)
+            return toast.error(
+                "⛔ An error occurred while fetching projects data...",
+                {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                },
+            );
         const data = await response.json();
         return this.setState({
             projects: data,
-            tags: this.cleanArray(data.map((i) => i.tags))
+            tags: this.cleanArray(data.map((i) => i.tags)),
         });
     }
     componentDidMount() {

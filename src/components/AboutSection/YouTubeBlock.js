@@ -9,18 +9,22 @@ export default class YouTubeBlock extends Component {
     };
     async getYouTubeData() {
         const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/youtube.json`);
-        if (!response.ok) return toast.error("⛔ An error occurred while fetching youtube data...", {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+        if (!response.ok)
+            return toast.error(
+                "⛔ An error occurred while fetching youtube data...",
+                {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                },
+            );
         const data = await response.json();
         return this.setState({
-            youtubeVideoID: data.defaultVideoId
+            youtubeVideoID: data.defaultVideoId,
         });
     }
     componentDidMount() {
