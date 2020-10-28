@@ -1,19 +1,27 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import { Component } from "react";
 import CONFIG from "../../config";
+import { toast } from "react-toastify";
 
 export default class YouTubeBlock extends Component {
     state = {
         youtubeVideoID: null,
     };
     async getYouTubeData() {
-        return fetch(`${CONFIG.DEFAULT_REPO_URL}/youtube.json`)
-            .then((r) => r.json())
-            .then((d) => {
-                this.setState({
-                    youtubeVideoID: d.defaultVideoId,
-                });
-            });
+        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/youtube.json`);
+        if (!response.ok) return toast.error("⛔ An error occurred while fetching youtube data...", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        const data = await response.json();
+        return this.setState({
+            youtubeVideoID: data.defaultVideoId
+        });
     }
     componentDidMount() {
         this.getYouTubeData();

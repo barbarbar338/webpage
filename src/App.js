@@ -5,7 +5,7 @@ import NotFound from "./pages/NotFound";
 import Redirect from "./pages/Redirect";
 import BlogPost from "./pages/BlogPost";
 import CONFIG from "./config";
-import SuccessModal from "./components/SuccessModal";
+import { ToastContainer, toast } from "react-toastify";
 
 export default class App extends Component {
     state = {
@@ -37,22 +37,36 @@ export default class App extends Component {
         return redirects;
     }
     async makeDataRequest() {
-        return fetch(`${CONFIG.DEFAULT_REPO_URL}/redirects.json`)
-            .then((r) => r.json())
-            .then((d) => {
-                this.setState({
-                    redirects: d,
-                });
-            });
+        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/redirects.json`);
+        if (!response.ok) return toast.error("⛔ An error occurred while fetching redirects...", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        const data = await response.json();
+        return this.setState({
+            redirects: data
+        });
     }
     async makeBlogDataRequest() {
-        return fetch(`${CONFIG.DEFAULT_REPO_URL}/blog_items.json`)
-            .then((r) => r.json())
-            .then((d) => {
-                this.setState({
-                    posts: d,
-                });
-            });
+        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/blog_items.json`);
+        if (!response.ok) return toast.error("⛔ An error occurred while fetching blog redirects...", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        const data = await response.json();
+        return this.setState({
+            posts: data
+        });
     }
     componentDidMount() {
         this.makeDataRequest();
@@ -61,7 +75,17 @@ export default class App extends Component {
     render() {
         return (
             <div id="app">
-                <SuccessModal />
+                <ToastContainer
+                    position="bottom-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
                 <Router>
                     <Switch>
                         <Route exact path="/">

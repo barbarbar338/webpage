@@ -2,19 +2,27 @@ import { Component } from "react";
 import CONFIG from "../../config";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
+import { toast } from "react-toastify";
 
 export default class InformationBlock extends Component {
     state = {
         information: null,
     };
     async makeDataRequest() {
-        return fetch(`${CONFIG.DEFAULT_REPO_URL}/information.json`)
-            .then((r) => r.json())
-            .then((r) => {
-                this.setState({
-                    information: r.information,
-                });
-            });
+        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/information.json`);
+        if (!response.ok) return toast.error("⛔ An error occurred while fetching information...", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        const data = await response.json();
+        return this.setState({
+            information: data.information
+        });
     }
     componentDidMount() {
         this.makeDataRequest();

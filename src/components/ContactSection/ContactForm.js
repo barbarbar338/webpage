@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import CONFIG from "../../config";
 import $ from "jquery";
+import { toast } from "react-toastify";
 
 export default class ContactForm extends Component {
     componentDidMount() {
@@ -18,7 +19,15 @@ export default class ContactForm extends Component {
                     "#subject",
                 ).val()}&body=${$("#message").val()}`,
             );
-            $("#success-modal").modal("show");
+            toast.success("🦄 Thanks for your message!", {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         });
     }
     render() {

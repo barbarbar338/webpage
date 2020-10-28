@@ -6,8 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "magnific-popup/dist/magnific-popup.css";
 import "./styles/index.css";
 import "./styles/404.css";
-import "./styles/successModal.css";
 import "bootstrap/dist/js/bootstrap.bundle";
+import "react-toastify/dist/ReactToastify.css"
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";

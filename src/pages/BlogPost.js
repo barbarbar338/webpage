@@ -6,6 +6,7 @@ import PostHeader from "../components/Blog/PostHeader";
 import matter from "gray-matter";
 import remark from "remark";
 import html from "remark-html";
+import { toast } from "react-toastify";
 
 export default class BlogPost extends Component {
     state = {
@@ -17,19 +18,26 @@ export default class BlogPost extends Component {
         },
     };
     async makeDataRequest() {
-        return fetch(`${CONFIG.DEFAULT_REPO_URL}/blog${this.props.itemURL}`)
-            .then((r) => r.text())
-            .then(async (d) => {
-                const data = matter(d);
-                const processedContent = await remark()
-                    .use(html)
-                    .process(data.content);
-                const contentHtml = processedContent.toString();
-                this.setState({
-                    postContent: contentHtml,
-                    postData: data.data,
-                });
-            });
+        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/blog${this.props.itemURL}`);
+        if (!response.ok) return toast.error("⛔ An error occurred while fetching blog data...", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        const data = await response.text();
+        const matterResult = matter(data);
+        const processedContent = await remark()
+                .use(html)
+                .process(matterResult.content);
+        const contentHtml = processedContent.toString();
+        return this.setState({
+            postContent: contentHtml,
+            postData: matterResult.data,
+        });
     }
     componentDidMount() {
         this.makeDataRequest();

@@ -1,6 +1,6 @@
 import { Component } from "react";
 import Header from "./Header";
-
+import { toast } from "react-toastify";
 import ContactForm from "./ContactForm";
 import ContactItem from "./ContactItem";
 import CONFIG from "../../config";
@@ -17,13 +17,20 @@ export default class ContactSection extends Component {
         return contactItems;
     }
     async makeDataRequest() {
-        return fetch(`${CONFIG.DEFAULT_REPO_URL}/contact_items.json`)
-            .then((r) => r.json())
-            .then((d) => {
-                this.setState({
-                    contactItems: d,
-                });
-            });
+        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/contact_items.json`);
+        if (!response.ok) return toast.error("⛔ An error occurred while fetching contact items...", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        const data = await response.json();
+        return this.setState({
+            contactItems: data
+        });
     }
     componentDidMount() {
         this.makeDataRequest();

@@ -2,6 +2,7 @@ import { Component } from "react";
 import Header from "./Header";
 import BlogItem from "./BlogItem";
 import CONFIG from "../../config";
+import { toast } from "react-toastify";
 
 export default class BlogSection extends Component {
     state = {
@@ -15,13 +16,20 @@ export default class BlogSection extends Component {
         return blogItems;
     }
     async makeDataRequest() {
-        return fetch(`${CONFIG.DEFAULT_REPO_URL}/blog_items.json`)
-            .then((r) => r.json())
-            .then((d) => {
-                this.setState({
-                    posts: d,
-                });
-            });
+        const response = await fetch(`${CONFIG.DEFAULT_REPO_URL}/blog_items.json`);
+        if (!response.ok) return toast.error("⛔ An error occurred while fetching blog items...", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+        const data = await response.json();
+        return this.setState({
+            posts: data
+        });
     }
     componentDidMount() {
         this.makeDataRequest();
