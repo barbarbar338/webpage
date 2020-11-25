@@ -7,6 +7,7 @@ import BlogPost from "./pages/BlogPost";
 import OverlayCreator from "./pages/OverlayCreator";
 import AchievementGenerator from "./pages/AchievementGenerator";
 import CONFIG from "./config";
+import Sponsors from "./pages/Sponsors";
 import { ToastContainer, toast } from "react-toastify";
 
 export default class App extends Component {
@@ -112,6 +113,9 @@ export default class App extends Component {
                         </Route>
                         <Route path="/achievement-generator">
                             <AchievementGenerator />
+                        </Route>
+                        <Route path="/sponsors">
+                            <Sponsors />
                         </Route>
                         <Route path="*">
                             <NotFound />

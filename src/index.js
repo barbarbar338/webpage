@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { StrictMode } from "react";
+import { render } from "react-dom";
 import $ from "jquery";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,17 +10,14 @@ import "bootstrap/dist/js/bootstrap.bundle";
 import "react-toastify/dist/ReactToastify.css";
 
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 
 window.jQuery = window.$ = $;
 require("magnific-popup");
 require("isotope-layout/dist/isotope.pkgd");
 
-ReactDOM.render(
-    <React.StrictMode>
+render(
+    <StrictMode>
         <App />
-    </React.StrictMode>,
+    </StrictMode>,
     document.getElementById("root"),
 );
-
-reportWebVitals();

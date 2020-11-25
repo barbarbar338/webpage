@@ -8,9 +8,6 @@
 		"@fortawesome/free-regular-svg-icons": "^5.15.1",
 		"@fortawesome/free-solid-svg-icons": "^5.15.1",
 		"@fortawesome/react-fontawesome": "^0.1.11",
-		"@testing-library/jest-dom": "^5.11.4",
-		"@testing-library/react": "^11.1.0",
-		"@testing-library/user-event": "^12.1.10",
 		"bootstrap": "^4.5.3",
 		"gray-matter": "^4.0.2",
 		"isotope-layout": "^3.0.6",
@@ -26,8 +23,7 @@
 		"remark": "^13.0.0",
 		"remark-html": "^13.0.1",
 		"serve": "^11.3.2",
-		"typed.js": "^2.0.11",
-		"web-vitals": "^0.2.4"
+		"typed.js": "^2.0.11"
 	},
 	"devDependencies": {
 		"prettier": "^2.1.2"
@@ -36,7 +32,6 @@
 		"start": "serve -s build",
 		"dev": "react-scripts start",
 		"build": "react-scripts build",
-		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"format": "prettier \"src/**/*.{js,jsx}\" --write"
 	},
