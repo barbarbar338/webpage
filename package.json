@@ -1,0 +1,59 @@
+{
+	"name": "hastepaste-website",
+	"version": "1.0.0",
+	"description": "🖥️ HastePaste app website",
+	"author": {
+		"email": "demirci.baris38@gmail.com",
+		"name": "Barış DEMİRCİ",
+		"url": "https://bariscodes.me"
+	},
+	"license": "GPL-3.0",
+	"scripts": {
+		"dev": "next ./src",
+		"build": "next build ./src",
+		"start": "next start ./dist",
+		"format": "prettier --write ./src",
+		"format:all": "prettier --write .",
+		"format:watch": "onchange . -- prettier --write {{changed}}"
+	},
+	"dependencies": {
+		"@material-ui/core": "latest",
+		"autoprefixer": "latest",
+		"next": "latest",
+		"next-optimized-images": "latest",
+		"next-seo": "latest",
+		"postcss": "latest",
+		"react": "latest",
+		"react-dom": "latest",
+		"tailwindcss": "latest"
+	},
+	"devDependencies": {
+		"@types/node": "latest",
+		"@types/react": "latest",
+		"@typescript-eslint/eslint-plugin": "latest",
+		"@typescript-eslint/parser": "latest",
+		"css-loader": "latest",
+		"eslint": "latest",
+		"eslint-plugin-react": "latest",
+		"eslint-plugin-react-hooks": "latest",
+		"next-compose-plugins": "latest",
+		"node-sass": "latest",
+		"onchange": "latest",
+		"prettier": "latest",
+		"stylelint": "latest",
+		"stylelint-config-recommended": "latest",
+		"typescript": "latest"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
+}
