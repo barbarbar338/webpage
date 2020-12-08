@@ -1,2 +1,2 @@
 # 🔥 My Personal Web Page Source
-- Made with ❤️ using [React](https://reactjs.org/)
+- Rewrite using [NextJS](https://nextjs.org/) and [TailwindCSS](https://tailwindcss.com/)
