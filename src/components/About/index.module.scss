@@ -1,0 +1,15 @@
+.wrapper {
+	@apply mx-auto max-w-lg py-4 px-8 bg-white shadow-xl rounded-lg my-20;
+	.img {
+		@apply flex justify-center md:justify-end -mt-16;
+		img {
+			@apply w-20 h-20 object-cover rounded-full border-2 border-indigo-500;
+		}
+	}
+	h2 {
+		@apply text-gray-800 text-3xl font-semibold;
+	}
+	p {
+		@apply mt-2 text-gray-600;
+	}
+}

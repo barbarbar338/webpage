@@ -1,0 +1,6 @@
+.wrapper {
+	@apply mt-24 text-right font-light text-gray-400 antialiased;
+	span {
+		@apply cursor-pointer text-blue-400 hover:text-blue-500;
+	}
+}

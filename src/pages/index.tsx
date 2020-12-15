@@ -1,10 +1,13 @@
-import { NextSeo } from "next-seo";
+import Layout from "@components/Layout";
+import Hero from "@components/Hero";
+import { NextPage } from "next";
 
-export default function IndexPage(): JSX.Element {
+const IndexPage: NextPage = () => {
 	return (
-		<>
-			<NextSeo title="Home" />
-			<h1>Hello, world!</h1>
-		</>
+		<Layout title="Home">
+			<Hero />
+		</Layout>
 	);
-}
+};
+
+export default IndexPage;

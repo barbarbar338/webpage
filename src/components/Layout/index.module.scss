@@ -1,0 +1,30 @@
+.wrapper {
+	@apply min-h-screen min-w-full bg-gray-100 flex flex-col justify-center p-10;
+	.content {
+		@apply relative w-full max-w-full lg:max-w-6xl xl:max-w-screen-2xl mx-auto;
+		.cardBG {
+			@apply absolute inset-0 -mr-3.5 bg-gradient-to-r from-red-200 to-purple-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:rotate-3 sm:rounded-3xl;
+		}
+		.cardContent {
+			@apply relative bg-white shadow-lg sm:rounded-3xl;
+			.btns {
+				@apply flex items-center justify-start pt-6 pl-6;
+				span {
+					@apply w-3 h-3 rounded-full mr-2;
+				}
+				:nth-child(1) {
+					@apply bg-red-400;
+				}
+				:nth-child(2) {
+					@apply bg-yellow-400;
+				}
+				:nth-child(3) {
+					@apply bg-green-400;
+				}
+			}
+			.children {
+				@apply px-20 py-6;
+			}
+		}
+	}
+}

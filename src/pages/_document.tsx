@@ -13,10 +13,7 @@ export default class CustomDocument extends Document {
 					<meta name="copyright" content="Barış DEMİRCİ" />
 					<meta name="theme-color" content="#ffa33b" />
 					<meta name="author" content="Barış DEMİRCİ, demirci.baris38@gmail.com" />
-					<meta
-						name="description"
-						content="Welcome to barbarbar338's profile!"
-					/>
+					<meta name="description" content="Welcome to barbarbar338's profile!" />
 					<meta name="og:title" content="barbarbar338" />
 					<meta name="og:site_name" content="barbarbar338" title="title" />
 					<meta name="og:url" content="https://bariscodes.me/" />
