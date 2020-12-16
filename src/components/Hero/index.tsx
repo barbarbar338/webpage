@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@components/Link";
 import { FC } from "react";
 import styles from "./index.module.scss";
 
@@ -10,9 +10,8 @@ const Hero: FC = () => {
 			<div className={styles.title}>
 				full-stack developer who is interested more with ReactJS and NestJS
 			</div>
-
-			<Link href="/about">
-				<span className={styles.more}>About Me</span>
+			<Link from="blue" to="blue" href="/about">
+				About Me
 			</Link>
 		</div>
 	);

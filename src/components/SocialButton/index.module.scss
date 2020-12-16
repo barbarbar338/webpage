@@ -1,0 +1,6 @@
+.btn {
+	@apply m-3;
+	span {
+		@apply cursor-pointer md:w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-2 hover:text-white shadow-md py-2 px-6 inline-flex items-center;
+	}
+}

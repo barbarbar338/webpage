@@ -13,9 +13,6 @@
 			.title {
 				@apply mb-8;
 			}
-			span {
-				@apply px-4 inline cursor-pointer py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 rounded-3xl focus:outline-none bg-gradient-to-b from-blue-400 to-blue-600 outline-none focus:outline-none hover:shadow-lg hover:from-blue-500 hover:to-blue-700 transition duration-200 ease-in-out;
-			}
 		}
 	}
 }

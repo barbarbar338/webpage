@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@components/Link";
 import { FC } from "react";
 import styles from "./index.module.scss";
 
@@ -12,8 +12,8 @@ const NotFound: FC = () => {
 					<p className={styles.title}>
 						But dont worry, you can find plenty of other things on my homepage.
 					</p>
-					<Link href="/">
-						<span>back to homepage</span>
+					<Link from="yellow" to="yellow" href="/">
+						back to homepage
 					</Link>
 				</div>
 			</div>
