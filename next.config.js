@@ -4,6 +4,6 @@ const optimizedImages = require("next-optimized-images");
 
 module.exports = withPlugins([[optimizedImages, { optimizeImages: false }]], {
 	dir: "src",
-	distDir: "../dist",
+	distDir: "../build",
 	cssModules: true,
 });

@@ -21,6 +21,6 @@
 			"@assets/*": ["src/assets/*"]
 		}
 	},
-	"exclude": ["dist", "node_modules"],
+	"exclude": ["build", "node_modules"],
 	"include": ["src/**/*.ts", "src/**/*.tsx"]
 }
