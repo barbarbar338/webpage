@@ -23,7 +23,7 @@ const socials = [
 	},
 	{
 		color: "blue-400",
-		title: "barbarbar338#0842",
+		title: "BjEJFwh",
 		name: "Discord",
 		path: "/discord",
 	},

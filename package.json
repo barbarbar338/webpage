@@ -17,7 +17,13 @@
 		"format:watch": "onchange . -- prettier --write {{changed}}"
 	},
 	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^1.2.32",
+		"@fortawesome/free-brands-svg-icons": "^5.15.1",
+		"@fortawesome/free-regular-svg-icons": "^5.15.1",
+		"@fortawesome/free-solid-svg-icons": "^5.15.1",
+		"@fortawesome/react-fontawesome": "^0.1.13",
 		"@material-ui/core": "latest",
+		"@tippyjs/react": "^4.2.0",
 		"autoprefixer": "latest",
 		"next": "latest",
 		"next-optimized-images": "latest",
@@ -25,6 +31,7 @@
 		"postcss": "latest",
 		"react": "latest",
 		"react-dom": "latest",
+		"react-toastify": "^6.2.0",
 		"tailwindcss": "latest"
 	},
 	"devDependencies": {

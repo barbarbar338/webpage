@@ -1,0 +1,12 @@
+.wrapper {
+	@apply relative flex justify-center bg-white sm:items-center sm:pt-0;
+	.cont {
+		@apply max-w-6xl mx-auto sm:px-6 lg:px-8;
+		.fix {
+			@apply mt-8 overflow-hidden;
+			.gridWrapper {
+				@apply grid grid-cols-1 md:grid-cols-2;
+			}
+		}
+	}
+}

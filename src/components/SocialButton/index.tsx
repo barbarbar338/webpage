@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FC } from "react";
 import styles from "./index.module.scss";
+import Tippy from "@tippyjs/react";
 
 export interface ISocialButton {
 	href: string;
@@ -11,16 +12,17 @@ export interface ISocialButton {
 
 const SocialButton: FC<ISocialButton> = ({ href, color, title, name }) => {
 	return (
-		<div className={styles.btn}>
-			<Link href={href}>
-				<span
-					title={title}
-					className={`border-${color} hover:border-${color} hover:bg-${color}`}
-				>
-					{name}
-				</span>
-			</Link>
-		</div>
+		<Tippy content={title} placement="auto">
+			<div className={styles.btn}>
+				<Link href={href}>
+					<span
+						className={`border-${color} hover:border-${color} hover:bg-${color}`}
+					>
+						{name}
+					</span>
+				</Link>
+			</div>
+		</Tippy>
 	);
 };
 

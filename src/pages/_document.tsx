@@ -25,10 +25,6 @@ export default class CustomDocument extends Document {
 					<meta name="twitter:image" content={Favicon} />
 					<link rel="icon" href={Favicon} />
 					<link rel="canonical" href="https://bariscodes.me/" />
-					<link
-						href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-						rel="stylesheet"
-					/>
 				</Head>
 				<body>
 					<Main />
