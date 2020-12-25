@@ -9,11 +9,10 @@
 	},
 	"license": "GPL-3.0",
 	"scripts": {
-		"dev": "next ./src",
-		"build": "next build ./src",
-		"start": "next start ./dist",
-		"format": "prettier --write ./src",
-		"format:all": "prettier --write .",
+		"dev": "next",
+		"build": "next build",
+		"start": "next start",
+		"format": "prettier --write .",
 		"format:watch": "onchange . -- prettier --write {{changed}}"
 	},
 	"dependencies": {
@@ -31,6 +30,7 @@
 		"postcss": "latest",
 		"react": "latest",
 		"react-dom": "latest",
+		"react-tilt": "^0.1.4",
 		"react-toastify": "^6.2.0",
 		"tailwindcss": "latest"
 	},

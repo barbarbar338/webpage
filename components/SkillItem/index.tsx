@@ -18,7 +18,7 @@ const SkillItem: FC<ISkillItem> = ({ percent, name, color }) => {
 						width: percent,
 					}}
 				>
-					<div className={`${styles.text} bg-${color}-500`}>{name}</div>
+					<div className={`${styles.text} bg-${color}-700`}>{name}</div>
 				</div>
 			</div>
 		</Tippy>

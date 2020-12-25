@@ -13,14 +13,14 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"jsx": "preserve",
-		"typeRoots": ["node_modules/@types", "src/@types", "src/node-env.d.ts"],
+		"typeRoots": ["node_modules/@types", "@types", "node-env.d.ts"],
 		"baseUrl": ".",
 		"paths": {
-			"@styles/*": ["src/styles/*"],
-			"@components/*": ["src/components/*"],
-			"@assets/*": ["src/assets/*"]
+			"@styles/*": ["styles/*"],
+			"@components/*": ["components/*"],
+			"@assets/*": ["assets/*"]
 		}
 	},
-	"exclude": ["build", "node_modules"],
-	"include": ["src/**/*.ts", "src/**/*.tsx"]
+	"exclude": [".next", "node_modules"],
+	"include": ["./**/*.ts", "./**/*.tsx"]
 }
