@@ -18,7 +18,7 @@ module.exports = withPlugins([[optimizedImages, { optimizeImages: false }]], {
 			},
 			{
 				source: "/youtube",
-				destination: "https://www.youtube.com/c/SimplifiedDocs",
+				destination: "https://www.youtube.com/ProjectHammer",
 				permanent: true,
 			},
 			{
