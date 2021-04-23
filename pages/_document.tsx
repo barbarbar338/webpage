@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Favicon from "@assets/favicon.png";
-import Avatar from "@assets/avatar.png";
+import Favicon from "@assets/icon.png";
+import Avatar from "@assets/avatar.jpeg";
 
 export default class CustomDocument extends Document {
 	render(): JSX.Element {
@@ -26,7 +26,7 @@ export default class CustomDocument extends Document {
 					<link rel="icon" href={Favicon} />
 					<link rel="canonical" href="https://bariscodes.me/" />
 				</Head>
-				<body>
+				<body className="antialiased bg-body text-body font-body">
 					<Main />
 					<script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
 					<NextScript />

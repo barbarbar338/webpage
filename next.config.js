@@ -28,4 +28,7 @@ module.exports = withPlugins([[optimizedImages, { optimizeImages: false }]], {
 			},
 		];
 	},
+	future: {
+		webpack5: true,
+	},
 });

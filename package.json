@@ -1,7 +1,7 @@
 {
 	"name": "hastepaste-website",
-	"version": "1.0.0",
-	"description": "🖥️ HastePaste app website",
+	"version": "4.0.0",
+	"description": "My personal webpage source >:3",
 	"author": {
 		"email": "demirci.baris38@gmail.com",
 		"name": "Barış DEMİRCİ",
@@ -21,16 +21,14 @@
 		"@fortawesome/free-regular-svg-icons": "^5.15.1",
 		"@fortawesome/free-solid-svg-icons": "^5.15.1",
 		"@fortawesome/react-fontawesome": "^0.1.13",
-		"@material-ui/core": "latest",
-		"@tippyjs/react": "^4.2.0",
 		"autoprefixer": "latest",
+		"axios": "^0.21.1",
 		"next": "latest",
 		"next-optimized-images": "latest",
 		"next-seo": "latest",
 		"postcss": "latest",
 		"react": "latest",
 		"react-dom": "latest",
-		"react-tilt": "^0.1.4",
 		"react-toastify": "^6.2.0",
 		"tailwindcss": "latest"
 	},

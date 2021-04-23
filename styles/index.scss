@@ -1,6 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap");
 
 html,
 body {
-	font-family: "Varela Round", sans-serif;
+	font-family: "DM Sans", sans-serif;
+	scroll-behavior: smooth;
+	@apply bg-gray-900;
+}
+
+::-webkit-scrollbar {
+	width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+	background: rgb(17, 24, 39);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(244, 114, 182);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(219, 39, 119);
 }
