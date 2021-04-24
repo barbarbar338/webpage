@@ -1,5 +1,5 @@
 {
-	"name": "hastepaste-website",
+	"name": "webpage",
 	"version": "4.0.0",
 	"description": "My personal webpage source >:3",
 	"author": {
@@ -21,6 +21,7 @@
 		"@fortawesome/free-regular-svg-icons": "^5.15.1",
 		"@fortawesome/free-solid-svg-icons": "^5.15.1",
 		"@fortawesome/react-fontawesome": "^0.1.13",
+		"@tailwindcss/line-clamp": "^0.2.0",
 		"autoprefixer": "latest",
 		"axios": "^0.21.1",
 		"next": "latest",
