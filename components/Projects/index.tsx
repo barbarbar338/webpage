@@ -2,6 +2,7 @@ import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { FC } from "react";
+import colors from "@assets/colors.json";
 
 export interface IRepoCard {
 	html_url: string;
@@ -10,14 +11,6 @@ export interface IRepoCard {
 	language: string;
 	description: string;
 }
-
-const colors = {
-	TypeScript: "blue",
-	Go: "indigo",
-	CSS: "green",
-	JavaScript: "yellow",
-	Python: "red",
-};
 
 const RepoCard: FC<IRepoCard> = ({
 	html_url,
@@ -43,7 +36,10 @@ const RepoCard: FC<IRepoCard> = ({
 				<p className="line-clamp-2 text-base h-12">{description}</p>
 				<div className="flex mt-3">
 					<span
-						className={`mt-1 block h-4 w-4 bg-${colors[language]}-400 rounded-full`}
+						className="mt-1 block h-4 w-4 bg-gray-400 rounded-full"
+						style={{
+							backgroundColor: colors[language].color,
+						}}
 					></span>
 					<p className="ml-1 mt-1 text-gray-400 text-xs">{language}</p>
 				</div>
