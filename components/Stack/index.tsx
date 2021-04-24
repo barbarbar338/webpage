@@ -139,9 +139,12 @@ export const Stack: FC = () => {
 			</h2>
 			<div className="container mx-auto px-4">
 				<div className="flex flex-col justify-center">
-					<div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 px-4">
+					<div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 px-4">
 						{shuffle(stacks).map((stack, idx) => (
-							<div key={idx} className="bg-white p-4 rounded-3xl flex justify-around">
+							<div
+								key={idx}
+								className="p-4 rounded-3xl flex justify-around items-center"
+							>
 								<img className="w-16 h-16" src={stack.icon} alt={stack.alt} />
 							</div>
 						))}
