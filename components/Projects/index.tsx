@@ -29,7 +29,10 @@ const RepoCard: FC<IRepoCard> = ({
 					<div className="flex items-center space-x-1">
 						<div className="flex items-center space-x-1">
 							<span>{stargazers_count}</span>{" "}
-							<FontAwesomeIcon icon={faStar} className="w-6 h-6 text-yellow-600" />
+							<FontAwesomeIcon
+								icon={faStar}
+								className="w-6 h-6 text-yellow-600"
+							/>
 						</div>
 					</div>
 				</div>
@@ -41,7 +44,9 @@ const RepoCard: FC<IRepoCard> = ({
 							backgroundColor: colors[language].color,
 						}}
 					></span>
-					<p className="ml-1 mt-1 text-gray-400 text-xs">{language}</p>
+					<p className="ml-1 mt-1 text-gray-400 text-xs">
+						{language}
+					</p>
 				</div>
 			</div>
 		</Link>
@@ -76,12 +81,3 @@ export const Projects: FC<IProjects> = ({ repos }) => {
 		</section>
 	);
 };
-
-// <div className="cursor-pointer p-4 bg-gray-700 rounded-lg h-full text-white">
-// <div className="flex items-center space-x-1">
-// <span className="flex-grow space-x-2 truncate hover:underline text-purple-300 hover:text-purple-400">
-// 	{name}
-// </span>{" "}
-// </div>{" "}
-
-// </div>
