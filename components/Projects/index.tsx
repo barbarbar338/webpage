@@ -1,6 +1,5 @@
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 import { FC } from "react";
 import colors from "@assets/colors.json";
 import Tilt from "react-tilt";
@@ -32,7 +31,7 @@ const RepoCard: FC<IRepoCard> = ({
 						scale: 1.05,
 					}}
 				>
-					<Link href={html_url}>
+					<a href={html_url} target="_blank">
 						<div className="cursor-pointer p-4 bg-gray-700 rounded-lg h-full text-white">
 							<div className="flex items-center space-x-1">
 								<span className="flex-grow space-x-2 truncate text-purple-300">
@@ -56,7 +55,7 @@ const RepoCard: FC<IRepoCard> = ({
 								<p className="ml-1 mt-1 text-gray-400 text-xs">{language}</p>
 							</div>
 						</div>
-					</Link>
+					</a>
 				</Tilt>
 			</div>
 		</Tippy>

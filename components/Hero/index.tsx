@@ -8,14 +8,14 @@ import Tilt from "react-tilt";
 
 export const Hero: FC = () => {
 	return (
-		<section className="min-h-screen bg-gray-900">
+		<section className="bg-gray-900">
 			<div className="bg-gray-900 pt-12 lg:pt-20 pb-12 md:pb-24">
 				<div className="container mx-auto px-4">
-					<div className="flex flex-wrap -mx-4">
+					<div className="flex flex-wrap -mx-4 flex-col-reverse md:flex-row">
 						<div className="w-full lg:w-1/2 px-4 mb-12 md:mb-20 lg:mb-0 flex items-center">
 							<div className="w-full text-center lg:text-left">
 								<div className="max-w-md mx-auto lg:mx-0">
-									<h2 className="mb-3 text-4xl lg:text-5xl text-white font-bold">
+									<h2 className="my-3 md:mt-0 text-4xl lg:text-5xl text-white font-bold">
 										Barış DEMİRCİ
 									</h2>
 								</div>
@@ -78,7 +78,7 @@ export const Hero: FC = () => {
 									}}
 								>
 									<img
-										className="h-128 md:w-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none"
+										className="md:h-128 md:w-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none"
 										src="https://avatars.githubusercontent.com/u/35371155"
 										alt="Avatar"
 										draggable={false}
