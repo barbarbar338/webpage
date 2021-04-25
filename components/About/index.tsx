@@ -109,8 +109,8 @@ export const About: FC = () => {
 								</ul>
 							</div>
 						</div>
-						<div className="w-full lg:w-1/2 flex flex-wrap -mx-4">
-							<div className="mb-8 lg:mb-0 w-1/2 px-4">
+						<div className="w-full lg:w-1/2 flex space-x-4">
+							<div className="mb-8 lg:mb-0 w-1/2">
 								<Tilt
 									className="Tilt"
 									options={{
@@ -119,11 +119,11 @@ export const About: FC = () => {
 										scale: 1.05,
 									}}
 								>
-									<div className="mb-8 py-6 pl-6 pr-4 shadow-md rounded bg-gray-800">
+									<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md rounded bg-gray-800">
 										<span className="mb-4 inline-block p-3 rounded-lg bg-red-800">
 											<img src={NestSVG} className="w-10 h-10" draggable={false} />
 										</span>
-										<h4 className="mb-2 text-2xl font-bold font-heading text-white">
+										<h4 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-white">
 											NestJS
 										</h4>
 										<p className="text-gray-500 leading-loose">
@@ -143,7 +143,7 @@ export const About: FC = () => {
 										<span className="mb-4 inline-block p-3 rounded-lg bg-green-800">
 											<img src={MongoDBSVG} className="w-10 h-10" draggable={false} />
 										</span>
-										<h4 className="mb-2 text-2xl font-bold font-heading text-white">
+										<h4 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-white">
 											MongoDB
 										</h4>
 										<p className="text-gray-500 leading-loose">
@@ -161,15 +161,15 @@ export const About: FC = () => {
 										scale: 1.05,
 									}}
 								>
-									<div className="mb-8 py-6 pl-6 pr-4 shadow-md rounded-lg bg-gray-800">
+									<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md rounded-lg bg-gray-800">
 										<span className="mb-4 inline-block p-3 rounded bg-gray-700">
 											<img src={NextSVG} className="w-10 h-10" draggable={false} />
 										</span>
-										<h4 className="mb-2 text-2xl font-bold font-heading text-white">
+										<h4 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-white">
 											NextJS
 										</h4>
 										<p className="text-gray-500 leading-loose">
-											About {new Date().getFullYear() - 2019} years
+											About {new Date().getFullYear() - 2019} year(s)
 										</p>
 									</div>
 								</Tilt>
@@ -185,11 +185,11 @@ export const About: FC = () => {
 										<span className="mb-4 inline-block p-3 rounded bg-blue-800">
 											<img src={TailwindSVG} className="w-10 h-10" draggable={false} />
 										</span>
-										<h4 className="mb-2 text-2xl font-bold font-heading text-white">
+										<h4 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-white">
 											TailwindCSS
 										</h4>
 										<p className="text-gray-500 leading-loose">
-											About {new Date().getFullYear() - 2020} year
+											About {new Date().getFullYear() - 2020} year(s)
 										</p>
 									</div>
 								</Tilt>

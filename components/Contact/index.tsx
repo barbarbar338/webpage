@@ -6,7 +6,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 import { ChangeEvent, FC, FormEvent, Fragment, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -109,7 +108,7 @@ export const Contact: FC = () => {
 			</div>
 			<div className="flex flex-col lg:flex-row justify-center -mx-4">
 				{socials.map((social, idx) => (
-					<Link key={idx} href={social.href}>
+					<a key={idx} href={social.href} target="_blank">
 						<div className="cursor-pointer px-4 flex items-center">
 							<FontAwesomeIcon
 								icon={social.icon}
@@ -117,7 +116,7 @@ export const Contact: FC = () => {
 							/>
 							<span>{social.name}</span>
 						</div>
-					</Link>
+					</a>
 				))}
 			</div>
 		</section>

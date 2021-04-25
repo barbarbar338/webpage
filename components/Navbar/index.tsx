@@ -165,12 +165,12 @@ export const Navbar: FC = () => {
 						</p>
 						<div className="text-center">
 							{socials.map((social, idx) => (
-								<Link key={idx} href={social.href}>
+								<a key={idx} href={social.href} target="_blank">
 									<FontAwesomeIcon
 										icon={social.icon}
 										className="cursor-pointer inline-block text-white mx-2"
 									/>
-								</Link>
+								</a>
 							))}
 						</div>
 					</div>
