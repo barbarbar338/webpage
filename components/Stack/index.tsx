@@ -1,4 +1,6 @@
 import { FC } from "react";
+import Tippy from "@tippyjs/react";
+import Tilt from "react-tilt";
 import HTML from "@assets/stack/html.svg";
 import CSS from "@assets/stack/css.svg";
 import JS from "@assets/stack/js.svg";
@@ -23,6 +25,12 @@ import GM8 from "@assets/stack/gm8.svg";
 import GMS1 from "@assets/stack/gms1.svg";
 import GMS2 from "@assets/stack/gms2.svg";
 import CPP from "@assets/stack/cpp.svg";
+import WEBPACK from "@assets/stack/webpack.svg";
+import RUST from "@assets/stack/rust.svg";
+import RUBY from "@assets/stack/ruby.svg";
+import CRYSTAL from "@assets/stack/crystal.svg";
+import CLOJURE from "@assets/stack/clojure.svg";
+import VLANG from "@assets/stack/vlang.svg";
 
 const stacks = [
 	{
@@ -35,59 +43,59 @@ const stacks = [
 	},
 	{
 		icon: TAILWIND,
-		alt: "TAILWIND",
+		alt: "TailwindCSS",
 	},
 	{
 		icon: JS,
-		alt: "JS",
+		alt: "JavaScript",
 	},
 	{
 		icon: TS,
-		alt: "TS",
+		alt: "TypeScript",
 	},
 	{
 		icon: GO,
-		alt: "GO",
+		alt: "GoLang",
 	},
 	{
 		icon: DOCKER,
-		alt: "DOCKER",
+		alt: "Docker",
 	},
 	{
 		icon: MONGODB,
-		alt: "MONGODB",
+		alt: "MongoDB",
 	},
 	{
 		icon: NEST,
-		alt: "NEST",
+		alt: "NestJS",
 	},
 	{
 		icon: NEXT,
-		alt: "NEXT",
+		alt: "NextJS",
 	},
 	{
 		icon: NODE,
-		alt: "NODE",
+		alt: "NodeJS",
 	},
 	{
 		icon: POSTGRE,
-		alt: "POSTGRE",
+		alt: "PostgreSQL",
 	},
 	{
 		icon: REACT,
-		alt: "REACT",
+		alt: "ReactJS",
 	},
 	{
 		icon: REDIS,
-		alt: "REDIS",
+		alt: "Redis",
 	},
 	{
 		icon: SQLITE,
-		alt: "SQLITE",
+		alt: "SQLite",
 	},
 	{
 		icon: HANDLEBARS,
-		alt: "HANDLEBARS",
+		alt: "Handlebars",
 	},
 	{
 		icon: LINUX,
@@ -95,7 +103,7 @@ const stacks = [
 	},
 	{
 		icon: PYTHON,
-		alt: "PYTHON",
+		alt: "Python",
 	},
 	{
 		icon: SCSS,
@@ -103,33 +111,50 @@ const stacks = [
 	},
 	{
 		icon: GITHUB,
-		alt: "GITHUB",
+		alt: "GitHub",
 	},
 	{
 		icon: GM8,
-		alt: "GAMEMAKER 8",
+		alt: "GameMaker 8",
 	},
 	{
 		icon: GMS1,
-		alt: "GAMEMAKER: STUDIO 1",
+		alt: "GameMaker: Studio 1",
 	},
 	{
 		icon: GMS2,
-		alt: "GAMEMAKER: STUDIO 2",
+		alt: "GameMaker: Studio 2",
 	},
 	{
 		icon: CPP,
-		alt: "CPP",
+		alt: "C++",
+	},
+
+	{
+		icon: WEBPACK,
+		alt: "Webpack",
+	},
+	{
+		icon: RUST,
+		alt: "Rust",
+	},
+	{
+		icon: RUBY,
+		alt: "Ruby",
+	},
+	{
+		icon: CRYSTAL,
+		alt: "Crystal",
+	},
+	{
+		icon: CLOJURE,
+		alt: "Clojure",
+	},
+	{
+		icon: VLANG,
+		alt: "VLang",
 	},
 ];
-
-function shuffle<T>(a: T[]): T[] {
-	for (let i = a.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		[a[i], a[j]] = [a[j], a[i]];
-	}
-	return a;
-}
 
 export const Stack: FC = () => {
 	return (
@@ -140,13 +165,22 @@ export const Stack: FC = () => {
 			<div className="container mx-auto px-4">
 				<div className="flex flex-col justify-center">
 					<div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 px-4">
-						{shuffle(stacks).map((stack, idx) => (
-							<div
+						{stacks.map((stack, idx) => (
+							<Tilt
 								key={idx}
-								className="p-4 rounded-3xl flex justify-around items-center"
+								className="Tilt"
+								options={{
+									max: 50,
+									reverse: false,
+									scale: 1.2,
+								}}
 							>
-								<img className="w-16 h-16" src={stack.icon} alt={stack.alt} />
-							</div>
+								<Tippy content={stack.alt}>
+									<div className="p-4 rounded-3xl flex justify-around items-center">
+										<img className="w-16 h-16" src={stack.icon} alt={stack.alt} />
+									</div>
+								</Tippy>
+							</Tilt>
 						))}
 					</div>
 				</div>

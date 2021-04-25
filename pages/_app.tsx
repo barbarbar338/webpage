@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 
 import "@styles/tailwind.css";
 import "@styles/index.scss";
+import "tippy.js/dist/tippy.css";
 import "react-toastify/dist/ReactToastify.css";
 
 export default class App extends NextApp {

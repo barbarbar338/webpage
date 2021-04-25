@@ -22,6 +22,7 @@
 		"@fortawesome/free-solid-svg-icons": "^5.15.1",
 		"@fortawesome/react-fontawesome": "^0.1.13",
 		"@tailwindcss/line-clamp": "^0.2.0",
+		"@tippyjs/react": "^4.2.5",
 		"autoprefixer": "latest",
 		"axios": "^0.21.1",
 		"next": "latest",
@@ -30,6 +31,7 @@
 		"postcss": "latest",
 		"react": "latest",
 		"react-dom": "latest",
+		"react-tilt": "^0.1.4",
 		"react-toastify": "^6.2.0",
 		"tailwindcss": "latest"
 	},

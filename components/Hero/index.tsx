@@ -4,6 +4,7 @@ import Down from "@assets/elements/down.svg";
 import Left from "@assets/elements/left.svg";
 import Right from "@assets/elements/right.svg";
 import Link from "next/link";
+import Tilt from "react-tilt";
 
 export const Hero: FC = () => {
 	return (
@@ -68,12 +69,22 @@ export const Hero: FC = () => {
 									zIndex: 0,
 								}}
 							>
-								<img
-									className="h-128 md:w-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none"
-									src="https://avatars.githubusercontent.com/u/35371155"
-									alt="Avatar"
-									draggable={false}
-								/>
+								<Tilt
+									className="Tilt"
+									options={{
+										max: 10,
+										reverse: false,
+										scale: 1.05,
+									}}
+								>
+									<img
+										className="h-128 md:w-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none"
+										src="https://avatars.githubusercontent.com/u/35371155"
+										alt="Avatar"
+										draggable={false}
+									/>
+								</Tilt>
+
 								<img
 									className="hidden md:block absolute"
 									style={{

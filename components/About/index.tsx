@@ -4,6 +4,7 @@ import NestSVG from "@assets/elements/nest.svg";
 import MongoDBSVG from "@assets/elements/mongodb.svg";
 import NextSVG from "@assets/elements/next.svg";
 import { Stack } from "@components/Stack";
+import Tilt from "react-tilt";
 
 export const About: FC = () => {
 	return (
@@ -110,52 +111,88 @@ export const About: FC = () => {
 						</div>
 						<div className="w-full lg:w-1/2 flex flex-wrap -mx-4">
 							<div className="mb-8 lg:mb-0 w-1/2 px-4">
-								<div className="mb-8 py-6 pl-6 pr-4 shadow-md rounded bg-gray-800">
-									<span className="mb-4 inline-block p-3 rounded-lg bg-red-800">
-										<img src={NestSVG} className="w-10 h-10" draggable={false} />
-									</span>
-									<h4 className="mb-2 text-2xl font-bold font-heading text-white">
-										NestJS
-									</h4>
-									<p className="text-gray-500 leading-loose">
-										About {new Date().getFullYear() - 2020} year(s)
-									</p>
-								</div>
-								<div className="py-6 pl-6 pr-4 shadow-md rounded bg-gray-800">
-									<span className="mb-4 inline-block p-3 rounded-lg bg-green-800">
-										<img src={MongoDBSVG} className="w-10 h-10" draggable={false} />
-									</span>
-									<h4 className="mb-2 text-2xl font-bold font-heading text-white">
-										MongoDB
-									</h4>
-									<p className="text-gray-500 leading-loose">
-										About {new Date().getFullYear() - 2010} year(s)
-									</p>
-								</div>
+								<Tilt
+									className="Tilt"
+									options={{
+										max: 25,
+										reverse: false,
+										scale: 1.05,
+									}}
+								>
+									<div className="mb-8 py-6 pl-6 pr-4 shadow-md rounded bg-gray-800">
+										<span className="mb-4 inline-block p-3 rounded-lg bg-red-800">
+											<img src={NestSVG} className="w-10 h-10" draggable={false} />
+										</span>
+										<h4 className="mb-2 text-2xl font-bold font-heading text-white">
+											NestJS
+										</h4>
+										<p className="text-gray-500 leading-loose">
+											About {new Date().getFullYear() - 2020} year(s)
+										</p>
+									</div>
+								</Tilt>
+								<Tilt
+									className="Tilt"
+									options={{
+										max: 25,
+										reverse: false,
+										scale: 1.05,
+									}}
+								>
+									<div className="py-6 pl-6 pr-4 shadow-md rounded bg-gray-800">
+										<span className="mb-4 inline-block p-3 rounded-lg bg-green-800">
+											<img src={MongoDBSVG} className="w-10 h-10" draggable={false} />
+										</span>
+										<h4 className="mb-2 text-2xl font-bold font-heading text-white">
+											MongoDB
+										</h4>
+										<p className="text-gray-500 leading-loose">
+											About {new Date().getFullYear() - 2010} year(s)
+										</p>
+									</div>
+								</Tilt>
 							</div>
 							<div className="w-1/2 lg:mt-20 md:px-4">
-								<div className="mb-8 py-6 pl-6 pr-4 shadow-md rounded-lg bg-gray-800">
-									<span className="mb-4 inline-block p-3 rounded bg-gray-700">
-										<img src={NextSVG} className="w-10 h-10" draggable={false} />
-									</span>
-									<h4 className="mb-2 text-2xl font-bold font-heading text-white">
-										NextJS
-									</h4>
-									<p className="text-gray-500 leading-loose">
-										About {new Date().getFullYear() - 2019} years
-									</p>
-								</div>
-								<div className="py-6 pl-6 pr-4 shadow-md rounded-lg bg-gray-800">
-									<span className="mb-4 inline-block p-3 rounded bg-blue-800">
-										<img src={TailwindSVG} className="w-10 h-10" draggable={false} />
-									</span>
-									<h4 className="mb-2 text-2xl font-bold font-heading text-white">
-										TailwindCSS
-									</h4>
-									<p className="text-gray-500 leading-loose">
-										About {new Date().getFullYear() - 2020} year
-									</p>
-								</div>
+								<Tilt
+									className="Tilt"
+									options={{
+										max: 25,
+										reverse: false,
+										scale: 1.05,
+									}}
+								>
+									<div className="mb-8 py-6 pl-6 pr-4 shadow-md rounded-lg bg-gray-800">
+										<span className="mb-4 inline-block p-3 rounded bg-gray-700">
+											<img src={NextSVG} className="w-10 h-10" draggable={false} />
+										</span>
+										<h4 className="mb-2 text-2xl font-bold font-heading text-white">
+											NextJS
+										</h4>
+										<p className="text-gray-500 leading-loose">
+											About {new Date().getFullYear() - 2019} years
+										</p>
+									</div>
+								</Tilt>
+								<Tilt
+									className="Tilt"
+									options={{
+										max: 25,
+										reverse: false,
+										scale: 1.05,
+									}}
+								>
+									<div className="py-6 pl-6 pr-4 shadow-md rounded-lg bg-gray-800">
+										<span className="mb-4 inline-block p-3 rounded bg-blue-800">
+											<img src={TailwindSVG} className="w-10 h-10" draggable={false} />
+										</span>
+										<h4 className="mb-2 text-2xl font-bold font-heading text-white">
+											TailwindCSS
+										</h4>
+										<p className="text-gray-500 leading-loose">
+											About {new Date().getFullYear() - 2020} year
+										</p>
+									</div>
+								</Tilt>
 							</div>
 						</div>
 					</div>
