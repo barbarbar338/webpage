@@ -26,4 +26,4 @@ yarn-error.log*
 
 # Lockfiles
 yarn.lock
-parkage-lock.json
+package-lock.json
