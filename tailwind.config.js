@@ -1,7 +1,7 @@
 /* eslint-disable */
 module.exports = {
 	purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-	darkMode: false,
+	darkMode: "class",
 	theme: {
 		screens: {
 			sm: "640px",

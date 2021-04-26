@@ -31,7 +31,7 @@ IndexPage.getInitialProps = async (ctx) => {
 	).data;
 	const repos = res
 		.sort((a, b) => b.stargazers_count - a.stargazers_count)
-		.slice(0, 12);
+		.slice(0, 15);
 	return { repos };
 };
 

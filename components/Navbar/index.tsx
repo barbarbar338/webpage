@@ -2,7 +2,12 @@ import { FC, Fragment, useEffect, useState } from "react";
 import Favicon from "@assets/icon.png";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUp, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+	faArrowUp,
+	faBars,
+	faLaptop,
+	faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 import { NavbarSeperator } from "@components/NavbarSeperator";
 import {
 	faDiscord,
@@ -10,6 +15,8 @@ import {
 	faInstagram,
 	faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { useTheme } from "next-themes";
+import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 
 const links = [
 	{
@@ -49,12 +56,58 @@ export const Navbar: FC = () => {
 	const [visible, setVisible] = useState(false);
 	const [hash, setHash] = useState("");
 	const [top, setTop] = useState(false);
+	const { theme, setTheme } = useTheme();
+	const [icon, setIcon] = useState(faSun);
+	const [color, setColor] = useState("yellow");
 
 	const onClose = () => {
 		setVisible(!visible);
 	};
 
+	const onTheme = () => {
+		switch (theme) {
+			case "light":
+				setTheme("dark");
+				setIcon(faMoon);
+				setColor("blue");
+				break;
+			case "dark":
+				setTheme("system");
+				setIcon(faLaptop);
+				setColor("gray");
+				break;
+			case "system":
+				setTheme("light");
+				setIcon(faSun);
+				setColor("yellow");
+				break;
+			default:
+				setTheme("system");
+				setIcon(faLaptop);
+				setColor("gray");
+				break;
+		}
+	};
+
 	useEffect(() => {
+		switch (theme) {
+			case "light":
+				setIcon(faSun);
+				setColor("yellow");
+				break;
+			case "dark":
+				setIcon(faMoon);
+				setColor("blue");
+				break;
+			case "system":
+				setIcon(faLaptop);
+				setColor("gray");
+				break;
+			default:
+				setIcon(faSun);
+				setColor("yellow");
+				break;
+		}
 		window.onscroll = function () {
 			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
 				setTop(true);
@@ -72,7 +125,7 @@ export const Navbar: FC = () => {
 
 	return (
 		<>
-			<nav className="relative px-6 py-6 flex justify-between items-center bg-gray-900">
+			<nav className="relative px-6 py-6 flex justify-between items-center bg-white dark:bg-gray-900">
 				<Link href="#">
 					<span className="cursor-pointer text-white text-3xl font-bold leading-none">
 						<img
@@ -87,7 +140,7 @@ export const Navbar: FC = () => {
 				<div className="lg:hidden">
 					<button
 						onClick={onClose}
-						className="flex items-center text-white p-3 focus:outline-none"
+						className="flex items-center text-gray-900 dark:text-white p-3 focus:outline-none"
 					>
 						<FontAwesomeIcon icon={faBars} className="block h-4 w-4 fill-current" />
 					</button>
@@ -102,7 +155,7 @@ export const Navbar: FC = () => {
 										className={`cursor-pointer text-sm ${
 											hash == link.href
 												? "text-purple-500 hover:text-purple-300"
-												: "text-gray-300 hover:text-white"
+												: "text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white"
 										}`}
 									>
 										{link.name}
@@ -120,8 +173,11 @@ export const Navbar: FC = () => {
 				</Link>
 			</nav>
 			<div className={`${visible ? "" : "hidden "}relative z-50`}>
-				<div onClick={onClose} className="fixed inset-0 bg-gray-700 opacity-25" />
-				<nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-gray-900 overflow-y-auto">
+				<div
+					onClick={onClose}
+					className="fixed inset-0 bg-white dark:bg-gray-700 opacity-25"
+				/>
+				<nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-gray-100 dark:bg-gray-900 overflow-y-auto">
 					<div className="flex items-center mb-8">
 						<Link href="#">
 							<span className="cursor-pointer mr-auto text-3xl font-bold leading-none">
@@ -131,7 +187,7 @@ export const Navbar: FC = () => {
 						<button onClick={onClose} className="focus:outline-none">
 							<FontAwesomeIcon
 								icon={faTimes}
-								className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+								className="h-6 w-6 cursor-pointer text-black dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-500"
 							/>
 						</button>
 					</div>
@@ -142,8 +198,8 @@ export const Navbar: FC = () => {
 									<Link href={link.href}>
 										<span
 											className={`cursor-pointer block p-4 text-sm font-semibold ${
-												hash == link.href ? "text-white" : "text-gray-500"
-											} hover:bg-gray-800 hover:text-white rounded`}
+												hash == link.href ? "text-black dark:text-white" : "text-gray-500"
+											} hover:bg-purple-600 dark:hover:bg-gray-800 hover:text-white rounded`}
 										>
 											{link.name}
 										</span>
@@ -160,7 +216,7 @@ export const Navbar: FC = () => {
 								</span>
 							</Link>
 						</div>
-						<p className="my-4 text-xs text-center text-gray-400">
+						<p className="my-4 text-xs text-center text-gray-600 dark:text-gray-400">
 							<span>&copy; {new Date().getFullYear()} All rights reserved.</span>
 						</p>
 						<div className="text-center">
@@ -168,7 +224,7 @@ export const Navbar: FC = () => {
 								<a key={idx} href={social.href} target="_blank">
 									<FontAwesomeIcon
 										icon={social.icon}
-										className="cursor-pointer inline-block text-white mx-2"
+										className="cursor-pointer inline-block text-black dark:text-white mx-2"
 									/>
 								</a>
 							))}
@@ -183,6 +239,12 @@ export const Navbar: FC = () => {
 				} fixed bottom-0 right-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-pink-400 rounded-full focus:outline-none`}
 			>
 				<FontAwesomeIcon icon={faArrowUp} />
+			</button>
+			<button
+				onClick={onTheme}
+				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-500 rounded-full focus:outline-none"
+			>
+				<FontAwesomeIcon icon={icon} className={`text-${color}-400 text-bold`} />
 			</button>
 		</>
 	);

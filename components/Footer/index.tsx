@@ -29,8 +29,8 @@ const socials = [
 
 export const Footer: FC = () => {
 	return (
-		<div className="bg-gray-900 pt-2 ">
-			<div className="flex pb-5 px-3 m-auto pt-5 text-gray-300 text-sm flex-col md:flex-row max-w-6xl">
+		<div className="bg-white dark:bg-gray-900 pt-2 ">
+			<div className="flex pb-5 px-3 m-auto pt-5 text-gray-600 dark:text-gray-300 text-sm flex-col md:flex-row max-w-6xl">
 				<div className="mt-2">
 					&copy; {new Date().getFullYear()} All rights reserved. Made with ❤ by{" "}
 					<Link href="https://github.com/barbarbar338">
@@ -45,7 +45,7 @@ export const Footer: FC = () => {
 						<span className="text-green-600 cursor-pointer">TailwindCSS</span>
 					</Link>
 				</div>
-				<div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex text-purple-400">
+				<div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex text-purple-600 dark:text-purple-400">
 					{socials.map((social, idx) => (
 						<Link key={idx} href={social.href}>
 							<span className="cursor-pointer w-6 mx-1">

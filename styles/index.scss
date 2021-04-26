@@ -4,7 +4,7 @@ html,
 body {
 	font-family: "DM Sans", sans-serif;
 	scroll-behavior: smooth;
-	@apply bg-gray-900;
+	@apply bg-white dark:bg-gray-900;
 }
 
 ::-webkit-scrollbar {
@@ -12,13 +12,13 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-	background: rgb(17, 24, 39);
+	@apply bg-white dark:bg-gray-900;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: rgb(244, 114, 182);
+	@apply bg-pink-500;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: rgb(219, 39, 119);
+	@apply bg-pink-600;
 }

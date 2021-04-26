@@ -158,7 +158,7 @@ const stacks = [
 
 export const Stack: FC = () => {
 	return (
-		<section className="bg-gray-900 text-white">
+		<section className="bg-white dark:bg-gray-900 text-black dark:text-white">
 			<h2 className="text-4xl mb-10 text-center font-semibold font-heading">
 				Tech Stack
 			</h2>
@@ -170,13 +170,13 @@ export const Stack: FC = () => {
 								key={idx}
 								className="Tilt"
 								options={{
-									max: 50,
+									max: 20,
 									reverse: false,
-									scale: 1.2,
+									scale: 1.05,
 								}}
 							>
 								<Tippy content={stack.alt}>
-									<div className="p-4 rounded-3xl flex justify-around items-center">
+									<div className="p-4 rounded-3xl flex justify-around items-center bg-gray-200 dark:bg-gray-800">
 										<img className="w-16 h-16" src={stack.icon} alt={stack.alt} />
 									</div>
 								</Tippy>

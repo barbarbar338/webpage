@@ -32,9 +32,9 @@ const RepoCard: FC<IRepoCard> = ({
 					}}
 				>
 					<a href={html_url} target="_blank">
-						<div className="cursor-pointer p-4 bg-gray-700 rounded-lg h-full text-white">
+						<div className="cursor-pointer p-4 bg-gray-200 dark:bg-gray-700 rounded-lg h-full text-black dark:text-white">
 							<div className="flex items-center space-x-1">
-								<span className="flex-grow space-x-2 truncate text-purple-300">
+								<span className="flex-grow space-x-2 truncate text-purple-600 dark:text-purple-300">
 									{name}
 								</span>
 								<div className="flex items-center space-x-1">
@@ -52,7 +52,9 @@ const RepoCard: FC<IRepoCard> = ({
 										backgroundColor: colors[language].color,
 									}}
 								></span>
-								<p className="ml-1 mt-1 text-gray-400 text-xs">{language}</p>
+								<p className="ml-1 mt-1 text-gray-600 dark:text-gray-400 text-xs">
+									{language}
+								</p>
 							</div>
 						</div>
 					</a>
@@ -70,7 +72,7 @@ export const Projects: FC<IProjects> = ({ repos }) => {
 	return (
 		<section
 			id="projects"
-			className="min-h-screen py-20 px-4 bg-gray-900 text-white"
+			className="min-h-screen py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white"
 		>
 			<h2 className="text-4xl mb-10 text-center font-semibold font-heading">
 				Most <span className="text-purple-600">Starred</span> Repos

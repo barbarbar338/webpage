@@ -28,6 +28,7 @@
 		"next": "latest",
 		"next-optimized-images": "latest",
 		"next-seo": "latest",
+		"next-themes": "^0.0.14",
 		"postcss": "latest",
 		"react": "latest",
 		"react-dom": "latest",

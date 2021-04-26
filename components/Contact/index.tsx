@@ -67,7 +67,10 @@ export const Contact: FC = () => {
 	};
 
 	return (
-		<section id="contact" className="py-20 px-4 bg-gray-900 text-white">
+		<section
+			id="contact"
+			className="py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white"
+		>
 			<h2 className="text-4xl mb-10 text-center font-semibold font-heading">
 				Contact <span className="text-purple-600">Me</span>
 			</h2>
