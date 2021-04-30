@@ -199,7 +199,8 @@ module.exports = {
 			sm: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
 			DEFAULT:
 				"0px 1px 2px rgba(148, 163, 184, 0.35), 0px 6px 6px rgba(203, 213, 225, 0.15)",
-			md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+			md:
+				"0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
 			lg:
 				"0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
 			xl:
@@ -242,7 +243,8 @@ module.exports = {
 				'"DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
 			sans:
 				'"DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-			serif: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+			serif:
+				'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
 			mono:
 				'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
 		},
@@ -484,7 +486,13 @@ module.exports = {
 		borderRadius: ["responsive"],
 		borderStyle: ["responsive"],
 		borderWidth: ["responsive"],
-		boxShadow: ["responsive", "group-hover", "focus-within", "hover", "focus"],
+		boxShadow: [
+			"responsive",
+			"group-hover",
+			"focus-within",
+			"hover",
+			"focus",
+		],
 		boxSizing: ["responsive"],
 		clear: ["responsive"],
 		container: ["responsive"],
@@ -536,7 +544,13 @@ module.exports = {
 		minWidth: ["responsive"],
 		objectFit: ["responsive"],
 		objectPosition: ["responsive"],
-		opacity: ["responsive", "group-hover", "focus-within", "hover", "focus"],
+		opacity: [
+			"responsive",
+			"group-hover",
+			"focus-within",
+			"hover",
+			"focus",
+		],
 		order: ["responsive"],
 		outline: ["responsive", "focus-within", "focus"],
 		overflow: ["responsive"],
@@ -578,7 +592,13 @@ module.exports = {
 			"hover",
 			"focus",
 		],
-		textOpacity: ["responsive", "group-hover", "focus-within", "hover", "focus"],
+		textOpacity: [
+			"responsive",
+			"group-hover",
+			"focus-within",
+			"hover",
+			"focus",
+		],
 		textOverflow: ["responsive"],
 		textTransform: ["responsive"],
 		transform: ["responsive"],
