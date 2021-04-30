@@ -178,6 +178,7 @@ export const Stack: FC = () => {
 								<Tippy content={stack.alt}>
 									<div className="p-4 rounded-3xl flex justify-around items-center bg-gray-200 dark:bg-gray-800">
 										<img
+											loading="lazy"
 											className="w-16 h-16"
 											src={stack.icon}
 											alt={stack.alt}

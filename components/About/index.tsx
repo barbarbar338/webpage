@@ -132,6 +132,7 @@ export const About: FC = () => {
 								<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md rounded bg-gray-200 dark:bg-gray-800">
 									<span className="mb-4 inline-block p-3 rounded-lg bg-red-500 dark:bg-red-800">
 										<img
+											loading="lazy"
 											src={NestSVG}
 											className="w-10 h-10"
 											draggable={false}
@@ -158,6 +159,7 @@ export const About: FC = () => {
 								<div className="py-6 pl-6 pr-4 shadow-md rounded bg-gray-200 dark:bg-gray-800">
 									<span className="mb-4 inline-block p-3 rounded-lg bg-green-500 dark:bg-green-800">
 										<img
+											loading="lazy"
 											src={MongoDBSVG}
 											className="w-10 h-10"
 											draggable={false}
@@ -186,6 +188,7 @@ export const About: FC = () => {
 								<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md rounded-lg bg-gray-200 dark:bg-gray-800">
 									<span className="mb-4 inline-block p-3 rounded bg-gray-500 dark:bg-gray-700">
 										<img
+											loading="lazy"
 											src={NextSVG}
 											className="w-10 h-10"
 											draggable={false}
@@ -212,6 +215,7 @@ export const About: FC = () => {
 								<div className="py-6 pl-6 pr-4 shadow-md rounded-lg bg-gray-200 dark:bg-gray-800">
 									<span className="mb-4 inline-block p-3 rounded bg-blue-500 dark:bg-blue-800">
 										<img
+											loading="lazy"
 											src={TailwindSVG}
 											className="w-10 h-10"
 											draggable={false}

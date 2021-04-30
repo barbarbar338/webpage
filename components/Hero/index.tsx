@@ -105,6 +105,7 @@ export const Hero: FC = () => {
 								}}
 							>
 								<img
+									loading="lazy"
 									className="md:h-128 md:w-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none"
 									src="https://avatars.githubusercontent.com/u/35371155"
 									alt="Avatar"
@@ -112,6 +113,7 @@ export const Hero: FC = () => {
 								/>
 							</Tilt>
 							<img
+								loading="lazy"
 								className="hidden md:block absolute"
 								style={{
 									top: "-2rem",
@@ -123,6 +125,7 @@ export const Hero: FC = () => {
 								draggable={false}
 							/>
 							<img
+								loading="lazy"
 								className="hidden md:block absolute"
 								style={{
 									bottom: "-2rem",
@@ -134,6 +137,7 @@ export const Hero: FC = () => {
 								draggable={false}
 							/>
 							<img
+								loading="lazy"
 								className="hidden md:block absolute"
 								style={{
 									top: "3rem",
@@ -145,6 +149,7 @@ export const Hero: FC = () => {
 								draggable={false}
 							/>
 							<img
+								loading="lazy"
 								className="hidden md:block absolute"
 								style={{
 									bottom: "2.5rem",

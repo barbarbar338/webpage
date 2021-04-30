@@ -12,6 +12,7 @@ const NotFoundPage: NextPage = () => {
 				</h1>
 				<p className="text-gray-400">Page not found</p>
 				<img
+					loading="lazy"
 					className="max-w-auto md:max-w-sm my-12 mx-auto"
 					src={ErrorSVG}
 					alt="Error SVG"

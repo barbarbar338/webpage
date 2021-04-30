@@ -110,7 +110,10 @@ export const Navbar: FC = () => {
 				break;
 		}
 		window.onscroll = function () {
-			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20)
+			if (
+				document.body.scrollTop > 20 ||
+				document.documentElement.scrollTop > 20
+			)
 				setTop(true);
 			else setTop(false);
 		};
@@ -130,6 +133,7 @@ export const Navbar: FC = () => {
 				<Link href="#">
 					<span className="cursor-pointer text-white text-3xl font-bold leading-none">
 						<img
+							loading="lazy"
 							className="h-12"
 							src={Favicon}
 							alt="Favicon"
@@ -144,7 +148,10 @@ export const Navbar: FC = () => {
 						onClick={onClose}
 						className="flex items-center text-gray-900 dark:text-white p-3 focus:outline-none"
 					>
-						<FontAwesomeIcon icon={faBars} className="block h-4 w-4 fill-current" />
+						<FontAwesomeIcon
+							icon={faBars}
+							className="block h-4 w-4 fill-current"
+						/>
 					</button>
 				</div>
 				<ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
@@ -192,6 +199,7 @@ export const Navbar: FC = () => {
 						<Link href="#">
 							<span className="cursor-pointer mr-auto text-3xl font-bold leading-none">
 								<img
+									loading="lazy"
 									className="h-10"
 									src={Favicon}
 									alt="Favicon"
@@ -227,7 +235,9 @@ export const Navbar: FC = () => {
 									<Link href={link.href}>
 										<span
 											className={`cursor-pointer block p-4 text-sm font-semibold ${
-												hash == link.href ? "text-black dark:text-white" : "text-gray-500"
+												hash == link.href
+													? "text-black dark:text-white"
+													: "text-gray-500"
 											} hover:bg-purple-600 dark:hover:bg-gray-800 hover:text-white rounded`}
 										>
 											{link.name}
@@ -254,11 +264,19 @@ export const Navbar: FC = () => {
 							</Link>
 						</div>
 						<p className="my-4 text-xs text-center text-gray-600 dark:text-gray-400">
-							<span>&copy; {new Date().getFullYear()} All rights reserved.</span>
+							<span>
+								&copy; {new Date().getFullYear()} All rights
+								reserved.
+							</span>
 						</p>
 						<div className="text-center">
 							{socials.map((social, idx) => (
-								<a key={idx} href={social.href} target="_blank" rel="noreferrer">
+								<a
+									key={idx}
+									href={social.href}
+									target="_blank"
+									rel="noreferrer"
+								>
 									<FontAwesomeIcon
 										icon={social.icon}
 										className="cursor-pointer inline-block text-black dark:text-white mx-2"
@@ -291,7 +309,10 @@ export const Navbar: FC = () => {
 				onClick={onTheme}
 				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-500 rounded-full focus:outline-none"
 			>
-				<FontAwesomeIcon icon={icon} className={`text-${color}-400 text-bold`} />
+				<FontAwesomeIcon
+					icon={icon}
+					className={`text-${color}-400 text-bold`}
+				/>
 			</motion.button>
 		</>
 	);
