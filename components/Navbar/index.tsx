@@ -17,7 +17,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useTheme } from "next-themes";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const links = [
 	{
@@ -59,7 +59,7 @@ export const Navbar: FC = () => {
 	const [top, setTop] = useState(false);
 	const { theme, setTheme } = useTheme();
 	const [icon, setIcon] = useState(faSun);
-	const [color, setColor] = useState("yellow");
+	const [color, setColor] = useState<"yellow" | "gray" | "blue">("yellow");
 
 	const onClose = () => {
 		setVisible(!visible);
@@ -176,7 +176,7 @@ export const Navbar: FC = () => {
 					))}
 				</ul>
 				<Link href="#contact">
-					<motion.span
+					<m.span
 						whileHover={{
 							scale: 1.1,
 						}}
@@ -186,10 +186,10 @@ export const Navbar: FC = () => {
 						className="cursor-pointer hidden lg:inline-block py-2 px-6 bg-pink-500 hover:bg-pink-600 text-sm text-white font-bold rounded-l-xl rounded-t-xl transition duration-200"
 					>
 						Contact
-					</motion.span>
+					</m.span>
 				</Link>
 			</nav>
-			<div className={`${visible ? "" : "hidden "}relative z-50`}>
+			<div className={visible ? "relative z-50" : "hidden relative z-50"}>
 				<div
 					onClick={onClose}
 					className="fixed inset-0 bg-white dark:bg-gray-700 opacity-25"
@@ -222,7 +222,7 @@ export const Navbar: FC = () => {
 					<div>
 						<ul>
 							{links.map((link, idx) => (
-								<motion.li
+								<m.li
 									whileHover={{
 										scale: 1.05,
 									}}
@@ -243,14 +243,14 @@ export const Navbar: FC = () => {
 											{link.name}
 										</span>
 									</Link>
-								</motion.li>
+								</m.li>
 							))}
 						</ul>
 					</div>
 					<div className="mt-auto">
 						<div>
 							<Link href="#contact">
-								<motion.span
+								<m.span
 									whileHover={{
 										scale: 1.05,
 									}}
@@ -260,7 +260,7 @@ export const Navbar: FC = () => {
 									className="cursor-pointer block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-pink-600 hover:bg-pink-700 rounded-l-xl rounded-t-xl"
 								>
 									Contact
-								</motion.span>
+								</m.span>
 							</Link>
 						</div>
 						<p className="my-4 text-xs text-center text-gray-600 dark:text-gray-400">
@@ -287,7 +287,7 @@ export const Navbar: FC = () => {
 					</div>
 				</nav>
 			</div>
-			<motion.button
+			<m.button
 				aria-label="Go Up"
 				whileHover={{ scale: 1.1 }}
 				whileTap={{
@@ -299,8 +299,8 @@ export const Navbar: FC = () => {
 				} fixed bottom-0 right-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-pink-400 rounded-full focus:outline-none`}
 			>
 				<FontAwesomeIcon icon={faArrowUp} />
-			</motion.button>
-			<motion.button
+			</m.button>
+			<m.button
 				aria-label="Change Theme"
 				whileHover={{ scale: 1.1 }}
 				whileTap={{
@@ -311,9 +311,15 @@ export const Navbar: FC = () => {
 			>
 				<FontAwesomeIcon
 					icon={icon}
-					className={`text-${color}-400 text-bold`}
+					className={
+						color === "yellow"
+							? "text-yellow-400 text-bold"
+							: color === "gray"
+							? "text-gray-400 text-bold"
+							: "text-blue-400 text-bold"
+					}
 				/>
-			</motion.button>
+			</m.button>
 		</>
 	);
 };

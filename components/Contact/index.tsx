@@ -6,8 +6,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from "framer-motion";
-import { ChangeEvent, FC, FormEvent, Fragment, useState } from "react";
+import { m } from "framer-motion";
+import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { toast } from "react-toastify";
 
 const socials = [
@@ -104,7 +104,7 @@ export const Contact: FC = () => {
 						></textarea>
 					</div>
 					<div>
-						<motion.button
+						<m.button
 							aria-label="Submit"
 							whileHover={{
 								scale: 1.02,
@@ -115,7 +115,7 @@ export const Contact: FC = () => {
 							className="inline-block w-full py-4 px-8 leading-none text-white bg-purple-600 hover:bg-purple-700 font-semibold rounded shadow"
 						>
 							Submit
-						</motion.button>
+						</m.button>
 					</div>
 				</form>
 			</div>
