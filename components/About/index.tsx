@@ -8,7 +8,10 @@ import Tilt from "react-tilt";
 
 export const About: FC = () => {
 	return (
-		<section id="about" className="py-10 min-h-screen bg-white dark:bg-gray-900">
+		<section
+			id="about"
+			className="py-10 min-h-screen bg-white dark:bg-gray-900"
+		>
 			<div className="container mx-auto px-4">
 				<div className="flex flex-wrap items-center">
 					<div className="w-full lg:w-1/2 mb-12 lg:mb-0">
@@ -17,17 +20,23 @@ export const About: FC = () => {
 								Being a back-end developer...
 							</span>
 							<h2 className="my-2 text-4xl lg:text-5xl font-bold font-heading text-black dark:text-white">
-								Who am I <span className="text-purple-600">&amp;</span> how did I get
-								here
+								Who am I{" "}
+								<span className="text-purple-600">&amp;</span>{" "}
+								how did I get here
 							</h2>
 							<p className="mb-6 text-gray-500 leading-loose">
 								Hello, I am Barış DEMİRCİ (a.k.a.{" "}
-								<span className="text-purple-600">barbarbar338</span>
-								). I am a student from Turkey who codes for fun. I have been in coding
-								since 2014 and I started my career first by making simple websites. I
-								have been using JavaScript (Node &amp; Client-side) for{" "}
-								{new Date().getFullYear() - 2015} years. Now I'm trying to produce lots
-								of open source projects and working as freelancer.
+								<span className="text-purple-600">
+									barbarbar338
+								</span>
+								). I am a student from Turkey who codes for fun.
+								I have been in coding since 2014 and I started
+								my career first by making simple websites. I
+								have been using JavaScript (Node &amp;
+								Client-side) for{" "}
+								{new Date().getFullYear() - 2015} years. Now I'm
+								trying to produce lots of open source projects
+								and working as freelancer.
 							</p>
 							<ul className="text-gray-500 font-bold">
 								<li className="flex mb-4">
@@ -43,7 +52,9 @@ export const About: FC = () => {
 											clipRule="evenodd"
 										></path>
 									</svg>
-									<span>JavaScript (Node &amp; Client-Side)</span>
+									<span>
+										JavaScript (Node &amp; Client-Side)
+									</span>
 								</li>
 								<li className="flex mb-4">
 									<svg
@@ -127,11 +138,12 @@ export const About: FC = () => {
 											alt="NestJS"
 										/>
 									</span>
-									<h4 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
+									<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 										NestJS
-									</h4>
+									</h3>
 									<p className="text-gray-500 leading-loose">
-										About {new Date().getFullYear() - 2020} year(s)
+										About {new Date().getFullYear() - 2020}{" "}
+										year(s)
 									</p>
 								</div>
 							</Tilt>
@@ -152,11 +164,12 @@ export const About: FC = () => {
 											alt="MongoDB"
 										/>
 									</span>
-									<h4 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
+									<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 										MongoDB
-									</h4>
+									</h3>
 									<p className="text-gray-500 leading-loose">
-										About {new Date().getFullYear() - 2015} year(s)
+										About {new Date().getFullYear() - 2015}{" "}
+										year(s)
 									</p>
 								</div>
 							</Tilt>
@@ -179,11 +192,12 @@ export const About: FC = () => {
 											alt="NextJS"
 										/>
 									</span>
-									<h4 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
+									<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 										NextJS
-									</h4>
+									</h3>
 									<p className="text-gray-500 leading-loose">
-										About {new Date().getFullYear() - 2019} year(s)
+										About {new Date().getFullYear() - 2019}{" "}
+										year(s)
 									</p>
 								</div>
 							</Tilt>
@@ -204,11 +218,12 @@ export const About: FC = () => {
 											alt="TailwindCSS"
 										/>
 									</span>
-									<h4 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
+									<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 										TailwindCSS
-									</h4>
+									</h3>
 									<p className="text-gray-500 leading-loose">
-										About {new Date().getFullYear() - 2020} year(s)
+										About {new Date().getFullYear() - 2020}{" "}
+										year(s)
 									</p>
 								</div>
 							</Tilt>

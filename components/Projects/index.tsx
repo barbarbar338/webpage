@@ -40,11 +40,16 @@ const RepoCard: FC<IRepoCard> = ({
 								<div className="flex items-center space-x-1">
 									<div className="flex items-center space-x-1">
 										<span>{stargazers_count}</span>{" "}
-										<FontAwesomeIcon icon={faStar} className="w-6 h-6 text-yellow-600" />
+										<FontAwesomeIcon
+											icon={faStar}
+											className="w-6 h-6 text-yellow-600"
+										/>
 									</div>
 								</div>
 							</div>
-							<p className="line-clamp-2 text-base h-12">{description}</p>
+							<p className="line-clamp-2 text-base h-12">
+								{description}
+							</p>
 							<div className="flex mt-3">
 								<span
 									className="mt-1 block h-4 w-4 bg-gray-400 rounded-full"
@@ -74,9 +79,9 @@ export const Projects: FC<IProjects> = ({ repos }) => {
 			id="projects"
 			className="min-h-screen py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white"
 		>
-			<h2 className="text-4xl mb-10 text-center font-semibold font-heading">
+			<h1 className="text-4xl mb-10 text-center font-semibold font-heading">
 				Most <span className="text-purple-600">Starred</span> Repos
-			</h2>
+			</h1>
 			<div className="container mx-auto mb-12">
 				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
 					{repos.map((repo, idx) => (

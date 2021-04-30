@@ -159,9 +159,9 @@ const stacks = [
 export const Stack: FC = () => {
 	return (
 		<section className="bg-white dark:bg-gray-900 text-black dark:text-white">
-			<h2 className="text-4xl mb-10 text-center font-semibold font-heading">
+			<h1 className="text-4xl mb-10 text-center font-semibold font-heading">
 				Tech Stack
-			</h2>
+			</h1>
 			<div className="container mx-auto px-4">
 				<div className="flex flex-col justify-center">
 					<div className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 px-4">

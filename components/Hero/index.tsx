@@ -15,35 +15,46 @@ export const Hero: FC = () => {
 					<div className="w-full lg:w-1/2 px-4 mb-12 md:mb-20 lg:mb-0 flex items-center">
 						<div className="w-full text-center lg:text-left">
 							<div className="max-w-md mx-auto lg:mx-0">
-								<h2 className="my-3 md:mt-0 text-4xl lg:text-5xl text-black dark:text-white font-bold">
+								<h1 className="my-3 md:mt-0 text-4xl lg:text-5xl text-black dark:text-white font-bold">
 									Barış DEMİRCİ
-								</h2>
+								</h1>
 							</div>
 							<div className="max-w-sm mx-auto lg:mx-0">
 								<p className="mb-6 text-gray-400 leading-loose">
 									Back-end developer with{" "}
 									<span className="text-purple-500">
-										over {new Date().getFullYear() - 2014} years
+										over {new Date().getFullYear() - 2014}{" "}
+										years
 									</span>{" "}
 									experience. More interested with{" "}
 									<Link href="https://www.typescriptlang.org/">
-										<span className="text-blue-500 cursor-pointer">TypeScript</span>
+										<span className="text-blue-500 cursor-pointer">
+											TypeScript
+										</span>
 									</Link>
 									,{" "}
 									<Link href="https://nestjs.com/">
-										<span className="text-red-500 cursor-pointer">NestJS</span>
+										<span className="text-red-500 cursor-pointer">
+											NestJS
+										</span>
 									</Link>
 									,{" "}
 									<Link href="https://reactjs.org/">
-										<span className="text-blue-600 cursor-pointer">ReactJS</span>
+										<span className="text-blue-600 cursor-pointer">
+											ReactJS
+										</span>
 									</Link>
 									,{" "}
 									<Link href="https://nextjs.org/">
-										<span className="text-gray-600 cursor-pointer">NextJS</span>
+										<span className="text-gray-600 cursor-pointer">
+											NextJS
+										</span>
 									</Link>{" "}
 									and{" "}
 									<Link href="https://golang.org/">
-										<span className="text-blue-300 cursor-pointer">GoLang</span>
+										<span className="text-blue-300 cursor-pointer">
+											GoLang
+										</span>
 									</Link>
 									.
 								</p>

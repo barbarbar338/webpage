@@ -72,9 +72,9 @@ export const Contact: FC = () => {
 			id="contact"
 			className="py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white"
 		>
-			<h2 className="text-4xl mb-10 text-center font-semibold font-heading">
+			<h1 className="text-4xl mb-10 text-center font-semibold font-heading">
 				Contact <span className="text-purple-600">Me</span>
-			</h2>
+			</h1>
 			<div className="w-full max-w-2xl mx-auto mb-12">
 				<form onSubmit={onSubmit}>
 					<div className="flex mb-4 -mx-2">
@@ -121,7 +121,12 @@ export const Contact: FC = () => {
 			</div>
 			<div className="flex flex-col lg:flex-row justify-center -mx-4">
 				{socials.map((social, idx) => (
-					<a key={idx} href={social.href} target="_blank" rel="noreferrer">
+					<a
+						key={idx}
+						href={social.href}
+						target="_blank"
+						rel="noreferrer"
+					>
 						<div className="cursor-pointer px-4 flex items-center">
 							<FontAwesomeIcon
 								icon={social.icon}
