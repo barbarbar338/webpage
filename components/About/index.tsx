@@ -120,7 +120,12 @@ export const About: FC = () => {
 							>
 								<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md rounded bg-gray-200 dark:bg-gray-800">
 									<span className="mb-4 inline-block p-3 rounded-lg bg-red-500 dark:bg-red-800">
-										<img src={NestSVG} className="w-10 h-10" draggable={false} />
+										<img
+											src={NestSVG}
+											className="w-10 h-10"
+											draggable={false}
+											alt="NestJS"
+										/>
 									</span>
 									<h4 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 										NestJS
@@ -140,7 +145,12 @@ export const About: FC = () => {
 							>
 								<div className="py-6 pl-6 pr-4 shadow-md rounded bg-gray-200 dark:bg-gray-800">
 									<span className="mb-4 inline-block p-3 rounded-lg bg-green-500 dark:bg-green-800">
-										<img src={MongoDBSVG} className="w-10 h-10" draggable={false} />
+										<img
+											src={MongoDBSVG}
+											className="w-10 h-10"
+											draggable={false}
+											alt="MongoDB"
+										/>
 									</span>
 									<h4 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 										MongoDB
@@ -162,7 +172,12 @@ export const About: FC = () => {
 							>
 								<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md rounded-lg bg-gray-200 dark:bg-gray-800">
 									<span className="mb-4 inline-block p-3 rounded bg-gray-500 dark:bg-gray-700">
-										<img src={NextSVG} className="w-10 h-10" draggable={false} />
+										<img
+											src={NextSVG}
+											className="w-10 h-10"
+											draggable={false}
+											alt="NextJS"
+										/>
 									</span>
 									<h4 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 										NextJS
@@ -182,7 +197,12 @@ export const About: FC = () => {
 							>
 								<div className="py-6 pl-6 pr-4 shadow-md rounded-lg bg-gray-200 dark:bg-gray-800">
 									<span className="mb-4 inline-block p-3 rounded bg-blue-500 dark:bg-blue-800">
-										<img src={TailwindSVG} className="w-10 h-10" draggable={false} />
+										<img
+											src={TailwindSVG}
+											className="w-10 h-10"
+											draggable={false}
+											alt="TailwindCSS"
+										/>
 									</span>
 									<h4 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 										TailwindCSS

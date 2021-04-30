@@ -25,6 +25,7 @@
 		"@tippyjs/react": "^4.2.5",
 		"autoprefixer": "latest",
 		"axios": "^0.21.1",
+		"framer-motion": "^4.1.11",
 		"next": "latest",
 		"next-optimized-images": "latest",
 		"next-seo": "latest",

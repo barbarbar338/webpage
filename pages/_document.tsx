@@ -1,11 +1,11 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import Favicon from "@assets/icon.png";
-import Avatar from "@assets/avatar.jpeg";
+import Avatar from "@assets/avatar.webp";
 
 export default class CustomDocument extends Document {
 	render(): JSX.Element {
 		return (
-			<Html>
+			<Html lang="en">
 				<Head>
 					<meta charSet="utf-8" />
 					<meta name="HandheldFriendly" content="true" />

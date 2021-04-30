@@ -17,6 +17,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useTheme } from "next-themes";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
+import { motion } from "framer-motion";
 
 const links = [
 	{
@@ -139,6 +140,7 @@ export const Navbar: FC = () => {
 				</Link>
 				<div className="lg:hidden">
 					<button
+						aria-label="Hamburger"
 						onClick={onClose}
 						className="flex items-center text-gray-900 dark:text-white p-3 focus:outline-none"
 					>
@@ -167,9 +169,17 @@ export const Navbar: FC = () => {
 					))}
 				</ul>
 				<Link href="#contact">
-					<span className="cursor-pointer hidden lg:inline-block py-2 px-6 bg-pink-500 hover:bg-pink-600 text-sm text-white font-bold rounded-l-xl rounded-t-xl transition duration-200">
+					<motion.span
+						whileHover={{
+							scale: 1.1,
+						}}
+						whileTap={{
+							scale: 0.9,
+						}}
+						className="cursor-pointer hidden lg:inline-block py-2 px-6 bg-pink-500 hover:bg-pink-600 text-sm text-white font-bold rounded-l-xl rounded-t-xl transition duration-200"
+					>
 						Contact
-					</span>
+					</motion.span>
 				</Link>
 			</nav>
 			<div className={`${visible ? "" : "hidden "}relative z-50`}>
@@ -181,10 +191,20 @@ export const Navbar: FC = () => {
 					<div className="flex items-center mb-8">
 						<Link href="#">
 							<span className="cursor-pointer mr-auto text-3xl font-bold leading-none">
-								<img className="h-10" src={Favicon} alt="Favicon" width="auto" />
+								<img
+									className="h-10"
+									src={Favicon}
+									alt="Favicon"
+									width="auto"
+									draggable={false}
+								/>
 							</span>
 						</Link>
-						<button onClick={onClose} className="focus:outline-none">
+						<button
+							aria-label="Close"
+							onClick={onClose}
+							className="focus:outline-none"
+						>
 							<FontAwesomeIcon
 								icon={faTimes}
 								className="h-6 w-6 cursor-pointer text-black dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-500"
@@ -194,7 +214,16 @@ export const Navbar: FC = () => {
 					<div>
 						<ul>
 							{links.map((link, idx) => (
-								<li key={idx} className="mb-1">
+								<motion.li
+									whileHover={{
+										scale: 1.05,
+									}}
+									whileTap={{
+										scale: 0.95,
+									}}
+									key={idx}
+									className="mb-1"
+								>
 									<Link href={link.href}>
 										<span
 											className={`cursor-pointer block p-4 text-sm font-semibold ${
@@ -204,16 +233,24 @@ export const Navbar: FC = () => {
 											{link.name}
 										</span>
 									</Link>
-								</li>
+								</motion.li>
 							))}
 						</ul>
 					</div>
 					<div className="mt-auto">
-						<div className="pt-6">
+						<div>
 							<Link href="#contact">
-								<span className="cursor-pointer block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-pink-600 hover:bg-pink-700 rounded-l-xl rounded-t-xl">
+								<motion.span
+									whileHover={{
+										scale: 1.05,
+									}}
+									whileTap={{
+										scale: 0.95,
+									}}
+									className="cursor-pointer block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-pink-600 hover:bg-pink-700 rounded-l-xl rounded-t-xl"
+								>
 									Contact
-								</span>
+								</motion.span>
 							</Link>
 						</div>
 						<p className="my-4 text-xs text-center text-gray-600 dark:text-gray-400">
@@ -221,7 +258,7 @@ export const Navbar: FC = () => {
 						</p>
 						<div className="text-center">
 							{socials.map((social, idx) => (
-								<a key={idx} href={social.href} target="_blank">
+								<a key={idx} href={social.href} target="_blank" rel="noreferrer">
 									<FontAwesomeIcon
 										icon={social.icon}
 										className="cursor-pointer inline-block text-black dark:text-white mx-2"
@@ -232,20 +269,30 @@ export const Navbar: FC = () => {
 					</div>
 				</nav>
 			</div>
-			<button
+			<motion.button
+				aria-label="Go Up"
+				whileHover={{ scale: 1.1 }}
+				whileTap={{
+					scale: 0.9,
+				}}
 				onClick={onUp}
 				className={`${
 					top ? "block" : "hidden"
 				} fixed bottom-0 right-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-pink-400 rounded-full focus:outline-none`}
 			>
 				<FontAwesomeIcon icon={faArrowUp} />
-			</button>
-			<button
+			</motion.button>
+			<motion.button
+				aria-label="Change Theme"
+				whileHover={{ scale: 1.1 }}
+				whileTap={{
+					scale: 0.9,
+				}}
 				onClick={onTheme}
 				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-500 rounded-full focus:outline-none"
 			>
 				<FontAwesomeIcon icon={icon} className={`text-${color}-400 text-bold`} />
-			</button>
+			</motion.button>
 		</>
 	);
 };

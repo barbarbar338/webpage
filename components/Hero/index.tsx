@@ -5,6 +5,7 @@ import Left from "@assets/elements/left.svg";
 import Right from "@assets/elements/right.svg";
 import Link from "next/link";
 import Tilt from "react-tilt";
+import { motion } from "framer-motion";
 
 export const Hero: FC = () => {
 	return (
@@ -48,14 +49,30 @@ export const Hero: FC = () => {
 								</p>
 								<div>
 									<Link href="#about">
-										<span className="cursor-pointer inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-l-xl rounded-t-xl transition duration-200">
+										<motion.span
+											whileHover={{
+												scale: 1.05,
+											}}
+											whileTap={{
+												scale: 0.95,
+											}}
+											className="cursor-pointer inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-l-xl rounded-t-xl transition duration-200"
+										>
 											About Me
-										</span>
+										</motion.span>
 									</Link>
 									<Link href="#contact">
-										<span className="cursor-pointer inline-block w-full lg:w-auto py-2 px-6 leading-loose text-white font-semibold bg-gray-900 border-2 border-gray-700 hover:border-gray-600 rounded-l-xl rounded-t-xl transition duration-200">
+										<motion.span
+											whileHover={{
+												scale: 1.05,
+											}}
+											whileTap={{
+												scale: 0.95,
+											}}
+											className="cursor-pointer inline-block w-full lg:w-auto py-2 px-6 leading-loose text-white font-semibold bg-gray-900 border-2 border-gray-700 hover:border-gray-600 rounded-l-xl rounded-t-xl transition duration-200"
+										>
 											Contact
-										</span>
+										</motion.span>
 									</Link>
 								</div>
 							</div>
