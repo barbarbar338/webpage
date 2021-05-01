@@ -137,6 +137,8 @@ export const About: FC = () => {
 											className="w-10 h-10"
 											draggable={false}
 											alt="NestJS"
+											width="auto"
+											height="auto"
 										/>
 									</span>
 									<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
@@ -164,6 +166,8 @@ export const About: FC = () => {
 											className="w-10 h-10"
 											draggable={false}
 											alt="MongoDB"
+											width="auto"
+											height="auto"
 										/>
 									</span>
 									<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
@@ -193,6 +197,8 @@ export const About: FC = () => {
 											className="w-10 h-10"
 											draggable={false}
 											alt="NextJS"
+											width="auto"
+											height="auto"
 										/>
 									</span>
 									<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
@@ -220,6 +226,8 @@ export const About: FC = () => {
 											className="w-10 h-10"
 											draggable={false}
 											alt="TailwindCSS"
+											width="auto"
+											height="auto"
 										/>
 									</span>
 									<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">

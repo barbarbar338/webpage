@@ -137,8 +137,9 @@ export const Navbar: FC = () => {
 							className="h-12"
 							src={Favicon}
 							alt="Favicon"
-							width="auto"
 							draggable={false}
+							width="auto"
+							height="auto"
 						/>
 					</span>
 				</Link>
@@ -203,8 +204,9 @@ export const Navbar: FC = () => {
 									className="h-10"
 									src={Favicon}
 									alt="Favicon"
-									width="auto"
 									draggable={false}
+									width="auto"
+									height="auto"
 								/>
 							</span>
 						</Link>

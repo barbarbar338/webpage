@@ -17,6 +17,8 @@ const NotFoundPage: NextPage = () => {
 					src={ErrorSVG}
 					alt="Error SVG"
 					draggable={false}
+					width="auto"
+					height="auto"
 				/>
 				<div>
 					<Link href="/">

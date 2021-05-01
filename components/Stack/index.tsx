@@ -183,6 +183,8 @@ export const Stack: FC = () => {
 											src={stack.icon}
 											alt={stack.alt}
 											draggable={false}
+											width="auto"
+											height="auto"
 										/>
 									</div>
 								</Tippy>

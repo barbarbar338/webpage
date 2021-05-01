@@ -110,6 +110,8 @@ export const Hero: FC = () => {
 									src="https://avatars.githubusercontent.com/u/35371155"
 									alt="Avatar"
 									draggable={false}
+									width="auto"
+									height="auto"
 								/>
 							</Tilt>
 							<img
@@ -123,6 +125,8 @@ export const Hero: FC = () => {
 								src={Up}
 								alt="Element Up"
 								draggable={false}
+								width="auto"
+								height="auto"
 							/>
 							<img
 								loading="lazy"
@@ -135,6 +139,8 @@ export const Hero: FC = () => {
 								src={Down}
 								alt="Element Down"
 								draggable={false}
+								width="auto"
+								height="auto"
 							/>
 							<img
 								loading="lazy"
@@ -147,6 +153,8 @@ export const Hero: FC = () => {
 								src={Right}
 								alt="Element Right"
 								draggable={false}
+								width="auto"
+								height="auto"
 							/>
 							<img
 								loading="lazy"
@@ -159,6 +167,8 @@ export const Hero: FC = () => {
 								src={Left}
 								alt="Element Left"
 								draggable={false}
+								width="auto"
+								height="auto"
 							/>
 						</div>
 					</div>
