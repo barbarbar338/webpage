@@ -144,7 +144,7 @@ export const About: FC = () => {
 									<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 										NestJS
 									</h3>
-									<p className="text-gray-500 leading-loose">
+									<p className="text-gray-700 dark:text-gray-300 leading-loose">
 										About {new Date().getFullYear() - 2020}{" "}
 										year(s)
 									</p>
@@ -173,7 +173,7 @@ export const About: FC = () => {
 									<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 										MongoDB
 									</h3>
-									<p className="text-gray-500 leading-loose">
+									<p className="text-gray-700 dark:text-gray-300 leading-loose">
 										About {new Date().getFullYear() - 2015}{" "}
 										year(s)
 									</p>
@@ -204,7 +204,7 @@ export const About: FC = () => {
 									<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 										NextJS
 									</h3>
-									<p className="text-gray-500 leading-loose">
+									<p className="text-gray-700 dark:text-gray-300 leading-loose">
 										About {new Date().getFullYear() - 2019}{" "}
 										year(s)
 									</p>
@@ -233,7 +233,7 @@ export const About: FC = () => {
 									<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 										TailwindCSS
 									</h3>
-									<p className="text-gray-500 leading-loose">
+									<p className="text-gray-700 dark:text-gray-300 leading-loose">
 										About {new Date().getFullYear() - 2020}{" "}
 										year(s)
 									</p>

@@ -164,7 +164,7 @@ export const Navbar: FC = () => {
 									<span
 										className={`cursor-pointer text-sm ${
 											hash == link.href
-												? "text-purple-500 hover:text-purple-300"
+												? "text-purple-600 hover:text-purple-500 dark:text-purple-300 dark:hover:text-purple-200"
 												: "text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white"
 										}`}
 									>
@@ -184,7 +184,7 @@ export const Navbar: FC = () => {
 						whileTap={{
 							scale: 0.9,
 						}}
-						className="cursor-pointer hidden lg:inline-block py-2 px-6 bg-pink-500 hover:bg-pink-600 text-sm text-white font-bold rounded-l-xl rounded-t-xl transition duration-200"
+						className="cursor-pointer hidden lg:inline-block py-2 px-6 bg-purple-700 hover:bg-purple-800 text-sm text-white font-bold rounded-l-xl rounded-t-xl transition duration-200"
 					>
 						Contact
 					</m.span>
@@ -298,7 +298,7 @@ export const Navbar: FC = () => {
 				onClick={onUp}
 				className={`${
 					top ? "block" : "hidden"
-				} fixed bottom-0 right-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-pink-400 rounded-full focus:outline-none`}
+				} fixed bottom-0 right-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-600 rounded-full focus:outline-none`}
 			>
 				<FontAwesomeIcon icon={faArrowUp} />
 			</m.button>
@@ -309,7 +309,7 @@ export const Navbar: FC = () => {
 					scale: 0.9,
 				}}
 				onClick={onTheme}
-				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-500 rounded-full focus:outline-none"
+				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-600 rounded-full focus:outline-none"
 			>
 				<FontAwesomeIcon
 					icon={icon}

@@ -47,7 +47,7 @@ export const Footer: FC = () => {
 					</Link>{" "}
 					and{" "}
 					<Link href="https://tailwindcss.com/">
-						<span className="text-green-600 cursor-pointer">
+						<span className="text-green-700 dark:text-green-400 cursor-pointer">
 							TailwindCSS
 						</span>
 					</Link>

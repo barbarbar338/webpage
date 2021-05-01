@@ -20,39 +20,39 @@ export const Hero: FC = () => {
 								</h1>
 							</div>
 							<div className="max-w-sm mx-auto lg:mx-0">
-								<p className="mb-6 text-gray-400 leading-loose">
+								<p className="mb-6 text-gray-700 dark:text-gray-300 leading-loose">
 									Back-end developer with{" "}
-									<span className="text-purple-500">
+									<span className="text-purple-600 dark:text-purple-300">
 										over {new Date().getFullYear() - 2014}{" "}
 										years
 									</span>{" "}
 									experience. More interested with{" "}
 									<Link href="https://www.typescriptlang.org/">
-										<span className="text-blue-500 cursor-pointer">
+										<span className="text-blue-600 dark:text-blue-400 cursor-pointer">
 											TypeScript
 										</span>
 									</Link>
 									,{" "}
 									<Link href="https://nestjs.com/">
-										<span className="text-red-500 cursor-pointer">
+										<span className="text-red-600 dark:text-red-400 cursor-pointer">
 											NestJS
 										</span>
 									</Link>
 									,{" "}
 									<Link href="https://reactjs.org/">
-										<span className="text-blue-600 cursor-pointer">
+										<span className="text-blue-600 dark:text-blue-400 cursor-pointer">
 											ReactJS
 										</span>
 									</Link>
 									,{" "}
 									<Link href="https://nextjs.org/">
-										<span className="text-gray-600 cursor-pointer">
+										<span className="text-indigo-700 dark:text-indigo-300 cursor-pointer">
 											NextJS
 										</span>
 									</Link>{" "}
 									and{" "}
 									<Link href="https://golang.org/">
-										<span className="text-blue-300 cursor-pointer">
+										<span className="text-blue-600 dark:text-blue-300 cursor-pointer">
 											GoLang
 										</span>
 									</Link>

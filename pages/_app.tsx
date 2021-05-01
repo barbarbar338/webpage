@@ -12,7 +12,7 @@ export default class App extends NextApp {
 	render(): JSX.Element {
 		const { Component, pageProps } = this.props;
 		return (
-			<ThemeProvider defaultTheme="system" attribute="class">
+			<ThemeProvider defaultTheme="dark" attribute="class">
 				<DefaultSeo titleTemplate="%s - Barış DEMİRCİ" />
 				<Component {...pageProps} />
 				<ToastContainer
