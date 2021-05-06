@@ -23,7 +23,9 @@ const IndexPage: NextPage<IIndexPage> = ({ repos }) => {
 	);
 };
 
-IndexPage.getInitialProps = async (ctx) => {
+export default IndexPage;
+
+export async function getStaticProps() {
 	const res = (
 		await axios.get(
 			"https://api.github.com/users/barbarbar338/repos?per_page=100",
@@ -32,7 +34,10 @@ IndexPage.getInitialProps = async (ctx) => {
 	const repos = res
 		.sort((a, b) => b.stargazers_count - a.stargazers_count)
 		.slice(0, 15);
-	return { repos };
-};
-
-export default IndexPage;
+	return {
+		props: {
+			repos,
+		},
+		revalidate: 60 * 15,
+	};
+}
