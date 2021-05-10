@@ -6,6 +6,7 @@ import Right from "@assets/elements/right.svg";
 import Link from "next/link";
 import Tilt from "react-tilt";
 import { m } from "framer-motion";
+import { Status } from "@components/Status";
 
 export const Hero: FC = () => {
 	return (
@@ -57,6 +58,7 @@ export const Hero: FC = () => {
 										</span>
 									</Link>
 									.
+									<Status />
 								</p>
 								<div>
 									<Link href="#about">
