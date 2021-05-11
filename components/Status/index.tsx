@@ -22,6 +22,10 @@ export const Status: FC = () => {
 
 			setLoading(false);
 		});
+
+		return () =>  {
+			lanyard.close();
+		}
 	}, []);
 
 	const getColor = () => {
