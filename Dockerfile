@@ -11,6 +11,7 @@ EXPOSE 8080
 WORKDIR /app
 
 COPY .next .next
+COPY public public
 COPY package.json package.json
 
 RUN npm i -g yarn
