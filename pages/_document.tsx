@@ -26,7 +26,10 @@ export default class CustomDocument extends Document {
 						content="barbarbar338"
 						title="title"
 					/>
-					<meta name="og:url" content="https://barbarbar338.fly.dev/" />
+					<meta
+						name="og:url"
+						content="https://barbarbar338.fly.dev/"
+					/>
 					<meta
 						name="keywords"
 						content="baris, demirci, barbarbar338, barbar, 338, hammer, projecthammer"
@@ -34,7 +37,10 @@ export default class CustomDocument extends Document {
 					<meta name="og:image" content={Avatar} />
 					<meta name="twitter:image" content={Favicon} />
 					<link rel="icon" href={Favicon} />
-					<link rel="canonical" href="https://barbarbar338.fly.dev/" />
+					<link
+						rel="canonical"
+						href="https://barbarbar338.fly.dev/"
+					/>
 					<link
 						href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap"
 						rel="stylesheet"
