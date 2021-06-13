@@ -1,35 +1,15 @@
-import { FC, useEffect, useState } from "react";
-import { LanyardData, useLanyard } from "react-use-lanyard";
+import { FC } from "react";
+import { LanyardWebsocket, useLanyard } from "react-use-lanyard";
 import Tippy from "@tippyjs/react";
 
 export const Status: FC = () => {
-	const [loading, setLoading] = useState(true);
-	const [status, setStatus] = useState<LanyardData>({} as LanyardData);
-	const lanyard = useLanyard({
+	const { loading, status } = useLanyard({
 		userId: "331846231514939392",
 		socket: true,
-	}) as WebSocket;
-
-	useEffect(() => {
-		lanyard.addEventListener("message", ({ data }) => {
-			const { t, d } = JSON.parse(data) as {
-				t: "INIT_STATE" | "PRESENCE_UPDATE";
-				d: LanyardData;
-			};
-
-			if (t === "INIT_STATE" || t === "PRESENCE_UPDATE")
-				setStatus(d || ({} as LanyardData));
-
-			setLoading(false);
-		});
-
-		return () => {
-			lanyard.close();
-		};
-	}, []);
+	}) as LanyardWebsocket;
 
 	const getColor = () => {
-		switch (status.discord_status) {
+		switch (status?.discord_status) {
 			case "online":
 				return {
 					status: "Online",
