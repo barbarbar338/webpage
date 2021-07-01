@@ -11,8 +11,10 @@ export const Layout: FC<ILayout> = ({ title, children }) => {
 	return (
 		<div className="select-none">
 			<NextSeo title={title} />
-			<LazyMotion features={domAnimation}>{children}</LazyMotion>
-			<Footer />
+			<LazyMotion features={domAnimation}>
+				{children}
+				<Footer />
+			</LazyMotion>
 		</div>
 	);
 };

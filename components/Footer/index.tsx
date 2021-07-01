@@ -1,31 +1,7 @@
-import {
-	faDiscord,
-	faGithub,
-	faInstagram,
-	faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
+import { CONFIG } from "@libs/config";
 import { FC } from "react";
-
-const socials = [
-	{
-		href: "https://github.com/barbarbar338",
-		icon: faGithub,
-	},
-	{
-		href: "https://instagram.com/ben_baris.d",
-		icon: faInstagram,
-	},
-	{
-		href: "https://www.youtube.com/channel/UC0tkTcxf5F3DdR3RJtaAuXg",
-		icon: faYoutube,
-	},
-	{
-		href: "https://discord.com/invite/BjEJFwh",
-		icon: faDiscord,
-	},
-];
+import { Link } from "@components/Link";
 
 export const Footer: FC = () => {
 	return (
@@ -35,29 +11,23 @@ export const Footer: FC = () => {
 					&copy; {new Date().getFullYear()} All rights reserved. Made
 					with ❤ by{" "}
 					<Link href="https://github.com/barbarbar338">
-						<span className="text-purple-600 cursor-pointer">
-							barbarbar338
-						</span>
+						<span className="text-purple-600">barbarbar338</span>
 					</Link>{" "}
 					using{" "}
 					<Link href="https://nextjs.org/">
-						<span className="text-gray-600 cursor-pointer">
-							NextJS
-						</span>
+						<span className="text-gray-600">NextJS</span>
 					</Link>{" "}
 					and{" "}
 					<Link href="https://tailwindcss.com/">
-						<span className="text-green-700 dark:text-green-400 cursor-pointer">
+						<span className="text-green-700 dark:text-green-400">
 							TailwindCSS
 						</span>
 					</Link>
 				</div>
 				<div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex text-purple-600 dark:text-purple-400">
-					{socials.map((social, idx) => (
-						<Link key={idx} href={social.href}>
-							<span className="cursor-pointer w-6 mx-1">
-								<FontAwesomeIcon icon={social.icon} />
-							</span>
+					{CONFIG.CONTACT.map((social, idx) => (
+						<Link key={idx} href={social.href} className="w-6 mx-1">
+							<FontAwesomeIcon icon={social.icon} />
 						</Link>
 					))}
 				</div>

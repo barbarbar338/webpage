@@ -1,6 +1,6 @@
 import { FC, Fragment, useEffect, useState } from "react";
 import Favicon from "@assets/icon.png";
-import Link from "next/link";
+import { Link } from "@components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faArrowUp,
@@ -9,15 +9,11 @@ import {
 	faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavbarSeperator } from "@components/NavbarSeperator";
-import {
-	faDiscord,
-	faGithub,
-	faInstagram,
-	faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
 import { useTheme } from "next-themes";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { m } from "framer-motion";
+import { CONFIG } from "@libs/config";
+import classNames from "classnames";
 
 const links = [
 	{
@@ -31,25 +27,6 @@ const links = [
 	{
 		name: "Projects",
 		href: "#projects",
-	},
-];
-
-const socials = [
-	{
-		href: "https://github.com/barbarbar338",
-		icon: faGithub,
-	},
-	{
-		href: "https://instagram.com/ben_baris.d",
-		icon: faInstagram,
-	},
-	{
-		href: "https://www.youtube.com/channel/UC0tkTcxf5F3DdR3RJtaAuXg",
-		icon: faYoutube,
-	},
-	{
-		href: "https://discord.com/invite/BjEJFwh",
-		icon: faDiscord,
 	},
 ];
 
@@ -130,19 +107,21 @@ export const Navbar: FC = () => {
 	return (
 		<>
 			<nav className="relative px-6 py-6 flex justify-between items-center bg-white dark:bg-gray-900">
-				<Link href="#">
-					<span className="cursor-pointer text-white text-3xl font-bold leading-none">
-						<img
-							loading="lazy"
-							className="h-12"
-							src={Favicon}
-							alt="Favicon"
-							draggable={false}
-							width="auto"
-							height="auto"
-						/>
-					</span>
+				<Link
+					href="#"
+					className="text-white text-3xl font-bold leading-none block"
+				>
+					<img
+						loading="lazy"
+						className="h-12"
+						src={Favicon}
+						alt="Favicon"
+						draggable={false}
+						width="auto"
+						height="auto"
+					/>
 				</Link>
+				<div className="flex-grow" />
 				<div className="lg:hidden">
 					<button
 						aria-label="Hamburger"
@@ -160,16 +139,16 @@ export const Navbar: FC = () => {
 					{links.map((link, idx) => (
 						<Fragment key={idx}>
 							<li>
-								<Link href={link.href}>
-									<span
-										className={`cursor-pointer text-sm ${
-											hash == link.href
-												? "text-purple-600 hover:text-purple-500 dark:text-purple-300 dark:hover:text-purple-200"
-												: "text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white"
-										}`}
-									>
-										{link.name}
-									</span>
+								<Link
+									href={link.href}
+									className={classNames("text-sm", {
+										"text-purple-600 hover:text-purple-500 dark:text-purple-300 dark:hover:text-purple-200":
+											hash == link.href,
+										"text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white":
+											hash != link.href,
+									})}
+								>
+									{link.name}
 								</Link>
 							</li>
 							<NavbarSeperator />
@@ -184,7 +163,7 @@ export const Navbar: FC = () => {
 						whileTap={{
 							scale: 0.9,
 						}}
-						className="cursor-pointer hidden lg:inline-block py-2 px-6 bg-purple-700 hover:bg-purple-800 text-sm text-white font-bold rounded-l-xl rounded-t-xl transition duration-200"
+						className="hidden lg:inline-block py-2 px-6 bg-purple-700 hover:bg-purple-800 text-sm text-white font-bold rounded-l-xl rounded-t-xl transition duration-200"
 					>
 						Contact
 					</m.span>
@@ -197,19 +176,21 @@ export const Navbar: FC = () => {
 				/>
 				<nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-gray-100 dark:bg-gray-900 overflow-y-auto">
 					<div className="flex items-center mb-8">
-						<Link href="#">
-							<span className="cursor-pointer mr-auto text-3xl font-bold leading-none">
-								<img
-									loading="lazy"
-									className="h-10"
-									src={Favicon}
-									alt="Favicon"
-									draggable={false}
-									width="auto"
-									height="auto"
-								/>
-							</span>
+						<Link
+							href="#"
+							className=" mr-auto text-3xl font-bold leading-none"
+						>
+							<img
+								loading="lazy"
+								className="h-10"
+								src={Favicon}
+								alt="Favicon"
+								draggable={false}
+								width="auto"
+								height="auto"
+							/>
 						</Link>
+						<div className="flex-grow" />
 						<button
 							aria-label="Close"
 							onClick={onClose}
@@ -236,11 +217,22 @@ export const Navbar: FC = () => {
 								>
 									<Link href={link.href}>
 										<span
-											className={`cursor-pointer block p-4 text-sm font-semibold ${
-												hash == link.href
-													? "text-black dark:text-white"
-													: "text-gray-500"
-											} hover:bg-purple-600 dark:hover:bg-gray-800 hover:text-white rounded`}
+											className={classNames(
+												"block",
+												"p-4",
+												"text-sm",
+												"font-semibold",
+												"hover:bg-purple-600",
+												"dark:hover:bg-gray-800",
+												"hover:text-white",
+												"rounded",
+												{
+													"text-black dark:text-white":
+														hash == link.href,
+													"text-gray-500":
+														hash != link.href,
+												},
+											)}
 										>
 											{link.name}
 										</span>
@@ -259,7 +251,7 @@ export const Navbar: FC = () => {
 									whileTap={{
 										scale: 0.95,
 									}}
-									className="cursor-pointer block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-pink-600 hover:bg-pink-700 rounded-l-xl rounded-t-xl"
+									className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-pink-600 hover:bg-pink-700 rounded-l-xl rounded-t-xl"
 								>
 									Contact
 								</m.span>
@@ -272,18 +264,13 @@ export const Navbar: FC = () => {
 							</span>
 						</p>
 						<div className="text-center">
-							{socials.map((social, idx) => (
-								<a
-									key={idx}
-									href={social.href}
-									target="_blank"
-									rel="noreferrer"
-								>
+							{CONFIG.CONTACT.map((social, idx) => (
+								<Link key={idx} href={social.href}>
 									<FontAwesomeIcon
 										icon={social.icon}
-										className="cursor-pointer inline-block text-black dark:text-white mx-2"
+										className="inline-block text-black dark:text-white mx-2"
 									/>
-								</a>
+								</Link>
 							))}
 						</div>
 					</div>
@@ -296,9 +283,25 @@ export const Navbar: FC = () => {
 					scale: 0.9,
 				}}
 				onClick={onUp}
-				className={`${
-					top ? "block" : "hidden"
-				} fixed bottom-0 right-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-600 rounded-full focus:outline-none`}
+				className={classNames(
+					"fixed",
+					"bottom-0",
+					"right-0",
+					"mx-10",
+					"lg:mx-20",
+					"my-10",
+					"z-50",
+					"text-white",
+					"w-10",
+					"h-10",
+					"bg-purple-600",
+					"rounded-full",
+					"focus:outline-none",
+					{
+						block: top,
+						hidden: !top,
+					},
+				)}
 			>
 				<FontAwesomeIcon icon={faArrowUp} />
 			</m.button>
@@ -313,13 +316,11 @@ export const Navbar: FC = () => {
 			>
 				<FontAwesomeIcon
 					icon={icon}
-					className={
-						color === "yellow"
-							? "text-yellow-400 text-bold"
-							: color === "gray"
-							? "text-gray-400 text-bold"
-							: "text-blue-400 text-bold"
-					}
+					className={classNames("text-bold", {
+						"text-yellow-400": color === "yellow",
+						"text-gray-400": color === "gray",
+						"text-blue-400": color === "blue",
+					})}
 				/>
 			</m.button>
 		</>

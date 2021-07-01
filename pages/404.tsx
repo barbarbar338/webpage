@@ -1,6 +1,6 @@
 import { Layout } from "@components/Layout";
 import { NextPage } from "next";
-import Link from "next/link";
+import { Link } from "@components/Link";
 import ErrorSVG from "@assets/elements/error.svg";
 
 const NotFoundPage: NextPage = () => {
@@ -21,10 +21,8 @@ const NotFoundPage: NextPage = () => {
 					height="auto"
 				/>
 				<div>
-					<Link href="/">
-						<span className="cursor-pointer px-4 text-purple-600">
-							Go Home
-						</span>
+					<Link href="/" className="px-4 text-purple-600">
+						Go Home
 					</Link>
 				</div>
 			</section>

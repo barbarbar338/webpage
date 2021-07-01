@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { LanyardWebsocket, useLanyard } from "react-use-lanyard";
 import Tippy from "@tippyjs/react";
+import { CONFIG } from "@libs/config";
 
 export const Status: FC = () => {
 	const { loading, status } = useLanyard({
-		userId: "331846231514939392",
+		userId: CONFIG.LANYARD_ID,
 		socket: true,
 	}) as LanyardWebsocket;
 

@@ -1,42 +1,9 @@
-import {
-	faDiscord,
-	faGithub,
-	faInstagram,
-	faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CONFIG } from "@libs/config";
 import { m } from "framer-motion";
 import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { toast } from "react-toastify";
-
-const socials = [
-	{
-		href: "mailto:demirci.baris38@gmail.com",
-		icon: faEnvelope,
-		name: "demirci.baris38@gmail.com",
-	},
-	{
-		href: "https://github.com/barbarbar338",
-		icon: faGithub,
-		name: "@barbarbar338",
-	},
-	{
-		href: "https://instagram.com/ben_baris.d",
-		icon: faInstagram,
-		name: "@ben_baris.d",
-	},
-	{
-		href: "https://www.youtube.com/channel/UC0tkTcxf5F3DdR3RJtaAuXg",
-		icon: faYoutube,
-		name: "Barış DEMİRCİ",
-	},
-	{
-		href: "https://discord.com/invite/BjEJFwh",
-		icon: faDiscord,
-		name: "discord.gg/BjEJFwh",
-	},
-];
+import { Link } from "@components/Link";
 
 export const Contact: FC = () => {
 	const [name, setName] = useState("");
@@ -60,7 +27,7 @@ export const Contact: FC = () => {
 		if (!name || !mail || !message)
 			return toast.error("❌ Please fill out the form completely.");
 		window.open(
-			`mailto:demirci.baris38@gmail.com?body=${encodeURIComponent(
+			`mailto:${CONFIG.EMAIL}?body=${encodeURIComponent(
 				`Hey, It's ${name} (${mail})\n\n${message}`,
 			)}`,
 		);
@@ -120,21 +87,16 @@ export const Contact: FC = () => {
 				</form>
 			</div>
 			<div className="flex flex-col lg:flex-row justify-center -mx-4">
-				{socials.map((social, idx) => (
-					<a
-						key={idx}
-						href={social.href}
-						target="_blank"
-						rel="noreferrer"
-					>
-						<div className="cursor-pointer px-4 flex items-center">
+				{CONFIG.CONTACT.map((social, idx) => (
+					<Link key={idx} href={social.href}>
+						<div className="px-4 flex items-center">
 							<FontAwesomeIcon
 								icon={social.icon}
 								className="inline-block w-6 h-6 mr-3 text-purple-600"
 							/>
-							<span>{social.name}</span>
+							<span>{social.value}</span>
 						</div>
-					</a>
+					</Link>
 				))}
 			</div>
 		</section>

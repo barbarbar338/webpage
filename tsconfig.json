@@ -18,7 +18,8 @@
 		"paths": {
 			"@styles/*": ["styles/*"],
 			"@components/*": ["components/*"],
-			"@assets/*": ["assets/*"]
+			"@assets/*": ["assets/*"],
+			"@libs/*": ["libs/*"]
 		}
 	},
 	"exclude": [".next", "node_modules"],
