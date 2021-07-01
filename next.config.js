@@ -1,9 +1,7 @@
 /* eslint-disable */
-const { withPlugins } = require("next-compose-plugins");
-const optimizedImages = require("next-optimized-images");
-
-module.exports = withPlugins([[optimizedImages, { optimizeImages: false }]], {
+module.exports = {
 	cssModules: true,
+	reactStrictMode: true,
 	async redirects() {
 		return [
 			{
@@ -28,7 +26,4 @@ module.exports = withPlugins([[optimizedImages, { optimizeImages: false }]], {
 			},
 		];
 	},
-	future: {
-		webpack5: true,
-	},
-});
+};
