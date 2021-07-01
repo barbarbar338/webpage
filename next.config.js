@@ -1,6 +1,5 @@
 /* eslint-disable */
 module.exports = {
-	cssModules: true,
 	reactStrictMode: true,
 	async redirects() {
 		return [

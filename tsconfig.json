@@ -13,7 +13,7 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"jsx": "preserve",
-		"typeRoots": ["node_modules/@types", "@types", "node-env.d.ts"],
+		"typeRoots": ["node_modules/@types", "next-env.d.ts"],
 		"baseUrl": ".",
 		"paths": {
 			"@styles/*": ["styles/*"],
