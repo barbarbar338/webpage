@@ -90,4 +90,5 @@ export const CONFIG = {
 	],
 	CONTACT,
 	STACKS,
+	DEV: process.env.NODE_ENV != "production",
 };

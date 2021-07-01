@@ -30,6 +30,21 @@ export default IndexPage;
 export async function getStaticProps(): Promise<
 	GetStaticPropsResult<IIndexPage>
 > {
+	if (CONFIG.DEV)
+		return {
+			props: {
+				repos: [
+					{
+						description: "Example description",
+						html_url: "https://github.com/barbarbar338/webpage",
+						language: "Go",
+						name: "Example Repo",
+						stargazers_count: 999,
+					},
+				],
+			},
+		};
+
 	const res = (
 		await axios.get(
 			`https://api.github.com/users/${CONFIG.GITHUB_USERNAME}/repos?per_page=100`,
