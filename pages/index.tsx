@@ -1,14 +1,14 @@
 import { Navbar } from "@components/Navbar";
-import { NextPage } from "next";
+import { GetStaticPropsResult, NextPage } from "next";
 import { Hero } from "@components/Hero";
 import { About } from "@components/About";
 import { Layout } from "@components/Layout";
 import { Contact } from "@components/Contact";
-import { Projects } from "@components/Projects";
+import { IRepoCard, Projects } from "@components/Projects";
 import axios from "axios";
 
 export interface IIndexPage {
-	repos: any;
+	repos: IRepoCard[];
 }
 
 const IndexPage: NextPage<IIndexPage> = ({ repos }) => {
@@ -25,7 +25,9 @@ const IndexPage: NextPage<IIndexPage> = ({ repos }) => {
 
 export default IndexPage;
 
-export async function getStaticProps() {
+export async function getStaticProps(): Promise<
+	GetStaticPropsResult<IIndexPage>
+> {
 	const res = (
 		await axios.get(
 			"https://api.github.com/users/barbarbar338/repos?per_page=100",

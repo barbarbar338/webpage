@@ -70,7 +70,7 @@ const RepoCard: FC<IRepoCard> = ({
 };
 
 export interface IProjects {
-	repos: any;
+	repos: IRepoCard[];
 }
 
 export const Projects: FC<IProjects> = ({ repos }) => {
