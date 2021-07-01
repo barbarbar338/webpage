@@ -21,6 +21,7 @@ export const CONFIG = {
 	SURNAME: "DEMİRCİ",
 	NICK: "barbarbar338",
 	EMAIL: "demirci.baris38@gmail.com",
+	GITHUB_USERNAME: "barbarbar338",
 	AVATAR_URL: "https://avatars.githubusercontent.com/u/35371155",
 	LANYARD_ID: "331846231514939392",
 	STARTED_AT,

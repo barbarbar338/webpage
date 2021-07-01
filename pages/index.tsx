@@ -4,8 +4,10 @@ import { Hero } from "@components/Hero";
 import { About } from "@components/About";
 import { Layout } from "@components/Layout";
 import { Contact } from "@components/Contact";
-import { IRepoCard, Projects } from "@components/Projects";
+import { Projects } from "@components/Projects";
+import { IRepoCard } from "@components/RepoCard";
 import axios from "axios";
+import { CONFIG } from "@libs/config";
 
 export interface IIndexPage {
 	repos: IRepoCard[];
@@ -30,9 +32,9 @@ export async function getStaticProps(): Promise<
 > {
 	const res = (
 		await axios.get(
-			"https://api.github.com/users/barbarbar338/repos?per_page=100",
+			`https://api.github.com/users/${CONFIG.GITHUB_USERNAME}/repos?per_page=100`,
 		)
-	).data;
+	).data as IRepoCard[];
 	const repos = res
 		.sort((a, b) => b.stargazers_count - a.stargazers_count)
 		.slice(0, 15);
