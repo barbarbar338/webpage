@@ -29,6 +29,10 @@ const links = [
 		name: "Projects",
 		href: "#projects",
 	},
+	{
+		name: "Accounts",
+		href: "/accounts",
+	},
 ];
 
 export const Navbar: FC = () => {

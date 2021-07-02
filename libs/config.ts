@@ -2,7 +2,7 @@ import TailwindSVG from "@assets/elements/tailwind.svg";
 import NestSVG from "@assets/elements/nest.svg";
 import MongoDBSVG from "@assets/elements/mongodb.svg";
 import NextSVG from "@assets/elements/next.svg";
-import { CONTACT } from "@libs/accounts";
+import { CONTACT, DISCORD_ID, SOCIALS } from "@libs/accounts";
 import { STACKS } from "@libs/stack";
 
 const NOW = new Date().getFullYear();
@@ -23,7 +23,7 @@ export const CONFIG = {
 	EMAIL: "demirci.baris38@gmail.com",
 	GITHUB_USERNAME: "barbarbar338",
 	AVATAR_URL: "https://avatars.githubusercontent.com/u/35371155", // dont forget to change next.config.js
-	LANYARD_ID: "331846231514939392",
+	LANYARD_ID: DISCORD_ID,
 	STARTED_AT,
 	NOW,
 	EXPERIENCE,
@@ -90,6 +90,7 @@ export const CONFIG = {
 		},
 	],
 	CONTACT,
+	SOCIALS,
 	STACKS,
 	DEV: process.env.NODE_ENV != "production",
 };
