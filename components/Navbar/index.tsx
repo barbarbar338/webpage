@@ -13,7 +13,8 @@ import { useTheme } from "next-themes";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { m } from "framer-motion";
 import { CONFIG } from "@libs/config";
-import classNames from "classnames";
+import classnames from "classnames";
+import { CustomImage } from "@components/CustomImage";
 
 const links = [
 	{
@@ -111,15 +112,7 @@ export const Navbar: FC = () => {
 					href="#"
 					className="text-white text-3xl font-bold leading-none block"
 				>
-					<img
-						loading="lazy"
-						className="h-12"
-						src={Favicon}
-						alt="Favicon"
-						draggable={false}
-						width="auto"
-						height="auto"
-					/>
+					<CustomImage className="h-12 w-12" src={Favicon} />
 				</Link>
 				<div className="flex-grow" />
 				<div className="lg:hidden">
@@ -141,7 +134,7 @@ export const Navbar: FC = () => {
 							<li>
 								<Link
 									href={link.href}
-									className={classNames("text-sm", {
+									className={classnames("text-sm", {
 										"text-purple-600 hover:text-purple-500 dark:text-purple-300 dark:hover:text-purple-200":
 											hash == link.href,
 										"text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white":
@@ -169,7 +162,11 @@ export const Navbar: FC = () => {
 					</m.span>
 				</Link>
 			</nav>
-			<div className={visible ? "relative z-50" : "hidden relative z-50"}>
+			<div
+				className={classnames("relative", "z-50", {
+					hidden: !visible,
+				})}
+			>
 				<div
 					onClick={onClose}
 					className="fixed inset-0 bg-white dark:bg-gray-700 opacity-25"
@@ -180,15 +177,7 @@ export const Navbar: FC = () => {
 							href="#"
 							className=" mr-auto text-3xl font-bold leading-none"
 						>
-							<img
-								loading="lazy"
-								className="h-10"
-								src={Favicon}
-								alt="Favicon"
-								draggable={false}
-								width="auto"
-								height="auto"
-							/>
+							<CustomImage className="h-10 w-10" src={Favicon} />
 						</Link>
 						<div className="flex-grow" />
 						<button
@@ -215,27 +204,26 @@ export const Navbar: FC = () => {
 									key={idx}
 									className="mb-1"
 								>
-									<Link href={link.href}>
-										<span
-											className={classNames(
-												"block",
-												"p-4",
-												"text-sm",
-												"font-semibold",
-												"hover:bg-purple-600",
-												"dark:hover:bg-gray-800",
-												"hover:text-white",
-												"rounded",
-												{
-													"text-black dark:text-white":
-														hash == link.href,
-													"text-gray-500":
-														hash != link.href,
-												},
-											)}
-										>
-											{link.name}
-										</span>
+									<Link
+										href={link.href}
+										className={classnames(
+											"block",
+											"p-4",
+											"text-sm",
+											"font-semibold",
+											"hover:bg-purple-600",
+											"dark:hover:bg-gray-800",
+											"hover:text-white",
+											"rounded",
+											{
+												"text-black dark:text-white":
+													hash == link.href,
+												"text-gray-500":
+													hash != link.href,
+											},
+										)}
+									>
+										{link.name}
 									</Link>
 								</m.li>
 							))}
@@ -251,7 +239,7 @@ export const Navbar: FC = () => {
 									whileTap={{
 										scale: 0.95,
 									}}
-									className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-pink-600 hover:bg-pink-700 rounded-l-xl rounded-t-xl"
+									className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-purple-600 hover:bg-purple-700 rounded-l-xl rounded-t-xl"
 								>
 									Contact
 								</m.span>
@@ -283,7 +271,7 @@ export const Navbar: FC = () => {
 					scale: 0.9,
 				}}
 				onClick={onUp}
-				className={classNames(
+				className={classnames(
 					"fixed",
 					"bottom-0",
 					"right-0",
@@ -316,7 +304,7 @@ export const Navbar: FC = () => {
 			>
 				<FontAwesomeIcon
 					icon={icon}
-					className={classNames("text-bold", {
+					className={classnames("text-bold", {
 						"text-yellow-400": color === "yellow",
 						"text-gray-400": color === "gray",
 						"text-blue-400": color === "blue",

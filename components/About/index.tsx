@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { Stack } from "@components/Stack";
 import { CONFIG } from "@libs/config";
-
 import { Dot } from "@components/Dot";
 import { FrameworkCard } from "@components/FrameworkCard";
 

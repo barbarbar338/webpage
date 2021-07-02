@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import classnames from "classnames";
 import NextLink from "next/link";
 import { FC } from "react";
 
@@ -9,12 +9,23 @@ export interface ILinkProps {
 
 export const Link: FC<ILinkProps> = ({ href, children, className }) =>
 	href.startsWith("http") ? (
-		<a href={href} rel="noreferrer" target="_blank" className={className}>
+		<a
+			href={href}
+			rel="noreferrer"
+			target="_blank"
+			className={classnames("hover:underline", className)}
+		>
 			{children}
 		</a>
 	) : (
 		<NextLink href={href}>
-			<span className={classNames("cursor-pointer", className)}>
+			<span
+				className={classnames(
+					"cursor-pointer",
+					"hover:underline",
+					className,
+				)}
+			>
 				{children}
 			</span>
 		</NextLink>

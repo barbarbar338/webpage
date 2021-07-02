@@ -25,6 +25,7 @@ export const CONFIG = {
 	AVATAR_URL: "https://avatars.githubusercontent.com/u/35371155",
 	LANYARD_ID: "331846231514939392",
 	STARTED_AT,
+	NOW,
 	EXPERIENCE,
 	TITLE: "back-end developer",
 	BIO: `I am a student from Turkey who codes for fun. I have been in coding since ${STARTED_AT} and I started my career first by making simple websites. I have been using JavaScript (Node & Client-side) for ${EXPERIENCE} years. Now I'm trying to produce lots of open source projects and working as freelancer.`,

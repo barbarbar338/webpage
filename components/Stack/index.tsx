@@ -2,6 +2,7 @@ import { FC } from "react";
 import Tippy from "@tippyjs/react";
 import Tilt from "react-tilt";
 import { CONFIG } from "@libs/config";
+import { CustomImage } from "@components/CustomImage";
 
 export const Stack: FC = () => {
 	return (
@@ -24,14 +25,9 @@ export const Stack: FC = () => {
 							>
 								<Tippy content={stack.alt}>
 									<div className="p-4 rounded-3xl flex justify-around items-center bg-gray-200 dark:bg-gray-800">
-										<img
-											loading="lazy"
+										<CustomImage
 											className="w-16 h-16"
 											src={stack.icon}
-											alt={stack.alt}
-											draggable={false}
-											width="auto"
-											height="auto"
 										/>
 									</div>
 								</Tippy>

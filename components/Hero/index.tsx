@@ -9,6 +9,7 @@ import { m } from "framer-motion";
 import { Status } from "@components/Status";
 import { CONFIG } from "@libs/config";
 import classNames from "classnames";
+import { CustomImage } from "@components/CustomImage";
 
 export const Hero: FC = () => {
 	const lastIDX = CONFIG.INTERESTS.length - 1;
@@ -106,18 +107,12 @@ export const Hero: FC = () => {
 									scale: 1.05,
 								}}
 							>
-								<img
-									loading="lazy"
+								<CustomImage
 									className="md:h-128 md:w-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none"
 									src={CONFIG.AVATAR_URL}
-									alt="Avatar"
-									draggable={false}
-									width="auto"
-									height="auto"
 								/>
 							</Tilt>
-							<img
-								loading="lazy"
+							<CustomImage
 								className="hidden md:block absolute"
 								style={{
 									top: "-2rem",
@@ -125,13 +120,9 @@ export const Hero: FC = () => {
 									zIndex: -1,
 								}}
 								src={Up}
-								alt="Element Up"
-								draggable={false}
-								width="auto"
-								height="auto"
+								layout="fixed"
 							/>
-							<img
-								loading="lazy"
+							<CustomImage
 								className="hidden md:block absolute"
 								style={{
 									bottom: "-2rem",
@@ -139,13 +130,9 @@ export const Hero: FC = () => {
 									zIndex: -1,
 								}}
 								src={Down}
-								alt="Element Down"
-								draggable={false}
-								width="auto"
-								height="auto"
+								layout="fixed"
 							/>
-							<img
-								loading="lazy"
+							<CustomImage
 								className="hidden md:block absolute"
 								style={{
 									top: "3rem",
@@ -153,13 +140,9 @@ export const Hero: FC = () => {
 									zIndex: -1,
 								}}
 								src={Right}
-								alt="Element Right"
-								draggable={false}
-								width="auto"
-								height="auto"
+								layout="fixed"
 							/>
-							<img
-								loading="lazy"
+							<CustomImage
 								className="hidden md:block absolute"
 								style={{
 									bottom: "2.5rem",
@@ -167,10 +150,7 @@ export const Hero: FC = () => {
 									zIndex: -1,
 								}}
 								src={Left}
-								alt="Element Left"
-								draggable={false}
-								width="auto"
-								height="auto"
+								layout="fixed"
 							/>
 						</div>
 					</div>

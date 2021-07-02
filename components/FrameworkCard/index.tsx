@@ -2,7 +2,7 @@ import { IFramework } from "@libs/config";
 import { FC } from "react";
 import Tilt from "react-tilt";
 import classNames from "classnames";
-
+import { CustomImage } from "@components/CustomImage";
 export interface IFrameworkCard {
 	framework: IFramework;
 }
@@ -26,15 +26,7 @@ export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => (
 					framework.color,
 				)}
 			>
-				<img
-					loading="lazy"
-					src={framework.icon}
-					className="w-10 h-10"
-					draggable={false}
-					alt={framework.name}
-					width="auto"
-					height="auto"
-				/>
+				<CustomImage src={framework.icon} className="w-10 h-10" />
 			</span>
 			<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 				{framework.name}

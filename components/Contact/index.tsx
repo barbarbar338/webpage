@@ -88,14 +88,16 @@ export const Contact: FC = () => {
 			</div>
 			<div className="flex flex-col lg:flex-row justify-center -mx-4">
 				{CONFIG.CONTACT.map((social, idx) => (
-					<Link key={idx} href={social.href}>
-						<div className="px-4 flex items-center">
-							<FontAwesomeIcon
-								icon={social.icon}
-								className="inline-block w-6 h-6 mr-3 text-purple-600"
-							/>
-							<span>{social.value}</span>
-						</div>
+					<Link
+						key={idx}
+						href={social.href}
+						className="px-4 flex items-center"
+					>
+						<FontAwesomeIcon
+							icon={social.icon}
+							className="inline-block w-6 h-6 mr-3 text-purple-600"
+						/>
+						{social.value}
 					</Link>
 				))}
 			</div>

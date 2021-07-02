@@ -2,6 +2,7 @@ import { FC } from "react";
 import { LanyardWebsocket, useLanyard } from "react-use-lanyard";
 import Tippy from "@tippyjs/react";
 import { CONFIG } from "@libs/config";
+import classnames from "classnames";
 
 export const Status: FC = () => {
 	const { loading, status } = useLanyard({
@@ -58,9 +59,13 @@ export const Status: FC = () => {
 		<span className="rounded-md flex space-x-2 text-gray-700 items-center dark:text-gray-300">
 			<Tippy content={getColor().status}>
 				<span
-					className={`h-3 w-3 rounded-full flex-shrink-0 ${
-						getColor().color
-					}`}
+					className={classnames(
+						"h-3",
+						"w-3",
+						"rounded-full",
+						"flex-shrink-0",
+						getColor().color,
+					)}
 				/>
 			</Tippy>
 			<Tippy content={getStatus()}>

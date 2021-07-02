@@ -34,9 +34,9 @@ export default class CustomDocument extends Document {
 						name="keywords"
 						content="baris, demirci, barbarbar338, barbar, 338, hammer, projecthammer"
 					/>
-					<meta name="og:image" content={Avatar} />
-					<meta name="twitter:image" content={Favicon} />
-					<link rel="icon" href={Favicon} />
+					<meta name="og:image" content={Avatar.src} />
+					<meta name="twitter:image" content={Favicon.src} />
+					<link rel="icon" href={Favicon.src} />
 					<link
 						rel="canonical"
 						href="https://barbarbar338.fly.dev/"
