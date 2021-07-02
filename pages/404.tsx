@@ -2,6 +2,8 @@ import { Layout } from "@components/Layout";
 import { NextPage } from "next";
 import { Link } from "@components/Link";
 import ErrorSVG from "@assets/elements/error.svg";
+import { CustomImage } from "@components/CustomImage";
+import { m } from "framer-motion";
 
 const NotFoundPage: NextPage = () => {
 	return (
@@ -11,18 +13,23 @@ const NotFoundPage: NextPage = () => {
 					Error 404
 				</h1>
 				<p className="text-gray-400">Page not found</p>
-				<img
-					loading="lazy"
+				<CustomImage
 					className="max-w-auto md:max-w-sm my-12 mx-auto"
 					src={ErrorSVG}
-					alt="Error SVG"
-					draggable={false}
-					width="auto"
-					height="auto"
 				/>
 				<div>
-					<Link href="/" className="px-4 text-purple-600">
-						Go Home
+					<Link href="/">
+						<m.span
+							whileHover={{
+								scale: 1.05,
+							}}
+							whileTap={{
+								scale: 0.95,
+							}}
+							className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-l-xl rounded-t-xl transition duration-200"
+						>
+							Go Home
+						</m.span>
 					</Link>
 				</div>
 			</section>

@@ -22,7 +22,7 @@ export const CONFIG = {
 	NICK: "barbarbar338",
 	EMAIL: "demirci.baris38@gmail.com",
 	GITHUB_USERNAME: "barbarbar338",
-	AVATAR_URL: "https://avatars.githubusercontent.com/u/35371155",
+	AVATAR_URL: "https://avatars.githubusercontent.com/u/35371155", // dont forget to change next.config.js
 	LANYARD_ID: "331846231514939392",
 	STARTED_AT,
 	NOW,

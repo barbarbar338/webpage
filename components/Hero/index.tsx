@@ -8,7 +8,6 @@ import Tilt from "react-tilt";
 import { m } from "framer-motion";
 import { Status } from "@components/Status";
 import { CONFIG } from "@libs/config";
-import classNames from "classnames";
 import { CustomImage } from "@components/CustomImage";
 
 export const Hero: FC = () => {
@@ -108,8 +107,11 @@ export const Hero: FC = () => {
 								}}
 							>
 								<CustomImage
-									className="md:h-128 md:w-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none"
+									className="md:h-128 md:w-128 w-full max-w-lg object-cover "
+									imageClassName="rounded-3xl md:rounded-br-none"
 									src={CONFIG.AVATAR_URL}
+									width={1024}
+									height={1024}
 								/>
 							</Tilt>
 							<CustomImage

@@ -1,6 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import Favicon from "@assets/icon.png";
 import Avatar from "@assets/avatar.webp";
+import Script from "next/script";
 
 export default class CustomDocument extends Document {
 	render(): JSX.Element {
@@ -48,7 +49,7 @@ export default class CustomDocument extends Document {
 				</Head>
 				<body className="antialiased bg-body text-body font-body">
 					<Main />
-					<script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
+					<Script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
 					<NextScript />
 				</body>
 			</Html>

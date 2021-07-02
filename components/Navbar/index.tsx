@@ -87,6 +87,9 @@ export const Navbar: FC = () => {
 				setColor("yellow");
 				break;
 		}
+	}, [theme]);
+
+	useEffect(() => {
 		window.onscroll = function () {
 			if (
 				document.body.scrollTop > 20 ||
@@ -97,13 +100,13 @@ export const Navbar: FC = () => {
 		};
 	}, []);
 
+	useEffect(() => {
+		setHash(window.location.hash ? window.location.hash : "#");
+	}, []);
+
 	const onUp = () => {
 		window.location.href = "#";
 	};
-
-	useEffect(() => {
-		setHash(window.location.hash ? window.location.hash : "#");
-	});
 
 	return (
 		<>

@@ -17,12 +17,7 @@ export const Projects: FC<IProjects> = ({ repos }) => {
 			<div className="container mx-auto mb-12">
 				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
 					{repos.map((repo, idx) => (
-						<RepoCard
-							{...{
-								key: idx,
-								...repo,
-							}}
-						/>
+						<RepoCard key={idx} {...repo} />
 					))}
 				</div>
 			</div>
