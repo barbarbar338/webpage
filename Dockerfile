@@ -21,6 +21,7 @@ COPY styles styles
 COPY pages pages
 COPY components components
 COPY assets assets
+COPY libs libs
 
 RUN npm i -g yarn
 RUN yarn
