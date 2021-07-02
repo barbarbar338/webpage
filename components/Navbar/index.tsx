@@ -100,9 +100,10 @@ export const Navbar: FC = () => {
 		};
 	}, []);
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => {
 		setHash(window.location.hash ? window.location.hash : "#");
-	}, []);
+	});
 
 	const onUp = () => {
 		window.location.href = "#";
