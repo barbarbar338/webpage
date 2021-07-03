@@ -16,6 +16,7 @@ const NotFoundPage: NextPage = () => {
 				<CustomImage
 					className="max-w-auto md:max-w-sm my-12 mx-auto"
 					src={ErrorSVG}
+					alt="Error"
 				/>
 				<div>
 					<Link href="/">

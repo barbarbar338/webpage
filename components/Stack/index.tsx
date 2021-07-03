@@ -28,6 +28,7 @@ export const Stack: FC = () => {
 										<CustomImage
 											className="w-16 h-16"
 											src={stack.icon}
+											alt={stack.alt}
 										/>
 									</div>
 								</Tippy>

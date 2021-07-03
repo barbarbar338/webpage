@@ -107,11 +107,9 @@ export const Hero: FC = () => {
 								}}
 							>
 								<CustomImage
-									className="md:h-128 md:w-128 w-full max-w-lg object-cover "
-									imageClassName="rounded-3xl md:rounded-br-none"
+									className="md:h-128 md:w-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none"
 									src={CONFIG.AVATAR_URL}
-									width={1024}
-									height={1024}
+									alt="Avatar"
 								/>
 							</Tilt>
 							<CustomImage
@@ -122,7 +120,7 @@ export const Hero: FC = () => {
 									zIndex: -1,
 								}}
 								src={Up}
-								layout="fixed"
+								alt="UpSVGElement"
 							/>
 							<CustomImage
 								className="hidden md:block absolute"
@@ -132,7 +130,7 @@ export const Hero: FC = () => {
 									zIndex: -1,
 								}}
 								src={Down}
-								layout="fixed"
+								alt="DownSVGElement"
 							/>
 							<CustomImage
 								className="hidden md:block absolute"
@@ -142,7 +140,7 @@ export const Hero: FC = () => {
 									zIndex: -1,
 								}}
 								src={Right}
-								layout="fixed"
+								alt="RightSVGElement"
 							/>
 							<CustomImage
 								className="hidden md:block absolute"
@@ -152,7 +150,7 @@ export const Hero: FC = () => {
 									zIndex: -1,
 								}}
 								src={Left}
-								layout="fixed"
+								alt="LeftSVGElement"
 							/>
 						</div>
 					</div>

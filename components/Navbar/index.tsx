@@ -1,5 +1,5 @@
 import { FC, Fragment, useEffect, useState } from "react";
-import Favicon from "@assets/icon.png";
+import Favicon from "@assets/icon.svg";
 import { Link } from "@components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,8 +13,8 @@ import { useTheme } from "next-themes";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { m } from "framer-motion";
 import { CONFIG } from "@libs/config";
-import classnames from "classnames";
 import { CustomImage } from "@components/CustomImage";
+import classnames from "classnames";
 
 const links = [
 	{
@@ -120,7 +120,11 @@ export const Navbar: FC = () => {
 					href="#"
 					className="text-white text-3xl font-bold leading-none block"
 				>
-					<CustomImage className="h-12 w-12" src={Favicon} />
+					<CustomImage
+						className="h-12 w-12"
+						src={Favicon}
+						alt="Favicon"
+					/>
 				</Link>
 				<div className="flex-grow" />
 				<div className="lg:hidden">
@@ -185,7 +189,11 @@ export const Navbar: FC = () => {
 							href="#"
 							className=" mr-auto text-3xl font-bold leading-none"
 						>
-							<CustomImage className="h-10 w-10" src={Favicon} />
+							<CustomImage
+								className="h-10 w-10"
+								src={Favicon}
+								alt="Favicon"
+							/>
 						</Link>
 						<div className="flex-grow" />
 						<button

@@ -26,7 +26,11 @@ export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => (
 					framework.color,
 				)}
 			>
-				<CustomImage src={framework.icon} className="w-10 h-10" />
+				<CustomImage
+					src={framework.icon}
+					className="w-10 h-10"
+					alt={framework.name}
+				/>
 			</span>
 			<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
 				{framework.name}

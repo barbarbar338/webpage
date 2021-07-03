@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Favicon from "@assets/icon.png";
-import Avatar from "@assets/avatar.webp";
+import Favicon from "@assets/icon.svg";
 import Script from "next/script";
 
 export default class CustomDocument extends Document {
@@ -35,9 +34,9 @@ export default class CustomDocument extends Document {
 						name="keywords"
 						content="baris, demirci, barbarbar338, barbar, 338, hammer, projecthammer"
 					/>
-					<meta name="og:image" content={Avatar.src} />
-					<meta name="twitter:image" content={Favicon.src} />
-					<link rel="icon" href={Favicon.src} />
+					<meta name="og:image" content={Favicon} />
+					<meta name="twitter:image" content={Favicon} />
+					<link rel="icon" href={Favicon} />
 					<link
 						rel="canonical"
 						href="https://barbarbar338.fly.dev/"
