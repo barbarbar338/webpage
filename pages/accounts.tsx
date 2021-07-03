@@ -23,7 +23,6 @@ const AccountsPage: NextPage = () => {
 									value={contact.value}
 									href={contact.href}
 									color={contact.color}
-									copy={contact.copy}
 								/>
 							),
 						)}
