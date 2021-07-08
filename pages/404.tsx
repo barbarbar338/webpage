@@ -1,5 +1,5 @@
+import type { NextPage } from "next";
 import { Layout } from "@components/Layout";
-import { NextPage } from "next";
 import { Link } from "@components/Link";
 import ErrorSVG from "@assets/elements/error.svg";
 import { CustomImage } from "@components/CustomImage";

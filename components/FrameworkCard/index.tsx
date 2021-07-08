@@ -1,5 +1,5 @@
-import { IFramework } from "@libs/config";
-import { FC } from "react";
+import type { IFramework } from "@libs/config";
+import type { FC } from "react";
 import Tilt from "react-tilt";
 import classNames from "classnames";
 import { CustomImage } from "@components/CustomImage";

@@ -1,7 +1,8 @@
+import type { ChangeEvent, FC, FormEvent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CONFIG } from "@libs/config";
 import { m } from "framer-motion";
-import { ChangeEvent, FC, FormEvent, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import { Link } from "@components/Link";
 

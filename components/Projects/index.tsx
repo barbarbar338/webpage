@@ -1,5 +1,6 @@
-import { IRepoCard, RepoCard } from "@components/RepoCard";
-import { FC } from "react";
+import type { FC } from "react";
+import type { IRepoCard } from "@components/RepoCard";
+import { RepoCard } from "@components/RepoCard";
 
 export interface IProjects {
 	repos: IRepoCard[];

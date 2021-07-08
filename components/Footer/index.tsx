@@ -1,6 +1,6 @@
+import type { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CONFIG } from "@libs/config";
-import { FC } from "react";
 import { Link } from "@components/Link";
 
 export const Footer: FC = () => {

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import { Tippy } from "@components/Tippy";
 import Tilt from "react-tilt";
 import { CONFIG } from "@libs/config";

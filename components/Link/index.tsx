@@ -1,6 +1,6 @@
+import type { FC } from "react";
 import classnames from "classnames";
 import NextLink from "next/link";
-import { FC } from "react";
 
 export interface ILinkProps {
 	href: string;

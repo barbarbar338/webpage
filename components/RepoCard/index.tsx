@@ -1,9 +1,9 @@
+import type { FC } from "react";
 import colors from "@assets/colors.json";
 import Tilt from "react-tilt";
 import { Tippy } from "@components/Tippy";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FC } from "react";
 import { Link } from "@components/Link";
 
 export interface IRepoCard {

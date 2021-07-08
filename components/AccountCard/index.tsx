@@ -1,9 +1,9 @@
+import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import type { FC } from "react";
 import Tilt from "react-tilt";
 import { Tippy } from "@components/Tippy";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FC } from "react";
 import { Link } from "@components/Link";
-import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import classnames from "classnames";
 import { useCopyToClipboard } from "react-use";
 import { toast } from "react-toastify";

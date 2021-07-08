@@ -1,5 +1,6 @@
-import { FC } from "react";
-import { LanyardWebsocket, useLanyard } from "react-use-lanyard";
+import type { FC } from "react";
+import type { LanyardWebsocket } from "react-use-lanyard";
+import { useLanyard } from "react-use-lanyard";
 import { Tippy } from "@components/Tippy";
 import { CONFIG } from "@libs/config";
 import classnames from "classnames";

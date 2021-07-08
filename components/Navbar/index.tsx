@@ -1,4 +1,5 @@
-import { FC, Fragment, useEffect, useState } from "react";
+import type { FC } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Favicon from "@assets/icon.svg";
 import { Link } from "@components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

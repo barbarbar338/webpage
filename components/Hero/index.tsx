@@ -1,4 +1,4 @@
-import { FC } from "react";
+import type { FC } from "react";
 import Up from "@assets/elements/up.svg";
 import Down from "@assets/elements/down.svg";
 import Left from "@assets/elements/left.svg";

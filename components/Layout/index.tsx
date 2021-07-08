@@ -1,7 +1,7 @@
+import type { FC } from "react";
 import { Footer } from "@components/Footer";
 import { domAnimation, LazyMotion } from "framer-motion";
 import { NextSeo } from "next-seo";
-import { FC } from "react";
 
 export interface ILayout {
 	title: string;
