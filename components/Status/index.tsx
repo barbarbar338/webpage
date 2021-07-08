@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { LanyardWebsocket, useLanyard } from "react-use-lanyard";
-import Tippy from "@tippyjs/react";
+import { Tippy } from "@components/Tippy";
 import { CONFIG } from "@libs/config";
 import classnames from "classnames";
 
@@ -57,7 +57,7 @@ export const Status: FC = () => {
 
 	return (
 		<span className="rounded-md flex space-x-2 text-gray-700 items-center dark:text-gray-300">
-			<Tippy content={getColor().status}>
+			<Tippy tooltip={getColor().status}>
 				<span
 					className={classnames(
 						"h-3",
@@ -68,7 +68,7 @@ export const Status: FC = () => {
 					)}
 				/>
 			</Tippy>
-			<Tippy content={getStatus()}>
+			<Tippy tooltip={getStatus()}>
 				<span className="text-sm truncate">{getStatus()}</span>
 			</Tippy>
 		</span>

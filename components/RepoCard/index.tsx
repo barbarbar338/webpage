@@ -1,6 +1,6 @@
 import colors from "@assets/colors.json";
 import Tilt from "react-tilt";
-import Tippy from "@tippyjs/react";
+import { Tippy } from "@components/Tippy";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
@@ -22,7 +22,7 @@ export const RepoCard: FC<IRepoCard> = ({
 	description,
 }) => {
 	return (
-		<Tippy content="Click Me!">
+		<Tippy tooltip="Click Me!">
 			<div>
 				<Tilt
 					className="Tilt"

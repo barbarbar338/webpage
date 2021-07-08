@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Tippy from "@tippyjs/react";
+import { Tippy } from "@components/Tippy";
 import Tilt from "react-tilt";
 import { CONFIG } from "@libs/config";
 import { CustomImage } from "@components/CustomImage";
@@ -23,7 +23,7 @@ export const Stack: FC = () => {
 									scale: 1.05,
 								}}
 							>
-								<Tippy content={stack.alt}>
+								<Tippy tooltip={stack.alt}>
 									<div className="p-4 rounded-3xl flex justify-around items-center bg-gray-200 dark:bg-gray-800">
 										<CustomImage
 											className="w-16 h-16"

@@ -1,5 +1,5 @@
 import Tilt from "react-tilt";
-import Tippy from "@tippyjs/react";
+import { Tippy } from "@components/Tippy";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
 import { Link } from "@components/Link";
@@ -53,7 +53,7 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	);
 
 	return (
-		<Tippy content="Click Me!">
+		<Tippy tooltip="Click Me!">
 			<div>
 				<Tilt
 					className="Tilt"
