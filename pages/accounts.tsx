@@ -28,7 +28,7 @@ const AccountsPage: NextPage = () => {
 						)}
 					</div>
 					<div className="pt-10">
-						<Link href="/">
+						<Link underline={false} href="/">
 							<m.span
 								whileHover={{
 									scale: 1.05,

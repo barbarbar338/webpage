@@ -19,7 +19,7 @@ const NotFoundPage: NextPage = () => {
 					alt="Error"
 				/>
 				<div>
-					<Link href="/">
+					<Link underline={false} href="/">
 						<m.span
 							whileHover={{
 								scale: 1.05,
