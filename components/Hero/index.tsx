@@ -40,6 +40,7 @@ export const Hero: FC = () => {
 										(interest, idx) =>
 											idx != lastIDX && (
 												<Link
+													underline
 													key={idx}
 													href={interest.href}
 													className={interest.color}
@@ -52,6 +53,7 @@ export const Hero: FC = () => {
 									)}
 									and{" "}
 									<Link
+										underline
 										href={lastElement.href}
 										className={lastElement.color}
 									>
@@ -61,7 +63,7 @@ export const Hero: FC = () => {
 									<Status />
 								</p>
 								<div>
-									<Link href="#about">
+									<Link underline href="#about">
 										<m.span
 											whileHover={{
 												scale: 1.05,
@@ -74,7 +76,7 @@ export const Hero: FC = () => {
 											About Me
 										</m.span>
 									</Link>
-									<Link href="#contact">
+									<Link underline href="#contact">
 										<m.span
 											whileHover={{
 												scale: 1.05,

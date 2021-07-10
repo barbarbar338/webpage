@@ -10,17 +10,23 @@ export const Footer: FC = () => {
 				<div className="mt-2">
 					&copy; {CONFIG.NOW} All rights reserved. Made with ❤ by{" "}
 					<Link
+						underline
 						href="https://github.com/barbarbar338"
 						className="text-purple-600"
 					>
 						barbarbar338
 					</Link>{" "}
 					using{" "}
-					<Link href="https://nextjs.org/" className="text-gray-600">
+					<Link
+						underline
+						href="https://nextjs.org/"
+						className="text-gray-600"
+					>
 						NextJS
 					</Link>{" "}
 					and{" "}
 					<Link
+						underline
 						href="https://tailwindcss.com/"
 						className="text-green-700 dark:text-green-400"
 					>
@@ -29,7 +35,12 @@ export const Footer: FC = () => {
 				</div>
 				<div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex text-purple-600 dark:text-purple-400">
 					{CONFIG.CONTACT.map((social, idx) => (
-						<Link key={idx} href={social.href} className="w-6 mx-1">
+						<Link
+							underline
+							key={idx}
+							href={social.href}
+							className="w-6 mx-1"
+						>
 							<FontAwesomeIcon icon={social.icon} />
 						</Link>
 					))}

@@ -118,6 +118,7 @@ export const Navbar: FC = () => {
 		<>
 			<nav className="relative px-6 py-6 flex justify-between items-center bg-white dark:bg-gray-900">
 				<Link
+					underline={false}
 					href="#"
 					className="text-white text-3xl font-bold leading-none block"
 				>
@@ -146,6 +147,7 @@ export const Navbar: FC = () => {
 						<Fragment key={idx}>
 							<li>
 								<Link
+									underline
 									href={link.href}
 									className={classnames("text-sm", {
 										"text-purple-600 hover:text-purple-500 dark:text-purple-300 dark:hover:text-purple-200":
@@ -161,7 +163,7 @@ export const Navbar: FC = () => {
 						</Fragment>
 					))}
 				</ul>
-				<Link href="#contact">
+				<Link underline href="#contact">
 					<m.span
 						whileHover={{
 							scale: 1.1,
@@ -187,6 +189,7 @@ export const Navbar: FC = () => {
 				<nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-gray-100 dark:bg-gray-900 overflow-y-auto">
 					<div className="flex items-center mb-8">
 						<Link
+							underline
 							href="#"
 							className=" mr-auto text-3xl font-bold leading-none"
 						>
@@ -222,6 +225,7 @@ export const Navbar: FC = () => {
 									className="mb-1"
 								>
 									<Link
+										underline={false}
 										href={link.href}
 										className={classnames(
 											"block",
@@ -231,7 +235,8 @@ export const Navbar: FC = () => {
 											"hover:bg-purple-600",
 											"dark:hover:bg-gray-800",
 											"hover:text-white",
-											"rounded",
+											"rounded-l-xl",
+											"rounded-t-xl",
 											{
 												"text-black dark:text-white":
 													hash == link.href,
@@ -248,7 +253,7 @@ export const Navbar: FC = () => {
 					</div>
 					<div className="mt-auto">
 						<div>
-							<Link href="#contact">
+							<Link underline={false} href="#contact">
 								<m.span
 									whileHover={{
 										scale: 1.05,
@@ -270,7 +275,7 @@ export const Navbar: FC = () => {
 						</p>
 						<div className="text-center">
 							{CONFIG.CONTACT.map((social, idx) => (
-								<Link key={idx} href={social.href}>
+								<Link underline key={idx} href={social.href}>
 									<FontAwesomeIcon
 										icon={social.icon}
 										className="inline-block text-black dark:text-white mx-2"
@@ -300,7 +305,8 @@ export const Navbar: FC = () => {
 					"w-10",
 					"h-10",
 					"bg-purple-600",
-					"rounded-full",
+					"rounded-l-full",
+					"rounded-t-full",
 					"focus:outline-none",
 					{
 						block: top,
@@ -317,7 +323,7 @@ export const Navbar: FC = () => {
 					scale: 0.9,
 				}}
 				onClick={onTheme}
-				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-600 rounded-full focus:outline-none"
+				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-600 rounded-l-full rounded-t-full focus:outline-none"
 			>
 				<FontAwesomeIcon
 					icon={icon}

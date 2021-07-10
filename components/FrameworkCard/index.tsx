@@ -16,13 +16,14 @@ export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => (
 			scale: 1.05,
 		}}
 	>
-		<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md rounded bg-gray-200 dark:bg-gray-800">
+		<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md rounded-t-xl rounded-bl-xl bg-gray-200 dark:bg-gray-800">
 			<span
 				className={classNames(
 					"mb-4",
 					"inline-block",
 					"p-3",
-					"rounded-lg",
+					"rounded-t-xl",
+					"rounded-bl-xl",
 					framework.color,
 				)}
 			>

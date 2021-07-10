@@ -5,15 +5,21 @@ import NextLink from "next/link";
 export interface ILinkProps {
 	href: string;
 	className?: string;
+	underline: boolean;
 }
 
-export const Link: FC<ILinkProps> = ({ href, children, className }) =>
+export const Link: FC<ILinkProps> = ({
+	href,
+	children,
+	className,
+	underline,
+}) =>
 	href.startsWith("http") ? (
 		<a
 			href={href}
 			rel="noreferrer"
 			target="_blank"
-			className={classnames("hover:underline", className)}
+			className={classnames({ "hover:underline": underline }, className)}
 		>
 			{children}
 		</a>
@@ -22,7 +28,7 @@ export const Link: FC<ILinkProps> = ({ href, children, className }) =>
 			<span
 				className={classnames(
 					"cursor-pointer",
-					"hover:underline",
+					{ "hover:underline": underline },
 					className,
 				)}
 			>

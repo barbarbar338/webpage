@@ -49,7 +49,7 @@ export const Contact: FC = () => {
 						<div className="w-1/2 px-2">
 							<input
 								onChange={onMailChange}
-								className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
+								className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded-t-xl rounded-bl-xl focus:outline-none"
 								type="email"
 								placeholder="Email"
 							/>
@@ -57,7 +57,7 @@ export const Contact: FC = () => {
 						<div className="w-1/2 px-2">
 							<input
 								onChange={onNameChange}
-								className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
+								className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded-t-xl rounded-bl-xl focus:outline-none"
 								type="text"
 								placeholder="Name"
 							/>
@@ -66,7 +66,7 @@ export const Contact: FC = () => {
 					<div className="mb-4">
 						<textarea
 							onChange={onMessageChange}
-							className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none"
+							className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded-t-xl rounded-bl-xl focus:outline-none"
 							placeholder="Write something..."
 							rows={5}
 						></textarea>
@@ -80,7 +80,7 @@ export const Contact: FC = () => {
 							whileTap={{
 								scale: 0.98,
 							}}
-							className="inline-block w-full py-4 px-8 leading-none text-white bg-purple-600 hover:bg-purple-700 font-semibold rounded shadow"
+							className="inline-block w-full py-4 px-8 leading-none text-white bg-purple-600 hover:bg-purple-700 font-semibold rounded-t-xl rounded-bl-xl shadow"
 						>
 							Submit
 						</m.button>
@@ -90,6 +90,7 @@ export const Contact: FC = () => {
 			<div className="flex flex-col lg:flex-row justify-center -mx-4">
 				{CONFIG.CONTACT.map((social, idx) => (
 					<Link
+						underline
 						key={idx}
 						href={social.href}
 						className="px-4 flex items-center"
