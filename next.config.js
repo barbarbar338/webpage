@@ -9,6 +9,7 @@ module.exports = withImages({
 			"react-dom": "preact/compat",
 			react: "preact/compat",
 		});
+		return config;
 	},
 	async redirects() {
 		return [
