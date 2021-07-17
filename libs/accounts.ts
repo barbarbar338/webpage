@@ -93,6 +93,12 @@ export const SOCIALS = [
 		color: "text-purple-500",
 	},
 	{
+		icon: faMoneyBill,
+		name: "Ininal",
+		value: "4091990104560",
+		color: "text-purple-500",
+	},
+	{
 		href: "https://stackoverflow.com/users/10124281/barbarbar338",
 		icon: faStackOverflow,
 		name: "StackOverFlow",
