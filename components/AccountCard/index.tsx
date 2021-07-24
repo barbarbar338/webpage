@@ -35,20 +35,10 @@ export const AccountCard: FC<IAccountCardProps> = ({
 			onClick={onCopy}
 			className="cursor-pointer px-4 pt-4 bg-gray-200 dark:bg-gray-700 rounded-t-xl rounded-bl-xl h-full text-black dark:text-white"
 		>
-			<div className="flex items-center space-x-1">
-				<span className="flex-grow space-x-2 truncate text-purple-600 dark:text-purple-300">
-					{name}
-				</span>
-				<div className="flex items-center">
-					<div className="flex items-center justify-center">
-						<FontAwesomeIcon
-							icon={icon}
-							className={classnames("text-6xl", color)}
-						/>
-					</div>
-				</div>
+			<div className="flex items-center justify-center">
+				<FontAwesomeIcon icon={icon} className={classnames("text-6xl", color)}/>
 			</div>
-			<p className="line-clamp-2 text-base h-12">{value}</p>
+			<p className="line-clamp-2 text-center h-12 text-xl">{value}</p>
 		</div>
 	);
 
