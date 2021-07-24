@@ -41,7 +41,12 @@ export const AccountCard: FC<IAccountCardProps> = ({
 					className={classnames("text-6xl", color)}
 				/>
 			</div>
-			<p className="line-clamp-2 text-center h-12 text-xl">{value}</p>
+			<span className="line-clamp-2 text-center h-12 text-xl">
+				{name}
+			</span>
+			<span className="line-clamp-2 text-center h-12 text-lg">
+				{value}
+			</span>
 		</div>
 	);
 
