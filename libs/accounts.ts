@@ -7,6 +7,7 @@ import {
 	faStackOverflow,
 	faSteam,
 	faYoutube,
+	faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { faDotCircle, faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faGamepad, faMoneyBill } from "@fortawesome/free-solid-svg-icons";
@@ -111,5 +112,12 @@ export const SOCIALS = [
 		name: "NPM",
 		value: "leydihavuc",
 		color: "text-red-500",
+	},
+	{
+		href: "https://www.linkedin.com/in/barbarbar338/",
+		icon: faLinkedin,
+		name: "Linkedin",
+		value: "barbarbar338",
+		color: "text-blue-500",
 	},
 ];
