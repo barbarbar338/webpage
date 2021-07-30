@@ -6,7 +6,7 @@ import { CONTACT, DISCORD_ID, SOCIALS } from "@libs/accounts";
 import { STACKS } from "@libs/stack";
 
 const NOW = new Date().getFullYear();
-const STARTED_AT = 2014;
+const STARTED_AT = 2010;
 const EXPERIENCE = NOW - STARTED_AT;
 
 export interface IFramework {
