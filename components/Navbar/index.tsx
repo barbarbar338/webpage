@@ -34,6 +34,10 @@ const links = [
 		name: "Accounts",
 		href: "/accounts",
 	},
+	{
+		name: "Blog",
+		href: "https://blog338.vercel.app",
+	},
 ];
 
 export const Navbar: FC = () => {
