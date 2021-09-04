@@ -8,6 +8,7 @@ import {
 	faSteam,
 	faYoutube,
 	faLinkedin,
+	faHive,
 } from "@fortawesome/free-brands-svg-icons";
 import { faDotCircle, faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faGamepad, faMoneyBill } from "@fortawesome/free-solid-svg-icons";
@@ -49,6 +50,13 @@ export const CONTACT = [
 		name: "Discord Server",
 		value: "discord.gg/BjEJFwh",
 		color: "text-blue-500",
+	},
+	{
+		href: "https://hiven.house/MCtyjW",
+		icon: faHive,
+		name: "Hiven House",
+		value: "hiven.house/MCtyjW",
+		color: "text-purple-500",
 	},
 ];
 
