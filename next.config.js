@@ -33,6 +33,11 @@ module.exports = withImages({
 				destination: "https://discord.gg/BjEJFwh",
 				permanent: true,
 			},
+			{
+				source: "/hiven",
+				destination: "https://hiven.house/MCtyjW",
+				permanent: true,
+			},
 		];
 	},
 });
