@@ -1,6 +1,6 @@
 FROM node:16-alpine3.14
 
-RUN apk add --no-cache git make python gcc g++
+RUN apk add --no-cache git make python3 py3-pip gcc g++
 
 ENV PORT=8080
 
