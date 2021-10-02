@@ -1,6 +1,6 @@
-FROM debian
+FROM node:16-alpine3.14
 
-RUN apt-get update && apt-get upgrade && apt-get install -y curl software-properties-common git make python gcc g++ && curl -sL https://deb.nodesource.com/setup_16.x | bash - && apt-get install -y nodejs && apt-get clean
+RUN apk add --no-cache git make python gcc g++
 
 ENV PORT=8080
 
