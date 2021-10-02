@@ -10,6 +10,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm i -g yarn && yarn && yarn build
+RUN yarn && yarn build
 
 CMD ["yarn", "start"]
