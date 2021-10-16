@@ -95,7 +95,7 @@ export const SOCIALS = [
 		value: "4154 3632 1875",
 		color: "text-red-500",
 	},
-        {
+	{
 		icon: faDotCircle,
 		name: "Pokemon Unite",
 		value: "5A9RKGE",

@@ -1,5 +1,4 @@
 import type { FC } from "react";
-import type { LanyardWebsocket } from "react-use-lanyard";
 import { useLanyard } from "react-use-lanyard";
 import { Tippy } from "@components/Tippy";
 import { CONFIG } from "@libs/config";
@@ -9,7 +8,7 @@ export const Status: FC = () => {
 	const { loading, status } = useLanyard({
 		userId: CONFIG.LANYARD_ID,
 		socket: true,
-	}) as LanyardWebsocket;
+	});
 
 	const getColor = () => {
 		switch (status?.discord_status) {
