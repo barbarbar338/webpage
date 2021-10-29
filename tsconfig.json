@@ -20,7 +20,8 @@
 			"@components/*": ["components/*"],
 			"@assets/*": ["assets/*"],
 			"@libs/*": ["libs/*"]
-		}
+		},
+		"incremental": true
 	},
 	"exclude": [".next", "node_modules"],
 	"include": ["./**/*.ts", "./**/*.tsx"]

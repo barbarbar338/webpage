@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import Favicon from "@assets/icon.svg";
 
 export default class CustomDocument extends Document {
 	render(): JSX.Element {
@@ -33,9 +32,6 @@ export default class CustomDocument extends Document {
 						name="keywords"
 						content="baris, demirci, barbarbar338, barbar, 338, hammer, projecthammer"
 					/>
-					<meta name="og:image" content={Favicon} />
-					<meta name="twitter:image" content={Favicon} />
-					<link rel="icon" href={Favicon} />
 					<link
 						rel="canonical"
 						href="https://barbarbar338.fly.dev/"
