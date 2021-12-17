@@ -42,14 +42,6 @@ export default BlogPage;
 export async function getStaticProps(): Promise<
 	GetStaticPropsResult<IBlogProps>
 > {
-	/*
-    if (CONFIG.DEV)
-		return {
-			props: {
-				posts: []
-			},
-		};
-    */
 	const pinned = await getPinnedPosts();
 	const categories = await getCategories();
 	const posts = await getPosts();

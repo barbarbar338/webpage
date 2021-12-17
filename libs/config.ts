@@ -22,7 +22,7 @@ export const CONFIG = {
 	NICK: "barbarbar338",
 	EMAIL: "demirci.baris38@gmail.com",
 	GITHUB_USERNAME: "barbarbar338",
-	AVATAR_URL: "https://avatars.githubusercontent.com/u/35371155", // dont forget to change next.config.js
+	AVATAR_URL: "https://avatars.githubusercontent.com/u/35371155",
 	LANYARD_ID: DISCORD_ID,
 	STARTED_AT,
 	NOW,
@@ -96,6 +96,7 @@ export const CONFIG = {
 		discussions: {
 			username: "barbarbar338",
 			repo: "webpage",
+			repo_id: "MDEwOlJlcG9zaXRvcnkyNjc3OTQ5NDE=",
 		},
 	},
 	DEV: process.env.NODE_ENV != "production",

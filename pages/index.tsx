@@ -29,24 +29,6 @@ export default IndexPage;
 export async function getStaticProps(): Promise<
 	GetStaticPropsResult<IIndexPage>
 > {
-	if (CONFIG.DEV)
-		return {
-			props: {
-				repos: [
-					{
-						description: "Example description",
-						url: "https://github.com/barbarbar338/webpage",
-						primaryLanguage: {
-							name: "Go",
-							color: "#375eab",
-						},
-						name: "Example Repo",
-						stargazerCount: 999,
-					},
-				],
-			},
-		};
-
 	const repos = await getMostStarredRepos();
 
 	return {

@@ -25,6 +25,7 @@ export interface ILabel {
 export interface IPost {
 	title: string;
 	id: string;
+	number: number;
 	createdAt: string;
 	author: IAuthor;
 	labels: ILabel[];
@@ -40,6 +41,68 @@ export interface IStarredRepo {
 		color: string;
 	};
 }
+
+export interface IPostData {
+	title: string;
+	author: IAuthor;
+	bodyHTML: string;
+	createdAt: string;
+	labels: ILabel[];
+	number: number;
+}
+
+export const getPostData = async (no: number): Promise<IPostData> => {
+	const { data } = await apollo.query({
+		query: gql`
+			{
+				repository(owner: "${CONFIG.BLOG.discussions.username}", name: "${CONFIG.BLOG.discussions.repo}") {
+					discussion(number: ${no}) {
+						title
+						author {
+							login
+							avatarUrl
+						}
+						bodyHTML
+						createdAt
+						number
+						labels(first: 3) {
+							edges {
+								node {
+									color
+									id
+									name
+								}
+							}
+						}
+					}
+				}
+			}
+		`,
+	});
+
+	const labels: ILabel[] = data.repository.discussion.labels.edges.map(
+		(l) => {
+			return {
+				color: l.node.color,
+				name: l.node.name,
+				id: l.node.id,
+			} as ILabel;
+		},
+	);
+	const post: IPostData = {
+		title: data.repository.discussion.title,
+		bodyHTML: data.repository.discussion.bodyHTML,
+		createdAt: format(
+			new Date(data.repository.discussion.createdAt),
+			"mm/dd/yyyy",
+		),
+		author: data.repository.discussion.author,
+		labels,
+		number: data.repository.discussion.number,
+	};
+
+	return post;
+};
 
 export const getMostStarredRepos = async (): Promise<IStarredRepo[]> => {
 	const { data } = await apollo.query({
@@ -122,6 +185,7 @@ export const getPosts = async (): Promise<IPost[]> => {
 								title
 								id
 								createdAt
+								number
 								author {
 									avatarUrl
 									login
@@ -158,6 +222,7 @@ export const getPosts = async (): Promise<IPost[]> => {
 			id: e.node.id,
 			createdAt: format(new Date(e.node.createdAt), "mm/dd/yyyy"),
 			labels,
+			number: e.node.number,
 		} as IPost;
 	});
 
@@ -176,6 +241,7 @@ export const getPinnedPosts = async (): Promise<IPost[]> => {
 									title
 									id
 									createdAt
+									number
 									author {
 										avatarUrl
 										login
@@ -216,6 +282,7 @@ export const getPinnedPosts = async (): Promise<IPost[]> => {
 				"mm/dd/yyyy",
 			),
 			labels,
+			number: e.node.discussion.number,
 		} as IPost;
 	});
 

@@ -35,7 +35,7 @@ export const PinnedPosts: FC<IPinnedPosts> = ({ posts }) => {
 					</div>
 					<div className="mt-4">
 						<Link
-							href={`/blog/post/${post.id}`}
+							href={`/blog/post/${post.number}`}
 							underline={true}
 							className="text-lg font-medium text-gray-700 dark:text-white hover:underline"
 						>
