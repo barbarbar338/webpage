@@ -1,9 +1,9 @@
 import type { FC } from "react";
-import type { IRepoCard } from "@components/RepoCard";
 import { RepoCard } from "@components/RepoCard";
+import { IStarredRepo } from "@libs/graphql";
 
 export interface IProjects {
-	repos: IRepoCard[];
+	repos: IStarredRepo[];
 }
 
 export const Projects: FC<IProjects> = ({ repos }) => {

@@ -5,7 +5,6 @@ import { About } from "@components/About";
 import { Layout } from "@components/Layout";
 import { Contact } from "@components/Contact";
 import { Projects } from "@components/Projects";
-import { CONFIG } from "@libs/config";
 import { getMostStarredRepos, IStarredRepo } from "@libs/graphql";
 
 export interface IIndexPage {
