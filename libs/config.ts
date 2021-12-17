@@ -92,5 +92,11 @@ export const CONFIG = {
 	CONTACT,
 	SOCIALS,
 	STACKS,
+	BLOG: {
+		discussions: {
+			username: "barbarbar338",
+			repo: "webpage",
+		},
+	},
 	DEV: process.env.NODE_ENV != "production",
 };

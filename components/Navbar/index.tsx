@@ -36,7 +36,7 @@ const links = [
 	},
 	{
 		name: "Blog",
-		href: "https://blog338.vercel.app",
+		href: "/blog",
 	},
 ];
 

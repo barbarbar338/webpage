@@ -1,24 +1,16 @@
 import type { FC } from "react";
-import colors from "@assets/colors.json";
 import Tilt from "react-tilt";
 import { Tippy } from "@components/Tippy";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "@components/Link";
+import { IStarredRepo } from "@libs/graphql";
 
-export interface IRepoCard {
-	html_url: string;
-	name: string;
-	stargazers_count: number;
-	language: string;
-	description: string;
-}
-
-export const RepoCard: FC<IRepoCard> = ({
-	html_url,
+export const RepoCard: FC<IStarredRepo> = ({
 	name,
-	stargazers_count,
-	language,
+	primaryLanguage,
+	stargazerCount,
+	url,
 	description,
 }) => {
 	return (
@@ -32,7 +24,7 @@ export const RepoCard: FC<IRepoCard> = ({
 						scale: 1.05,
 					}}
 				>
-					<Link href={html_url} underline={false}>
+					<Link href={url} underline={false}>
 						<div className="p-4 bg-gray-200 dark:bg-gray-800 rounded-t-xl rounded-bl-xl h-full text-black dark:text-white">
 							<div className="flex items-center space-x-1">
 								<span className="flex-grow space-x-2 truncate text-purple-600 dark:text-purple-300">
@@ -40,7 +32,7 @@ export const RepoCard: FC<IRepoCard> = ({
 								</span>
 								<div className="flex items-center space-x-1">
 									<div className="flex items-center space-x-1">
-										<span>{stargazers_count}</span>{" "}
+										<span>{stargazerCount}</span>{" "}
 										<FontAwesomeIcon
 											icon={faStar}
 											className="w-6 h-6 text-yellow-600"
@@ -55,11 +47,11 @@ export const RepoCard: FC<IRepoCard> = ({
 								<span
 									className="mt-1 block h-4 w-4 bg-gray-400 rounded-full"
 									style={{
-										backgroundColor: colors[language].color,
+										backgroundColor: primaryLanguage.color,
 									}}
 								></span>
 								<p className="ml-1 mt-1 text-gray-600 dark:text-gray-400 text-xs">
-									{language}
+									{primaryLanguage.name}
 								</p>
 							</div>
 						</div>
