@@ -9,6 +9,7 @@ import Favicon from "@assets/icon.svg";
 
 import "@styles/tailwind.css";
 import "@styles/index.scss";
+import "@styles/blog.scss";
 import "tippy.js/dist/tippy.css";
 import "react-toastify/dist/ReactToastify.css";
 

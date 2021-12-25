@@ -41,7 +41,7 @@ export default class CustomDocument extends Document {
 						rel="stylesheet"
 					/>
 				</Head>
-				<body className="antialiased bg-body text-body font-body">
+				<body className="antialiased">
 					<Main />
 					<NextScript />
 				</body>

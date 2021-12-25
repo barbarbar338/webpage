@@ -21,7 +21,7 @@ interface IBlogProps {
 const BlogPage: NextPage<IBlogProps> = ({ pinned, categories, posts }) => {
 	return (
 		<Layout title="Blog">
-			<div className="overflow-x-hidden">
+			<div className="overflow-x-hidden min-h-screen">
 				<BlogNavbar />
 				<div className="px-6 py-8">
 					<div className="container flex justify-between mx-auto">

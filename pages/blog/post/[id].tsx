@@ -1,49 +1,81 @@
 import { Layout } from "@components/Layout";
-import { Link } from "@components/Link";
 import { getPostData, IPostData } from "@libs/graphql";
 import { GetServerSideProps, GetServerSidePropsResult, NextPage } from "next";
 import { Giscus } from "@giscus/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "@components/Link";
 import { CONFIG } from "@libs/config";
+import { useTheme } from "next-themes";
 
 export interface IPostProps {
 	post: IPostData;
 }
 
 const PostPage: NextPage<IPostProps> = ({ post }) => {
+	const { theme } = useTheme();
+
 	return (
 		<Layout title={post.title}>
-			<main className="relative container mx-auto bg-white dark:bg-gray-800 px-4 rounded-xl">
-				<article className="max-w-prose mx-auto py-8">
-					<h1 className="text-2xl font-bold text-black dark:text-white">
-						{post.title}
-					</h1>
-					<h2 className="mt-2 text-sm text-gray-500 dark:text-white">
-						{post.author.login}, {post.createdAt}
-					</h2>
-					<div
-						className="mt-6 text-black dark:text-white"
-						dangerouslySetInnerHTML={{
-							__html: post.bodyHTML,
-						}}
-					/>
-					<div>
-						<Link underline={false} href="/blog">
-							<span className="inline-block mb-3 mt-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-l-xl rounded-t-xl transition duration-200">
-								Go Home
-							</span>
-						</Link>
+			<div className="leading-normal tracking-normal min-h-screen">
+				<div className="container w-full md:max-w-3xl mx-auto pt-20">
+					<div className="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
+						<div className="font-sans">
+							<p className="text-base md:text-sm text-purple-500 font-bold">
+								<FontAwesomeIcon icon={faLongArrowAltLeft} />{" "}
+								<Link
+									href="/blog"
+									underline={false}
+									className="text-base md:text-sm uppercase text-purple-500 font-bold no-underline hover:underline"
+								>
+									Back to blog
+								</Link>
+							</p>
+							<h1 className="font-bold font-sans break-normal text-black dark:text-white pt-6 pb-2 text-3xl md:text-4xl">
+								{post.title}
+							</h1>
+							<p className="text-sm md:text-base font-normal text-gray-500">
+								Published at {post.createdAt}
+							</p>
+						</div>
+						<div
+							className="container text-black dark:text-white prose"
+							dangerouslySetInnerHTML={{ __html: post.bodyHTML }}
+						/>
 					</div>
-				</article>
-				<Giscus
-					repo={`${CONFIG.BLOG.discussions.username}/${CONFIG.BLOG.discussions.repo}`}
-					repoId={CONFIG.BLOG.discussions.repo_id}
-					mapping="number"
-					term={post.number.toString()}
-					reactionsEnabled="1"
-					theme="dark_dimmed"
-					emitMetadata="1"
-				/>
-			</main>
+					<div className="text-base md:text-sm text-gray-500 px-4 py-6">
+						Tags:{" "}
+						{post.labels.length
+							? post.labels.map((label, idx) => (
+									<Link
+										key={idx}
+										underline={false}
+										href={`/blog/category/${label.id}`}
+										className="text-black md:text-sm p-1 mx-2 rounded"
+										style={{
+											backgroundColor: `#${label.color}`,
+										}}
+									>
+										{label.name}
+									</Link>
+							  ))
+							: "No tags"}
+					</div>
+					<hr className="border-b-2 border-gray-700 mb-8 mx-4" />
+					<div className="container p-4">
+						<Giscus
+							repo={`${CONFIG.BLOG.discussions.username}/${CONFIG.BLOG.discussions.repo}`}
+							repoId={CONFIG.BLOG.discussions.repo_id}
+							mapping="number"
+							term={post.number.toString()}
+							reactionsEnabled="1"
+							theme={theme == "dark" ? "dark_dimmed" : "light"}
+							emitMetadata="1"
+						/>
+					</div>
+					<hr className="border-b-2 border-gray-700 mb-8 mx-4" />
+				</div>
+			</div>
 		</Layout>
 	);
 };

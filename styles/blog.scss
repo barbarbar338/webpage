@@ -1,0 +1,30 @@
+* {
+	--tw-prose-quote-borders: rgb(124, 58, 237);
+}
+
+.prose {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	ul,
+	ol,
+	li,
+	blockquote,
+	em,
+	strong,
+	del {
+		@apply text-black dark:text-white;
+	}
+
+	blockquote {
+		@apply bg-gray-200 dark:bg-gray-800;
+	}
+
+	a {
+		@apply text-purple-600 hover:text-purple-500;
+	}
+}
