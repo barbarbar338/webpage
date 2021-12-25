@@ -16,7 +16,7 @@ export const PinnedPosts: FC<IPinnedPosts> = ({ posts }) => {
 			{posts.map((post, idx) => (
 				<div
 					key={idx}
-					className="flex flex-col max-w-sm px-8 py-6 mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-md"
+					className="flex flex-col max-w-sm px-8 py-6 mx-auto my-5 bg-white dark:bg-gray-800 rounded-lg shadow-md"
 				>
 					<div className="flex items-center justify-center">
 						{post.labels.map((label, idx) => (
