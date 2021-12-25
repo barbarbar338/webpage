@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { CONFIG } from "@libs/config";
-import moment from "moment"
+import moment from "moment";
 
 export const apollo = new ApolloClient({
 	uri: "https://api.github.com/graphql",
@@ -89,7 +89,7 @@ export const getPostData = async (no: number): Promise<IPostData> => {
 			} as ILabel;
 		},
 	);
-	
+
 	const post: IPostData = {
 		title: data.repository.discussion.title,
 		bodyHTML: data.repository.discussion.bodyHTML,

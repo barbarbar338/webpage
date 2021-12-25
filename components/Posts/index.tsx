@@ -12,7 +12,14 @@ export const Posts: FC<IPosts> = ({ posts }) => {
 		<div className="w-full lg:w-8/12">
 			<div className="flex items-center justify-between">
 				<h1 className="text-xl font-bold text-gray-700 md:text-2xl dark:text-white">
-					Posts
+					P
+					<Link
+						href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+						underline={false}
+					>
+						o
+					</Link>
+					sts
 				</h1>
 			</div>
 			{posts.map((post, idx) => (

@@ -35,7 +35,14 @@ export const Hero: FC = () => {
 									<span className="text-purple-600 dark:text-purple-300">
 										over {CONFIG.EXPERIENCE} year(s)
 									</span>{" "}
-									experience. More interested with{" "}
+									experience. M
+									<Link
+										href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+										underline={false}
+									>
+										o
+									</Link>
+									re interested with{" "}
 									{CONFIG.INTERESTS.map(
 										(interest, idx) =>
 											idx != lastIDX && (
