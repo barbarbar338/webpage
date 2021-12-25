@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import { format } from "date-fns";
 import { CONFIG } from "@libs/config";
+import moment from "moment"
 
 export const apollo = new ApolloClient({
 	uri: "https://api.github.com/graphql",
@@ -89,13 +89,11 @@ export const getPostData = async (no: number): Promise<IPostData> => {
 			} as ILabel;
 		},
 	);
+	
 	const post: IPostData = {
 		title: data.repository.discussion.title,
 		bodyHTML: data.repository.discussion.bodyHTML,
-		createdAt: format(
-			new Date(data.repository.discussion.createdAt),
-			"mm/dd/yyyy",
-		),
+		createdAt: moment(data.repository.discussion.createdAt).calendar(),
 		author: data.repository.discussion.author,
 		labels,
 		number: data.repository.discussion.number,
@@ -220,7 +218,7 @@ export const getPosts = async (): Promise<IPost[]> => {
 			title: e.node.title,
 			author: e.node.author,
 			id: e.node.id,
-			createdAt: format(new Date(e.node.createdAt), "mm/dd/yyyy"),
+			createdAt: moment(e.node.createdAt).calendar(),
 			labels,
 			number: e.node.number,
 		} as IPost;
@@ -277,10 +275,7 @@ export const getPinnedPosts = async (): Promise<IPost[]> => {
 			title: e.node.discussion.title,
 			author: e.node.discussion.author,
 			id: e.node.discussion.id,
-			createdAt: format(
-				new Date(e.node.discussion.createdAt),
-				"mm/dd/yyyy",
-			),
+			createdAt: moment(e.node.discussion.createdAt).calendar(),
 			labels,
 			number: e.node.discussion.number,
 		} as IPost;

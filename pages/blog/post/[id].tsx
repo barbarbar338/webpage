@@ -36,7 +36,7 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 								{post.title}
 							</h1>
 							<p className="text-sm md:text-base font-normal text-gray-500">
-								Published at {post.createdAt}
+								Published {post.createdAt}
 							</p>
 						</div>
 						<div
