@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { Layout } from "@components/Layout";
 import { getPostData, IPostData } from "@libs/graphql";
 import { GetServerSideProps, GetServerSidePropsResult, NextPage } from "next";
