@@ -20,15 +20,15 @@ import classnames from "classnames";
 const links = [
 	{
 		name: "Home",
-		href: "#",
+		href: "/#",
 	},
 	{
 		name: "About",
-		href: "#about",
+		href: "/#about",
 	},
 	{
 		name: "Projects",
-		href: "#projects",
+		href: "/#projects",
 	},
 	{
 		name: "Accounts",
@@ -123,7 +123,7 @@ export const Navbar: FC = () => {
 			<nav className="relative px-6 py-6 flex justify-between items-center bg-white dark:bg-gray-900">
 				<Link
 					underline={false}
-					href="#"
+					href="/#"
 					className="text-white text-3xl font-bold leading-none block"
 				>
 					<CustomImage
@@ -167,7 +167,7 @@ export const Navbar: FC = () => {
 						</Fragment>
 					))}
 				</ul>
-				<Link underline href="#contact">
+				<Link underline href="/#contact">
 					<m.span
 						whileHover={{
 							scale: 1.1,
@@ -194,7 +194,7 @@ export const Navbar: FC = () => {
 					<div className="flex items-center mb-8">
 						<Link
 							underline
-							href="#"
+							href="/#"
 							className=" mr-auto text-3xl font-bold leading-none"
 						>
 							<CustomImage
@@ -257,7 +257,7 @@ export const Navbar: FC = () => {
 					</div>
 					<div className="mt-auto">
 						<div>
-							<Link underline={false} href="#contact">
+							<Link underline={false} href="/#contact">
 								<m.span
 									whileHover={{
 										scale: 1.05,

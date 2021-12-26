@@ -37,7 +37,7 @@ export const Posts: FC<IPosts> = ({ posts, title }) => {
 						</div>
 						<div className="mt-2">
 							<Link
-								underline={true}
+								underline
 								href={`/blog/post/${post.number}`}
 								className="text-2xl font-bold text-gray-700 dark:text-white"
 							>
@@ -46,7 +46,7 @@ export const Posts: FC<IPosts> = ({ posts, title }) => {
 						</div>
 						<div className="flex items-center justify-between mt-4">
 							<Link
-								underline={true}
+								underline
 								href={`/blog/post/${post.number}`}
 								className="text-blue-500"
 							>
@@ -54,7 +54,7 @@ export const Posts: FC<IPosts> = ({ posts, title }) => {
 							</Link>
 							<div>
 								<Link
-									underline={true}
+									underline
 									href={`https://github.com/${post.author.login}`}
 									className="flex items-center"
 								>

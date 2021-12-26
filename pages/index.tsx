@@ -15,7 +15,6 @@ export interface IIndexPage {
 const IndexPage: NextPage<IIndexPage> = ({ repos }) => {
 	return (
 		<Layout title="Home">
-			<Navbar />
 			<Hero />
 			<About />
 			<Projects repos={repos} />

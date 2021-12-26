@@ -18,7 +18,7 @@ export const Categories: FC<ICategories> = ({ categories }) => {
 						<li key={idx} className="m-1">
 							<Link
 								href={`/blog/category/${category.id}`}
-								underline={true}
+								underline
 								className="p-1 text-sm text-black rounded"
 								style={{
 									backgroundColor: `#${category.color}`,

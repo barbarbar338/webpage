@@ -36,7 +36,7 @@ export const PinnedPosts: FC<IPinnedPosts> = ({ posts }) => {
 					<div className="mt-4">
 						<Link
 							href={`/blog/post/${post.number}`}
-							underline={true}
+							underline
 							className="text-lg font-medium text-gray-700 dark:text-white hover:underline"
 						>
 							{post.title}
@@ -51,7 +51,7 @@ export const PinnedPosts: FC<IPinnedPosts> = ({ posts }) => {
 							/>
 							<Link
 								href={`https://github.com/${post.author.login}`}
-								underline={true}
+								underline
 								className="mx-3 text-sm text-gray-700 dark:text-white"
 							>
 								{post.author.login}

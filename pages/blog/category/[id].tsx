@@ -1,5 +1,4 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import { BlogNavbar } from "@components/BlogNavbar";
 import { Categories } from "@components/Categories";
 import { Layout } from "@components/Layout";
 import { PinnedPosts } from "@components/PinnedPosts";
@@ -30,7 +29,6 @@ const CategoryPage: NextPage<ICategoryProps> = ({
 	return (
 		<Layout title={tag.name}>
 			<div className="overflow-x-hidden min-h-screen">
-				<BlogNavbar />
 				<div className="px-6 py-8">
 					<div className="container flex justify-between mx-auto">
 						<Posts posts={posts} title={tag.name} />

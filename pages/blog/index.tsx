@@ -7,7 +7,6 @@ import {
 	ILabel,
 	IPost,
 } from "@libs/graphql";
-import { BlogNavbar } from "@components/BlogNavbar";
 import { PinnedPosts } from "@components/PinnedPosts";
 import { Categories } from "@components/Categories";
 import { Posts } from "@components/Posts";
@@ -23,7 +22,6 @@ const BlogPage: NextPage<IBlogProps> = ({ pinned, categories, posts }) => {
 	return (
 		<Layout title="Blog">
 			<div className="overflow-x-hidden min-h-screen">
-				<BlogNavbar />
 				<div className="px-6 py-8">
 					<div className="container flex justify-between mx-auto">
 						<Posts posts={posts} />
