@@ -51,6 +51,22 @@ export interface IPostData {
 	number: number;
 }
 
+export interface ICommitAuthor {
+	name: string;
+}
+
+export interface ICommit {
+	message: string;
+	committedDate: string;
+	author: ICommitAuthor;
+	commitUrl: string;
+}
+
+export interface ICommitsData {
+	commits: { [key: string]: ICommit[] };
+	latest: string;
+}
+
 export const getPostData = async (no: number): Promise<IPostData> => {
 	const { data } = await apollo.query({
 		query: gql`
@@ -282,4 +298,71 @@ export const getPinnedPosts = async (): Promise<IPost[]> => {
 	});
 
 	return posts;
+};
+
+export const getCommits = async (): Promise<ICommitsData> => {
+	const { data } = await apollo.query({
+		query: gql`
+			{
+				repository(owner: "${CONFIG.BLOG.discussions.username}", name: "${CONFIG.BLOG.discussions.repo}") {
+					refs(refPrefix: "refs/heads/", orderBy: {direction: DESC, field: TAG_COMMIT_DATE}, first: 100) {
+						edges {
+							node {
+								... on Ref {
+									target {
+										... on Commit {
+												history(first: 30) {
+													edges {
+														node {
+														... on Commit {
+																message
+																committedDate
+																author {
+																	name
+																}
+															commitUrl
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		`,
+	});
+
+	const commitsData: ICommitsData = {
+		commits: {},
+		latest: "Unknown",
+	};
+
+	for (const e of data.repository.refs.edges) {
+		e.node.target.history.edges.map((c) => {
+			const commitDate = moment(c.node.committedDate);
+			if (!commitsData.commits[commitDate.format("YYYY-MM-DD")])
+				commitsData.commits[commitDate.format("YYYY-MM-DD")] =
+					[] as ICommit[];
+
+			commitsData.commits[commitDate.format("YYYY-MM-DD")].push({
+				message: c.node.message,
+				committedDate: commitDate.calendar(),
+				commitUrl: c.node.commitUrl,
+				author: {
+					name: c.node.author.name,
+				},
+			} as ICommit);
+		});
+	}
+
+	commitsData.latest =
+		commitsData.commits[
+			Object.keys(commitsData.commits)[0]
+		][0].committedDate;
+
+	return commitsData;
 };

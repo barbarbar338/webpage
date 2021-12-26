@@ -38,6 +38,10 @@ const links = [
 		name: "Blog",
 		href: "/blog",
 	},
+	{
+		name: "Changelog",
+		href: "/changelog",
+	},
 ];
 
 export const Navbar: FC = () => {
@@ -122,7 +126,6 @@ export const Navbar: FC = () => {
 		<>
 			<nav className="relative px-6 py-6 flex justify-between items-center bg-white dark:bg-gray-900">
 				<Link
-					underline={false}
 					href="/#"
 					className="text-white text-3xl font-bold leading-none block"
 				>
@@ -229,7 +232,6 @@ export const Navbar: FC = () => {
 									className="mb-1"
 								>
 									<Link
-										underline={false}
 										href={link.href}
 										className={classnames(
 											"block",
@@ -257,7 +259,7 @@ export const Navbar: FC = () => {
 					</div>
 					<div className="mt-auto">
 						<div>
-							<Link underline={false} href="/#contact">
+							<Link href="/#contact">
 								<m.span
 									whileHover={{
 										scale: 1.05,
