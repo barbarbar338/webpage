@@ -62,7 +62,7 @@ export const AccountCard: FC<IAccountCardProps> = ({
 					}}
 				>
 					{href ? (
-						<Link underline={false} href={href}>
+						<Link href={href}>
 							<Card />
 						</Link>
 					) : (

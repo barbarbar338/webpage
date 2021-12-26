@@ -36,10 +36,7 @@ export const Hero: FC = () => {
 										over {CONFIG.EXPERIENCE} year(s)
 									</span>{" "}
 									experience. M
-									<Link
-										href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-										underline={false}
-									>
+									<Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
 										o
 									</Link>
 									re interested with{" "}

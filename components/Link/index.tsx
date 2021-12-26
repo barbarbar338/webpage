@@ -5,7 +5,7 @@ import NextLink from "next/link";
 export interface ILinkProps {
 	href: string;
 	className?: string;
-	underline: boolean;
+	underline?: boolean;
 	style?: CSSProperties;
 }
 

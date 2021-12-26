@@ -26,7 +26,6 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 								<FontAwesomeIcon icon={faLongArrowAltLeft} />{" "}
 								<Link
 									href="/blog"
-									underline={false}
 									className="text-base md:text-sm uppercase text-purple-500 font-bold no-underline hover:underline"
 								>
 									Back to blog
@@ -50,7 +49,6 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 							? post.labels.map((label, idx) => (
 									<Link
 										key={idx}
-										underline={false}
 										href={`/blog/category/${label.id}`}
 										className="text-black md:text-sm p-1 mx-2 rounded"
 										style={{
