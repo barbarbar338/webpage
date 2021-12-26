@@ -100,4 +100,5 @@ export const CONFIG = {
 		},
 	},
 	DEV: process.env.NODE_ENV != "production",
+	REVALIDATION: 60 * 5,
 };

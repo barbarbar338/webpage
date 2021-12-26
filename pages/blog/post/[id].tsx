@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import { Layout } from "@components/Layout";
-import { getPostData, IPostData } from "@libs/graphql";
-import { GetServerSideProps, GetServerSidePropsResult, NextPage } from "next";
+import { getPostData, IPostData, getPosts } from "@libs/graphql";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Giscus } from "@giscus/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
@@ -83,23 +83,26 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 
 export default PostPage;
 
-export const getServerSideProps: GetServerSideProps = async (
-	ctx,
-): Promise<GetServerSidePropsResult<IPostProps>> => {
-	const id = ctx.params.id as string;
-	try {
-		const post = await getPostData(parseInt(id));
-		return {
-			props: {
-				post,
-			},
-		};
-	} catch (e) {
-		return {
-			redirect: {
-				statusCode: 307,
-				destination: "/404",
-			},
-		};
-	}
+export const getStaticPaths: GetStaticPaths = async () => {
+	const posts = await getPosts();
+	const paths = posts.map((post) => ({
+		params: { id: post.number.toString() },
+	}));
+
+	return {
+		paths,
+		fallback: false,
+	};
+};
+
+export const getStaticProps: GetStaticProps<IPostProps> = async (ctx) => {
+	const id = parseInt(ctx.params.id as string);
+	const post = await getPostData(id);
+
+	return {
+		props: {
+			post,
+		},
+		revalidate: CONFIG.REVALIDATION,
+	};
 };
