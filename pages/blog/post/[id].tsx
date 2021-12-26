@@ -50,7 +50,7 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 									<Link
 										key={idx}
 										href={`/blog/category/${label.id}`}
-										className="text-black md:text-sm p-1 mx-2 rounded"
+										className="text-black md:text-sm p-1 mx-2 rounded-t-xl rounded-bl-xl"
 										style={{
 											backgroundColor: `#${label.color}`,
 										}}
