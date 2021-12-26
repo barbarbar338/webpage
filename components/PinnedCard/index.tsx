@@ -3,10 +3,19 @@ import { FC } from "react";
 import Tilt from "react-tilt";
 import { Link } from "@components/Link";
 import { CustomImage } from "@components/CustomImage";
+import { m, Variants } from "framer-motion";
 
 export interface IPinnedCard {
 	post: IPost;
 }
+
+const item: Variants = {
+	hidden: { y: 20, opacity: 0 },
+	visible: {
+		y: 0,
+		opacity: 1,
+	},
+};
 
 export const PinnedCard: FC<IPinnedCard> = ({ post }) => {
 	return (
@@ -18,7 +27,10 @@ export const PinnedCard: FC<IPinnedCard> = ({ post }) => {
 				scale: 1.05,
 			}}
 		>
-			<div className="flex flex-col max-w-sm px-8 py-6 mx-auto my-5 bg-white dark:bg-gray-800 rounded-t-xl rounded-bl-xl shadow-md">
+			<m.div
+				variants={item}
+				className="flex flex-col max-w-sm px-8 py-6 mx-auto my-5 bg-white dark:bg-gray-800 rounded-t-xl rounded-bl-xl shadow-md"
+			>
 				<div className="flex items-center justify-center">
 					{post.labels.map((label, idx) => (
 						<Link
@@ -61,7 +73,7 @@ export const PinnedCard: FC<IPinnedCard> = ({ post }) => {
 						{post.createdAt}
 					</span>
 				</div>
-			</div>
+			</m.div>
 		</Tilt>
 	);
 };

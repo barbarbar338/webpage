@@ -2,15 +2,30 @@ import { Link } from "@components/Link";
 import { PostCard } from "@components/PostCard";
 import { IPost } from "@libs/graphql";
 import { FC, Fragment } from "react";
+import { m, Variants } from "framer-motion";
 
 export interface IPosts {
 	posts: IPost[];
 	title?: string;
 }
 
+const container: Variants = {
+	visible: {
+		transition: {
+			delayChildren: 0.3,
+			staggerChildren: 0.2,
+		},
+	},
+};
+
 export const Posts: FC<IPosts> = ({ posts, title }) => {
 	return (
-		<div className="w-full lg:w-8/12">
+		<m.div
+			variants={container}
+			initial="hidden"
+			animate="visible"
+			className="w-full lg:w-8/12"
+		>
 			<div className="flex items-center justify-between">
 				<h1 className="text-xl font-bold text-gray-700 md:text-2xl dark:text-white">
 					{title || (
@@ -27,6 +42,6 @@ export const Posts: FC<IPosts> = ({ posts, title }) => {
 			{posts.map((post, idx) => (
 				<PostCard post={post} key={idx} />
 			))}
-		</div>
+		</m.div>
 	);
 };

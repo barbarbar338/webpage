@@ -3,11 +3,31 @@ import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
 import { getCommits, ICommitsData } from "@libs/graphql";
 import { Link } from "@components/Link";
-import { CustomImage } from "@components/CustomImage";
+import { Variants, m } from "framer-motion";
 
 export interface IChangelogProps {
 	commitsData: ICommitsData;
 }
+
+const container: Variants = {
+	hidden: { opacity: 1, scale: 0 },
+	visible: {
+		opacity: 1,
+		scale: 1,
+		transition: {
+			delayChildren: 0.3,
+			staggerChildren: 0.2,
+		},
+	},
+};
+
+const item: Variants = {
+	hidden: { y: 20, opacity: 0 },
+	visible: {
+		y: 0,
+		opacity: 1,
+	},
+};
 
 const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 	return (
@@ -36,18 +56,29 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 								website.
 							</p>
 							<h2>Last 30 commits:</h2>
-							<ul>
+							<m.ul
+								variants={container}
+								initial="hidden"
+								animate="visible"
+							>
 								{Object.keys(commitsData.commits).map(
 									(date, idx) => {
 										const commits =
 											commitsData.commits[date];
 										return (
-											<li key={idx}>
+											<m.li variants={item} key={idx}>
 												{date}
-												<ul>
+												<m.ul
+													variants={container}
+													initial="hidden"
+													animate="visible"
+												>
 													{commits.map(
 														(commit, idx) => (
-															<li key={idx}>
+															<m.li
+																variants={item}
+																key={idx}
+															>
 																<Link
 																	href={
 																		commit.commitUrl
@@ -63,15 +94,15 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 																		.author
 																		.name
 																}
-															</li>
+															</m.li>
 														),
 													)}
-												</ul>
-											</li>
+												</m.ul>
+											</m.li>
 										);
 									},
 								)}
-							</ul>
+							</m.ul>
 						</div>
 					</div>
 				</div>

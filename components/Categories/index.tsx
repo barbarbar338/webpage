@@ -1,11 +1,20 @@
-import { Link } from "@components/Link";
+import { CategoryCard } from "@components/CategoryCard";
 import { ILabel } from "@libs/graphql";
+import { m, Variants } from "framer-motion";
 import { FC } from "react";
-import Tilt from "react-tilt";
 
 export interface ICategories {
 	categories: ILabel[];
 }
+
+const container: Variants = {
+	visible: {
+		transition: {
+			delayChildren: 0.3,
+			staggerChildren: 0.2,
+		},
+	},
+};
 
 export const Categories: FC<ICategories> = ({ categories }) => {
 	return (
@@ -13,33 +22,11 @@ export const Categories: FC<ICategories> = ({ categories }) => {
 			<h1 className="mb-4 text-xl font-bold text-gray-700 dark:text-white">
 				Categories
 			</h1>
-			<ul>
+			<m.ul variants={container} initial="hidden" animate="visible">
 				{categories.map((category, idx) => (
-					<Tilt
-						key={idx}
-						className="Tilt"
-						options={{
-							max: 25,
-							reverse: false,
-							scale: 1.05,
-						}}
-					>
-						<li
-							className="m-1 flex flex-col max-w-sm p-2 mx-auto bg-white rounded-t-xl rounded-bl-xl shadow-md dark:bg-gray-800"
-							style={{
-								backgroundColor: `#${category.color}`,
-							}}
-						>
-							<Link
-								href={`/blog/category/${category.id}`}
-								className="text-black"
-							>
-								{category.name}
-							</Link>
-						</li>
-					</Tilt>
+					<CategoryCard category={category} key={idx} />
 				))}
-			</ul>
+			</m.ul>
 		</div>
 	);
 };
