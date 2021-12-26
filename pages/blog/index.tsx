@@ -1,4 +1,4 @@
-import type { GetStaticPropsResult, NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import { Layout } from "@components/Layout";
 import {
 	getCategories,
@@ -11,6 +11,7 @@ import { BlogNavbar } from "@components/BlogNavbar";
 import { PinnedPosts } from "@components/PinnedPosts";
 import { Categories } from "@components/Categories";
 import { Posts } from "@components/Posts";
+import { CONFIG } from "@libs/config";
 
 interface IBlogProps {
 	pinned: IPost[];
@@ -39,9 +40,7 @@ const BlogPage: NextPage<IBlogProps> = ({ pinned, categories, posts }) => {
 
 export default BlogPage;
 
-export async function getStaticProps(): Promise<
-	GetStaticPropsResult<IBlogProps>
-> {
+export const getStaticProps: GetStaticProps<IBlogProps> = async () => {
 	const pinned = await getPinnedPosts();
 	const categories = await getCategories();
 	const posts = await getPosts();
@@ -52,6 +51,6 @@ export async function getStaticProps(): Promise<
 			categories,
 			posts,
 		},
-		revalidate: 60 * 15,
+		revalidate: CONFIG.REVALIDATION,
 	};
-}
+};
