@@ -70,9 +70,7 @@ export const getStaticProps: GetStaticProps<ICategoryProps> = async (ctx) => {
 	);
 	const pinned = await getPinnedPosts();
 	const categories = await getCategories();
-
-	console.log(posts);
-
+	
 	return {
 		props: {
 			posts,
