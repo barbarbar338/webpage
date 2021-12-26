@@ -2,26 +2,18 @@ import { Link } from "@components/Link";
 import { PostCard } from "@components/PostCard";
 import { IPost } from "@libs/graphql";
 import { FC, Fragment } from "react";
-import { m, Variants } from "framer-motion";
+import { m } from "framer-motion";
+import { CONFIG } from "@libs/config";
 
 export interface IPosts {
 	posts: IPost[];
 	title?: string;
 }
 
-const container: Variants = {
-	visible: {
-		transition: {
-			delayChildren: 0.3,
-			staggerChildren: 0.2,
-		},
-	},
-};
-
 export const Posts: FC<IPosts> = ({ posts, title }) => {
 	return (
 		<m.div
-			variants={container}
+			variants={CONFIG.VARIANTS.container}
 			initial="hidden"
 			animate="visible"
 			className="w-full lg:w-8/12"

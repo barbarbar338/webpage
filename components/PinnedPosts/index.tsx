@@ -1,25 +1,17 @@
 import { PinnedCard } from "@components/PinnedCard";
 import { IPost } from "@libs/graphql";
 import { FC } from "react";
-import { m, Variants } from "framer-motion";
+import { m } from "framer-motion";
+import { CONFIG } from "@libs/config";
 
 interface IPinnedPosts {
 	posts: IPost[];
 }
 
-const container: Variants = {
-	visible: {
-		transition: {
-			delayChildren: 0.3,
-			staggerChildren: 0.2,
-		},
-	},
-};
-
 export const PinnedPosts: FC<IPinnedPosts> = ({ posts }) => {
 	return (
 		<m.div
-			variants={container}
+			variants={CONFIG.VARIANTS.container}
 			initial="hidden"
 			animate="visible"
 			className="px-8 mt-10"

@@ -2,19 +2,12 @@ import Tilt from "react-tilt";
 import { Link } from "@components/Link";
 import { ILabel } from "@libs/graphql";
 import { FC } from "react";
-import { m, Variants } from "framer-motion";
+import { m } from "framer-motion";
+import { CONFIG } from "@libs/config";
 
 export interface ICategoryCard {
 	category: ILabel;
 }
-
-const item: Variants = {
-	hidden: { y: 20, opacity: 0 },
-	visible: {
-		y: 0,
-		opacity: 1,
-	},
-};
 
 export const CategoryCard: FC<ICategoryCard> = ({ category }) => {
 	return (
@@ -27,7 +20,7 @@ export const CategoryCard: FC<ICategoryCard> = ({ category }) => {
 			}}
 		>
 			<m.li
-				variants={item}
+				variants={CONFIG.VARIANTS.item}
 				className="m-1 flex flex-col max-w-sm p-2 mx-auto bg-white rounded-t-xl rounded-bl-xl shadow-md dark:bg-gray-800"
 				style={{
 					backgroundColor: `#${category.color}`,

@@ -3,31 +3,11 @@ import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
 import { getCommits, ICommitsData } from "@libs/graphql";
 import { Link } from "@components/Link";
-import { Variants, m } from "framer-motion";
+import { m } from "framer-motion";
 
 export interface IChangelogProps {
 	commitsData: ICommitsData;
 }
-
-const container: Variants = {
-	hidden: { opacity: 1, scale: 0 },
-	visible: {
-		opacity: 1,
-		scale: 1,
-		transition: {
-			delayChildren: 0.3,
-			staggerChildren: 0.2,
-		},
-	},
-};
-
-const item: Variants = {
-	hidden: { y: 20, opacity: 0 },
-	visible: {
-		y: 0,
-		opacity: 1,
-	},
-};
 
 const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 	return (
@@ -57,7 +37,7 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 							</p>
 							<h2>Last 30 commits:</h2>
 							<m.ul
-								variants={container}
+								variants={CONFIG.VARIANTS.container}
 								initial="hidden"
 								animate="visible"
 							>
@@ -66,17 +46,27 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 										const commits =
 											commitsData.commits[date];
 										return (
-											<m.li variants={item} key={idx}>
+											<m.li
+												variants={CONFIG.VARIANTS.item}
+												key={idx}
+											>
 												{date}
 												<m.ul
-													variants={container}
+													variants={
+														CONFIG.VARIANTS
+															.container
+													}
 													initial="hidden"
 													animate="visible"
 												>
 													{commits.map(
 														(commit, idx) => (
 															<m.li
-																variants={item}
+																variants={
+																	CONFIG
+																		.VARIANTS
+																		.item
+																}
 																key={idx}
 															>
 																<Link
