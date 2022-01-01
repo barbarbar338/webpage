@@ -118,13 +118,50 @@ export const getPostData = async (no: number): Promise<IPostData> => {
 	return post;
 };
 
+export const getPinnedRepos = async (): Promise<IStarredRepo[]> => {
+	const { data } = await apollo.query({
+		query: gql`
+			{
+				user(login: "${CONFIG.BLOG.discussions.username}") {
+					pinnedItems(first: 6, types: REPOSITORY) {
+						nodes {
+							... on Repository {
+								name
+								url
+								stargazerCount
+								primaryLanguage {
+									name
+									color
+								}
+								description
+							}
+						}
+					}
+				}
+			}
+		`,
+	});
+
+	const repos: IStarredRepo[] = data.user.pinnedItems.nodes.map((r) => {
+		return {
+			description: r.description,
+			name: r.name,
+			primaryLanguage: r.primaryLanguage,
+			stargazerCount: r.stargazerCount,
+			url: r.url,
+		} as IStarredRepo;
+	});
+
+	return repos;
+};
+
 export const getMostStarredRepos = async (): Promise<IStarredRepo[]> => {
 	const { data } = await apollo.query({
 		query: gql`
 			{
 				user(login: "${CONFIG.BLOG.discussions.username}") {
 					repositories(
-						first: 15
+						first: 6
 						orderBy: { field: STARGAZERS, direction: DESC }
 					) {
 						edges {
