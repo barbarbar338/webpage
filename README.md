@@ -1,7 +1,7 @@
 # 🔥 My Personal Web Page Source
 
 Made with ❤ using [TypeScript](https://www.typescriptlang.org/), [NextJS](https://nextjs.org/) and [TailwindCSS](https://tailwindcss.com/)
-See https://barbarbar338.fly.dev for live demo
+See https://338.rocks for live demo
 ![preview](assets/preview.png)
 
 # 🏃‍♀️ Running

@@ -4,7 +4,11 @@ import { About } from "@components/About";
 import { Layout } from "@components/Layout";
 import { Contact } from "@components/Contact";
 import { Projects } from "@components/Projects";
-import { getMostStarredRepos, getPinnedRepos, IStarredRepo } from "@libs/graphql";
+import {
+	getMostStarredRepos,
+	getPinnedRepos,
+	IStarredRepo,
+} from "@libs/graphql";
 import { CONFIG } from "@libs/config";
 
 export interface IIndexPage {
@@ -32,7 +36,7 @@ export const getStaticProps: GetStaticProps<IIndexPage> = async () => {
 	return {
 		props: {
 			repos,
-			pinned
+			pinned,
 		},
 		revalidate: CONFIG.REVALIDATION,
 	};
