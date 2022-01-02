@@ -230,7 +230,7 @@ export const getPosts = async (): Promise<IPost[]> => {
 		query: gql`
 			{
 				repository(owner: "${CONFIG.BLOG.discussions.username}", name: "${CONFIG.BLOG.discussions.repo}") {
-					discussions(first: 100) {
+					discussions(first: 100, orderBy: { direction: DESC, field: CREATED_AT }) {
 						edges {
 							node {
 								title
