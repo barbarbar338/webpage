@@ -89,18 +89,27 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 	return {
 		paths,
-		fallback: false,
+		fallback: true,
 	};
 };
 
 export const getStaticProps: GetStaticProps<IPostProps> = async (ctx) => {
 	const id = parseInt(ctx.params.id as string);
-	const post = await getPostData(id);
+	try {
+		const post = await getPostData(id);
 
-	return {
-		props: {
-			post,
-		},
-		revalidate: CONFIG.REVALIDATION,
-	};
+		return {
+			props: {
+				post,
+			},
+			revalidate: CONFIG.REVALIDATION,
+		};
+	} catch (e) {
+		return {
+			redirect: {
+				permanent: false,
+				destination: "/404",
+			},
+		};
+	}
 };
