@@ -39,6 +39,10 @@ const links = [
 		href: "/blog",
 	},
 	{
+		name: "Bookmarks",
+		href: "/bookmarks",
+	},
+	{
 		name: "Changelog",
 		href: "/changelog",
 	},
