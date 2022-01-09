@@ -24,10 +24,10 @@ export const getStaticProps: GetStaticProps<IBookmarksPage> = async () => {
 	const token = process.env.STORAGE_AUTH_TOKEN as string;
 
 	const { data } = await axios.get(`${url}/v1/bookmark`, {
-        headers: {
-            Authorization: token,
-        }
-    });
+		headers: {
+			Authorization: token,
+		},
+	});
 
 	return {
 		props: {

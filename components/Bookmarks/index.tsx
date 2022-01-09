@@ -2,12 +2,12 @@ import { Bookmark, IBookmark } from "@components/Bookmark";
 import { FC } from "react";
 
 export interface IBookmarks {
-    bookmarks: IBookmark[];
+	bookmarks: IBookmark[];
 }
 
 export const Bookmarks: FC<IBookmarks> = ({ bookmarks }) => {
-    return (
-        <section
+	return (
+		<section
 			id="projects"
 			className="min-h-screen py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white"
 		>
@@ -22,5 +22,5 @@ export const Bookmarks: FC<IBookmarks> = ({ bookmarks }) => {
 				</div>
 			</div>
 		</section>
-    )
-}
+	);
+};

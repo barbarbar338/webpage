@@ -109,7 +109,7 @@ export const getStaticProps: GetStaticProps<IPostProps> = async (ctx) => {
 				redirect: {
 					permanent: false,
 					destination: "/404",
-				}
+				},
 			};
 		});
 };
