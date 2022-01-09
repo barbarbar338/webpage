@@ -29,6 +29,7 @@ export const CONFIG = {
 	EXPERIENCE,
 	TITLE: "back-end developer",
 	BIO: `I am a student from Turkey who codes for fun. I have been in coding since ${STARTED_AT} and I started my career first by making simple websites. I have been using JavaScript (Node & Client-side) for ${EXPERIENCE} years. Now I'm trying to produce lots of open source projects and working as freelancer.`,
+	GA_TRACKING_ID: "G-14SS6XWKC1",
 	IMPORTANT_SKILLS: [
 		"JavaScript (Node & Client-Side)",
 		"TypeScript",
