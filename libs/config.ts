@@ -16,6 +16,28 @@ export interface IFramework {
 	icon: string;
 }
 
+const SEO = {
+	layoutTitle: "%s - Barış DEMİRCİ",
+	title: "Home - Barış DEMİRCİ",
+	publishDomain: "https://338.rocks",
+	themeColor: "#6D28D9",
+	keywords: [
+		"baris",
+		"demirci",
+		"barbarbar338",
+		"barbar",
+		"338",
+		"hammer",
+		"projecthammer",
+		"blog",
+		"react",
+		"next",
+		"reactjs",
+		"nextjs",
+	],
+	description: "Welcome to barbarbar338's profile!",
+};
+
 export const CONFIG = {
 	NAME: "Barış",
 	SURNAME: "DEMİRCİ",
@@ -122,4 +144,5 @@ export const CONFIG = {
 			},
 		},
 	},
+	SEO,
 };

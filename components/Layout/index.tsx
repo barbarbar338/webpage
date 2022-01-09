@@ -5,6 +5,8 @@ import { NextSeo } from "next-seo";
 import { Navbar } from "@components/Navbar";
 import { Alert } from "@components/Alert";
 import { useLocalStorage } from "react-use";
+import { useRouter } from "next/router";
+import { CONFIG } from "@libs/config";
 
 export interface ILayout {
 	title: string;
@@ -13,6 +15,7 @@ export interface ILayout {
 export const Layout: FC<ILayout> = ({ title, children }) => {
 	const [check, setCheck] = useLocalStorage("domain_check", false);
 	const [show, setShow] = useState(false);
+	const router = useRouter();
 
 	useEffect(() => {
 		if (!window.location.hostname.includes("338.rocks") && !check) {
@@ -27,7 +30,10 @@ export const Layout: FC<ILayout> = ({ title, children }) => {
 
 	return (
 		<div className="select-none">
-			<NextSeo title={title} />
+			<NextSeo
+				title={title}
+				canonical={`${CONFIG.SEO.publishDomain}${router.pathname}`}
+			/>
 			<LazyMotion features={domAnimation}>
 				<Navbar />
 				{show && (

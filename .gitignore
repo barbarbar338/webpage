@@ -27,3 +27,7 @@ yarn-error.log*
 # Lockfiles
 yarn.lock
 package-lock.json
+
+# sitemap
+sitemap.xml
+robots.txt

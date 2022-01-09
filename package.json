@@ -11,6 +11,7 @@
 	"scripts": {
 		"dev": "next-remote-watch",
 		"build": "next build",
+		"postbuild": "next-sitemap",
 		"start": "next start --port 8080",
 		"lint": "next lint",
 		"format": "prettier --write .",
@@ -55,6 +56,7 @@
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
 		"next-remote-watch": "^1.0.0",
+		"next-sitemap": "^1.6.261",
 		"onchange": "^7.1.0",
 		"postcss": "^8.4.5",
 		"prettier": "^2.5.1",

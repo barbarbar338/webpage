@@ -32,9 +32,47 @@ const App = ({ Component, pageProps }) => {
 	return (
 		<>
 			<Head>
-				<meta name="og:image" content={Favicon} />
-				<meta name="twitter:image" content={Favicon} />
+				<title>{CONFIG.SEO.title}</title>
+				<link rel="manifest" href="/manifest.json" />
 				<link rel="icon" href={Favicon} />
+				<link rel="canonical" href={CONFIG.SEO.publishDomain} />
+				<meta charSet="utf-8" />
+				<meta name="HandheldFriendly" content="true" />
+				<meta
+					name="copyright"
+					content="Barış DEMİRCİ, demirci.baris38@gmail.com"
+				/>
+				<meta name="theme-color" content={CONFIG.SEO.themeColor} />
+				<meta
+					name="author"
+					content="Barış DEMİRCİ, demirci.baris38@gmail.com"
+				/>
+				<meta name="keywords" content={CONFIG.SEO.keywords.join(",")} />
+				<meta name="description" content={CONFIG.SEO.description} />
+				<meta property="og:title" content={CONFIG.SEO.title} />
+				<meta
+					property="og:description"
+					content={CONFIG.SEO.description}
+				/>
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content={CONFIG.SEO.publishDomain} />
+				<meta property="og:site_name" content={CONFIG.SEO.title} />
+				<meta property="og:image" content={Favicon} />
+				<meta property="og:locale" content="en_GB" />
+				<meta property="og:locale:alternate" content="tr_TR" />
+				<meta property="og:locale:alternate" content="en_US" />
+				<meta
+					property="twitter:url"
+					content={CONFIG.SEO.publishDomain}
+				/>
+				<meta property="twitter:title" content={CONFIG.SEO.title} />
+				<meta
+					property="twitter:description"
+					content={CONFIG.SEO.description}
+				/>
+				<meta property="twitter:image" content={Favicon} />
+
+				<meta property="twitter:card" content={Favicon} />
 			</Head>
 			<ThemeProvider defaultTheme="dark" attribute="class">
 				<Script
@@ -58,8 +96,8 @@ const App = ({ Component, pageProps }) => {
 					}}
 				/>
 				<Script src="https://cdn.polyfill.io/v3/polyfill.min.js" />
-				<NextProgress color="#6D28D9" />
-				<DefaultSeo titleTemplate="%s - Barış DEMİRCİ" />
+				<NextProgress color={CONFIG.SEO.themeColor} />
+				<DefaultSeo titleTemplate={CONFIG.SEO.layoutTitle} />
 				<Component {...pageProps} />
 				<ToastContainer position="bottom-right" />
 			</ThemeProvider>
