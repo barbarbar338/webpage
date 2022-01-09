@@ -2,20 +2,21 @@ import type { FC } from "react";
 import { Fragment, useEffect, useState } from "react";
 import Favicon from "@assets/icon.svg";
 import { Link } from "@components/Link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faArrowUp,
-	faBars,
-	faLaptop,
-	faTimes,
-} from "@fortawesome/free-solid-svg-icons";
 import { NavbarSeperator } from "@components/NavbarSeperator";
 import { useTheme } from "next-themes";
-import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { m } from "framer-motion";
 import { CONFIG } from "@libs/config";
 import { CustomImage } from "@components/CustomImage";
 import classnames from "classnames";
+import {
+	FiArrowUp,
+	FiMenu,
+	FiMonitor,
+	FiMoon,
+	FiSun,
+	FiX,
+} from "react-icons/fi";
+import { IconType } from "react-icons";
 
 const links = [
 	{
@@ -53,8 +54,31 @@ export const Navbar: FC = () => {
 	const [hash, setHash] = useState("");
 	const [top, setTop] = useState(false);
 	const { theme, setTheme } = useTheme();
-	const [icon, setIcon] = useState(faSun);
 	const [color, setColor] = useState<"yellow" | "gray" | "blue">("yellow");
+
+	const getIcon = () => {
+		let Icon: IconType;
+		switch (theme) {
+			case "dark":
+				Icon = FiMoon;
+				break;
+			case "light":
+				Icon = FiSun;
+				break;
+			default:
+				Icon = FiMonitor;
+				break;
+		}
+		return (
+			<Icon
+				className={classnames("text-bold", "h-full", "w-full", "p-2", {
+					"text-yellow-400": color === "yellow",
+					"text-gray-400": color === "gray",
+					"text-blue-400": color === "blue",
+				})}
+			/>
+		);
+	};
 
 	const onClose = () => {
 		setVisible(!visible);
@@ -64,22 +88,18 @@ export const Navbar: FC = () => {
 		switch (theme) {
 			case "light":
 				setTheme("dark");
-				setIcon(faMoon);
 				setColor("blue");
 				break;
 			case "dark":
 				setTheme("system");
-				setIcon(faLaptop);
 				setColor("gray");
 				break;
 			case "system":
 				setTheme("light");
-				setIcon(faSun);
 				setColor("yellow");
 				break;
 			default:
 				setTheme("system");
-				setIcon(faLaptop);
 				setColor("gray");
 				break;
 		}
@@ -88,19 +108,15 @@ export const Navbar: FC = () => {
 	useEffect(() => {
 		switch (theme) {
 			case "light":
-				setIcon(faSun);
 				setColor("yellow");
 				break;
 			case "dark":
-				setIcon(faMoon);
 				setColor("blue");
 				break;
 			case "system":
-				setIcon(faLaptop);
 				setColor("gray");
 				break;
 			default:
-				setIcon(faSun);
 				setColor("yellow");
 				break;
 		}
@@ -146,10 +162,7 @@ export const Navbar: FC = () => {
 						onClick={onClose}
 						className="flex items-center text-gray-900 dark:text-white p-3 focus:outline-none"
 					>
-						<FontAwesomeIcon
-							icon={faBars}
-							className="block h-4 w-4 fill-current"
-						/>
+						<FiMenu className="block h-4 w-4 fill-current" />
 					</button>
 				</div>
 				<ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
@@ -216,10 +229,7 @@ export const Navbar: FC = () => {
 							onClick={onClose}
 							className="focus:outline-none"
 						>
-							<FontAwesomeIcon
-								icon={faTimes}
-								className="h-6 w-6 cursor-pointer text-black dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-500"
-							/>
+							<FiX className="h-6 w-6 cursor-pointer text-black dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-500" />
 						</button>
 					</div>
 					<div>
@@ -286,10 +296,7 @@ export const Navbar: FC = () => {
 						<div className="text-center">
 							{CONFIG.CONTACT.map((social, idx) => (
 								<Link underline key={idx} href={social.href}>
-									<FontAwesomeIcon
-										icon={social.icon}
-										className="inline-block text-black dark:text-white mx-2"
-									/>
+									<social.icon className="inline-block text-black dark:text-white mx-2" />
 								</Link>
 							))}
 						</div>
@@ -324,7 +331,7 @@ export const Navbar: FC = () => {
 					},
 				)}
 			>
-				<FontAwesomeIcon icon={faArrowUp} />
+				<FiArrowUp className="h-full w-full p-2" />
 			</m.button>
 			<m.button
 				aria-label="Change Theme"
@@ -335,14 +342,7 @@ export const Navbar: FC = () => {
 				onClick={onTheme}
 				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-600 rounded-l-full rounded-t-full focus:outline-none"
 			>
-				<FontAwesomeIcon
-					icon={icon}
-					className={classnames("text-bold", {
-						"text-yellow-400": color === "yellow",
-						"text-gray-400": color === "gray",
-						"text-blue-400": color === "blue",
-					})}
-				/>
+				{getIcon()}
 			</m.button>
 		</>
 	);

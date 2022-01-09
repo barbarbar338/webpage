@@ -1,8 +1,7 @@
 import type { FC } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CONFIG } from "@libs/config";
 import { Link } from "@components/Link";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FiHeart } from "react-icons/fi";
 
 export const Footer: FC = () => {
 	return (
@@ -10,8 +9,7 @@ export const Footer: FC = () => {
 			<div className="flex pb-5 px-3 m-auto pt-5 text-gray-600 dark:text-gray-300 text-sm flex-col md:flex-row max-w-6xl">
 				<div className="mt-2">
 					&copy; {CONFIG.NOW} All rights reserved. Made with{" "}
-					<FontAwesomeIcon icon={faHeart} className="text-red-500" />{" "}
-					by{" "}
+					<FiHeart className="text-red-500 inline" /> by{" "}
 					<Link
 						underline
 						href="https://github.com/barbarbar338"
@@ -44,7 +42,7 @@ export const Footer: FC = () => {
 							href={social.href}
 							className="w-6 mx-1"
 						>
-							<FontAwesomeIcon icon={social.icon} />
+							<social.icon />
 						</Link>
 					))}
 				</div>

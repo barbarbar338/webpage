@@ -1,13 +1,12 @@
-import {
-	faCheck,
-	faExclamationTriangle,
-	faInfo,
-	faSkullCrossbones,
-	faTimes,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 import { FC } from "react";
+import {
+	FiAlertOctagon,
+	FiCheckCircle,
+	FiInfo,
+	FiX,
+	FiXOctagon,
+} from "react-icons/fi";
 
 export interface IAlertProps {
 	type: "success" | "warning" | "error" | "info";
@@ -17,10 +16,10 @@ export interface IAlertProps {
 }
 
 const icons = {
-	success: faCheck,
-	warning: faExclamationTriangle,
-	error: faSkullCrossbones,
-	info: faInfo,
+	success: FiCheckCircle,
+	warning: FiAlertOctagon,
+	error: FiXOctagon,
+	info: FiInfo,
 };
 
 const bgColors = {
@@ -38,6 +37,8 @@ const textColors = {
 };
 
 export const Alert: FC<IAlertProps> = ({ message, type, title, onClose }) => {
+	const Icon = icons[type];
+
 	return (
 		<div
 			className={classNames(
@@ -51,10 +52,7 @@ export const Alert: FC<IAlertProps> = ({ message, type, title, onClose }) => {
 			)}
 			role="alert"
 		>
-			<FontAwesomeIcon
-				icon={icons[type]}
-				className="w-5 h-5 inline mr-3"
-			/>
+			<Icon className="w-5 h-5 inline mr-3" />
 			<div>
 				<span className="font-medium">{title}:</span> {message}
 			</div>
@@ -63,10 +61,7 @@ export const Alert: FC<IAlertProps> = ({ message, type, title, onClose }) => {
 					onClick={onClose}
 					className="flex flex-auto flex-row-reverse"
 				>
-					<FontAwesomeIcon
-						icon={faTimes}
-						className="w-5 h-5 cursor-pointer"
-					/>
+					<FiX className="w-5 h-5 cursor-pointer" />
 				</div>
 			)}
 		</div>

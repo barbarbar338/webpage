@@ -1,15 +1,14 @@
-import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import type { IconType } from "react-icons";
 import type { FC } from "react";
 import Tilt from "react-tilt";
 import { Tippy } from "@components/Tippy";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "@components/Link";
 import classnames from "classnames";
 import { useCopyToClipboard } from "react-use";
 import { toast } from "react-toastify";
 
 export interface IAccountCardProps {
-	icon: IconDefinition;
+	icon: IconType;
 	name: string;
 	value: string;
 	href?: string;
@@ -23,6 +22,8 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	value,
 	color,
 }) => {
+	const Icon = icon;
+
 	const [, copyToClipboard] = useCopyToClipboard();
 
 	const onCopy = () => {
@@ -36,10 +37,7 @@ export const AccountCard: FC<IAccountCardProps> = ({
 			className="cursor-pointer px-4 pt-4 bg-gray-200 dark:bg-gray-800 rounded-t-xl rounded-bl-xl h-full text-black dark:text-white"
 		>
 			<div className="flex items-center justify-center">
-				<FontAwesomeIcon
-					icon={icon}
-					className={classnames("text-6xl", color)}
-				/>
+				<Icon className={classnames("text-6xl", color)} />
 			</div>
 			<span className="line-clamp-2 text-center h-12 text-xl">
 				{name}

@@ -1,8 +1,7 @@
 import type { FC } from "react";
 import Tilt from "react-tilt";
 import { Tippy } from "@components/Tippy";
-import { faStar } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FiStar } from "react-icons/fi";
 import { Link } from "@components/Link";
 import { IStarredRepo } from "@libs/graphql";
 
@@ -33,10 +32,7 @@ export const RepoCard: FC<IStarredRepo> = ({
 								<div className="flex items-center space-x-1">
 									<div className="flex items-center space-x-1">
 										<span>{stargazerCount}</span>{" "}
-										<FontAwesomeIcon
-											icon={faStar}
-											className="w-6 h-6 text-yellow-600"
-										/>
+										<FiStar className="w-6 h-6 text-yellow-600" />
 									</div>
 								</div>
 							</div>

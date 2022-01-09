@@ -1,5 +1,4 @@
 import type { ChangeEvent, FC, FormEvent } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CONFIG } from "@libs/config";
 import { m } from "framer-motion";
 import { useState } from "react";
@@ -95,10 +94,7 @@ export const Contact: FC = () => {
 						href={social.href}
 						className="px-4 flex items-center"
 					>
-						<FontAwesomeIcon
-							icon={social.icon}
-							className="inline-block w-6 h-6 mr-3 text-purple-600"
-						/>
+						<social.icon className="inline-block w-6 h-6 mr-3 text-purple-600" />
 						{social.value}
 					</Link>
 				))}

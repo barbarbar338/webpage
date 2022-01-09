@@ -3,11 +3,10 @@ import { Layout } from "@components/Layout";
 import { getPostData, IPostData, getPosts } from "@libs/graphql";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Giscus } from "@giscus/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "@components/Link";
 import { CONFIG } from "@libs/config";
 import { useTheme } from "next-themes";
+import { FiArrowLeft } from "react-icons/fi";
 
 export interface IPostProps {
 	post: IPostData;
@@ -23,12 +22,12 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 					<div className="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
 						<div className="font-sans">
 							<p className="text-base md:text-sm text-purple-500 font-bold">
-								<FontAwesomeIcon icon={faLongArrowAltLeft} />{" "}
 								<Link
 									href="/blog"
 									className="text-base md:text-sm uppercase text-purple-500 font-bold no-underline hover:underline"
 								>
-									Back to blog
+									<FiArrowLeft className="inline" /> Back to
+									blog
 								</Link>
 							</p>
 							<h1 className="font-bold font-sans break-normal text-black dark:text-white pt-6 pb-2 text-3xl md:text-4xl">
