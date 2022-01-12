@@ -16,6 +16,7 @@ import {
 	FaStackOverflow,
 	FaSteam,
 } from "react-icons/fa";
+import { SiFiverr } from "react-icons/si";
 
 export const DISCORD_ID = "331846231514939392";
 
@@ -65,6 +66,20 @@ export const CONTACT = [
 ];
 
 export const SOCIALS = [
+	{
+		href: "https://www.linkedin.com/in/barbarbar338/",
+		icon: FiLinkedin,
+		name: "Linkedin",
+		value: "barbarbar338",
+		color: "text-blue-500",
+	},
+	{
+		href: "https://www.fiverr.com/barbarbar338",
+		icon: SiFiverr,
+		name: "Fiverr",
+		value: "barbarbar338",
+		color: "text-green-500",
+	},
 	{
 		href: `discord://click-me/users/${DISCORD_ID}`,
 		icon: FaDiscord,
@@ -121,7 +136,7 @@ export const SOCIALS = [
 		href: "https://stackoverflow.com/users/10124281/barbarbar338",
 		icon: FaStackOverflow,
 		name: "StackOverFlow",
-		value: "1149106680",
+		value: "barbarbar338",
 		color: "text-yellow-500",
 	},
 	{
@@ -130,12 +145,5 @@ export const SOCIALS = [
 		name: "NPM",
 		value: "leydihavuc",
 		color: "text-red-500",
-	},
-	{
-		href: "https://www.linkedin.com/in/barbarbar338/",
-		icon: FiLinkedin,
-		name: "Linkedin",
-		value: "barbarbar338",
-		color: "text-blue-500",
 	},
 ];
