@@ -53,7 +53,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 	return {
 		paths,
-		fallback: false,
+		fallback: "blocking",
 	};
 };
 
@@ -66,16 +66,26 @@ export const getStaticProps: GetStaticProps<ICategoryProps> = async (ctx) => {
 	const posts = allPosts.filter((post) =>
 		post.labels.some((label) => label.id == id && (tag = label)),
 	);
-	const pinned = await getPinnedPosts();
-	const categories = await getCategories();
 
-	return {
-		props: {
-			posts,
-			pinned,
-			categories,
-			tag,
-		},
-		revalidate: CONFIG.REVALIDATION,
-	};
+	if (!tag) {
+		return {
+			redirect: {
+				permanent: false,
+				destination: "/404",
+			},
+		};
+	} else {
+		const pinned = await getPinnedPosts();
+		const categories = await getCategories();
+
+		return {
+			props: {
+				posts,
+				pinned,
+				categories,
+				tag,
+			},
+			revalidate: CONFIG.REVALIDATION,
+		};
+	}
 };
