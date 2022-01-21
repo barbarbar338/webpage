@@ -7,6 +7,7 @@ import { Alert } from "@components/Alert";
 import { useLocalStorage } from "react-use";
 import { useRouter } from "next/router";
 import { CONFIG } from "@libs/config";
+import { Link } from "@components/Link";
 
 export interface ILayout {
 	title: string;
@@ -41,9 +42,19 @@ export const Layout: FC<ILayout> = ({ title, children }) => {
 						<Alert
 							type="warning"
 							title="New Domain"
-							message="I have migrated to a new domain name. Now when entering this site, make sure it says https://338.rocks in the address bar!"
 							onClose={handleClose}
-						/>
+						>
+							I have migrated to a new domain name. Now when
+							entering this site, make sure it says{" "}
+							<Link
+								href="https://338.rocks"
+								underline
+								className="text-blue-500 hover:text-blue-400"
+							>
+								https://338.rocks
+							</Link>{" "}
+							in the address bar!
+						</Alert>
 					</div>
 				)}
 				{children}
