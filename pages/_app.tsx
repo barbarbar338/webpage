@@ -77,6 +77,14 @@ const App = ({ Component, pageProps }) => {
 			<ThemeProvider defaultTheme="dark" attribute="class">
 				<Script
 					strategy="afterInteractive"
+					data-domain={CONFIG.SEO.publishDomain.replace(
+						"https://",
+						"",
+					)}
+					src="https://plausible.io/js/plausible.js"
+				/>
+				<Script
+					strategy="afterInteractive"
 					src={`https://www.googletagmanager.com/gtag/js?id=${CONFIG.GA_TRACKING_ID}`}
 				/>
 				<Script
