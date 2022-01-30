@@ -15,6 +15,7 @@ import "@styles/index.scss";
 import "@styles/blog.scss";
 import "tippy.js/dist/tippy.css";
 import "react-toastify/dist/ReactToastify.css";
+import "highlight.js/styles/tomorrow-night-bright.css";
 
 const App = ({ Component, pageProps }) => {
 	const router = useRouter();

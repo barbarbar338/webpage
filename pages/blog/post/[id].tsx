@@ -7,6 +7,8 @@ import { Link } from "@components/Link";
 import { CONFIG } from "@libs/config";
 import { useTheme } from "next-themes";
 import { FiArrowLeft } from "react-icons/fi";
+import hljs from "highlight.js";
+import { useEffect } from "react";
 
 export interface IPostProps {
 	post: IPostData;
@@ -14,6 +16,25 @@ export interface IPostProps {
 
 const PostPage: NextPage<IPostProps> = ({ post }) => {
 	const { theme } = useTheme();
+
+	useEffect(() => {
+		const codeBlocks = document.querySelectorAll(".highlight");
+		for (const element of codeBlocks) {
+			const content = element.getAttribute(
+				"data-snippet-clipboard-copy-content",
+			);
+			const match = element.className.match(/highlight-source-([a-z]+)/);
+
+			let language = "js";
+			if (match) language = match[1];
+
+			const highlighted = hljs.highlight(content, {
+				language: language,
+			}).value;
+
+			element.innerHTML = `<pre>${highlighted}</pre>`;
+		}
+	}, []);
 
 	return (
 		<Layout title={post.title}>
