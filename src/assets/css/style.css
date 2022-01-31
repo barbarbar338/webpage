@@ -1,5 +1,7 @@
 * {
 	font-family: "Roboto Mono", serif;
+	background-color: #2c2f33 !important;
+	color: white;
 }
 
 .centered {
@@ -30,6 +32,7 @@ a.grow {
 	width: 4rem;
 	height: 4rem;
 	font-size: 2rem;
+	margin: 0.5rem;
 }
 
 .grow:hover,
