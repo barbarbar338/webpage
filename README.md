@@ -1,7 +1,7 @@
 # 🔥 My Personal Web Page Source
 
-Made with ❤ using [BootstrapCSS](https://getbootstrap.com/) and [Preact](https://preactjs.com/).
-![preview](src/assets/preview.png)
+Made with ❤ using [BootstrapCSS](https://getbootstrap.com/) and [React](https://reactjs.org/).
+![preview](public/preview.png)
 
 # ⌚ Changelog
 
@@ -11,3 +11,6 @@ Made with ❤ using [BootstrapCSS](https://getbootstrap.com/) and [Preact](https
 -   v2
     -   **Created At:** Oct 23, 2020
     -   **Deprecated At:** Oct 26, 2020
+-   v3
+    -   **Created At:** Oct 26, 2020
+    -   **Deprecated At:** Dec 8, 2020
