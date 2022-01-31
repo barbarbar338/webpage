@@ -1,0 +1,24 @@
+.wrapper {
+	@apply flex items-center justify-between;
+	.left {
+		@apply flex items-center justify-center;
+		.name {
+			@apply flex items-center justify-center text-3xl font-bold text-gray-800 cursor-pointer;
+		}
+		.links {
+			@apply hidden lg:flex items-center justify-center antialiased lg:ml-20 pt-1;
+			span {
+				@apply flex items-center cursor-pointer justify-center mr-10 text-base text-gray-600 text-opacity-90 font-medium tracking-tight hover:text-gray-700 transition duration-150 ease-in-out;
+			}
+		}
+	}
+	.right {
+		@apply hidden md:flex items-center justify-center;
+		.link {
+			@apply mr-5 text-lg font-medium cursor-pointer text-gray-600 hover:text-gray-700 transition duration-150 ease-in-out;
+		}
+		.btn {
+			@apply px-6 py-3 rounded-3xl font-medium bg-gradient-to-b from-gray-900 to-black text-white outline-none cursor-pointer focus:outline-none hover:shadow-md hover:from-gray-900 transition duration-200 ease-in-out;
+		}
+	}
+}

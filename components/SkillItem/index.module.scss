@@ -1,0 +1,9 @@
+.item {
+	@apply mt-2 cursor-pointer bg-gray-500 rounded-full;
+	.bg {
+		@apply mt-2 py-1 text-center rounded-full;
+		.text {
+			@apply text-white text-sm inline-block px-2 rounded-full;
+		}
+	}
+}

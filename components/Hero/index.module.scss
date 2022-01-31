@@ -1,0 +1,12 @@
+.hero {
+	@apply text-left lg:w-2/6 xl:w-2/4 mt-20 lg:mt-40 lg:ml-16;
+	.small {
+		@apply text-xl text-gray-500 leading-none;
+	}
+	.name {
+		@apply text-6xl font-semibold text-gray-900 leading-none;
+	}
+	.title {
+		@apply mt-6 text-xl font-light text-gray-500 antialiased;
+	}
+}
