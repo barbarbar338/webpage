@@ -4,6 +4,23 @@ Made with ❤ using [TypeScript](https://www.typescriptlang.org/), [NextJS](http
 See https://338.rocks for live demo
 ![preview](assets/preview.png)
 
+# ⌚ Changelog
+
+- v1:
+    - **Created At:** May 29, 2020
+    - **Deprecated At:** Oct 23, 2020
+- v2
+    - **Created At:** Oct 23, 2020
+    - **Deprecated At:** Oct 26, 2020
+- v3
+    - **Created At:** Oct 26, 2020
+    - **Deprecated At:** Dec 8, 2020
+- v4
+    - **Created At:** Dec 8, 2020
+    - **Deprecated At:** Apr 24, 2021
+- v5
+    -   **Created At:** Apr 24, 2021
+
 # 🏃‍♀️ Running
 
 -   Clone repo
