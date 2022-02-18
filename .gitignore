@@ -29,5 +29,5 @@ yarn.lock
 package-lock.json
 
 # sitemap
-sitemap.xml
+sitemap*.xml
 robots.txt

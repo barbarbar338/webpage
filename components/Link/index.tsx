@@ -27,7 +27,7 @@ export const Link: FC<ILinkProps> = ({
 			{children}
 		</a>
 	) : (
-		<NextLink href={href}>
+		<NextLink passHref href={href}>
 			<span
 				style={style}
 				className={classnames(
