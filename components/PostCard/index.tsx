@@ -21,7 +21,7 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 			}}
 		>
 			<m.div variants={CONFIG.VARIANTS.item} className="mt-6">
-				<div className="max-w-4xl px-10 py-6 mx-auto bg-white dark:bg-gray-800 rounded-t-xl rounded-bl-xl shadow-md">
+				<div className="max-w-4xl px-10 py-6 mx-auto bg-white dark:bg-gray-800 round shadow-md">
 					<div className="flex items-center justify-between">
 						<span className="font-light text-gray-600 dark:text-white">
 							{post.createdAt}
@@ -66,7 +66,7 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 							<Link
 								key={idx}
 								href={`/blog/category/${label.id}`}
-								className="p-1 m-1 text-sm text-black rounded-t-xl rounded-bl-xl"
+								className="p-1 m-1 text-sm text-black round"
 								style={{
 									backgroundColor: `#${label.color}`,
 								}}

@@ -24,7 +24,7 @@ export const RepoCard: FC<IStarredRepo> = ({
 					}}
 				>
 					<Link href={url}>
-						<div className="p-4 bg-gray-200 dark:bg-gray-800 rounded-t-xl rounded-bl-xl h-full text-black dark:text-white">
+						<div className="p-4 bg-gray-200 dark:bg-gray-800 round h-full text-black dark:text-white">
 							<div className="flex items-center space-x-1">
 								<span className="flex-grow space-x-2 truncate text-purple-600 dark:text-purple-300">
 									{name}

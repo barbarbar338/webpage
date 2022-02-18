@@ -22,14 +22,14 @@ export const PinnedCard: FC<IPinnedCard> = ({ post }) => {
 		>
 			<m.div
 				variants={CONFIG.VARIANTS.item}
-				className="flex flex-col max-w-sm px-8 py-6 mx-auto my-5 bg-white dark:bg-gray-800 rounded-t-xl rounded-bl-xl shadow-md"
+				className="flex flex-col max-w-sm px-8 py-6 mx-auto my-5 bg-white dark:bg-gray-800 round shadow-md"
 			>
 				<div className="flex items-center justify-center">
 					{post.labels.map((label, idx) => (
 						<Link
 							key={idx}
 							href={`/blog/category/${label.id}`}
-							className="m-1 p-1 text-sm text-black rounded-t-xl rounded-bl-xl"
+							className="m-1 p-1 text-sm text-black round"
 							style={{
 								backgroundColor: `#${label.color}`,
 							}}

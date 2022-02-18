@@ -75,7 +75,7 @@ export const Hero: FC = () => {
 											whileTap={{
 												scale: 0.95,
 											}}
-											className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-l-xl rounded-t-xl transition duration-200"
+											className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200"
 										>
 											About Me
 										</m.span>
@@ -88,7 +88,7 @@ export const Hero: FC = () => {
 											whileTap={{
 												scale: 0.95,
 											}}
-											className="inline-block w-full lg:w-auto py-2 px-6 leading-loose text-white font-semibold bg-gray-900 border-2 border-gray-700 hover:border-gray-600 rounded-l-xl rounded-t-xl transition duration-200"
+											className="inline-block w-full lg:w-auto py-2 px-6 leading-loose text-white font-semibold bg-gray-900 border-2 border-gray-700 hover:border-gray-600 round transition duration-200"
 										>
 											Contact
 										</m.span>

@@ -21,7 +21,7 @@ export const CategoryCard: FC<ICategoryCard> = ({ category }) => {
 		>
 			<m.li
 				variants={CONFIG.VARIANTS.item}
-				className="m-1 flex flex-col max-w-sm p-2 mx-auto bg-white rounded-t-xl rounded-bl-xl shadow-md dark:bg-gray-800"
+				className="m-1 flex flex-col max-w-sm p-2 mx-auto bg-white round shadow-md dark:bg-gray-800"
 				style={{
 					backgroundColor: `#${category.color}`,
 				}}

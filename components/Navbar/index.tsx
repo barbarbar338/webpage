@@ -195,7 +195,7 @@ export const Navbar: FC = () => {
 						whileTap={{
 							scale: 0.9,
 						}}
-						className="hidden lg:inline-block py-2 px-6 bg-purple-700 hover:bg-purple-800 text-sm text-white font-bold rounded-l-xl rounded-t-xl transition duration-200"
+						className="hidden lg:inline-block py-2 px-6 bg-purple-700 hover:bg-purple-800 text-sm text-white font-bold round transition duration-200"
 					>
 						Contact
 					</m.span>
@@ -255,8 +255,7 @@ export const Navbar: FC = () => {
 											"hover:bg-purple-600",
 											"dark:hover:bg-gray-800",
 											"hover:text-white",
-											"rounded-l-xl",
-											"rounded-t-xl",
+											"round",
 											{
 												"text-black dark:text-white":
 													hash == link.href,
@@ -281,7 +280,7 @@ export const Navbar: FC = () => {
 									whileTap={{
 										scale: 0.95,
 									}}
-									className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-purple-600 hover:bg-purple-700 rounded-l-xl rounded-t-xl"
+									className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-purple-600 hover:bg-purple-700 round"
 								>
 									Contact
 								</m.span>
@@ -322,8 +321,7 @@ export const Navbar: FC = () => {
 					"w-10",
 					"h-10",
 					"bg-purple-600",
-					"rounded-l-full",
-					"rounded-t-full",
+					"round",
 					"focus:outline-none",
 					{
 						block: top,
@@ -340,7 +338,7 @@ export const Navbar: FC = () => {
 					scale: 0.9,
 				}}
 				onClick={onTheme}
-				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-600 rounded-l-full rounded-t-full focus:outline-none"
+				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-600 round focus:outline-none"
 			>
 				{getIcon()}
 			</m.button>

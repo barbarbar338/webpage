@@ -24,7 +24,7 @@ export const Stack: FC = () => {
 								}}
 							>
 								<Tippy tooltip={stack.alt}>
-									<div className="p-4 rounded-l-xl rounded-t-xl flex justify-around items-center bg-gray-200 dark:bg-gray-800">
+									<div className="p-4 round flex justify-around items-center bg-gray-200 dark:bg-gray-800">
 										<CustomImage
 											className="w-16 h-16"
 											src={stack.icon}
