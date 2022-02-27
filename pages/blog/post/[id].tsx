@@ -23,14 +23,7 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 			const content = element.getAttribute(
 				"data-snippet-clipboard-copy-content",
 			);
-			const match = element.className.match(/highlight-source-([a-z]+)/);
-
-			let language = "js";
-			if (match) language = match[1];
-
-			const highlighted = hljs.highlight(content, {
-				language: language,
-			}).value;
+			const highlighted = hljs.highlightAuto(content).value;
 
 			element.innerHTML = `<pre>${highlighted}</pre>`;
 		}
