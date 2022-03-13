@@ -1,8 +1,8 @@
 import type { IconType } from "react-icons";
 import type { FC } from "react";
 import Tilt from "react-tilt";
-import { Tippy } from "@components/Tippy";
-import { Link } from "@components/Link";
+import { Tippy } from "@components/Utils/Tippy";
+import { Link } from "@components/Utils/Link";
 import classnames from "classnames";
 import { useCopyToClipboard } from "react-use";
 import { toast } from "react-toastify";

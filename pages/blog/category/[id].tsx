@@ -1,8 +1,8 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import { Categories } from "@components/Categories";
+import { Categories } from "@components/Blog/Categories";
 import { Layout } from "@components/Layout";
-import { PinnedPosts } from "@components/PinnedPosts";
-import { Posts } from "@components/Posts";
+import { PinnedPosts } from "@components/Blog/PinnedPosts";
+import { Posts } from "@components/Blog/Posts";
 import { CONFIG } from "@libs/config";
 import {
 	getCategories,

@@ -3,7 +3,7 @@ import { Layout } from "@components/Layout";
 import { getPostData, IPostData, getPosts } from "@libs/graphql";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Giscus } from "@giscus/react";
-import { Link } from "@components/Link";
+import { Link } from "@components/Utils/Link";
 import { CONFIG } from "@libs/config";
 import { useTheme } from "next-themes";
 import { FiArrowLeft } from "react-icons/fi";

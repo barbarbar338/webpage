@@ -3,7 +3,7 @@ import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
 import axios from "axios";
 import { Bookmarks } from "@components/Bookmarks";
-import { IBookmark } from "@components/Bookmark";
+import { IBookmark } from "@components/Bookmarks/Bookmark";
 
 export interface IBookmarksPage {
 	bookmarks: IBookmark[];

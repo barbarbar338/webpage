@@ -7,9 +7,9 @@ import {
 	ILabel,
 	IPost,
 } from "@libs/graphql";
-import { PinnedPosts } from "@components/PinnedPosts";
-import { Categories } from "@components/Categories";
-import { Posts } from "@components/Posts";
+import { PinnedPosts } from "@components/Blog/PinnedPosts";
+import { Categories } from "@components/Blog/Categories";
+import { Posts } from "@components/Blog/Posts";
 import { CONFIG } from "@libs/config";
 
 interface IBlogProps {

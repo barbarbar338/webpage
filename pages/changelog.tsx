@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from "next";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
 import { getCommits, ICommitsData } from "@libs/graphql";
-import { Link } from "@components/Link";
+import { Link } from "@components/Utils/Link";
 import { m } from "framer-motion";
 
 export interface IChangelogProps {

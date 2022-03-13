@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import { Layout } from "@components/Layout";
-import { Link } from "@components/Link";
+import { Link } from "@components/Utils/Link";
 import ErrorSVG from "@assets/elements/error.svg";
-import { CustomImage } from "@components/CustomImage";
+import { CustomImage } from "@components/Utils/CustomImage";
 import { m } from "framer-motion";
 
 const NotFoundPage: NextPage = () => {

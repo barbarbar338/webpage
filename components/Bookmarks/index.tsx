@@ -1,4 +1,4 @@
-import { Bookmark, IBookmark } from "@components/Bookmark";
+import { Bookmark, IBookmark } from "@components/Bookmarks/Bookmark";
 import { FC } from "react";
 
 export interface IBookmarks {

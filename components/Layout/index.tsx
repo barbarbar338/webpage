@@ -1,13 +1,13 @@
 import { FC, useEffect, useState } from "react";
-import { Footer } from "@components/Footer";
+import { Footer } from "@components/Layout/Footer";
 import { domAnimation, LazyMotion } from "framer-motion";
 import { NextSeo } from "next-seo";
-import { Navbar } from "@components/Navbar";
-import { Alert } from "@components/Alert";
+import { Navbar } from "@components/Layout/Navbar";
+import { Alert } from "@components/Utils/Alert";
 import { useLocalStorage } from "react-use";
 import { useRouter } from "next/router";
 import { CONFIG } from "@libs/config";
-import { Link } from "@components/Link";
+import { Link } from "@components/Utils/Link";
 
 export interface ILayout {
 	title: string;
