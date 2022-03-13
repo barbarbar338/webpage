@@ -18,7 +18,7 @@ import {
 } from "react-icons/fa";
 import { SiFiverr } from "react-icons/si";
 
-export const DISCORD_ID = "331846231514939392";
+export const DISCORD_ID = "952574663916154960";
 
 export const CONTACT = [
 	{
