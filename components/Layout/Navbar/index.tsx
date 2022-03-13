@@ -44,6 +44,10 @@ const links = [
 		href: "/bookmarks",
 	},
 	{
+		name: "Games",
+		href: "/games",
+	},
+	{
 		name: "Changelog",
 		href: "/changelog",
 	},

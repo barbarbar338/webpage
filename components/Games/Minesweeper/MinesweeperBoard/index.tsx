@@ -3,6 +3,7 @@ import { createMinesweeperBoard } from "@libs/games/minesweeper/createMinesweepe
 import { ICell, reveal } from "@libs/games/minesweeper/reveal";
 import { MinesweeperCell } from "@components/Games/Minesweeper/MinesweeperCell";
 import { toast } from "react-toastify";
+import { Link } from "@components/Utils/Link";
 
 export const MinesweeperBoard: FC = () => {
 	const [x, setX] = useState(10);
@@ -104,7 +105,7 @@ export const MinesweeperBoard: FC = () => {
 				</div>
 			</div>
 			<button
-				className="lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
+				className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
 				onClick={restartGame}
 			>
 				Restart
@@ -126,6 +127,14 @@ export const MinesweeperBoard: FC = () => {
 					</div>
 				);
 			})}
+			<br />
+			<Link
+				href="/games"
+				underline={false}
+				className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200"
+			>
+				Go Back
+			</Link>
 		</div>
 	);
 };
