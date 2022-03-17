@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import { Layout } from "@components/Layout";
 import { AccountCard } from "@components/AccountCard";
 import { Link } from "@components/Utils/Link";
-import { m } from "framer-motion";
 import { CONFIG } from "@libs/config";
 
 const AccountsPage: NextPage = () => {
@@ -29,17 +28,9 @@ const AccountsPage: NextPage = () => {
 					</div>
 					<div className="pt-10">
 						<Link href="/">
-							<m.span
-								whileHover={{
-									scale: 1.05,
-								}}
-								whileTap={{
-									scale: 0.95,
-								}}
-								className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200"
-							>
+							<span className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200">
 								Go Home
-							</m.span>
+							</span>
 						</Link>
 					</div>
 				</div>

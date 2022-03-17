@@ -1,6 +1,5 @@
 import type { ChangeEvent, FC, FormEvent } from "react";
 import { CONFIG } from "@libs/config";
-import { m } from "framer-motion";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { Link } from "@components/Utils/Link";
@@ -71,18 +70,12 @@ export const Contact: FC = () => {
 						></textarea>
 					</div>
 					<div>
-						<m.button
+						<button
 							aria-label="Submit"
-							whileHover={{
-								scale: 1.02,
-							}}
-							whileTap={{
-								scale: 0.98,
-							}}
-							className="inline-block w-full py-4 px-8 leading-none text-white bg-purple-600 hover:bg-purple-700 font-semibold round shadow"
+							className="inline-block w-full py-4 px-8 leading-none text-white bg-purple-600 hover:bg-purple-700 font-semibold round"
 						>
 							Submit
-						</m.button>
+						</button>
 					</div>
 				</form>
 			</div>

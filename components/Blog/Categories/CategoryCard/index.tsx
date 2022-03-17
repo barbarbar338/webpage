@@ -2,8 +2,6 @@ import Tilt from "react-tilt";
 import { Link } from "@components/Utils/Link";
 import { ILabel } from "@libs/graphql";
 import { FC } from "react";
-import { m } from "framer-motion";
-import { CONFIG } from "@libs/config";
 
 export interface ICategoryCard {
 	category: ILabel;
@@ -19,8 +17,7 @@ export const CategoryCard: FC<ICategoryCard> = ({ category }) => {
 				scale: 1.05,
 			}}
 		>
-			<m.li
-				variants={CONFIG.VARIANTS.item}
+			<li
 				className="m-1 flex flex-col max-w-sm p-2 mx-auto bg-white round shadow-md dark:bg-gray-800"
 				style={{
 					backgroundColor: `#${category.color}`,
@@ -32,7 +29,7 @@ export const CategoryCard: FC<ICategoryCard> = ({ category }) => {
 				>
 					{category.name}
 				</Link>
-			</m.li>
+			</li>
 		</Tilt>
 	);
 };

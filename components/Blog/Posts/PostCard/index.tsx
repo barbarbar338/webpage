@@ -3,8 +3,6 @@ import Tilt from "react-tilt";
 import { CustomImage } from "@components/Utils/CustomImage";
 import { IPost } from "@libs/graphql";
 import { Link } from "@components/Utils/Link";
-import { m } from "framer-motion";
-import { CONFIG } from "@libs/config";
 
 export interface IPostCard {
 	post: IPost;
@@ -20,7 +18,7 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 				scale: 1.05,
 			}}
 		>
-			<m.div variants={CONFIG.VARIANTS.item} className="mt-6">
+			<div className="mt-6">
 				<div className="max-w-4xl px-10 py-6 mx-auto bg-white dark:bg-gray-800 round shadow-md">
 					<div className="flex items-center justify-between">
 						<span className="font-light text-gray-600 dark:text-white">
@@ -76,7 +74,7 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 						))}
 					</div>
 				</div>
-			</m.div>
+			</div>
 		</Tilt>
 	);
 };

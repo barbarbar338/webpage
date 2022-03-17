@@ -342,25 +342,19 @@ export const getCommits = async (): Promise<ICommitsData> => {
 		query: gql`
 			{
 				repository(owner: "${CONFIG.BLOG.discussions.username}", name: "${CONFIG.BLOG.discussions.repo}") {
-					refs(refPrefix: "refs/heads/", orderBy: {direction: DESC, field: TAG_COMMIT_DATE}, first: 100) {
-						edges {
-							node {
-								... on Ref {
-									target {
-										... on Commit {
-												history(first: 30) {
-													edges {
-														node {
-														... on Commit {
-																message
-																committedDate
-																author {
-																	name
-																}
-															commitUrl
-														}
-													}
+					defaultBranchRef {
+						target {
+							... on Commit {
+								history(first: 30) {
+									edges {
+										node {
+											... on Commit {
+												message
+												committedDate
+												author {
+													name
 												}
+												commitUrl
 											}
 										}
 									}
@@ -378,23 +372,21 @@ export const getCommits = async (): Promise<ICommitsData> => {
 		latest: "Unknown",
 	};
 
-	for (const e of data.repository.refs.edges) {
-		e.node.target.history.edges.map((c) => {
-			const commitDate = moment(c.node.committedDate);
-			if (!commitsData.commits[commitDate.format("YYYY-MM-DD")])
-				commitsData.commits[commitDate.format("YYYY-MM-DD")] =
-					[] as ICommit[];
+	data.repository.defaultBranchRef.target.history.edges.map((c) => {
+		const commitDate = moment(c.node.committedDate);
+		if (!commitsData.commits[commitDate.format("YYYY-MM-DD")])
+			commitsData.commits[commitDate.format("YYYY-MM-DD")] =
+				[] as ICommit[];
 
-			commitsData.commits[commitDate.format("YYYY-MM-DD")].push({
-				message: c.node.message,
-				committedDate: commitDate.calendar(),
-				commitUrl: c.node.commitUrl,
-				author: {
-					name: c.node.author.name,
-				},
-			} as ICommit);
-		});
-	}
+		commitsData.commits[commitDate.format("YYYY-MM-DD")].push({
+			message: c.node.message,
+			committedDate: commitDate.calendar(),
+			commitUrl: c.node.commitUrl,
+			author: {
+				name: c.node.author.name,
+			},
+		} as ICommit);
+	});
 
 	commitsData.latest =
 		commitsData.commits[

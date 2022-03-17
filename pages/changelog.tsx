@@ -3,7 +3,6 @@ import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
 import { getCommits, ICommitsData } from "@libs/graphql";
 import { Link } from "@components/Utils/Link";
-import { m } from "framer-motion";
 
 export interface IChangelogProps {
 	commitsData: ICommitsData;
@@ -36,39 +35,18 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 								website.
 							</p>
 							<h2>Last 30 commits:</h2>
-							<m.ul
-								variants={CONFIG.VARIANTS.container}
-								initial="hidden"
-								animate="visible"
-							>
+							<ul>
 								{Object.keys(commitsData.commits).map(
 									(date, idx) => {
 										const commits =
 											commitsData.commits[date];
 										return (
-											<m.li
-												variants={CONFIG.VARIANTS.item}
-												key={idx}
-											>
+											<li key={idx}>
 												{date}
-												<m.ul
-													variants={
-														CONFIG.VARIANTS
-															.container
-													}
-													initial="hidden"
-													animate="visible"
-												>
+												<ul>
 													{commits.map(
 														(commit, idx) => (
-															<m.li
-																variants={
-																	CONFIG
-																		.VARIANTS
-																		.item
-																}
-																key={idx}
-															>
+															<li key={idx}>
 																<Link
 																	href={
 																		commit.commitUrl
@@ -84,15 +62,15 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 																		.author
 																		.name
 																}
-															</m.li>
+															</li>
 														),
 													)}
-												</m.ul>
-											</m.li>
+												</ul>
+											</li>
 										);
 									},
 								)}
-							</m.ul>
+							</ul>
 						</div>
 					</div>
 				</div>

@@ -34,13 +34,13 @@ export const Footer: FC = () => {
 						TailwindCSS
 					</Link>
 				</div>
-				<div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex text-purple-600 dark:text-purple-400">
+				<div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
 					{CONFIG.CONTACT.map((social, idx) => (
 						<Link
 							underline
 							key={idx}
 							href={social.href}
-							className="w-6 mx-1"
+							className="w-6 mx-1 text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-500"
 						>
 							<social.icon />
 						</Link>

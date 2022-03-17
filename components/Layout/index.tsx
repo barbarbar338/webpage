@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from "react";
 import { Footer } from "@components/Layout/Footer";
-import { domAnimation, LazyMotion } from "framer-motion";
 import { NextSeo } from "next-seo";
 import { Navbar } from "@components/Layout/Navbar";
 import { Alert } from "@components/Utils/Alert";
@@ -35,7 +34,7 @@ export const Layout: FC<ILayout> = ({ title, children }) => {
 				title={title}
 				canonical={`${CONFIG.SEO.publishDomain}${router.pathname}`}
 			/>
-			<LazyMotion features={domAnimation}>
+			<>
 				<Navbar />
 				{show && (
 					<div className="container mx-auto">
@@ -59,7 +58,7 @@ export const Layout: FC<ILayout> = ({ title, children }) => {
 				)}
 				{children}
 				<Footer />
-			</LazyMotion>
+			</>
 		</div>
 	);
 };

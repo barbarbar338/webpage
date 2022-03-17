@@ -4,7 +4,6 @@ import Favicon from "@assets/icon.svg";
 import { Link } from "@components/Utils/Link";
 import { NavbarSeperator } from "@components/Layout/NavbarSeperator";
 import { useTheme } from "next-themes";
-import { m } from "framer-motion";
 import { CONFIG } from "@libs/config";
 import { CustomImage } from "@components/Utils/CustomImage";
 import classnames from "classnames";
@@ -192,17 +191,9 @@ export const Navbar: FC = () => {
 					))}
 				</ul>
 				<Link underline href="/#contact">
-					<m.span
-						whileHover={{
-							scale: 1.1,
-						}}
-						whileTap={{
-							scale: 0.9,
-						}}
-						className="hidden lg:inline-block py-2 px-6 bg-purple-700 hover:bg-purple-800 text-sm text-white font-bold round transition duration-200"
-					>
+					<span className="hidden lg:inline-block py-2 px-6 bg-purple-700 hover:bg-purple-800 text-sm text-white font-bold round transition duration-200">
 						Contact
-					</m.span>
+					</span>
 				</Link>
 			</nav>
 			<div
@@ -239,16 +230,7 @@ export const Navbar: FC = () => {
 					<div>
 						<ul>
 							{links.map((link, idx) => (
-								<m.li
-									whileHover={{
-										scale: 1.05,
-									}}
-									whileTap={{
-										scale: 0.95,
-									}}
-									key={idx}
-									className="mb-1"
-								>
+								<li key={idx} className="mb-1">
 									<Link
 										href={link.href}
 										className={classnames(
@@ -270,24 +252,16 @@ export const Navbar: FC = () => {
 									>
 										{link.name}
 									</Link>
-								</m.li>
+								</li>
 							))}
 						</ul>
 					</div>
 					<div className="mt-auto">
 						<div>
 							<Link href="/#contact">
-								<m.span
-									whileHover={{
-										scale: 1.05,
-									}}
-									whileTap={{
-										scale: 0.95,
-									}}
-									className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-purple-600 hover:bg-purple-700 round"
-								>
+								<span className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-purple-600 hover:bg-purple-700 round">
 									Contact
-								</m.span>
+								</span>
 							</Link>
 						</div>
 						<p className="my-4 text-xs text-center text-gray-600 dark:text-gray-400">
@@ -306,12 +280,8 @@ export const Navbar: FC = () => {
 					</div>
 				</nav>
 			</div>
-			<m.button
+			<button
 				aria-label="Go Up"
-				whileHover={{ scale: 1.1 }}
-				whileTap={{
-					scale: 0.9,
-				}}
 				onClick={onUp}
 				className={classnames(
 					"fixed",
@@ -325,6 +295,7 @@ export const Navbar: FC = () => {
 					"w-10",
 					"h-10",
 					"bg-purple-600",
+					"hover:bg-purple-700",
 					"round",
 					"focus:outline-none",
 					{
@@ -334,18 +305,14 @@ export const Navbar: FC = () => {
 				)}
 			>
 				<FiArrowUp className="h-full w-full p-2" />
-			</m.button>
-			<m.button
+			</button>
+			<button
 				aria-label="Change Theme"
-				whileHover={{ scale: 1.1 }}
-				whileTap={{
-					scale: 0.9,
-				}}
 				onClick={onTheme}
-				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-600 round focus:outline-none"
+				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-600 hover:bg-purple-700 round focus:outline-none"
 			>
 				{getIcon()}
-			</m.button>
+			</button>
 		</>
 	);
 };
