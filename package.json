@@ -15,7 +15,8 @@
 		"start": "next start --port 8080",
 		"lint": "next lint",
 		"format": "prettier --write .",
-		"format:watch": "onchange . -- prettier --write {{changed}}"
+		"format:watch": "onchange . -- prettier --write {{changed}}",
+		"deploy": "npm run build && flyctl deploy"
 	},
 	"dependencies": {
 		"@apollo/client": "^3.5.9",
