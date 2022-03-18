@@ -1,0 +1,35 @@
+.game-block {
+	@apply m-0 p-0 w-8 h-8 border-2;
+}
+
+.piece-i {
+	@apply bg-red-500;
+}
+
+.piece-j {
+	@apply bg-yellow-500;
+}
+
+.piece-l {
+	@apply bg-yellow-300;
+}
+
+.piece-o {
+	@apply bg-yellow-800;
+}
+
+.piece-s {
+	@apply bg-green-500;
+}
+
+.piece-t {
+	@apply bg-indigo-400;
+}
+
+.piece-z {
+	@apply bg-blue-800;
+}
+
+.piece-preview {
+	@apply bg-gray-500;
+}

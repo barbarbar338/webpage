@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { Layout } from "@components/Layout";
-import { FaBomb } from "react-icons/fa";
+import { FaBomb, FaCube } from "react-icons/fa";
 import { Link } from "@components/Utils/Link";
 import { GamesCard } from "@components/Games/GamesCard";
 
@@ -11,6 +11,13 @@ const games = [
 		icon: FaBomb,
 		href: "/games/minesweeper",
 		color: "text-black",
+	},
+	{
+		name: "Tetris",
+		description: "A classic game of tetris",
+		icon: FaCube,
+		href: "/games/tetris",
+		color: "text-blue-500",
 	},
 ];
 
