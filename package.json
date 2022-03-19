@@ -11,7 +11,7 @@
 	"scripts": {
 		"dev": "next-remote-watch",
 		"build": "next build",
-		"postbuild": "next-sitemap",
+		"postbuild": "next-sitemap --config sitemap.config.js",
 		"start": "next start --port 8080",
 		"lint": "next lint",
 		"format": "prettier --write .",
