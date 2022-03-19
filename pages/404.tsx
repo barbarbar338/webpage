@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import { Layout } from "@components/Layout";
-import { Link } from "@components/Utils/Link";
-import ErrorSVG from "@assets/elements/error.svg";
 import { CustomImage } from "@components/Utils/CustomImage";
+import { Link } from "@components/Utils/Link";
+import { Layout } from "@components/Layout";
+import ErrorSVG from "@assets/elements/error.svg";
 
 const NotFoundPage: NextPage = () => {
 	return (

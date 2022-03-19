@@ -1,7 +1,7 @@
-import { Link } from "@components/Utils/Link";
+import type { IPost } from "@libs/graphql";
+import { type FC, Fragment } from "react";
 import { PostCard } from "@components/Blog/Posts/PostCard";
-import { IPost } from "@libs/graphql";
-import { FC, Fragment } from "react";
+import { Link } from "@components/Utils/Link";
 
 export interface IPosts {
 	posts: IPost[];

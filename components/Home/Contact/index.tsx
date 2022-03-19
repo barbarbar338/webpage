@@ -1,8 +1,7 @@
-import type { ChangeEvent, FC, FormEvent } from "react";
-import { CONFIG } from "@libs/config";
-import { useState } from "react";
-import { toast } from "react-toastify";
+import { type ChangeEvent, type FC, type FormEvent, useState } from "react";
 import { Link } from "@components/Utils/Link";
+import { CONFIG } from "@libs/config";
+import { toast } from "react-toastify";
 
 export const Contact: FC = () => {
 	const [name, setName] = useState("");

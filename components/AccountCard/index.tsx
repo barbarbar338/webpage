@@ -1,11 +1,11 @@
-import type { IconType } from "react-icons";
 import type { FC } from "react";
-import Tilt from "react-tilt";
+import type { IconType } from "react-icons";
 import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
-import classnames from "classnames";
 import { useCopyToClipboard } from "react-use";
 import { toast } from "react-toastify";
+import Tilt from "react-tilt";
+import classnames from "classnames";
 
 export interface IAccountCardProps {
 	icon: IconType;

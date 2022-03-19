@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from "next";
-import { Hero } from "@components/Home/Hero";
-import { About } from "@components/Home/About";
-import { Layout } from "@components/Layout";
-import { Contact } from "@components/Home/Contact";
 import { Projects } from "@components/Home/Projects";
+import { Contact } from "@components/Home/Contact";
+import { About } from "@components/Home/About";
+import { Hero } from "@components/Home/Hero";
+import { Layout } from "@components/Layout";
 import {
 	getMostStarredRepos,
 	getPinnedRepos,

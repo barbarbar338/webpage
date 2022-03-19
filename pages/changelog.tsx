@@ -1,8 +1,8 @@
 import type { GetStaticProps, NextPage } from "next";
+import { type ICommitsData, getCommits } from "@libs/graphql";
+import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
-import { getCommits, ICommitsData } from "@libs/graphql";
-import { Link } from "@components/Utils/Link";
 
 export interface IChangelogProps {
 	commitsData: ICommitsData;

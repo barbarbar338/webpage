@@ -1,6 +1,6 @@
-import dynamic from "next/dynamic";
-import { FC, useEffect, useState } from "react";
+import { type FC, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import dynamic from "next/dynamic";
 
 const Tetris = dynamic(() => import("react-tetris"), { ssr: false });
 

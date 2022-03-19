@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { calculateWinner } from "@libs/games/tictactoe/calculateWinner";
 import { TicTacToeBoard } from "./Board";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 export const TicTacToeGame = () => {
 	const [history, setHistory] = useState([Array(9).fill(null)]);

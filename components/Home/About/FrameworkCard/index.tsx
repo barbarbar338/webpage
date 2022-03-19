@@ -1,8 +1,8 @@
-import type { IFramework } from "@libs/config";
 import type { FC } from "react";
-import Tilt from "react-tilt";
-import classNames from "classnames";
+import type { IFramework } from "@libs/config";
 import { CustomImage } from "@components/Utils/CustomImage";
+import classNames from "classnames";
+import Tilt from "react-tilt";
 export interface IFrameworkCard {
 	framework: IFramework;
 }

@@ -1,12 +1,12 @@
-import { FC, useEffect, useState } from "react";
+import { type FC, useEffect, useState } from "react";
 import { Footer } from "@components/Layout/Footer";
-import { NextSeo } from "next-seo";
 import { Navbar } from "@components/Layout/Navbar";
 import { Alert } from "@components/Utils/Alert";
+import { Link } from "@components/Utils/Link";
+import { CONFIG } from "@libs/config";
 import { useLocalStorage } from "react-use";
 import { useRouter } from "next/router";
-import { CONFIG } from "@libs/config";
-import { Link } from "@components/Utils/Link";
+import { NextSeo } from "next-seo";
 
 export interface ILayout {
 	title: string;

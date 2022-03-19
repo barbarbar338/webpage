@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import { Layout } from "@components/Layout";
 import { MinesweeperBoard } from "@components/Games/Minesweeper/MinesweeperBoard";
+import { Layout } from "@components/Layout";
 
 const MinesweeperGamePage: NextPage = () => {
 	return (

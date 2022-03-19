@@ -1,12 +1,10 @@
-import type { FC } from "react";
-import { Fragment, useEffect, useState } from "react";
-import Favicon from "@assets/icon.svg";
-import { Link } from "@components/Utils/Link";
+import { type FC, Fragment, useEffect, useState } from "react";
+import type { IconType } from "react-icons";
 import { NavbarSeperator } from "@components/Layout/NavbarSeperator";
-import { useTheme } from "next-themes";
-import { CONFIG } from "@libs/config";
 import { CustomImage } from "@components/Utils/CustomImage";
-import classnames from "classnames";
+import { Link } from "@components/Utils/Link";
+import { CONFIG } from "@libs/config";
+import { useTheme } from "next-themes";
 import {
 	FiArrowUp,
 	FiMenu,
@@ -15,7 +13,8 @@ import {
 	FiSun,
 	FiX,
 } from "react-icons/fi";
-import { IconType } from "react-icons";
+import Favicon from "@assets/icon.svg";
+import classnames from "classnames";
 
 const links = [
 	{

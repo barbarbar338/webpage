@@ -1,10 +1,10 @@
 import type { FC } from "react";
-import Tilt from "react-tilt";
+import { CustomImage } from "@components/Utils/CustomImage";
 import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
 import { useCopyToClipboard } from "react-use";
 import { toast } from "react-toastify";
-import { CustomImage } from "@components/Utils/CustomImage";
+import Tilt from "react-tilt";
 import moment from "moment";
 
 export interface IBookmark {

@@ -1,13 +1,13 @@
 import type { FC } from "react";
+import { CustomImage } from "@components/Utils/CustomImage";
+import { Status } from "@components/Home/Hero/Status";
+import { Link } from "@components/Utils/Link";
+import { CONFIG } from "@libs/config";
 import Up from "@assets/elements/up.svg";
 import Down from "@assets/elements/down.svg";
 import Left from "@assets/elements/left.svg";
 import Right from "@assets/elements/right.svg";
-import { Link } from "@components/Utils/Link";
 import Tilt from "react-tilt";
-import { Status } from "@components/Home/Hero/Status";
-import { CONFIG } from "@libs/config";
-import { CustomImage } from "@components/Utils/CustomImage";
 
 export const Hero: FC = () => {
 	const lastIDX = CONFIG.INTERESTS.length - 1;

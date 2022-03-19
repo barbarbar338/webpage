@@ -1,8 +1,8 @@
 import type { FC } from "react";
-import { Tippy } from "@components/Utils/Tippy";
-import Tilt from "react-tilt";
-import { CONFIG } from "@libs/config";
 import { CustomImage } from "@components/Utils/CustomImage";
+import { Tippy } from "@components/Utils/Tippy";
+import { CONFIG } from "@libs/config";
+import Tilt from "react-tilt";
 
 export const Stack: FC = () => {
 	return (

@@ -1,6 +1,6 @@
+import type { FC } from "react";
+import type { ILabel } from "@libs/graphql";
 import { CategoryCard } from "@components/Blog/Categories/CategoryCard";
-import { ILabel } from "@libs/graphql";
-import { FC } from "react";
 
 export interface ICategories {
 	categories: ILabel[];

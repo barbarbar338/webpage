@@ -1,5 +1,4 @@
-import classNames from "classnames";
-import { FC } from "react";
+import type { FC } from "react";
 import {
 	FiAlertOctagon,
 	FiCheckCircle,
@@ -7,6 +6,7 @@ import {
 	FiX,
 	FiXOctagon,
 } from "react-icons/fi";
+import classNames from "classnames";
 
 export interface IAlertProps {
 	type: "success" | "warning" | "error" | "info";

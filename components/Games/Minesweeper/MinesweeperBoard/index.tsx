@@ -1,9 +1,9 @@
-import React, { useState, useEffect, FC, MouseEvent } from "react";
+import { type FC, type MouseEvent, useState, useEffect } from "react";
+import { type ICell, reveal } from "@libs/games/minesweeper/reveal";
 import { createMinesweeperBoard } from "@libs/games/minesweeper/createMinesweeperBoard";
-import { ICell, reveal } from "@libs/games/minesweeper/reveal";
 import { MinesweeperCell } from "@components/Games/Minesweeper/MinesweeperCell";
-import { toast } from "react-toastify";
 import { Link } from "@components/Utils/Link";
+import { toast } from "react-toastify";
 
 export const MinesweeperBoard: FC = () => {
 	const [x, setX] = useState(10);

@@ -1,14 +1,14 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import { Layout } from "@components/Layout";
-import { getPostData, IPostData, getPosts } from "@libs/graphql";
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { Giscus } from "@giscus/react";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { type IPostData, getPostData, getPosts } from "@libs/graphql";
 import { Link } from "@components/Utils/Link";
+import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
-import { useTheme } from "next-themes";
 import { FiArrowLeft } from "react-icons/fi";
-import hljs from "highlight.js";
+import { Giscus } from "@giscus/react";
+import { useTheme } from "next-themes";
 import { useEffect } from "react";
+import hljs from "highlight.js";
 
 export interface IPostProps {
 	post: IPostData;

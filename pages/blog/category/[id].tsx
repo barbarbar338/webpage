@@ -1,8 +1,8 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
-import { Categories } from "@components/Blog/Categories";
-import { Layout } from "@components/Layout";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { PinnedPosts } from "@components/Blog/PinnedPosts";
+import { Categories } from "@components/Blog/Categories";
 import { Posts } from "@components/Blog/Posts";
+import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
 import {
 	getCategories,
@@ -11,7 +11,6 @@ import {
 	ILabel,
 	IPost,
 } from "@libs/graphql";
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
 export interface ICategoryProps {
 	pinned: IPost[];

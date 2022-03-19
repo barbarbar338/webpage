@@ -1,8 +1,8 @@
 import type { FC } from "react";
-import { Stack } from "@components/Home/About/Stack";
-import { CONFIG } from "@libs/config";
-import { Dot } from "@components/Home/About/Dot";
 import { FrameworkCard } from "@components/Home/About/FrameworkCard";
+import { Stack } from "@components/Home/About/Stack";
+import { Dot } from "@components/Home/About/Dot";
+import { CONFIG } from "@libs/config";
 
 export const About: FC = () => {
 	const left: JSX.Element[] = [];

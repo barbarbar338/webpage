@@ -1,7 +1,7 @@
 import type { FC } from "react";
-import { useLanyard } from "react-use-lanyard";
 import { Tippy } from "@components/Utils/Tippy";
 import { CONFIG } from "@libs/config";
+import { useLanyard } from "react-use-lanyard";
 import classnames from "classnames";
 
 export const Status: FC = () => {

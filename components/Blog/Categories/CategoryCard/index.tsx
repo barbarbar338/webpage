@@ -1,7 +1,7 @@
-import Tilt from "react-tilt";
+import type { FC } from "react";
+import type { ILabel } from "@libs/graphql";
 import { Link } from "@components/Utils/Link";
-import { ILabel } from "@libs/graphql";
-import { FC } from "react";
+import Tilt from "react-tilt";
 
 export interface ICategoryCard {
 	category: ILabel;

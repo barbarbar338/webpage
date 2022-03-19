@@ -1,20 +1,41 @@
-import React from "react";
+import type { FC, MouseEvent } from "react";
+import type { ICell } from "@libs/games/minesweeper/reveal";
 import { randomColor } from "@libs/games/minesweeper/randomColor";
 import { Circle } from "@components/Games/Minesweeper/Circle";
 
-export function MinesweeperCell({ details, updateFlag, revealCell }) {
+export interface IMinesweeperCell {
+	updateFlag: (
+		e: MouseEvent<HTMLDivElement, MouseEvent>,
+		x: number,
+		y: number,
+	) => void;
+	revealCell: (x: number, y: number) => void;
+	details: ICell;
+}
+
+export const MinesweeperCell: FC<IMinesweeperCell> = ({
+	details,
+	updateFlag,
+	revealCell,
+}) => {
 	const cellstyle = {
 		background: details.revealed
 			? details.value === "X"
 				? randomColor()
 				: bombCheckPattern(details.x, details.y)
 			: chexPattern(details.x, details.y),
-		color: numColorCode(details.value),
+		color: numColorCode(details.value as number),
 	};
 
 	return (
 		<div
-			onContextMenu={(e) => updateFlag(e, details.x, details.y)}
+			onContextMenu={(e) =>
+				updateFlag(
+					e as unknown as MouseEvent<HTMLDivElement, MouseEvent>,
+					details.x,
+					details.y,
+				)
+			}
 			onClick={() => revealCell(details.x, details.y)}
 			style={cellstyle}
 			className="w-12 h-12 flex items-center justify-center cursor-pointer text-xl font-black"
@@ -32,7 +53,7 @@ export function MinesweeperCell({ details, updateFlag, revealCell }) {
 			)}
 		</div>
 	);
-}
+};
 
 const bombCheckPattern = (x: number, y: number) => {
 	if (x % 2 === 0 && y % 2 === 0) {

@@ -1,8 +1,8 @@
-import { FC } from "react";
-import Tilt from "react-tilt";
+import type { FC } from "react";
+import type { IPost } from "@libs/graphql";
 import { CustomImage } from "@components/Utils/CustomImage";
-import { IPost } from "@libs/graphql";
 import { Link } from "@components/Utils/Link";
+import Tilt from "react-tilt";
 
 export interface IPostCard {
 	post: IPost;

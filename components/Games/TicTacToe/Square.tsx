@@ -1,6 +1,6 @@
-import classNames from "classnames";
-import { FC } from "react";
+import type { FC } from "react";
 import { FiX, FiCircle } from "react-icons/fi";
+import classNames from "classnames";
 
 export interface ISquare {
 	value: string;

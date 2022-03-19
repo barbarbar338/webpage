@@ -1,6 +1,6 @@
 /* eslint-disable */
-const twLineClamp = require("@tailwindcss/line-clamp");
 const twTypography = require("@tailwindcss/typography");
+const twLineClamp = require("@tailwindcss/line-clamp");
 
 module.exports = {
 	mode: "jit",

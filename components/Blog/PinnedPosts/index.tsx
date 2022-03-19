@@ -1,6 +1,6 @@
+import type { FC } from "react";
+import type { IPost } from "@libs/graphql";
 import { PinnedCard } from "@components/Blog/PinnedPosts/PinnedCard";
-import { IPost } from "@libs/graphql";
-import { FC } from "react";
 
 interface IPinnedPosts {
 	posts: IPost[];

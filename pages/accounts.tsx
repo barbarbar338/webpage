@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import { Layout } from "@components/Layout";
 import { AccountCard } from "@components/AccountCard";
 import { Link } from "@components/Utils/Link";
+import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
 
 const AccountsPage: NextPage = () => {

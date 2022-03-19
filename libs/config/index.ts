@@ -1,9 +1,9 @@
-import TailwindSVG from "@assets/elements/tailwind.svg";
-import NestSVG from "@assets/elements/nest.svg";
-import MongoDBSVG from "@assets/elements/mongodb.svg";
-import NextSVG from "@assets/elements/next.svg";
 import { CONTACT, DISCORD_ID, SOCIALS } from "@libs/config/accounts";
 import { STACKS } from "@libs/config/stack";
+import TailwindSVG from "@assets/elements/tailwind.svg";
+import MongoDBSVG from "@assets/elements/mongodb.svg";
+import NestSVG from "@assets/elements/nest.svg";
+import NextSVG from "@assets/elements/next.svg";
 
 const NOW = new Date().getFullYear();
 const STARTED_AT = 2010;

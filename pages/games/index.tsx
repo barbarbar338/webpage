@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
-import { Layout } from "@components/Layout";
-import { FaBomb } from "react-icons/fa";
-import { FiBox, FiX } from "react-icons/fi";
-import { Link } from "@components/Utils/Link";
 import { GamesCard } from "@components/Games/GamesCard";
+import { Link } from "@components/Utils/Link";
+import { Layout } from "@components/Layout";
+import { FiBox, FiX } from "react-icons/fi";
+import { FaBomb } from "react-icons/fa";
 
 const games = [
 	{

@@ -1,6 +1,6 @@
 import type { FC } from "react";
+import type { IStarredRepo } from "@libs/graphql";
 import { RepoCard } from "@components/Home/Projects/RepoCard";
-import { IStarredRepo } from "@libs/graphql";
 
 export interface IProjects {
 	repos: IStarredRepo[];

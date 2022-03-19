@@ -1,9 +1,9 @@
 import type { IconType } from "react-icons";
 import type { FC } from "react";
-import Tilt from "react-tilt";
 import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
 import classnames from "classnames";
+import Tilt from "react-tilt";
 
 export interface IGamesCardProps {
 	icon: IconType;

@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import { CONFIG } from "@libs/config";
 import { Link } from "@components/Utils/Link";
+import { CONFIG } from "@libs/config";
 import { FiHeart } from "react-icons/fi";
 
 export const Footer: FC = () => {

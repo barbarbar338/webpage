@@ -1,5 +1,5 @@
-import { Bookmark, IBookmark } from "@components/Bookmarks/Bookmark";
-import { FC } from "react";
+import type { FC } from "react";
+import { type IBookmark, Bookmark } from "@components/Bookmarks/Bookmark";
 
 export interface IBookmarks {
 	bookmarks: IBookmark[];
