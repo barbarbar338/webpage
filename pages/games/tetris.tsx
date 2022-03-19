@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { Layout } from "@components/Layout";
 import { TetrisGame } from "@components/Games/Tetris";
 
-const MinesweeperGamePage: NextPage = () => {
+const TetrisGamePage: NextPage = () => {
 	return (
 		<Layout title="Tetris - Games">
 			<TetrisGame />
@@ -10,4 +10,4 @@ const MinesweeperGamePage: NextPage = () => {
 	);
 };
 
-export default MinesweeperGamePage;
+export default TetrisGamePage;
