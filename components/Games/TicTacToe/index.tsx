@@ -34,7 +34,7 @@ export const TicTacToeGame = () => {
 			<div className="flex justify-center mb-4">
 				<button
 					onClick={restart}
-					className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
+					className="inline-block mb-3 mx-5 lg:mb-0 lg:mr-3 w-full lg:w-1/5 py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
 				>
 					restart
 				</button>

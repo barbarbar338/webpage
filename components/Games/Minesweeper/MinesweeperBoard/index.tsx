@@ -72,11 +72,11 @@ export const MinesweeperBoard: FC = () => {
 
 	return (
 		<div className="min-h-screen flex relative items-center flex-col">
-			<div className="flex mb-4 -mx-2">
+			<div className="flex mb-4 ">
 				<div className="w-1/3 px-2">
 					<input
 						onChange={(e) => setX(parseInt(e.target.value))}
-						className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
+						className="appearance-none w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 						type="number"
 						placeholder="X"
 						value={x}
@@ -86,7 +86,7 @@ export const MinesweeperBoard: FC = () => {
 				<div className="w-1/3 px-2">
 					<input
 						onChange={(e) => setY(parseInt(e.target.value))}
-						className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
+						className="appearance-none w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 						type="number"
 						placeholder="Y"
 						value={y}
@@ -96,7 +96,7 @@ export const MinesweeperBoard: FC = () => {
 				<div className="w-1/3 px-2">
 					<input
 						onChange={(e) => setMine(parseInt(e.target.value))}
-						className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
+						className="appearance-none w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 						type="number"
 						placeholder="Mine"
 						value={mine}
@@ -105,33 +105,35 @@ export const MinesweeperBoard: FC = () => {
 				</div>
 			</div>
 			<button
-				className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
+				className="inline-block mb-3 lg:mr-3 w-2/3 text-center lg:w-96 py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
 				onClick={restartGame}
 			>
 				Restart
 			</button>
 			<br />
-			{grid.map((singleRow, idx) => {
-				return (
-					<div className="flex" key={idx}>
-						{singleRow.map((singleBlock, idx) => {
-							return (
-								<MinesweeperCell
-									revealCell={revealCell}
-									details={singleBlock}
-									updateFlag={updateFlag}
-									key={idx}
-								/>
-							);
-						})}
-					</div>
-				);
-			})}
+			<div>
+				{grid.map((singleRow, idx) => {
+					return (
+						<div className="flex" key={idx}>
+							{singleRow.map((singleBlock, idx) => {
+								return (
+									<MinesweeperCell
+										revealCell={revealCell}
+										details={singleBlock}
+										updateFlag={updateFlag}
+										key={idx}
+									/>
+								);
+							})}
+						</div>
+					);
+				})}
+			</div>
 			<br />
 			<Link
 				href="/games"
 				underline={false}
-				className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200"
+				className="inline-block  lg:mr-3 w-2/3 text-center mt-3 lg:w-96 py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200"
 			>
 				Go Back
 			</Link>
