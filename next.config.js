@@ -1,21 +1,10 @@
 /* eslint-disable */
 const withImages = require("next-images");
 
-/**
- * @type { import("next").NextConfig }
- */
 module.exports = withImages({
 	reactStrictMode: true,
 	poweredByHeader: false,
 	trailingSlash: true,
-	webpack(config) {
-		// replace react with preact to reduce bundle size and faster DevServer
-		Object.assign(config.resolve.alias, {
-			"react-dom": "preact/compat",
-			react: "preact/compat",
-		});
-		return config;
-	},
 	async redirects() {
 		return [
 			{
