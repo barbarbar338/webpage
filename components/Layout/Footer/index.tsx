@@ -6,7 +6,7 @@ import { FiHeart } from "react-icons/fi";
 export const Footer: FC = () => {
 	return (
 		<div className="bg-white dark:bg-gray-900">
-			<div className="flex pb-5 px-3 m-auto pt-5 text-gray-600 dark:text-gray-300 text-sm flex-col md:flex-row max-w-6xl">
+			<div className="flex pb-5 px-3  items-center text-center m-auto pt-5 text-gray-600 dark:text-gray-300 text-sm flex-col md:flex-row max-w-6xl">
 				<div className="mt-2">
 					&copy; {CONFIG.NOW} All rights reserved. Made with{" "}
 					<FiHeart className="text-red-500 inline" /> by{" "}

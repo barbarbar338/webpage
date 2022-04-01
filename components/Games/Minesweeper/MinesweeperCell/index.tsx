@@ -38,7 +38,7 @@ export const MinesweeperCell: FC<IMinesweeperCell> = ({
 			}
 			onClick={() => revealCell(details.x, details.y)}
 			style={cellstyle}
-			className="w-12 h-12 flex items-center justify-center cursor-pointer text-xl font-black"
+			className="md:w-12 md:h-12 w-8 h-8 flex items-center justify-center cursor-pointer text-xl font-black"
 		>
 			{!details.revealed && details.flagged ? (
 				"🚩"
