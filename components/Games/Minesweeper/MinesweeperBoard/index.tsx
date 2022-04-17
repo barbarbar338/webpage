@@ -76,7 +76,7 @@ export const MinesweeperBoard: FC = () => {
 				<div className="w-1/3 px-2">
 					<input
 						onChange={(e) => setX(parseInt(e.target.value))}
-						className="appearance-none w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
+						className="appearance-none w-full py-3 px-4 hidden md:block leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 						type="number"
 						placeholder="X"
 						value={x}
@@ -86,7 +86,7 @@ export const MinesweeperBoard: FC = () => {
 				<div className="w-1/3 px-2">
 					<input
 						onChange={(e) => setY(parseInt(e.target.value))}
-						className="appearance-none w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
+						className="appearance-none w-full py-3 px-4 hidden md:block leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 						type="number"
 						placeholder="Y"
 						value={y}
@@ -96,7 +96,7 @@ export const MinesweeperBoard: FC = () => {
 				<div className="w-1/3 px-2">
 					<input
 						onChange={(e) => setMine(parseInt(e.target.value))}
-						className="appearance-none w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
+						className="appearance-none w-full py-3 px-4 hidden md:block leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 						type="number"
 						placeholder="Mine"
 						value={mine}
