@@ -3,7 +3,6 @@ import {
 	FiGithub,
 	FiYoutube,
 	FiInstagram,
-	FiLayers,
 	FiSmartphone,
 	FiTarget,
 	FiDollarSign,
@@ -55,13 +54,6 @@ export const CONTACT = [
 		name: "Discord Server",
 		value: "discord.gg/BjEJFwh",
 		color: "text-blue-500",
-	},
-	{
-		href: "https://hiven.house/MCtyjW",
-		icon: FiLayers,
-		name: "Hiven House",
-		value: "hiven.house/MCtyjW",
-		color: "text-purple-500",
 	},
 ];
 

@@ -28,11 +28,6 @@ module.exports = withImages({
 				permanent: true,
 			},
 			{
-				source: "/hiven",
-				destination: "https://hiven.house/MCtyjW",
-				permanent: true,
-			},
-			{
 				source: "/fiverr",
 				destination: "https://www.fiverr.com/barbarbar338",
 				permanent: true,
