@@ -1,4 +1,4 @@
-import { type FC, useEffect, useState } from "react";
+import { type FC, type ReactNode, useEffect, useState } from "react";
 import { Footer } from "@components/Layout/Footer";
 import { Navbar } from "@components/Layout/Navbar";
 import { Alert } from "@components/Utils/Alert";
@@ -10,6 +10,7 @@ import { NextSeo } from "next-seo";
 
 export interface ILayout {
 	title: string;
+	children: ReactNode;
 }
 
 export const Layout: FC<ILayout> = ({ title, children }) => {

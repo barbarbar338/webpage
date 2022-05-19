@@ -1,8 +1,9 @@
-import type { FC, JSXElementConstructor, ReactElement } from "react";
+import type { FC, JSXElementConstructor, ReactElement, ReactNode } from "react";
 import TippyJS from "@tippyjs/react";
 
 export interface ITippyProps {
 	tooltip: string;
+	children: ReactNode;
 }
 
 export const Tippy: FC<ITippyProps> = ({ children, tooltip }) => {

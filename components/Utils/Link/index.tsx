@@ -1,4 +1,4 @@
-import type { CSSProperties, FC } from "react";
+import type { CSSProperties, FC, ReactNode } from "react";
 import classnames from "classnames";
 import NextLink from "next/link";
 
@@ -7,6 +7,7 @@ export interface ILinkProps {
 	className?: string;
 	underline?: boolean;
 	style?: CSSProperties;
+	children: ReactNode;
 }
 
 export const Link: FC<ILinkProps> = ({

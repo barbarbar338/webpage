@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import type { FC, ReactNode } from "react";
 import {
 	FiAlertOctagon,
 	FiCheckCircle,
@@ -12,6 +12,7 @@ export interface IAlertProps {
 	type: "success" | "warning" | "error" | "info";
 	title: string;
 	onClose?: () => void;
+	children: ReactNode;
 }
 
 const icons = {
