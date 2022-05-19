@@ -3,7 +3,7 @@ import type { FC } from "react";
 import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
 import classnames from "classnames";
-import Tilt from "react-tilt";
+import Tilt from "react-parallax-tilt";
 
 export interface IGamesCardProps {
 	icon: IconType;
@@ -39,14 +39,7 @@ export const GamesCard: FC<IGamesCardProps> = ({
 	return (
 		<Tippy tooltip="Click Me!">
 			<div>
-				<Tilt
-					className="Tilt"
-					options={{
-						max: 10,
-						reverse: false,
-						scale: 1.05,
-					}}
-				>
+				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 					{href ? (
 						<Link href={href}>
 							<Card />

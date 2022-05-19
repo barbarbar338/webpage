@@ -35,8 +35,8 @@
 		"next-themes": "^0.2.0",
 		"nextjs-progressbar": "^0.0.14",
 		"react-icons": "^4.3.1",
+		"react-parallax-tilt": "^1.7.35",
 		"react-simple-tetris": "^0.3.0",
-		"react-tilt": "^0.1.4",
 		"react-toastify": "^9.0.1",
 		"react-use": "^17.3.2",
 		"react-use-lanyard": "^0.1.2"

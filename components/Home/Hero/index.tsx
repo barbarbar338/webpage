@@ -7,7 +7,7 @@ import Up from "@assets/elements/up.svg";
 import Down from "@assets/elements/down.svg";
 import Left from "@assets/elements/left.svg";
 import Right from "@assets/elements/right.svg";
-import Tilt from "react-tilt";
+import Tilt from "react-parallax-tilt";
 
 export const Hero: FC = () => {
 	const lastIDX = CONFIG.INTERESTS.length - 1;
@@ -88,12 +88,9 @@ export const Hero: FC = () => {
 							}}
 						>
 							<Tilt
-								className="Tilt"
-								options={{
-									max: 10,
-									reverse: false,
-									scale: 1.05,
-								}}
+								scale={1.05}
+								tiltMaxAngleX={10}
+								tiltMaxAngleY={10}
 							>
 								<CustomImage
 									className="md:h-128 md:w-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none"

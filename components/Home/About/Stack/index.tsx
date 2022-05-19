@@ -2,7 +2,7 @@ import type { FC } from "react";
 import { CustomImage } from "@components/Utils/CustomImage";
 import { Tippy } from "@components/Utils/Tippy";
 import { CONFIG } from "@libs/config";
-import Tilt from "react-tilt";
+import Tilt from "react-parallax-tilt";
 
 export const Stack: FC = () => {
 	return (
@@ -16,12 +16,9 @@ export const Stack: FC = () => {
 						{CONFIG.STACKS.map((stack, idx) => (
 							<Tilt
 								key={idx}
-								className="Tilt"
-								options={{
-									max: 20,
-									reverse: false,
-									scale: 1.05,
-								}}
+								scale={1.05}
+								tiltMaxAngleX={20}
+								tiltMaxAngleY={20}
 							>
 								<Tippy tooltip={stack.alt}>
 									<div className="p-4 round flex justify-around items-center bg-gray-200 dark:bg-gray-800">

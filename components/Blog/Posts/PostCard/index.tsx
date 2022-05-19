@@ -2,7 +2,7 @@ import type { FC } from "react";
 import type { IPost } from "@libs/graphql";
 import { CustomImage } from "@components/Utils/CustomImage";
 import { Link } from "@components/Utils/Link";
-import Tilt from "react-tilt";
+import Tilt from "react-parallax-tilt";
 
 export interface IPostCard {
 	post: IPost;
@@ -10,14 +10,7 @@ export interface IPostCard {
 
 export const PostCard: FC<IPostCard> = ({ post }) => {
 	return (
-		<Tilt
-			className="Tilt"
-			options={{
-				max: 10,
-				reverse: false,
-				scale: 1.05,
-			}}
-		>
+		<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 			<div className="mt-6">
 				<div className="max-w-4xl px-10 py-6 mx-auto bg-white dark:bg-gray-800 round shadow-md">
 					<div className="flex items-center justify-between">

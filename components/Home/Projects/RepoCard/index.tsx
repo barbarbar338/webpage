@@ -3,7 +3,7 @@ import type { IStarredRepo } from "@libs/graphql";
 import { Tippy } from "@components/Utils/Tippy";
 import { FiStar } from "react-icons/fi";
 import { Link } from "@components/Utils/Link";
-import Tilt from "react-tilt";
+import Tilt from "react-parallax-tilt";
 
 export const RepoCard: FC<IStarredRepo> = ({
 	name,
@@ -15,14 +15,7 @@ export const RepoCard: FC<IStarredRepo> = ({
 	return (
 		<Tippy tooltip="Click Me!">
 			<div>
-				<Tilt
-					className="Tilt"
-					options={{
-						max: 10,
-						reverse: false,
-						scale: 1.05,
-					}}
-				>
+				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 					<Link href={url}>
 						<div className="p-4 bg-gray-200 dark:bg-gray-800 round h-full text-black dark:text-white">
 							<div className="flex items-center space-x-1">

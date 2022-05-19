@@ -2,20 +2,13 @@ import type { FC } from "react";
 import type { IFramework } from "@libs/config";
 import { CustomImage } from "@components/Utils/CustomImage";
 import classNames from "classnames";
-import Tilt from "react-tilt";
+import Tilt from "react-parallax-tilt";
 export interface IFrameworkCard {
 	framework: IFramework;
 }
 
 export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => (
-	<Tilt
-		className="Tilt"
-		options={{
-			max: 25,
-			reverse: false,
-			scale: 1.05,
-		}}
-	>
+	<Tilt scale={1.05} tiltMaxAngleX={25} tiltMaxAngleY={25}>
 		<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md round bg-gray-200 dark:bg-gray-800">
 			<span
 				className={classNames(

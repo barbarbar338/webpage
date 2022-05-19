@@ -4,7 +4,7 @@ import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
 import { useCopyToClipboard } from "react-use";
 import { toast } from "react-toastify";
-import Tilt from "react-tilt";
+import Tilt from "react-parallax-tilt";
 import classnames from "classnames";
 
 export interface IAccountCardProps {
@@ -51,14 +51,7 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	return (
 		<Tippy tooltip="Click Me!">
 			<div>
-				<Tilt
-					className="Tilt"
-					options={{
-						max: 10,
-						reverse: false,
-						scale: 1.05,
-					}}
-				>
+				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 					{href ? (
 						<Link href={href}>
 							<Card />
