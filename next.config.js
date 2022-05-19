@@ -27,11 +27,6 @@ module.exports = withImages({
 				destination: "https://discord.gg/BjEJFwh",
 				permanent: true,
 			},
-			{
-				source: "/fiverr",
-				destination: "https://www.fiverr.com/barbarbar338",
-				permanent: true,
-			},
 		];
 	},
 });

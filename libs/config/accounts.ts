@@ -15,7 +15,6 @@ import {
 	FaStackOverflow,
 	FaSteam,
 } from "react-icons/fa";
-import { SiFiverr } from "react-icons/si";
 
 export const DISCORD_ID = "952574663916154960";
 
@@ -64,13 +63,6 @@ export const SOCIALS = [
 		name: "Linkedin",
 		value: "barbarbar338",
 		color: "text-blue-500",
-	},
-	{
-		href: "https://www.fiverr.com/barbarbar338",
-		icon: SiFiverr,
-		name: "Fiverr",
-		value: "barbarbar338",
-		color: "text-green-500",
 	},
 	{
 		href: `discord://click-me/users/${DISCORD_ID}`,
