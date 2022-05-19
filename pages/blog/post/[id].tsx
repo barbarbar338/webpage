@@ -5,7 +5,7 @@ import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
 import { FiArrowLeft } from "react-icons/fi";
-import { Giscus } from "@giscus/react";
+import Giscus from "@giscus/react";
 import { useTheme } from "next-themes";
 import { useEffect } from "react";
 import hljs from "highlight.js";
