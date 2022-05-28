@@ -27,6 +27,11 @@ module.exports = withImages({
 				destination: "https://discord.gg/BjEJFwh",
 				permanent: true,
 			},
+			{
+				source: "/pokemon",
+				destination: "https://discord.gg/CNXVAuhGGa",
+				permanent: true,
+			},
 		];
 	},
 });
