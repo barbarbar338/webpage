@@ -15,41 +15,8 @@ import {
 } from "react-icons/fi";
 import Favicon from "@assets/icon.svg";
 import classnames from "classnames";
-
-const links = [
-	{
-		name: "Home",
-		href: "/#",
-	},
-	{
-		name: "About",
-		href: "/#about",
-	},
-	{
-		name: "Projects",
-		href: "/#projects",
-	},
-	{
-		name: "Accounts",
-		href: "/accounts",
-	},
-	{
-		name: "Blog",
-		href: "/blog",
-	},
-	{
-		name: "Bookmarks",
-		href: "/bookmarks",
-	},
-	{
-		name: "Games",
-		href: "/games",
-	},
-	{
-		name: "Changelog",
-		href: "/changelog",
-	},
-];
+import { useRouter } from "next/router";
+import { LocaleParser } from "@libs/localeParser";
 
 export const Navbar: FC = () => {
 	const [visible, setVisible] = useState(false);
@@ -57,6 +24,43 @@ export const Navbar: FC = () => {
 	const [top, setTop] = useState(false);
 	const { theme, setTheme } = useTheme();
 	const [color, setColor] = useState<"yellow" | "gray" | "blue">("yellow");
+	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
+
+	const links = [
+		{
+			name: parser.get("home") as string,
+			href: "/#",
+		},
+		{
+			name: parser.get("about") as string,
+			href: "/#about",
+		},
+		{
+			name: parser.get("projects") as string,
+			href: "/#projects",
+		},
+		{
+			name: parser.get("accounts") as string,
+			href: "/accounts",
+		},
+		{
+			name: parser.get("blog") as string,
+			href: "/blog",
+		},
+		{
+			name: parser.get("bookmarks") as string,
+			href: "/bookmarks",
+		},
+		{
+			name: parser.get("games") as string,
+			href: "/games",
+		},
+		{
+			name: parser.get("changelog") as string,
+			href: "/changelog",
+		},
+	];
 
 	const getIcon = () => {
 		let Icon: IconType;
@@ -191,7 +195,7 @@ export const Navbar: FC = () => {
 				</ul>
 				<Link underline href="/#contact">
 					<span className="hidden lg:inline-block py-2 px-6 bg-purple-700 hover:bg-purple-800 text-sm text-white font-bold round transition duration-200">
-						Contact
+						{parser.get("contact")}
 					</span>
 				</Link>
 			</nav>
@@ -259,14 +263,13 @@ export const Navbar: FC = () => {
 						<div>
 							<Link href="/#contact">
 								<span className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-purple-600 hover:bg-purple-700 round">
-									Contact
+									{parser.get("contact")}
 								</span>
 							</Link>
 						</div>
 						<p className="my-4 text-xs text-center text-gray-600 dark:text-gray-400">
 							<span>
-								&copy; {new Date().getFullYear()} All rights
-								reserved.
+								&copy; 2020 - {CONFIG.NOW} All rights reserved | Barış DEMİRCİ
 							</span>
 						</p>
 						<div className="text-center">

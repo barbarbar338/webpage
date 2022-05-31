@@ -4,6 +4,8 @@ import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
 import classnames from "classnames";
 import Tilt from "react-parallax-tilt";
+import { useRouter } from "next/router";
+import { LocaleParser } from "@libs/localeParser";
 
 export interface IGamesCardProps {
 	icon: IconType;
@@ -20,6 +22,8 @@ export const GamesCard: FC<IGamesCardProps> = ({
 	value,
 	color,
 }) => {
+	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
 	const Icon = icon;
 
 	const Card: FC = () => (
@@ -37,7 +41,7 @@ export const GamesCard: FC<IGamesCardProps> = ({
 	);
 
 	return (
-		<Tippy tooltip="Click Me!">
+		<Tippy tooltip={parser.get("click_me") as string}>
 			<div>
 				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 					{href ? (

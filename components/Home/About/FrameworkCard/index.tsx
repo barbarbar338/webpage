@@ -3,11 +3,17 @@ import type { IFramework } from "@libs/config";
 import { CustomImage } from "@components/Utils/CustomImage";
 import classNames from "classnames";
 import Tilt from "react-parallax-tilt";
+import { useRouter } from "next/router";
+import { LocaleParser } from "@libs/localeParser";
 export interface IFrameworkCard {
 	framework: IFramework;
 }
 
-export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => (
+export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => {
+	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
+
+	return (
 	<Tilt scale={1.05} tiltMaxAngleX={25} tiltMaxAngleY={25}>
 		<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md round bg-gray-200 dark:bg-gray-800">
 			<span
@@ -29,8 +35,10 @@ export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => (
 				{framework.name}
 			</h3>
 			<p className="text-gray-700 dark:text-gray-300 leading-loose">
-				About {framework.experience} year(s)
+				{parser.get("framework_year", {
+					experience: framework.experience.toString()
+				})}
 			</p>
 		</div>
 	</Tilt>
-);
+)}

@@ -5,19 +5,15 @@ const locales = { en };
 
 export class LocaleParser {
 	private locale: string;
-	constructor(locale: string) {
+	constructor(locale = "en") {
 		this.locale = locale;
 	}
 	public get(
 		name: string,
 		args?: { [param: string]: string },
 	): string | string[] {
-		const locale = locales[this.locale] as {
-			[prop: string]: string | string[];
-		};
-
-		let str = Object(locale).hasOwnProperty(name) ? locale[name] : null;
-		if (!str) return `${name} not found in ${this.locale}`;
+		const locale = locales[this.locale] || locales["en"];
+		let str = locale[name];
 		for (const constant in constants) {
 			const regToken = new RegExp(`%{${constant}}`, "gm");
 			if (Array.isArray(str)) {

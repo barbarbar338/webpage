@@ -12,7 +12,8 @@ export interface IAlertProps {
 	type: "success" | "warning" | "error" | "info";
 	title: string;
 	onClose?: () => void;
-	children: ReactNode;
+	children?: ReactNode;
+	html?: string;
 }
 
 const icons = {
@@ -36,7 +37,13 @@ const textColors = {
 	info: "text-blue-700",
 };
 
-export const Alert: FC<IAlertProps> = ({ children, type, title, onClose }) => {
+export const Alert: FC<IAlertProps> = ({
+	children,
+	type,
+	title,
+	onClose,
+	html,
+}) => {
 	const Icon = icons[type];
 
 	return (
@@ -54,7 +61,16 @@ export const Alert: FC<IAlertProps> = ({ children, type, title, onClose }) => {
 		>
 			<Icon className="w-5 h-5 inline mr-3" />
 			<div>
-				<span className="font-medium">{title}:</span> {children}
+				<span className="font-medium">{title}:</span>{" "}
+				{html ? (
+					<p
+						dangerouslySetInnerHTML={{
+							__html: html,
+						}}
+					/>
+				) : (
+					<p>{children}</p>
+				)}
 			</div>
 			{onClose && (
 				<div

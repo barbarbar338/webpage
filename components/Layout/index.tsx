@@ -2,11 +2,11 @@ import { type FC, type ReactNode, useEffect, useState } from "react";
 import { Footer } from "@components/Layout/Footer";
 import { Navbar } from "@components/Layout/Navbar";
 import { Alert } from "@components/Utils/Alert";
-import { Link } from "@components/Utils/Link";
 import { CONFIG } from "@libs/config";
 import { useLocalStorage } from "react-use";
 import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
+import { LocaleParser } from "@libs/localeParser";
 
 export interface ILayout {
 	title: string;
@@ -17,6 +17,7 @@ export const Layout: FC<ILayout> = ({ title, children }) => {
 	const [check, setCheck] = useLocalStorage("domain_check", false);
 	const [show, setShow] = useState(false);
 	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
 
 	useEffect(() => {
 		if (!window.location.hostname.includes("338.rocks") && !check) {
@@ -41,20 +42,14 @@ export const Layout: FC<ILayout> = ({ title, children }) => {
 					<div className="container mx-auto">
 						<Alert
 							type="warning"
-							title="New Domain"
+							title={parser.get("new_domain") as string}
 							onClose={handleClose}
-						>
-							I have migrated to a new domain name. Now when
-							entering this site, make sure it says{" "}
-							<Link
-								href="https://338.rocks"
-								underline
-								className="text-blue-500 hover:text-blue-400"
-							>
-								https://338.rocks
-							</Link>{" "}
-							in the address bar!
-						</Alert>
+							html={
+								parser.get("new_domain_alert", {
+									link: `<a rel='noreferrer' target='_blank' href='${CONFIG.SEO.publishDomain}' class='cursor-pointer hover:underline text-blue-500'>${CONFIG.SEO.publishDomain}</a>`,
+								}) as string
+							}
+						></Alert>
 					</div>
 				)}
 				{children}

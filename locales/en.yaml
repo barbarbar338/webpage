@@ -1,1 +1,41 @@
-hello: hello, my name is %{name}
+click_me: Click Me!
+go_back: Go Back
+back_to_blog: Back to blog
+published: Published %{date}
+tags: "Tags:"
+no_tags: No tags
+account_copied: "✨ Account copied to clipboard!"
+categories: Categories
+pinned_posts: Pinned Posts
+read_more: Read more
+url_copied: "✨ URL copied to clipboard!"
+bookmarked: Bookmarked %{date}
+bookmarks: Bookmarks
+mine_and_cells_doesnt_matches: Number of mines cannot be greater than number of cells
+lose: You lose!
+win: You win!
+mine: Mine
+points: "Points: %{points}"
+cleared: "Lines Cleared: %{lines}"
+left: left
+right: right
+rotate: rotate
+drop: drop
+restart: restart
+game_over: Game Over
+winner: "%{player} won!"
+new_domain_alert: I have migrated to a new domain name. Now when entering this site, make sure it says %{link} in the address bar!
+new_domain: New Domain
+home: Home
+about: About
+projects: Projects
+accounts: Accounts
+blog: Blog
+games: Games
+changelog: Changelog
+contact: Contact
+framework_year: About %{experience} year(s)
+stack: Tech Stack
+
+# <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" rel="noreferrer" target="_blank">o</a>
+posts: "Posts"

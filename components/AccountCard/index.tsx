@@ -4,6 +4,8 @@ import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
 import { useCopyToClipboard } from "react-use";
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
+import { LocaleParser } from "@libs/localeParser";
 import Tilt from "react-parallax-tilt";
 import classnames from "classnames";
 
@@ -22,13 +24,15 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	value,
 	color,
 }) => {
+	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
 	const Icon = icon;
 
 	const [, copyToClipboard] = useCopyToClipboard();
 
 	const onCopy = () => {
 		copyToClipboard(value);
-		toast.success("✨ Account copied to clipboard!");
+		toast.success(parser.get("account_copied"));
 	};
 
 	const Card: FC = () => (
@@ -49,7 +53,7 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	);
 
 	return (
-		<Tippy tooltip="Click Me!">
+		<Tippy tooltip={parser.get("click_me") as string}>
 			<div>
 				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 					{href ? (

@@ -6,6 +6,8 @@ import { useCopyToClipboard } from "react-use";
 import { toast } from "react-toastify";
 import Tilt from "react-parallax-tilt";
 import moment from "moment";
+import { useRouter } from "next/router";
+import { LocaleParser } from "@libs/localeParser";
 
 export interface IBookmark {
 	id: number;
@@ -23,11 +25,13 @@ export const Bookmark: FC<IBookmark> = ({
 	title,
 	url,
 }) => {
+	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
 	const [, copyToClipboard] = useCopyToClipboard();
 
 	const onCopy = () => {
 		copyToClipboard(url);
-		toast.success("✨ URL copied to clipboard!");
+		toast.success(parser.get("url_copied"));
 	};
 
 	const Card: FC = () => (
@@ -52,14 +56,16 @@ export const Bookmark: FC<IBookmark> = ({
 			</div>
 			<div className="flex justify-end mt-4">
 				<span className="text-xl font-medium text-indigo-500">
-					Bookmarked {moment(createdAt).calendar()}
+					{parser.get("bookmarked", {
+						date: moment(createdAt).calendar(),
+					})}
 				</span>
 			</div>
 		</div>
 	);
 
 	return (
-		<Tippy tooltip="Click Me!">
+		<Tippy tooltip={parser.get("click_me") as string}>
 			<div>
 				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 					<Link href={url}>

@@ -3,12 +3,17 @@ import type { IPost } from "@libs/graphql";
 import { CustomImage } from "@components/Utils/CustomImage";
 import { Link } from "@components/Utils/Link";
 import Tilt from "react-parallax-tilt";
+import { useRouter } from "next/router";
+import { LocaleParser } from "@libs/localeParser";
 
 export interface IPostCard {
 	post: IPost;
 }
 
 export const PostCard: FC<IPostCard> = ({ post }) => {
+	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
+
 	return (
 		<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 			<div className="mt-6">
@@ -33,7 +38,7 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 							href={`/blog/post/${post.number}`}
 							className="text-blue-500"
 						>
-							Read more
+							{parser.get("read_more")}
 						</Link>
 						<div>
 							<Link

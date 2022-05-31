@@ -1,18 +1,25 @@
 import type { FC } from "react";
 import { type IBookmark, Bookmark } from "@components/Bookmarks/Bookmark";
+import { useRouter } from "next/router";
+import { LocaleParser } from "@libs/localeParser";
 
 export interface IBookmarks {
 	bookmarks: IBookmark[];
 }
 
 export const Bookmarks: FC<IBookmarks> = ({ bookmarks }) => {
+	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
+
 	return (
 		<section
 			id="projects"
 			className="min-h-screen py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white"
 		>
 			<h1 className="text-4xl mb-10 text-center font-semibold font-heading">
-				<span className="text-purple-600">Bookmarks</span>
+				<span className="text-purple-600">
+					{parser.get("bookmarks")}
+				</span>
 			</h1>
 			<div className="container mx-auto mb-12">
 				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">

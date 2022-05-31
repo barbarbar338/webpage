@@ -9,6 +9,8 @@ import Giscus from "@giscus/react";
 import { useTheme } from "next-themes";
 import { useEffect } from "react";
 import hljs from "highlight.js";
+import { useRouter } from "next/router";
+import { LocaleParser } from "@libs/localeParser";
 
 export interface IPostProps {
 	post: IPostData;
@@ -16,6 +18,8 @@ export interface IPostProps {
 
 const PostPage: NextPage<IPostProps> = ({ post }) => {
 	const { theme } = useTheme();
+	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
 
 	useEffect(() => {
 		const codeBlocks = document.querySelectorAll(".highlight");
@@ -40,15 +44,17 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 									href="/blog"
 									className="text-base md:text-sm uppercase text-purple-500 font-bold no-underline hover:underline"
 								>
-									<FiArrowLeft className="inline" /> Back to
-									blog
+									<FiArrowLeft className="inline" />{" "}
+									{parser.get("back_to_blog")}
 								</Link>
 							</p>
 							<h1 className="font-bold font-sans break-normal text-black dark:text-white pt-6 pb-2 text-3xl md:text-4xl">
 								{post.title}
 							</h1>
 							<p className="text-sm md:text-base font-normal text-gray-500">
-								Published {post.createdAt}
+								{parser.get("published", {
+									date: post.createdAt,
+								})}
 							</p>
 						</div>
 						<div
@@ -57,7 +63,7 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 						/>
 					</div>
 					<div className="text-base md:text-sm text-gray-500 px-4 py-6">
-						Tags:{" "}
+						{parser.get("tags")}{" "}
 						{post.labels.length
 							? post.labels.map((label, idx) => (
 									<Link
@@ -71,7 +77,7 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 										{label.name}
 									</Link>
 							  ))
-							: "No tags"}
+							: parser.get("no_tags")}
 					</div>
 					<hr className="border-b-2 border-gray-700 mb-8 mx-4" />
 					<div className="container p-4">

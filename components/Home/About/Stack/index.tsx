@@ -3,12 +3,17 @@ import { CustomImage } from "@components/Utils/CustomImage";
 import { Tippy } from "@components/Utils/Tippy";
 import { CONFIG } from "@libs/config";
 import Tilt from "react-parallax-tilt";
+import { useRouter } from "next/router";
+import { LocaleParser } from "@libs/localeParser";
 
 export const Stack: FC = () => {
+	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
+
 	return (
 		<section className="bg-white dark:bg-gray-900 text-black dark:text-white">
 			<h1 className="text-4xl mb-10 text-center font-semibold font-heading">
-				Tech Stack
+				{parser.get("stack")}
 			</h1>
 			<div className="container mx-auto px-4">
 				<div className="flex flex-col justify-center">

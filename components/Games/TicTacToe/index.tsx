@@ -2,6 +2,8 @@ import { calculateWinner } from "@libs/games/tictactoe/calculateWinner";
 import { TicTacToeBoard } from "./Board";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { LocaleParser } from "@libs/localeParser";
+import { useRouter } from "next/router";
 
 export const TicTacToeGame = () => {
 	const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -9,8 +11,15 @@ export const TicTacToeGame = () => {
 	const [xIsNext, setXisNext] = useState(true);
 	const winner = calculateWinner(history[stepNumber]);
 	const xO = xIsNext ? "X" : "O";
+	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
 
-	if (winner) toast.success(`${winner} won!`);
+	if (winner)
+		toast.success(
+			parser.get("winner", {
+				player: winner,
+			}),
+		);
 
 	const handleClick = (i: number) => {
 		const historyPoint = history.slice(0, stepNumber + 1);
@@ -36,7 +45,7 @@ export const TicTacToeGame = () => {
 					onClick={restart}
 					className="inline-block mb-3 mx-5 lg:mb-0 lg:mr-3 w-full lg:w-1/5 py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
 				>
-					restart
+					{parser.get("restart")}
 				</button>
 			</div>
 			<div className="flex justify-center">

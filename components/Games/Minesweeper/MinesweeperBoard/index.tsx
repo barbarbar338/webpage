@@ -4,6 +4,8 @@ import { createMinesweeperBoard } from "@libs/games/minesweeper/createMinesweepe
 import { MinesweeperCell } from "@components/Games/Minesweeper/MinesweeperCell";
 import { Link } from "@components/Utils/Link";
 import { toast } from "react-toastify";
+import { LocaleParser } from "@libs/localeParser";
+import { useRouter } from "next/router";
 
 export const MinesweeperBoard: FC = () => {
 	const [x, setX] = useState(10);
@@ -13,6 +15,8 @@ export const MinesweeperBoard: FC = () => {
 	const [nonMineCount, setNonMineCount] = useState(0);
 	const [mineLocations, setMineLocations] = useState<number[][]>([]);
 	const [gameOver, setGameOver] = useState(false);
+	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
 
 	const freshBoard = (x: number, y: number, mine: number) => {
 		const newBoard = createMinesweeperBoard(x, y, mine);
@@ -26,9 +30,7 @@ export const MinesweeperBoard: FC = () => {
 
 	const restartGame = () => {
 		if (x * y < mine) {
-			toast.error(
-				"Number of mines cannot be greater than number of cells",
-			);
+			toast.error(parser.get("mine_and_cells_doesnt_matches"));
 			return;
 		}
 		freshBoard(x, y, mine);
@@ -57,7 +59,7 @@ export const MinesweeperBoard: FC = () => {
 
 			setGrid(newGrid);
 			setGameOver(true);
-			toast.error("You Lose!");
+			toast.error(parser.get("lose"));
 		} else {
 			const newRevealedBoard = reveal(newGrid, x, y, nonMineCount);
 			setGrid(newRevealedBoard.arr);
@@ -65,7 +67,7 @@ export const MinesweeperBoard: FC = () => {
 
 			if (newRevealedBoard.newNonMinesCount === 0) {
 				setGameOver(true);
-				toast.success("You Win!");
+				toast.success(parser.get("win"));
 			}
 		}
 	};
@@ -98,7 +100,7 @@ export const MinesweeperBoard: FC = () => {
 						onChange={(e) => setMine(parseInt(e.target.value))}
 						className="appearance-none w-full py-3 px-4 hidden md:block leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 						type="number"
-						placeholder="Mine"
+						placeholder={parser.get("mine") as string}
 						value={mine}
 						min={1}
 					/>
@@ -135,7 +137,7 @@ export const MinesweeperBoard: FC = () => {
 				underline={false}
 				className="inline-block  lg:mr-3 w-2/3 text-center mt-3 lg:w-96 py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200"
 			>
-				Go Back
+				{parser.get("go_back")}
 			</Link>
 		</div>
 	);

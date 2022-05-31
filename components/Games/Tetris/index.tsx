@@ -1,11 +1,15 @@
 import { type FC, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+import { LocaleParser } from "@libs/localeParser";
 
 const Tetris = dynamic(() => import("react-simple-tetris"), { ssr: false });
 
 export const TetrisGame: FC = () => {
 	const [lose, setLose] = useState(false);
+	const router = useRouter();
+	const parser = new LocaleParser(router.locale);
 
 	useEffect(() => {
 		document.onkeydown = (e) => e.preventDefault();
@@ -30,8 +34,16 @@ export const TetrisGame: FC = () => {
 									<HeldPiece />
 								</div>
 								<div className="w-1/2 px-2">
-									<p>Points: {points}</p>
-									<p>Lines Cleared: {linesCleared}</p>
+									<p>
+										{parser.get("points", {
+											points: points.toString(),
+										})}
+									</p>
+									<p>
+										{parser.get("cleared", {
+											lines: linesCleared.toString(),
+										})}
+									</p>
 								</div>
 							</div>
 							<div className="flex mb-4 ">
@@ -48,7 +60,7 @@ export const TetrisGame: FC = () => {
 										onClick={controller.moveLeft}
 										className="inline-block mb-3 lg:mb-0  w-full py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
 									>
-										left
+										{parser.get("left")}
 									</button>
 								</div>
 								<div className="md:w-1/5">
@@ -56,7 +68,7 @@ export const TetrisGame: FC = () => {
 										onClick={controller.moveRight}
 										className="inline-block mb-3 lg:mb-0  w-full  py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
 									>
-										right
+										{parser.get("right")}
 									</button>
 								</div>
 								<div className="md:w-1/5">
@@ -64,7 +76,7 @@ export const TetrisGame: FC = () => {
 										onClick={controller.flipClockwise}
 										className="inline-block mb-3 lg:mb-0  w-full  py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
 									>
-										rotate
+										{parser.get("rotate")}
 									</button>
 								</div>
 								<div className="md:w-1/5">
@@ -72,7 +84,7 @@ export const TetrisGame: FC = () => {
 										onClick={controller.hardDrop}
 										className="inline-block mb-3 lg:mb-0  w-full  py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
 									>
-										drop
+										{parser.get("drop")}
 									</button>
 								</div>
 								<div className="md:w-1/5">
@@ -83,13 +95,14 @@ export const TetrisGame: FC = () => {
 										}}
 										className="inline-block mb-3 lg:mb-0  w-full lg:w-auto py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
 									>
-										restart
+										{parser.get("restart")}
 									</button>
 								</div>
 							</div>
 
 							{state === "LOST" && !lose
-								? toast.error("Game Over!") && setLose(true)
+								? toast.error(parser.get("game_over")) &&
+								  setLose(true)
 								: ""}
 						</>
 					</div>
