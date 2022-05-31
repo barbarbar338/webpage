@@ -14,31 +14,32 @@ export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => {
 	const parser = new LocaleParser(router.locale);
 
 	return (
-	<Tilt scale={1.05} tiltMaxAngleX={25} tiltMaxAngleY={25}>
-		<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md round bg-gray-200 dark:bg-gray-800">
-			<span
-				className={classNames(
-					"mb-4",
-					"inline-block",
-					"p-3",
-					"round",
-					framework.color,
-				)}
-			>
-				<CustomImage
-					src={framework.icon}
-					className="w-10 h-10"
-					alt={framework.name}
-				/>
-			</span>
-			<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
-				{framework.name}
-			</h3>
-			<p className="text-gray-700 dark:text-gray-300 leading-loose">
-				{parser.get("framework_year", {
-					experience: framework.experience.toString()
-				})}
-			</p>
-		</div>
-	</Tilt>
-)}
+		<Tilt scale={1.05} tiltMaxAngleX={25} tiltMaxAngleY={25}>
+			<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md round bg-gray-200 dark:bg-gray-800">
+				<span
+					className={classNames(
+						"mb-4",
+						"inline-block",
+						"p-3",
+						"round",
+						framework.color,
+					)}
+				>
+					<CustomImage
+						src={framework.icon}
+						className="w-10 h-10"
+						alt={framework.name}
+					/>
+				</span>
+				<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
+					{framework.name}
+				</h3>
+				<p className="text-gray-700 dark:text-gray-300 leading-loose">
+					{parser.get("framework_year", {
+						experience: framework.experience.toString(),
+					})}
+				</p>
+			</div>
+		</Tilt>
+	);
+};

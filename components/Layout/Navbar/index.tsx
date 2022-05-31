@@ -269,7 +269,8 @@ export const Navbar: FC = () => {
 						</div>
 						<p className="my-4 text-xs text-center text-gray-600 dark:text-gray-400">
 							<span>
-								&copy; 2020 - {CONFIG.NOW} All rights reserved | Barış DEMİRCİ
+								&copy; 2020 - {CONFIG.NOW} All rights reserved |
+								Barış DEMİRCİ
 							</span>
 						</p>
 						<div className="text-center">
