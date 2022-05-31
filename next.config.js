@@ -1,10 +1,16 @@
 /* eslint-disable */
+const { withPlugins } = require("next-compose-plugins");
 const withImages = require("next-images");
+const withYAML = require("next-yaml");
 
-module.exports = withImages({
+module.exports = withPlugins([withImages, withYAML], {
 	reactStrictMode: true,
 	poweredByHeader: false,
 	trailingSlash: true,
+	i18n: {
+		locales: ["en", "tr", "ru"],
+		defaultLocale: "en",
+	},
 	async redirects() {
 		return [
 			{
