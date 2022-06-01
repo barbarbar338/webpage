@@ -18,9 +18,9 @@ const tokens: ITokens = {
 	purple: {
 		start: new RegExp("<purple[^>]*>", "gm"),
 		end: new RegExp("</purple[^>]*>", "gm"),
-		value: "<span class='text-purple-500'>"
-	}
-}
+		value: "<span class='text-purple-500'>",
+	},
+};
 
 class LocaleParser {
 	private locale: string;
@@ -40,11 +40,9 @@ class LocaleParser {
 			for (const arg in args) {
 				const regToken = new RegExp(`%{${arg}}`, "gm");
 
-				if (Array.isArray(str)) 
+				if (Array.isArray(str))
 					str = str.map((s) => s.replace(regToken, args[arg]));
-				else 
-					str = str.replace(regToken, args[arg]);
-				
+				else str = str.replace(regToken, args[arg]);
 			}
 		}
 
@@ -71,10 +69,12 @@ class LocaleParser {
 	private replaceColors(str: string) {
 		for (const t in tokens) {
 			const token = tokens[t];
-			str = str.replace(token.start, token.value).replace(token.end, "</span>");
+			str = str
+				.replace(token.start, token.value)
+				.replace(token.end, "</span>");
 		}
 
-		console.log(str)
+		console.log(str);
 
 		return str;
 	}

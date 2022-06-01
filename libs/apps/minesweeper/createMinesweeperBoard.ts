@@ -1,4 +1,4 @@
-import type { ICell } from "@libs/games/minesweeper/reveal";
+import type { ICell } from "@libs/apps/minesweeper/reveal";
 
 export const createMinesweeperBoard = (
 	row: number,
