@@ -6,7 +6,7 @@ import { Link } from "@components/Utils/Link";
 import classnames from "classnames";
 import Tilt from "react-parallax-tilt";
 
-export interface IGamesCardProps {
+export interface IAppsCardProps {
 	icon: IconType;
 	name: string;
 	value: string;
@@ -14,7 +14,7 @@ export interface IGamesCardProps {
 	color: string;
 }
 
-export const GamesCard: FC<IGamesCardProps> = ({
+export const AppsCard: FC<IAppsCardProps> = ({
 	href,
 	icon,
 	name,

@@ -52,8 +52,8 @@ export const Navbar: FC = () => {
 			href: "/bookmarks",
 		},
 		{
-			name: parser.get("games") as string,
-			href: "/games",
+			name: parser.get("apps") as string,
+			href: "/apps",
 		},
 		{
 			name: parser.get("changelog") as string,

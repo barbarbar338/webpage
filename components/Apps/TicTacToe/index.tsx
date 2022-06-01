@@ -1,5 +1,5 @@
-import { calculateWinner } from "@libs/games/tictactoe/calculateWinner";
-import { TicTacToeBoard } from "@components/Games/TicTacToe/Board";
+import { calculateWinner } from "@libs/apps/tictactoe/calculateWinner";
+import { TicTacToeBoard } from "@components/Apps/TicTacToe/Board";
 import { useLocaleParser } from "@libs/localeParser";
 import { toast } from "react-toastify";
 import { useState } from "react";

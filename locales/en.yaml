@@ -31,23 +31,23 @@ about: About
 projects: Projects
 accounts: Accounts
 blog: Blog
-games: Games
+app: Apps
 changelog: Changelog
 contact: Contact
 framework_year: About %{experience} year(s)
 stack: <purple>Tech</purple> Stack
 posts: Posts
 go_home: Go Home
-all_games: All <purple>Games</purple>
+all_app: All <purple>Apps</purple>
 minesweeper: Minesweeper
 tetris: Tetris
 tic_tac_toe: Tic Tac Toe
 minesweeper_description: A classic game of Minesweeper
 tetris_description: A classic game of Tetris
 tic_tac_toe_description: A classic game of Tic-Tac-Toe
-games_minesweeper: Minesweeper - Games
-games_tetris: Tetris - Games
-games_tic_tac_toe: Tic-Tac-Toe - Games
+apps_minesweeper: Minesweeper - Apps
+apps_tetris: Tetris - Apps
+apps_tic_tac_toe: Tic-Tac-Toe - Apps
 error_404: Error 404
 page_not_found: Page not found
 my_accounts: My Accounts

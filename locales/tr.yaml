@@ -31,23 +31,23 @@ about: Hakkımda
 projects: Projelerim
 accounts: Hesaplarım
 blog: Blog
-games: Oyunlar
+apps: Uygulamalar
 changelog: Değişiklikler
 contact: İletişim
 framework_year: Yaklaşık %{experience} yıl
 stack: Kullandığım <purple>Teknolojiler</purple>
 posts: Yazılar
 go_home: Ana Sayfaya Dön
-all_games: Tüm <purple>Oyunlar</purple>
+all_apps: Tüm <purple>Uygulamalar</purple>
 minesweeper: Mayın Tarlası
 tetris: Tetris
 tic_tac_toe: X-O-X
 minesweeper_description: Klasik bir mayın tarlası oyunu
 tetris_description: klasik bir tetris oyunu
 tic_tac_toe_description: Klasik bir x-o-x oyunu
-games_minesweeper: Mayın Tarlası - Oyunlar
-games_tetris: Tetris - Oyunlar
-games_tic_tac_toe: X-O-X - Oyunlar
+apps_minesweeper: Mayın Tarlası - Uygulamalar
+apps_tetris: Tetris - Uygulamalar
+apps_tic_tac_toe: X-O-X - Uygulamalar
 error_404: Hata Kodu 404
 page_not_found: Sayfa Bulunamadı
 my_accounts: Hesaplarım

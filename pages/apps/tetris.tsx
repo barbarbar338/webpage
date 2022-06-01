@@ -1,16 +1,16 @@
 import type { NextPage } from "next";
-import { TetrisGame } from "@components/Games/Tetris";
+import { TetrisGame } from "@components/Apps/Tetris";
 import { useLocaleParser } from "@libs/localeParser";
 import { Layout } from "@components/Layout";
 
-const TetrisGamePage: NextPage = () => {
+const TetrisAppPage: NextPage = () => {
 	const parser = useLocaleParser();
 
 	return (
-		<Layout title={parser.get("games_tetris") as string}>
+		<Layout title={parser.get("apps_tetris") as string}>
 			<TetrisGame />
 		</Layout>
 	);
 };
 
-export default TetrisGamePage;
+export default TetrisAppPage;

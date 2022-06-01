@@ -1,57 +1,57 @@
 import type { NextPage } from "next";
-import { GamesCard } from "@components/Games/GamesCard";
+import { AppsCard } from "@components/Apps/AppsCard";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import { FiBox, FiX } from "react-icons/fi";
 import { FaBomb } from "react-icons/fa";
 
-const GamesPage: NextPage = () => {
+const AppsPage: NextPage = () => {
 	const parser = useLocaleParser();
 
-	const games = [
+	const apps = [
 		{
 			name: parser.get("minesweeper") as string,
 			description: parser.get("minesweeper_description") as string,
 			icon: FaBomb,
-			href: "/games/minesweeper",
+			href: "/apps/minesweeper",
 			color: "text-black",
 		},
 		{
 			name: parser.get("tetris") as string,
 			description: parser.get("tetris_description") as string,
 			icon: FiBox,
-			href: "/games/tetris",
+			href: "/apps/tetris",
 			color: "text-blue-500",
 		},
 		{
 			name: parser.get("tic_tac_toe") as string,
 			description: parser.get("tic_tac_toe_description") as string,
 			icon: FiX,
-			href: "/games/tictactoe",
+			href: "/apps/tictactoe",
 			color: "text-red-500",
 		},
 	];
 
 	return (
-		<Layout title={parser.get("games") as string}>
+		<Layout title={parser.get("apps") as string}>
 			<section className="min-h-screen py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white text-center">
 				<h1
 					className="text-4xl mb-10 font-semibold font-heading"
 					dangerouslySetInnerHTML={{
-						__html: parser.get("all_games") as string,
+						__html: parser.get("all_apps") as string,
 					}}
 				/>
 				<div className="container mx-auto mb-12">
 					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 text-left">
-						{games.map((game, idx) => (
-							<GamesCard
+						{apps.map((app, idx) => (
+							<AppsCard
 								key={idx}
-								icon={game.icon}
-								name={game.name}
-								value={game.description}
-								href={game.href}
-								color={game.color}
+								icon={app.icon}
+								name={app.name}
+								value={app.description}
+								href={app.href}
+								color={app.color}
 							/>
 						))}
 					</div>
@@ -68,4 +68,4 @@ const GamesPage: NextPage = () => {
 	);
 };
 
-export default GamesPage;
+export default AppsPage;

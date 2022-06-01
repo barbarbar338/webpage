@@ -1,7 +1,7 @@
 import { type FC, type MouseEvent, useState, useEffect } from "react";
-import { type ICell, reveal } from "@libs/games/minesweeper/reveal";
-import { createMinesweeperBoard } from "@libs/games/minesweeper/createMinesweeperBoard";
-import { MinesweeperCell } from "@components/Games/Minesweeper/MinesweeperCell";
+import { type ICell, reveal } from "@libs/apps/minesweeper/reveal";
+import { createMinesweeperBoard } from "@libs/apps/minesweeper/createMinesweeperBoard";
+import { MinesweeperCell } from "@components/Apps/Minesweeper/MinesweeperCell";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import { toast } from "react-toastify";
@@ -132,7 +132,7 @@ export const MinesweeperBoard: FC = () => {
 			</div>
 			<br />
 			<Link
-				href="/games"
+				href="/apps"
 				underline={false}
 				className="inline-block  lg:mr-3 w-2/3 text-center mt-3 lg:w-96 py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200"
 			>

@@ -1,16 +1,16 @@
 import type { NextPage } from "next";
-import { MinesweeperBoard } from "@components/Games/Minesweeper/MinesweeperBoard";
+import { MinesweeperBoard } from "@components/Apps/Minesweeper/MinesweeperBoard";
 import { useLocaleParser } from "@libs/localeParser";
 import { Layout } from "@components/Layout";
 
-const MinesweeperGamePage: NextPage = () => {
+const MinesweeperAppPage: NextPage = () => {
 	const parser = useLocaleParser();
 
 	return (
-		<Layout title={parser.get("games_minesweeper") as string}>
+		<Layout title={parser.get("apps_minesweeper") as string}>
 			<MinesweeperBoard />
 		</Layout>
 	);
 };
 
-export default MinesweeperGamePage;
+export default MinesweeperAppPage;

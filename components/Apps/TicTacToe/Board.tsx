@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { Square } from "@components/Games/TicTacToe/Square";
+import { Square } from "@components/Apps/TicTacToe/Square";
 
 export interface ITicTacToeBoard {
 	squares: string[];
