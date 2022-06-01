@@ -1,9 +1,9 @@
 import type { FC } from "react";
 import type { IPost } from "@libs/graphql";
 import { CustomImage } from "@components/Utils/CustomImage";
+import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import Tilt from "react-parallax-tilt";
-import { useLocaleParser } from "@libs/localeParser";
 
 export interface IPostCard {
 	post: IPost;

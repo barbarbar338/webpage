@@ -1,10 +1,11 @@
-import type { IconType } from "react-icons";
 import type { FC } from "react";
+import type { IconType } from "react-icons";
+import { useLocaleParser } from "@libs/localeParser";
 import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
 import classnames from "classnames";
 import Tilt from "react-parallax-tilt";
-import { useLocaleParser } from "@libs/localeParser";
+
 export interface IGamesCardProps {
 	icon: IconType;
 	name: string;
@@ -21,6 +22,7 @@ export const GamesCard: FC<IGamesCardProps> = ({
 	color,
 }) => {
 	const parser = useLocaleParser();
+
 	const Icon = icon;
 
 	const Card: FC = () => (

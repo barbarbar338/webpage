@@ -1,10 +1,10 @@
 import type { FC } from "react";
 import type { IconType } from "react-icons";
+import { useLocaleParser } from "@libs/localeParser";
 import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
 import { useCopyToClipboard } from "react-use";
 import { toast } from "react-toastify";
-import { useLocaleParser } from "@libs/localeParser";
 import Tilt from "react-parallax-tilt";
 import classnames from "classnames";
 
@@ -24,6 +24,7 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	color,
 }) => {
 	const parser = useLocaleParser();
+
 	const Icon = icon;
 
 	const [, copyToClipboard] = useCopyToClipboard();

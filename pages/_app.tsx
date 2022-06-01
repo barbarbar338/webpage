@@ -5,8 +5,8 @@ import { ThemeProvider } from "next-themes";
 import { useRouter } from "next/router";
 import { DefaultSeo } from "next-seo";
 import { useEffect } from "react";
-import NextProgress from "nextjs-progressbar";
 import Favicon from "@assets/icon.svg";
+import NextProgress from "nextjs-progressbar";
 import Script from "next/script";
 import Head from "next/head";
 
@@ -20,6 +20,7 @@ import "highlight.js/styles/tomorrow-night-bright.css";
 
 const App = ({ Component, pageProps }) => {
 	const router = useRouter();
+
 	useEffect(() => {
 		const handleRouteChange = (url: string) => {
 			pageview(url);

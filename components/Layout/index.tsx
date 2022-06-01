@@ -1,4 +1,5 @@
 import { type FC, type ReactNode, useEffect, useState } from "react";
+import { useLocaleParser } from "@libs/localeParser";
 import { Footer } from "@components/Layout/Footer";
 import { Navbar } from "@components/Layout/Navbar";
 import { Alert } from "@components/Utils/Alert";
@@ -6,7 +7,6 @@ import { CONFIG } from "@libs/config";
 import { useLocalStorage } from "react-use";
 import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
-import { useLocaleParser } from "@libs/localeParser";
 
 export interface ILayout {
 	title: string;
@@ -14,10 +14,12 @@ export interface ILayout {
 }
 
 export const Layout: FC<ILayout> = ({ title, children }) => {
+	const parser = useLocaleParser();
+
+	const router = useRouter();
+
 	const [check, setCheck] = useLocalStorage("domain_check", false);
 	const [show, setShow] = useState(false);
-	const router = useRouter();
-	const parser = useLocaleParser();
 
 	useEffect(() => {
 		if (!window.location.hostname.includes("338.rocks") && !check) {

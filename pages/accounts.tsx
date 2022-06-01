@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import { AccountCard } from "@components/AccountCard";
+import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
-import { useLocaleParser } from "@libs/localeParser";
 
 const AccountsPage: NextPage = () => {
 	const parser = useLocaleParser();

@@ -71,3 +71,6 @@ name: Name
 email: E-Mail
 starred_repos: Most <purple>Starred</purple> Repositories
 pinned_repos: <purple>Pinned</purple> Repositories
+last_commit: "Last Commit: %{date}"
+last_30_commit: "Last 30 Commits:"
+changelog_description: The changelog below displays the thirty most recent commits for this website. Click %{link} if you want to learn more information about this website.

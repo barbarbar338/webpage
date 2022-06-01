@@ -10,6 +10,7 @@ export interface IProjects {
 
 export const Projects: FC<IProjects> = ({ repos, pinned }) => {
 	const parser = useLocaleParser();
+
 	return (
 		<section
 			id="projects"

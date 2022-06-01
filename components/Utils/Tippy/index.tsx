@@ -6,15 +6,8 @@ export interface ITippyProps {
 	children: ReactNode;
 }
 
-export const Tippy: FC<ITippyProps> = ({ children, tooltip }) => {
-	return (
-		<TippyJS content={tooltip}>
-			{
-				children as ReactElement<
-					never,
-					string | JSXElementConstructor<never>
-				>
-			}
-		</TippyJS>
-	);
-};
+export const Tippy: FC<ITippyProps> = ({ children, tooltip }) => (
+	<TippyJS content={tooltip}>
+		{children as ReactElement<never, string | JSXElementConstructor<never>>}
+	</TippyJS>
+);

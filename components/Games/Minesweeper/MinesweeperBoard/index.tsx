@@ -2,10 +2,13 @@ import { type FC, type MouseEvent, useState, useEffect } from "react";
 import { type ICell, reveal } from "@libs/games/minesweeper/reveal";
 import { createMinesweeperBoard } from "@libs/games/minesweeper/createMinesweeperBoard";
 import { MinesweeperCell } from "@components/Games/Minesweeper/MinesweeperCell";
+import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import { toast } from "react-toastify";
-import { useLocaleParser } from "@libs/localeParser";
+
 export const MinesweeperBoard: FC = () => {
+	const parser = useLocaleParser();
+
 	const [x, setX] = useState(10);
 	const [y, setY] = useState(10);
 	const [mine, setMine] = useState(10);
@@ -13,8 +16,6 @@ export const MinesweeperBoard: FC = () => {
 	const [nonMineCount, setNonMineCount] = useState(0);
 	const [mineLocations, setMineLocations] = useState<number[][]>([]);
 	const [gameOver, setGameOver] = useState(false);
-
-	const parser = useLocaleParser();
 
 	const freshBoard = (x: number, y: number, mine: number) => {
 		const newBoard = createMinesweeperBoard(x, y, mine);

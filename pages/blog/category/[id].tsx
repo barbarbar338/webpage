@@ -24,23 +24,21 @@ const CategoryPage: NextPage<ICategoryProps> = ({
 	categories,
 	posts,
 	tag,
-}) => {
-	return (
-		<Layout title={tag.name}>
-			<div className="overflow-x-hidden min-h-screen">
-				<div className="px-6 py-8">
-					<div className="container flex justify-between mx-auto">
-						<Posts posts={posts} title={tag.name} />
-						<div className="hidden w-4/12 -mx-8 lg:block">
-							<PinnedPosts posts={pinned} />
-							<Categories categories={categories} />
-						</div>
+}) => (
+	<Layout title={tag.name}>
+		<div className="overflow-x-hidden min-h-screen">
+			<div className="px-6 py-8">
+				<div className="container flex justify-between mx-auto">
+					<Posts posts={posts} title={tag.name} />
+					<div className="hidden w-4/12 -mx-8 lg:block">
+						<PinnedPosts posts={pinned} />
+						<Categories categories={categories} />
 					</div>
 				</div>
 			</div>
-		</Layout>
-	);
-};
+		</div>
+	</Layout>
+);
 
 export default CategoryPage;
 

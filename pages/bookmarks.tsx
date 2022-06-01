@@ -1,10 +1,10 @@
 import type { GetStaticProps, NextPage } from "next";
 import type { IBookmark } from "@components/Bookmarks/Bookmark";
+import { useLocaleParser } from "@libs/localeParser";
 import { Bookmarks } from "@components/Bookmarks";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
 import axios from "axios";
-import { useLocaleParser } from "@libs/localeParser";
 
 export interface IBookmarksPage {
 	bookmarks: IBookmark[];

@@ -1,9 +1,9 @@
 import type { FC } from "react";
 import { CustomImage } from "@components/Utils/CustomImage";
+import { useLocaleParser } from "@libs/localeParser";
 import { Tippy } from "@components/Utils/Tippy";
 import { CONFIG } from "@libs/config";
 import Tilt from "react-parallax-tilt";
-import { useLocaleParser } from "@libs/localeParser";
 
 export const Stack: FC = () => {
 	const parser = useLocaleParser();

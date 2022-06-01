@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { MinesweeperBoard } from "@components/Games/Minesweeper/MinesweeperBoard";
-import { Layout } from "@components/Layout";
 import { useLocaleParser } from "@libs/localeParser";
+import { Layout } from "@components/Layout";
 
 const MinesweeperGamePage: NextPage = () => {
 	const parser = useLocaleParser();

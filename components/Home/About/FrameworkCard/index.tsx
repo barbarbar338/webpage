@@ -1,9 +1,9 @@
 import type { FC } from "react";
 import type { IFramework } from "@libs/config";
 import { CustomImage } from "@components/Utils/CustomImage";
+import { useLocaleParser } from "@libs/localeParser";
 import classNames from "classnames";
 import Tilt from "react-parallax-tilt";
-import { useLocaleParser } from "@libs/localeParser";
 
 export interface IFrameworkCard {
 	framework: IFramework;

@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
+import { useLocaleParser } from "@libs/localeParser";
 import { Projects } from "@components/Home/Projects";
 import { Contact } from "@components/Home/Contact";
 import { About } from "@components/Home/About";
@@ -10,7 +11,6 @@ import {
 	IStarredRepo,
 } from "@libs/graphql";
 import { CONFIG } from "@libs/config";
-import { useLocaleParser } from "@libs/localeParser";
 
 export interface IIndexPage {
 	repos: IStarredRepo[];

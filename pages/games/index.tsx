@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import { GamesCard } from "@components/Games/GamesCard";
+import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import { FiBox, FiX } from "react-icons/fi";
 import { FaBomb } from "react-icons/fa";
-import { useLocaleParser } from "@libs/localeParser";
 
 const GamesPage: NextPage = () => {
 	const parser = useLocaleParser();

@@ -117,6 +117,10 @@ export const CONFIG = {
 			repo_id: "MDEwOlJlcG9zaXRvcnkyNjc3OTQ5NDE=",
 		},
 	},
+	SOURCE: {
+		repo: "webpage",
+		username: "barbarbar338",
+	},
 	DEV: process.env.NODE_ENV != "production",
 	REVALIDATION: 60 * 5,
 	SEO,

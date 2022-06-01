@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import { CustomImage } from "@components/Utils/CustomImage";
+import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import ErrorSVG from "@assets/elements/error.svg";
-import { useLocaleParser } from "@libs/localeParser";
 
 const NotFoundPage: NextPage = () => {
 	const parser = useLocaleParser();

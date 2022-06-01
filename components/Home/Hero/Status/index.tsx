@@ -1,12 +1,13 @@
 import type { FC } from "react";
+import { useLocaleParser } from "@libs/localeParser";
 import { Tippy } from "@components/Utils/Tippy";
 import { CONFIG } from "@libs/config";
 import { useLanyard } from "react-use-lanyard";
 import classnames from "classnames";
-import { useLocaleParser } from "@libs/localeParser";
 
 export const Status: FC = () => {
 	const parser = useLocaleParser();
+
 	const { loading, status } = useLanyard({
 		userId: CONFIG.LANYARD_ID,
 		socket: true,

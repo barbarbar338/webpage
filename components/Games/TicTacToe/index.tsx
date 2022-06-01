@@ -1,16 +1,17 @@
 import { calculateWinner } from "@libs/games/tictactoe/calculateWinner";
-import { TicTacToeBoard } from "./Board";
+import { TicTacToeBoard } from "@components/Games/TicTacToe/Board";
+import { useLocaleParser } from "@libs/localeParser";
 import { toast } from "react-toastify";
 import { useState } from "react";
-import { useLocaleParser } from "@libs/localeParser";
+
 export const TicTacToeGame = () => {
+	const parser = useLocaleParser();
+
 	const [history, setHistory] = useState([Array(9).fill(null)]);
 	const [stepNumber, setStepNumber] = useState(0);
 	const [xIsNext, setXisNext] = useState(true);
 	const winner = calculateWinner(history[stepNumber]);
 	const xO = xIsNext ? "X" : "O";
-
-	const parser = useLocaleParser();
 
 	if (winner)
 		toast.success(

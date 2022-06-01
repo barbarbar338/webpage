@@ -9,6 +9,7 @@ import {
 } from "@libs/graphql";
 import { PinnedPosts } from "@components/Blog/PinnedPosts";
 import { Categories } from "@components/Blog/Categories";
+import { useLocaleParser } from "@libs/localeParser";
 import { Posts } from "@components/Blog/Posts";
 import { CONFIG } from "@libs/config";
 
@@ -19,8 +20,10 @@ interface IBlogProps {
 }
 
 const BlogPage: NextPage<IBlogProps> = ({ pinned, categories, posts }) => {
+	const parser = useLocaleParser();
+
 	return (
-		<Layout title="Blog">
+		<Layout title={parser.get("blog") as string}>
 			<div className="overflow-x-hidden min-h-screen">
 				<div className="px-6 py-8">
 					<div className="container flex justify-between mx-auto">

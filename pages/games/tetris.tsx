@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { TetrisGame } from "@components/Games/Tetris";
-import { Layout } from "@components/Layout";
 import { useLocaleParser } from "@libs/localeParser";
+import { Layout } from "@components/Layout";
 
 const TetrisGamePage: NextPage = () => {
 	const parser = useLocaleParser();

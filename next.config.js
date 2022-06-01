@@ -8,7 +8,7 @@ module.exports = withPlugins([withImages, withYAML], {
 	poweredByHeader: false,
 	trailingSlash: true,
 	i18n: {
-		locales: ["en", "tr", "ru"],
+		locales: ["en", "tr"],
 		defaultLocale: "en",
 	},
 	async redirects() {

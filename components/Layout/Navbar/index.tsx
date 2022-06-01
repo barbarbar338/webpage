@@ -2,6 +2,7 @@ import { type FC, Fragment, useEffect, useState } from "react";
 import type { IconType } from "react-icons";
 import { NavbarSeperator } from "@components/Layout/NavbarSeperator";
 import { CustomImage } from "@components/Utils/CustomImage";
+import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import { CONFIG } from "@libs/config";
 import { useTheme } from "next-themes";
@@ -15,15 +16,15 @@ import {
 } from "react-icons/fi";
 import Favicon from "@assets/icon.svg";
 import classnames from "classnames";
-import { useLocaleParser } from "@libs/localeParser";
 
 export const Navbar: FC = () => {
+	const parser = useLocaleParser();
+
 	const [visible, setVisible] = useState(false);
 	const [hash, setHash] = useState("");
 	const [top, setTop] = useState(false);
 	const { theme, setTheme } = useTheme();
 	const [color, setColor] = useState<"yellow" | "gray" | "blue">("yellow");
-	const parser = useLocaleParser();
 
 	const links = [
 		{

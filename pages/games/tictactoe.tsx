@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { TicTacToeGame } from "@components/Games/TicTacToe";
-import { Layout } from "@components/Layout";
 import { useLocaleParser } from "@libs/localeParser";
+import { Layout } from "@components/Layout";
 
 const TicTacToeGamePage: NextPage = () => {
 	const parser = useLocaleParser();

@@ -1,12 +1,13 @@
 import type { FC } from "react";
 import { CustomImage } from "@components/Utils/CustomImage";
+import { useLocaleParser } from "@libs/localeParser";
 import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
 import { useCopyToClipboard } from "react-use";
 import { toast } from "react-toastify";
 import Tilt from "react-parallax-tilt";
 import moment from "moment";
-import { useLocaleParser } from "@libs/localeParser";
+
 export interface IBookmark {
 	id: number;
 	url: string;
@@ -24,6 +25,7 @@ export const Bookmark: FC<IBookmark> = ({
 	url,
 }) => {
 	const parser = useLocaleParser();
+
 	const [, copyToClipboard] = useCopyToClipboard();
 
 	const onCopy = () => {
