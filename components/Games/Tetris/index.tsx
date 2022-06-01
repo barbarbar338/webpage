@@ -101,7 +101,8 @@ export const TetrisGame: FC = () => {
 
 							{state === "LOST" && !lose
 								? toast.error(parser.get("game_over")) &&
-								  setLose(true)
+								setLose(true)
+								// eslint-disable-next-line no-mixed-spaces-and-tabs
 								: ""}
 						</>
 					</div>
