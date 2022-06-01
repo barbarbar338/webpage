@@ -1,0 +1,77 @@
+click_me: Bana Tıkla!
+go_back: Geri Dön
+back_to_blog: Bloga geri dön
+published: "%{date} tarihinde yayınlandı"
+tags: "Etiketler:"
+no_tags: Etiket yok
+account_copied: "✨ Hesap bilgileri panoya kopyalandı!"
+categories: Kategoriler
+pinned_posts: Sabitlenen Yazılar
+read_more: Devamını Oku
+url_copied: "✨ URL panoya kopyalandı!"
+bookmarked: "%{date} tarihinde kaydedildi"
+bookmarks: Yerİmleri
+mine_and_cells_doesnt_matches: Mayın sayısı hücre sayısından fazla olamaz.
+lose: Kaybettin!
+win: Kazandın!
+mine: Mayın
+points: "Puan: %{points}"
+cleared: "Temizlenen Satırlar: %{lines}"
+left: sol
+right: sağ
+rotate: döndür
+drop: düşür
+restart: yeniden başlat
+game_over: Oyun bitti
+winner: "%{player} kazandı!"
+new_domain_alert: Yeni bir alan adına geçiş yaptım. Artık siteye girerken adres barında %{link} yazdığından emin olun!
+new_domain: Yeni Alan Adı
+home: AnaSayfa
+about: Hakkımda
+projects: Projelerim
+accounts: Hesaplarım
+blog: Blog
+games: Oyunlar
+changelog: Değişiklikler
+contact: İletişim
+framework_year: Yaklaşık %{experience} yıl
+stack: Kullandığım <purple>Teknolojiler</purple>
+posts: Yazılar
+go_home: Ana Sayfaya Dön
+all_games: Tüm <purple>Oyunlar</purple>
+minesweeper: Mayın Tarlası
+tetris: Tetris
+tic_tac_toe: X-O-X
+minesweeper_description: Klasik bir mayın tarlası oyunu
+tetris_description: klasik bir tetris oyunu
+tic_tac_toe_description: Klasik bir x-o-x oyunu
+games_minesweeper: Mayın Tarlası - Oyunlar
+games_tetris: Tetris - Oyunlar
+games_tic_tac_toe: X-O-X - Oyunlar
+error_404: Hata Kodu 404
+page_not_found: Sayfa Bulunamadı
+my_accounts: Hesaplarım
+online: Çevrimiçi
+offline: Çevrimdışı
+idle: Boşta
+dnd: Rahatsız Etmeyin
+vscode_status: "Visual Studio Code'da %{doing} (%{workspace})"
+spotify_status: "Spotify'da %{author} sanatçısının %{album} albümündeki %{song} şarkısını dinliyor."
+hero_title: "<purple>Yaklaşık %{experience} yıllık</purple> tecrübeye sahip bir %{title}. Daha çok %{interests} ve %{lastInterest} ile ilgileniyor."
+about_me: Hakkımda
+being_a_title: "%{title} olmak..."
+about_title: Ben kimim <purple>&amp;</purple> buraya nasıl geldim
+bio: Merhaba, ben %{name} %{surname} (a.k.a. <purple>%{nickname}</purple>) Ben daha çok eğlence için kodlama yapan Türk bir öğrenciyim. Kodlama kariyerime ilk olarak basit web siteler yaparak %{startedAt} yılında başladım. JavaScript'i (Node & Client-side) %{experience} yıldır kullanıyorum. Şu anda ise bol bol açık kaynaklı projeler geliştirmeye çalışıyorum ve freelancer olarak iş yapıyorum.
+fill_form: "❌Lütfen formu tamamen doldurun!"
+form_sent: "🦄 Mesajınız için teşekkürler!"
+contact_me: <purple>İletişim</purple>
+submit: Gönder
+write_something: Bir şeyler yazın...
+name: İsim
+email: E-Posta
+starred_repos: En çok <purple>Yıldızlanan</purple> Repolarım
+pinned_repos: <purple>Sabitlediğim</purple> Repolarım
+last_commit: "Son Commit: %{date}"
+last_30_commit: "Son 30 Commit:"
+changelog_description: Aşağıdaki değişiklik günlüğü bu siteye yapmış olduğum son 30 commiti gösterir. Bu site hakkında daha fazla bilgi için %{link} tıklayın.
+here: buraya

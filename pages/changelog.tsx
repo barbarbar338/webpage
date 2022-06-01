@@ -33,7 +33,11 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 									__html: parser.get(
 										"changelog_description",
 										{
-											link: `<a rel="noreferrer" target="_blank" href="https://github.com/${CONFIG.SOURCE.username}/${CONFIG.SOURCE.repo}">here</a>`,
+											link: `<a rel="noreferrer" target="_blank" href="https://github.com/${
+												CONFIG.SOURCE.username
+											}/${
+												CONFIG.SOURCE.repo
+											}">${parser.get("here")}</a>`,
 										},
 									) as string,
 								}}

@@ -35,10 +35,10 @@ games: Games
 changelog: Changelog
 contact: Contact
 framework_year: About %{experience} year(s)
-stack: Tech Stack
-posts: "Posts"
+stack: <purple>Tech</purple> Stack
+posts: Posts
 go_home: Go Home
-all_games: All Games
+all_games: All <purple>Games</purple>
 minesweeper: Minesweeper
 tetris: Tetris
 tic_tac_toe: Tic Tac Toe
@@ -74,3 +74,4 @@ pinned_repos: <purple>Pinned</purple> Repositories
 last_commit: "Last Commit: %{date}"
 last_30_commit: "Last 30 Commits:"
 changelog_description: The changelog below displays the thirty most recent commits for this website. Click %{link} if you want to learn more information about this website.
+here: here

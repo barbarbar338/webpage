@@ -1,8 +1,9 @@
 import en from "@locales/en.yaml";
+import tr from "@locales/tr.yaml";
 import constants from "@locales/constants.yaml";
 import { useRouter } from "next/router";
 
-const locales = { en };
+const locales = { en, tr };
 
 class LocaleParser {
 	private locale: string;

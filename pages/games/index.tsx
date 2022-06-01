@@ -36,9 +36,12 @@ const GamesPage: NextPage = () => {
 	return (
 		<Layout title={parser.get("games") as string}>
 			<section className="min-h-screen py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white text-center">
-				<h1 className="text-4xl mb-10 font-semibold font-heading">
-					{parser.get("all_games")}
-				</h1>
+				<h1
+					className="text-4xl mb-10 font-semibold font-heading"
+					dangerouslySetInnerHTML={{
+						__html: parser.get("all_games") as string,
+					}}
+				/>
 				<div className="container mx-auto mb-12">
 					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 text-left">
 						{games.map((game, idx) => (
