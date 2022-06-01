@@ -36,6 +36,8 @@ class LocaleParser {
 		const locale = locales[this.locale] || locales["en"];
 		let str = locale[name];
 
+		if (!str) return `string not found for ${name} in ${this.locale || "en"}, please contact the developer.`;
+
 		if (args) {
 			for (const arg in args) {
 				const regToken = new RegExp(`%{${arg}}`, "gm");
@@ -47,7 +49,8 @@ class LocaleParser {
 		}
 
 		if (typeof str == "string") str = this.replaceColors(str);
-		else if (Array.isArray(str)) str.map((s) => this.replaceColors(s));
+		else if (Array.isArray(str))
+			str = str.map((s) => this.replaceColors(s));
 
 		str = this.replaceConstants(str);
 
@@ -73,8 +76,6 @@ class LocaleParser {
 				.replace(token.start, token.value)
 				.replace(token.end, "</span>");
 		}
-
-		console.log(str);
 
 		return str;
 	}
