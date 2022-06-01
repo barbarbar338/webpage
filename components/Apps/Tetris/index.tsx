@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { type FC, useEffect, useState } from "react";
 import { useLocaleParser } from "@libs/localeParser";
 import { toast } from "react-toastify";
@@ -101,8 +102,7 @@ export const TetrisGame: FC = () => {
 
 							{state === "LOST" && !lose
 								? toast.error(parser.get("game_over")) &&
-								setLose(true)
-								// eslint-disable-next-line no-mixed-spaces-and-tabs
+								  setLose(true)
 								: ""}
 						</>
 					</div>

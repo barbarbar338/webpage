@@ -3,7 +3,7 @@ import { AppsCard } from "@components/Apps/AppsCard";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
-import { FiBox, FiX } from "react-icons/fi";
+import { FiBox, FiCrop, FiX } from "react-icons/fi";
 import { FaBomb } from "react-icons/fa";
 
 const AppsPage: NextPage = () => {
@@ -30,6 +30,13 @@ const AppsPage: NextPage = () => {
 			icon: FiX,
 			href: "/apps/tictactoe",
 			color: "text-red-500",
+		},
+		{
+			name: parser.get("overlay_creator") as string,
+			description: parser.get("overlay_creator_description") as string,
+			icon: FiCrop,
+			href: "/apps/overlay-creator",
+			color: "text-indigo-500",
 		},
 	];
 

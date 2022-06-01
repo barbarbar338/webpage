@@ -26,7 +26,7 @@ export const AppsCard: FC<IAppsCardProps> = ({
 	const Icon = icon;
 
 	const Card: FC = () => (
-		<div className="cursor-pointer px-4 pt-4 bg-gray-200 dark:bg-gray-800 round h-full text-black dark:text-white">
+		<div className="cursor-pointer p-4 bg-gray-200 dark:bg-gray-800 round h-full text-black dark:text-white">
 			<div className="flex items-center justify-center">
 				<Icon className={classnames("text-6xl", color)} />
 			</div>
@@ -43,13 +43,9 @@ export const AppsCard: FC<IAppsCardProps> = ({
 		<Tippy tooltip={parser.get("click_me") as string}>
 			<div>
 				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
-					{href ? (
-						<Link href={href}>
-							<Card />
-						</Link>
-					) : (
+					<Link href={href}>
 						<Card />
-					)}
+					</Link>
 				</Tilt>
 			</div>
 		</Tippy>

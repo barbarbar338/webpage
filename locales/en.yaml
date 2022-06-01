@@ -75,3 +75,7 @@ last_commit: "Last Commit: %{date}"
 last_30_commit: "Last 30 Commits:"
 changelog_description: The changelog below displays the thirty most recent commits for this website. Click %{link} if you want to learn more information about this website.
 here: here
+overlay_creator: Overlay Creator
+overlay_creator_description: Adds beautiful overlays to your avatar.
+apps_overlay_creator: Overlay Creator - Apps
+avatar: Avatar URL

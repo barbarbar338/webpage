@@ -75,3 +75,7 @@ last_commit: "Son Commit: %{date}"
 last_30_commit: "Son 30 Commit:"
 changelog_description: Aşağıdaki değişiklik günlüğü bu siteye yapmış olduğum son 30 commiti gösterir. Bu site hakkında daha fazla bilgi için %{link} tıklayın.
 here: buraya
+overlay_creator: Çerçeve Oluşturucu
+overlay_creator_description: Avatarınıza birbirinden güzel çerçeveler ekler.
+apps_overlay_creator: Çerçeve Oluşturucu - Uygulamalar
+avatar: Avatar URL'si
