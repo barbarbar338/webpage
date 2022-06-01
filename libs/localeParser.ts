@@ -36,7 +36,10 @@ class LocaleParser {
 		const locale = locales[this.locale] || locales["en"];
 		let str = locale[name];
 
-		if (!str) return `string not found for ${name} in ${this.locale || "en"}, please contact the developer.`;
+		if (!str)
+			return `string not found for ${name} in ${
+				this.locale || "en"
+			}, please contact the developer.`;
 
 		if (args) {
 			for (const arg in args) {
