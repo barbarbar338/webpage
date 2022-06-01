@@ -3,12 +3,10 @@ import { CustomImage } from "@components/Utils/CustomImage";
 import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import ErrorSVG from "@assets/elements/error.svg";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 
 const NotFoundPage: NextPage = () => {
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	return (
 		<Layout title="Not Found">

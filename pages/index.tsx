@@ -10,8 +10,7 @@ import {
 	IStarredRepo,
 } from "@libs/graphql";
 import { CONFIG } from "@libs/config";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 
 export interface IIndexPage {
 	repos: IStarredRepo[];
@@ -19,8 +18,7 @@ export interface IIndexPage {
 }
 
 const IndexPage: NextPage<IIndexPage> = ({ repos, pinned }) => {
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	return (
 		<Layout title={parser.get("home") as string}>

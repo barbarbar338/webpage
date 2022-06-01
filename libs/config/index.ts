@@ -39,9 +39,6 @@ const SEO = {
 };
 
 export const CONFIG = {
-	NAME: "Barış",
-	SURNAME: "DEMİRCİ",
-	NICK: "barbarbar338",
 	EMAIL: "demirci.baris38@gmail.com",
 	GITHUB_USERNAME: "barbarbar338",
 	AVATAR_URL: "https://avatars.githubusercontent.com/u/35371155",
@@ -49,8 +46,6 @@ export const CONFIG = {
 	STARTED_AT,
 	NOW,
 	EXPERIENCE,
-	TITLE: "back-end developer",
-	BIO: `I am a student from Turkey who codes for fun. I have been in coding since ${STARTED_AT} and I started my career first by making simple websites. I have been using JavaScript (Node & Client-side) for ${EXPERIENCE} years. Now I'm trying to produce lots of open source projects and working as freelancer.`,
 	GA_TRACKING_ID: "G-14SS6XWKC1",
 	IMPORTANT_SKILLS: [
 		"JavaScript (Node & Client-Side)",
@@ -108,7 +103,7 @@ export const CONFIG = {
 		},
 		{
 			name: "GoLang",
-			color: "text-blue-600 dark:text-blue-300",
+			color: "text-blue-600 dark:text-blue-400",
 			href: "https://golang.org/",
 		},
 	],

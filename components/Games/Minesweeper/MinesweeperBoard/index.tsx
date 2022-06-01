@@ -4,9 +4,7 @@ import { createMinesweeperBoard } from "@libs/games/minesweeper/createMinesweepe
 import { MinesweeperCell } from "@components/Games/Minesweeper/MinesweeperCell";
 import { Link } from "@components/Utils/Link";
 import { toast } from "react-toastify";
-import { LocaleParser } from "@libs/localeParser";
-import { useRouter } from "next/router";
-
+import { useLocaleParser } from "@libs/localeParser";
 export const MinesweeperBoard: FC = () => {
 	const [x, setX] = useState(10);
 	const [y, setY] = useState(10);
@@ -15,8 +13,8 @@ export const MinesweeperBoard: FC = () => {
 	const [nonMineCount, setNonMineCount] = useState(0);
 	const [mineLocations, setMineLocations] = useState<number[][]>([]);
 	const [gameOver, setGameOver] = useState(false);
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+
+	const parser = useLocaleParser();
 
 	const freshBoard = (x: number, y: number, mine: number) => {
 		const newBoard = createMinesweeperBoard(x, y, mine);

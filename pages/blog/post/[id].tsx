@@ -9,8 +9,7 @@ import Giscus from "@giscus/react";
 import { useTheme } from "next-themes";
 import { useEffect } from "react";
 import hljs from "highlight.js";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 
 export interface IPostProps {
 	post: IPostData;
@@ -18,8 +17,7 @@ export interface IPostProps {
 
 const PostPage: NextPage<IPostProps> = ({ post }) => {
 	const { theme } = useTheme();
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	useEffect(() => {
 		const codeBlocks = document.querySelectorAll(".highlight");

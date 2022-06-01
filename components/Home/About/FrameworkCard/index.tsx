@@ -3,15 +3,14 @@ import type { IFramework } from "@libs/config";
 import { CustomImage } from "@components/Utils/CustomImage";
 import classNames from "classnames";
 import Tilt from "react-parallax-tilt";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
+
 export interface IFrameworkCard {
 	framework: IFramework;
 }
 
 export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => {
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	return (
 		<Tilt scale={1.05} tiltMaxAngleX={25} tiltMaxAngleY={25}>

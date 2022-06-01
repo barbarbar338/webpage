@@ -3,12 +3,10 @@ import { AccountCard } from "@components/AccountCard";
 import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 
 const AccountsPage: NextPage = () => {
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	return (
 		<Layout title="My Accounts">

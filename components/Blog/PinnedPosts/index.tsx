@@ -1,16 +1,14 @@
 import type { FC } from "react";
 import type { IPost } from "@libs/graphql";
 import { PinnedCard } from "@components/Blog/PinnedPosts/PinnedCard";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 
 interface IPinnedPosts {
 	posts: IPost[];
 }
 
 export const PinnedPosts: FC<IPinnedPosts> = ({ posts }) => {
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	return (
 		<div className="px-8 mt-10">

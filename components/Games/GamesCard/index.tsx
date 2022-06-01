@@ -4,9 +4,7 @@ import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
 import classnames from "classnames";
 import Tilt from "react-parallax-tilt";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
-
+import { useLocaleParser } from "@libs/localeParser";
 export interface IGamesCardProps {
 	icon: IconType;
 	name: string;
@@ -22,8 +20,7 @@ export const GamesCard: FC<IGamesCardProps> = ({
 	value,
 	color,
 }) => {
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 	const Icon = icon;
 
 	const Card: FC = () => (

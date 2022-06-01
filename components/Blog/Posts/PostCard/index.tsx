@@ -3,16 +3,14 @@ import type { IPost } from "@libs/graphql";
 import { CustomImage } from "@components/Utils/CustomImage";
 import { Link } from "@components/Utils/Link";
 import Tilt from "react-parallax-tilt";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 
 export interface IPostCard {
 	post: IPost;
 }
 
 export const PostCard: FC<IPostCard> = ({ post }) => {
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	return (
 		<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>

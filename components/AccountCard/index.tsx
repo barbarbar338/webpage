@@ -4,8 +4,7 @@ import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
 import { useCopyToClipboard } from "react-use";
 import { toast } from "react-toastify";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 import Tilt from "react-parallax-tilt";
 import classnames from "classnames";
 
@@ -24,8 +23,7 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	value,
 	color,
 }) => {
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 	const Icon = icon;
 
 	const [, copyToClipboard] = useCopyToClipboard();

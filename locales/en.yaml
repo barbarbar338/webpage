@@ -51,3 +51,23 @@ games_tic_tac_toe: Tic-Tac-Toe - Games
 error_404: Error 404
 page_not_found: Page not found
 my_accounts: My Accounts
+online: Online
+offline: Offline
+idle: Idle
+dnd: Do Not Disturb
+vscode_status: "%{doing} in Visual Studio Code. (%{workspace})"
+spotify_status: "Listening to %{song} by %{author} from %{album} on Spotify."
+hero_title: "%{title} with <purple>over %{experience} year(s)</purple> experience. More interested with %{interests} and %{lastInterest}."
+about_me: About Me
+being_a_title: Being a %{title}...
+about_title: Who am I <purple>&amp;</purple> how did I get here
+bio: Hello, I am %{name} %{surname} (a.k.a. <purple>%{nickname}</purple>) I am a student from Turkey who codes for fun. I have been in coding since %{startedAt} and I started my career first by making simple websites. I have been using JavaScript (Node & Client-side) for %{experience} years. Now I'm trying to produce lots of open source projects and working as freelancer.
+fill_form: "❌ Please fill out the form completely."
+form_sent: "🦄 Thanks for your message!"
+contact_me: Contact <purple>Me</purple>
+submit: Submit
+write_something: Write something...
+name: Name
+email: E-Mail
+starred_repos: Most <purple>Starred</purple> Repositories
+pinned_repos: <purple>Pinned</purple> Repositories

@@ -6,7 +6,7 @@ import { CONFIG } from "@libs/config";
 import { useLocalStorage } from "react-use";
 import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 
 export interface ILayout {
 	title: string;
@@ -17,7 +17,7 @@ export const Layout: FC<ILayout> = ({ title, children }) => {
 	const [check, setCheck] = useLocalStorage("domain_check", false);
 	const [show, setShow] = useState(false);
 	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	useEffect(() => {
 		if (!window.location.hostname.includes("338.rocks") && !check) {

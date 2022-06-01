@@ -2,8 +2,11 @@ import { type ChangeEvent, type FC, type FormEvent, useState } from "react";
 import { Link } from "@components/Utils/Link";
 import { CONFIG } from "@libs/config";
 import { toast } from "react-toastify";
+import { useLocaleParser } from "@libs/localeParser";
 
 export const Contact: FC = () => {
+	const parser = useLocaleParser();
+
 	const [name, setName] = useState("");
 	const [mail, setMail] = useState("");
 	const [message, setMessage] = useState("");
@@ -23,13 +26,13 @@ export const Contact: FC = () => {
 	const onSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		if (!name || !mail || !message)
-			return toast.error("❌ Please fill out the form completely.");
+			return toast.error(parser.get("fill_form"));
 		window.open(
 			`mailto:${CONFIG.EMAIL}?body=${encodeURIComponent(
 				`Hey, It's ${name} (${mail})\n\n${message}`,
 			)}`,
 		);
-		toast.success("🦄 Thanks for your message!");
+		toast.success(parser.get("form_sent"));
 	};
 
 	return (
@@ -37,9 +40,12 @@ export const Contact: FC = () => {
 			id="contact"
 			className="py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white"
 		>
-			<h1 className="text-4xl mb-10 text-center font-semibold font-heading">
-				Contact <span className="text-purple-600">Me</span>
-			</h1>
+			<h1
+				className="text-4xl mb-10 text-center font-semibold font-heading"
+				dangerouslySetInnerHTML={{
+					__html: parser.get("contact_me") as string,
+				}}
+			/>
 			<div className="w-full max-w-2xl mx-auto mb-12">
 				<form onSubmit={onSubmit}>
 					<div className="flex mb-4 -mx-2">
@@ -48,7 +54,7 @@ export const Contact: FC = () => {
 								onChange={onMailChange}
 								className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 								type="email"
-								placeholder="Email"
+								placeholder={parser.get("email") as string}
 							/>
 						</div>
 						<div className="w-1/2 px-2">
@@ -56,7 +62,7 @@ export const Contact: FC = () => {
 								onChange={onNameChange}
 								className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 								type="text"
-								placeholder="Name"
+								placeholder={parser.get("name") as string}
 							/>
 						</div>
 					</div>
@@ -64,7 +70,9 @@ export const Contact: FC = () => {
 						<textarea
 							onChange={onMessageChange}
 							className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
-							placeholder="Write something..."
+							placeholder={
+								parser.get("write_something") as string
+							}
 							rows={5}
 						></textarea>
 					</div>
@@ -73,7 +81,7 @@ export const Contact: FC = () => {
 							aria-label="Submit"
 							className="inline-block w-full py-4 px-8 leading-none text-white bg-purple-600 hover:bg-purple-700 font-semibold round"
 						>
-							Submit
+							{parser.get("submit")}
 						</button>
 					</div>
 				</form>

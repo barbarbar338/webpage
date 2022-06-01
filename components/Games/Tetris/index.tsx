@@ -1,15 +1,13 @@
 import { type FC, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 
 const Tetris = dynamic(() => import("react-simple-tetris"), { ssr: false });
 
 export const TetrisGame: FC = () => {
 	const [lose, setLose] = useState(false);
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	useEffect(() => {
 		document.onkeydown = (e) => e.preventDefault();

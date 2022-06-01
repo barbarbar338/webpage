@@ -15,8 +15,7 @@ import {
 } from "react-icons/fi";
 import Favicon from "@assets/icon.svg";
 import classnames from "classnames";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 
 export const Navbar: FC = () => {
 	const [visible, setVisible] = useState(false);
@@ -24,8 +23,7 @@ export const Navbar: FC = () => {
 	const [top, setTop] = useState(false);
 	const { theme, setTheme } = useTheme();
 	const [color, setColor] = useState<"yellow" | "gray" | "blue">("yellow");
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	const links = [
 		{

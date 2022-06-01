@@ -4,12 +4,10 @@ import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import { FiBox, FiX } from "react-icons/fi";
 import { FaBomb } from "react-icons/fa";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 
 const GamesPage: NextPage = () => {
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	const games = [
 		{

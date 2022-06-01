@@ -1,15 +1,13 @@
 import type { FC } from "react";
 import { type IBookmark, Bookmark } from "@components/Bookmarks/Bookmark";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 
 export interface IBookmarks {
 	bookmarks: IBookmark[];
 }
 
 export const Bookmarks: FC<IBookmarks> = ({ bookmarks }) => {
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	return (
 		<section

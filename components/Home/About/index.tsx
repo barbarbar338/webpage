@@ -3,8 +3,10 @@ import { FrameworkCard } from "@components/Home/About/FrameworkCard";
 import { Stack } from "@components/Home/About/Stack";
 import { Dot } from "@components/Home/About/Dot";
 import { CONFIG } from "@libs/config";
+import { useLocaleParser } from "@libs/localeParser";
 
 export const About: FC = () => {
+	const parser = useLocaleParser();
 	const left: JSX.Element[] = [];
 	const right: JSX.Element[] = [];
 
@@ -26,21 +28,24 @@ export const About: FC = () => {
 					<div className="w-full lg:w-1/2 mb-12 lg:mb-0">
 						<div className="max-w-md lg:mx-auto">
 							<span className="text-purple-600 font-bold">
-								Being a {CONFIG.TITLE}...
+								{parser.get("being_a_title")}
 							</span>
-							<h2 className="my-2 text-4xl lg:text-5xl font-bold font-heading text-black dark:text-white">
-								Who am I{" "}
-								<span className="text-purple-600">&amp;</span>{" "}
-								how did I get here
-							</h2>
-							<p className="mb-6 text-gray-500 leading-loose">
-								Hello, I am {CONFIG.NAME} {CONFIG.SURNAME}{" "}
-								(a.k.a.{" "}
-								<span className="text-purple-600">
-									{CONFIG.NICK}
-								</span>
-								). {CONFIG.BIO}
-							</p>
+							<h2
+								className="my-2 text-4xl lg:text-5xl font-bold font-heading text-black dark:text-white"
+								dangerouslySetInnerHTML={{
+									__html: parser.get("about_title") as string,
+								}}
+							/>
+							<p
+								className="mb-6 text-gray-500 leading-loose"
+								dangerouslySetInnerHTML={{
+									__html: parser.get("bio", {
+										startedAt: CONFIG.STARTED_AT.toString(),
+										experience:
+											CONFIG.EXPERIENCE.toString(),
+									}) as string,
+								}}
+							/>
 							<ul className="text-gray-500 font-bold">
 								{CONFIG.IMPORTANT_SKILLS.map((skill, idx) => (
 									<li key={idx} className="flex mb-4">

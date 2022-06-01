@@ -6,9 +6,7 @@ import { useCopyToClipboard } from "react-use";
 import { toast } from "react-toastify";
 import Tilt from "react-parallax-tilt";
 import moment from "moment";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
-
+import { useLocaleParser } from "@libs/localeParser";
 export interface IBookmark {
 	id: number;
 	url: string;
@@ -25,8 +23,7 @@ export const Bookmark: FC<IBookmark> = ({
 	title,
 	url,
 }) => {
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 	const [, copyToClipboard] = useCopyToClipboard();
 
 	const onCopy = () => {

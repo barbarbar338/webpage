@@ -8,8 +8,10 @@ import Down from "@assets/elements/down.svg";
 import Left from "@assets/elements/left.svg";
 import Right from "@assets/elements/right.svg";
 import Tilt from "react-parallax-tilt";
+import { useLocaleParser } from "@libs/localeParser";
 
 export const Hero: FC = () => {
+	const parser = useLocaleParser();
 	const lastIDX = CONFIG.INTERESTS.length - 1;
 	const lastElement = CONFIG.INTERESTS[lastIDX];
 
@@ -21,59 +23,49 @@ export const Hero: FC = () => {
 						<div className="w-full text-center lg:text-left">
 							<div className="max-w-md mx-auto lg:mx-0">
 								<h1 className="my-3 md:mt-0 text-4xl lg:text-5xl text-black dark:text-white font-bold">
-									{CONFIG.NAME} {CONFIG.SURNAME}
+									{parser.constants["name"]}{" "}
+									{parser.constants["surname"]}
 								</h1>
 							</div>
 							<div className="max-w-sm mx-auto lg:mx-0">
-								<p className="mb-6 text-gray-700 dark:text-gray-300 leading-loose">
-									{CONFIG.TITLE[0].toUpperCase() +
-										CONFIG.TITLE.slice(
-											1,
-										).toLowerCase()}{" "}
-									with{" "}
-									<span className="text-purple-600 dark:text-purple-300">
-										over {CONFIG.EXPERIENCE} year(s)
-									</span>{" "}
-									experience. M
-									<Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-										o
-									</Link>
-									re interested with{" "}
-									{CONFIG.INTERESTS.map(
-										(interest, idx) =>
-											idx != lastIDX && (
-												<Link
-													underline
-													key={idx}
-													href={interest.href}
-													className={interest.color}
-												>
-													{interest.name}
-													{lastIDX - 1 != idx &&
-														","}{" "}
-												</Link>
-											),
-									)}
-									and{" "}
-									<Link
-										underline
-										href={lastElement.href}
-										className={lastElement.color}
-									>
-										{lastElement.name}
-									</Link>
-									.
-									<Status />
-								</p>
+								<p
+									className="mb-6 text-gray-700 dark:text-gray-300 leading-loose"
+									dangerouslySetInnerHTML={{
+										__html: parser.get("hero_title", {
+											experience:
+												CONFIG.EXPERIENCE.toString(),
+											interests: CONFIG.INTERESTS.map(
+												(interest, idx) =>
+													idx != lastIDX
+														? `<a
+															rel="noreferrer"
+															target="_blank"
+															href="${interest.href}"
+															class="${interest.color} hover:underline"
+														>${interest.name}</a>`
+														: "",
+											)
+												.filter((i) => !!i)
+												.join(", "),
+											lastInterest: `<a
+													rel="noreferrer"
+													target="_blank"
+													href="${lastElement.href}"
+													class="${lastElement.color} hover:underline"
+												>${lastElement.name}</a>`,
+										}) as string,
+									}}
+								/>
+								<Status />
 								<div>
 									<Link underline href="#about">
 										<span className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200">
-											About Me
+											{parser.get("about_me")}
 										</span>
 									</Link>
 									<Link underline href="#contact">
 										<span className="inline-block w-full lg:w-auto py-2 px-6 leading-loose text-white font-semibold bg-gray-900 border-2 border-gray-700 hover:border-gray-600 round transition duration-200">
-											Contact
+											{parser.get("contact")}
 										</span>
 									</Link>
 								</div>

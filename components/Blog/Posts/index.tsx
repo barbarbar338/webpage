@@ -1,8 +1,7 @@
 import type { IPost } from "@libs/graphql";
 import type { FC } from "react";
 import { PostCard } from "@components/Blog/Posts/PostCard";
-import { useRouter } from "next/router";
-import { LocaleParser } from "@libs/localeParser";
+import { useLocaleParser } from "@libs/localeParser";
 
 export interface IPosts {
 	posts: IPost[];
@@ -10,8 +9,7 @@ export interface IPosts {
 }
 
 export const Posts: FC<IPosts> = ({ posts, title }) => {
-	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = useLocaleParser();
 
 	return (
 		<div className="w-full lg:w-8/12">

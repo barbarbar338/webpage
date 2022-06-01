@@ -4,6 +4,7 @@ import { Tippy } from "@components/Utils/Tippy";
 import { FiStar } from "react-icons/fi";
 import { Link } from "@components/Utils/Link";
 import Tilt from "react-parallax-tilt";
+import { useLocaleParser } from "@libs/localeParser";
 
 export const RepoCard: FC<IStarredRepo> = ({
 	name,
@@ -12,8 +13,10 @@ export const RepoCard: FC<IStarredRepo> = ({
 	url,
 	description,
 }) => {
+	const parser = useLocaleParser();
+
 	return (
-		<Tippy tooltip="Click Me!">
+		<Tippy tooltip={parser.get("click_me") as string}>
 			<div>
 				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 					<Link href={url}>
