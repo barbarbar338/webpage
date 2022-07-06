@@ -60,7 +60,10 @@ export const Status: FC = () => {
 					workspace: filtered.state,
 				}) as string;
 			default:
-				if (filtered.name) return `Playing ${filtered.name}`;
+				if (filtered.name)
+					return parser.get("playing", {
+						game: filtered.name,
+					}) as string;
 				return parser.get("online") as string;
 		}
 	};

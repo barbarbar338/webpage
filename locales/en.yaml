@@ -79,3 +79,4 @@ overlay_creator: Overlay Creator
 overlay_creator_description: Adds beautiful overlays to your avatar.
 apps_overlay_creator: Overlay Creator - Apps
 avatar: Avatar URL
+playing: Playing %{game}

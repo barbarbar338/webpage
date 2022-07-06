@@ -79,3 +79,4 @@ overlay_creator: Çerçeve Oluşturucu
 overlay_creator_description: Avatarınıza birbirinden güzel çerçeveler ekler.
 apps_overlay_creator: Çerçeve Oluşturucu - Uygulamalar
 avatar: Avatar URL'si
+playing: "%{game} oynuyor"
