@@ -106,6 +106,12 @@ export const SOCIALS = [
 	},
 	{
 		icon: FiDollarSign,
+		name: "IBAN",
+		value: "TR80 0011 1000 0000 0112 0345 53",
+		color: "text-green-500",
+	},
+	{
+		icon: FiDollarSign,
 		name: "Papara",
 		value: "1149106680",
 		color: "text-purple-500",
