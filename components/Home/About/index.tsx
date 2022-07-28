@@ -33,7 +33,7 @@ export const About: FC = () => {
 							<h2
 								className="my-2 text-4xl lg:text-5xl font-bold font-heading text-black dark:text-white"
 								dangerouslySetInnerHTML={{
-									__html: parser.get("about_title") as string,
+									__html: parser.get("about_title"),
 								}}
 							/>
 							<p
@@ -43,7 +43,7 @@ export const About: FC = () => {
 										startedAt: CONFIG.STARTED_AT.toString(),
 										experience:
 											CONFIG.EXPERIENCE.toString(),
-									}) as string,
+									}),
 								}}
 							/>
 							<ul className="text-gray-500 font-bold">

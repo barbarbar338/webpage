@@ -23,7 +23,7 @@ const BlogPage: NextPage<IBlogProps> = ({ pinned, categories, posts }) => {
 	const parser = useLocaleParser();
 
 	return (
-		<Layout title={parser.get("blog") as string}>
+		<Layout title={parser.get("blog")}>
 			<div className="overflow-x-hidden min-h-screen">
 				<div className="px-6 py-8">
 					<div className="container flex justify-between mx-auto">

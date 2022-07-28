@@ -13,7 +13,7 @@ export const Stack: FC = () => {
 			<h1
 				className="text-4xl mb-10 text-center font-semibold font-heading"
 				dangerouslySetInnerHTML={{
-					__html: parser.get("stack") as string,
+					__html: parser.get("stack"),
 				}}
 			/>
 			<div className="container mx-auto px-4">

@@ -54,7 +54,7 @@ export const Hero: FC = () => {
 													href="${lastElement.href}"
 													class="${lastElement.color} hover:underline"
 												>${lastElement.name}</a>`,
-										}) as string,
+										}),
 									}}
 								/>
 								<Status />

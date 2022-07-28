@@ -43,12 +43,12 @@ const OverlayCreatorAppPage: NextPage = () => {
 	};
 
 	return (
-		<Layout title={parser.get("apps_overlay_creator") as string}>
+		<Layout title={parser.get("apps_overlay_creator")}>
 			<section className="min-h-screen py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white">
 				<h1
 					className="text-4xl mb-10 text-center font-semibold font-heading"
 					dangerouslySetInnerHTML={{
-						__html: parser.get("overlay_creator") as string,
+						__html: parser.get("overlay_creator"),
 					}}
 				/>
 				<div className="w-full max-w-2xl mx-auto mb-12">
@@ -58,7 +58,7 @@ const OverlayCreatorAppPage: NextPage = () => {
 								onChange={onURLChange}
 								className="appearance-none my-2 block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 								type="text"
-								placeholder={parser.get("avatar") as string}
+								placeholder={parser.get("avatar")}
 							/>
 							<select
 								onChange={onSelectChange}

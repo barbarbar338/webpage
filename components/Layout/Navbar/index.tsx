@@ -28,35 +28,39 @@ export const Navbar: FC = () => {
 
 	const links = [
 		{
-			name: parser.get("home") as string,
+			name: parser.get("home"),
 			href: "/#",
 		},
 		{
-			name: parser.get("about") as string,
+			name: parser.get("about"),
 			href: "/#about",
 		},
 		{
-			name: parser.get("projects") as string,
+			name: parser.get("projects"),
 			href: "/#projects",
 		},
 		{
-			name: parser.get("accounts") as string,
+			name: parser.get("resume"),
+			href: "/resume",
+		},
+		{
+			name: parser.get("accounts"),
 			href: "/accounts",
 		},
 		{
-			name: parser.get("blog") as string,
+			name: parser.get("blog"),
 			href: "/blog",
 		},
 		{
-			name: parser.get("bookmarks") as string,
+			name: parser.get("bookmarks"),
 			href: "/bookmarks",
 		},
 		{
-			name: parser.get("apps") as string,
+			name: parser.get("apps"),
 			href: "/apps",
 		},
 		{
-			name: parser.get("changelog") as string,
+			name: parser.get("changelog"),
 			href: "/changelog",
 		},
 	];

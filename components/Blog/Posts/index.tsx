@@ -17,7 +17,7 @@ export const Posts: FC<IPosts> = ({ posts, title }) => {
 				<h1
 					className="text-xl font-bold text-gray-700 md:text-2xl dark:text-white"
 					dangerouslySetInnerHTML={{
-						__html: title || (parser.get("posts") as string),
+						__html: title || parser.get("posts"),
 					}}
 				/>
 			</div>

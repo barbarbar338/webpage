@@ -44,13 +44,11 @@ export const Layout: FC<ILayout> = ({ title, children }) => {
 					<div className="container mx-auto">
 						<Alert
 							type="warning"
-							title={parser.get("new_domain") as string}
+							title={parser.get("new_domain")}
 							onClose={handleClose}
-							html={
-								parser.get("new_domain_alert", {
-									link: `<a rel='noreferrer' target='_blank' href='${CONFIG.SEO.publishDomain}' class='cursor-pointer hover:underline text-blue-500'>${CONFIG.SEO.publishDomain}</a>`,
-								}) as string
-							}
+							html={parser.get("new_domain_alert", {
+								link: `<a rel='noreferrer' target='_blank' href='${CONFIG.SEO.publishDomain}' class='cursor-pointer hover:underline text-blue-500'>${CONFIG.SEO.publishDomain}</a>`,
+							})}
 						></Alert>
 					</div>
 				)}

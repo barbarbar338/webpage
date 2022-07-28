@@ -7,7 +7,7 @@ const TetrisAppPage: NextPage = () => {
 	const parser = useLocaleParser();
 
 	return (
-		<Layout title={parser.get("apps_tetris") as string}>
+		<Layout title={parser.get("apps_tetris")}>
 			<TetrisGame />
 		</Layout>
 	);

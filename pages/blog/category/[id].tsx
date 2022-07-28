@@ -55,7 +55,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<ICategoryProps> = async (ctx) => {
-	const id = ctx.params.id as string;
+	const id = ctx.params.id;
 	const allPosts = await getPosts();
 
 	let tag: ILabel;

@@ -13,7 +13,7 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 	const parser = useLocaleParser();
 
 	return (
-		<Layout title={parser.get("changelog") as string}>
+		<Layout title={parser.get("changelog")}>
 			<div className="leading-normal tracking-normal min-h-screen">
 				<div className="container w-full md:max-w-3xl mx-auto">
 					<div className="w-full text-xl text-gray-800 leading-normal">
@@ -39,7 +39,7 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 												CONFIG.SOURCE.repo
 											}">${parser.get("here")}</a>`,
 										},
-									) as string,
+									),
 								}}
 							/>
 							<h2>{parser.get("last_30_commit")}</h2>

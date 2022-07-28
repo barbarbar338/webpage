@@ -19,7 +19,7 @@ export const Projects: FC<IProjects> = ({ repos, pinned }) => {
 			<h1
 				className="text-4xl mb-10 text-center font-semibold font-heading"
 				dangerouslySetInnerHTML={{
-					__html: parser.get("starred_repos") as string,
+					__html: parser.get("starred_repos"),
 				}}
 			/>
 			<div className="container mx-auto mb-12">
@@ -32,7 +32,7 @@ export const Projects: FC<IProjects> = ({ repos, pinned }) => {
 			<h1
 				className="text-4xl mb-10 text-center font-semibold font-heading"
 				dangerouslySetInnerHTML={{
-					__html: parser.get("pinned_repos") as string,
+					__html: parser.get("pinned_repos"),
 				}}
 			/>
 			<div className="container mx-auto mb-12">

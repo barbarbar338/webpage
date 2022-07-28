@@ -43,7 +43,7 @@ export const Contact: FC = () => {
 			<h1
 				className="text-4xl mb-10 text-center font-semibold font-heading"
 				dangerouslySetInnerHTML={{
-					__html: parser.get("contact_me") as string,
+					__html: parser.get("contact_me"),
 				}}
 			/>
 			<div className="w-full max-w-2xl mx-auto mb-12">
@@ -54,7 +54,7 @@ export const Contact: FC = () => {
 								onChange={onMailChange}
 								className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 								type="email"
-								placeholder={parser.get("email") as string}
+								placeholder={parser.get("email")}
 							/>
 						</div>
 						<div className="w-1/2 px-2">
@@ -62,7 +62,7 @@ export const Contact: FC = () => {
 								onChange={onNameChange}
 								className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 								type="text"
-								placeholder={parser.get("name") as string}
+								placeholder={parser.get("name")}
 							/>
 						</div>
 					</div>
@@ -70,9 +70,7 @@ export const Contact: FC = () => {
 						<textarea
 							onChange={onMessageChange}
 							className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
-							placeholder={
-								parser.get("write_something") as string
-							}
+							placeholder={parser.get("write_something")}
 							rows={5}
 						></textarea>
 					</div>

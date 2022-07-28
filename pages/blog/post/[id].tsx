@@ -112,7 +112,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<IPostProps> = async (ctx) => {
-	const id = parseInt(ctx.params.id as string);
+	const id = parseInt(ctx.params.id);
 	return getPostData(id)
 		.then((post) => {
 			return {

@@ -99,7 +99,7 @@ export const MinesweeperBoard: FC = () => {
 						onChange={(e) => setMine(parseInt(e.target.value))}
 						className="appearance-none w-full py-3 px-4 hidden md:block leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
 						type="number"
-						placeholder={parser.get("mine") as string}
+						placeholder={parser.get("mine")}
 						value={mine}
 						min={1}
 					/>

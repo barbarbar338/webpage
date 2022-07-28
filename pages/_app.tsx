@@ -14,6 +14,7 @@ import "@styles/tailwind.css";
 import "@styles/index.scss";
 import "@styles/blog.scss";
 import "@styles/tetris.scss";
+
 import "tippy.js/dist/tippy.css";
 import "react-toastify/dist/ReactToastify.css";
 import "highlight.js/styles/tomorrow-night-bright.css";

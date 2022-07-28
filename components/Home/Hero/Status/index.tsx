@@ -17,22 +17,22 @@ export const Status: FC = () => {
 		switch (status?.discord_status) {
 			case "online":
 				return {
-					status: parser.get("online") as string,
+					status: parser.get("online"),
 					color: "bg-green-500",
 				};
 			case "idle":
 				return {
-					status: parser.get("idle") as string,
+					status: parser.get("idle"),
 					color: "bg-yellow-500",
 				};
 			case "dnd":
 				return {
-					status: parser.get("dnd") as string,
+					status: parser.get("dnd"),
 					color: "bg-red-500",
 				};
 			default:
 				return {
-					status: parser.get("offline") as string,
+					status: parser.get("offline"),
 					color: "bg-gray-500 dark:bg-gray-200",
 				};
 		}
@@ -40,12 +40,12 @@ export const Status: FC = () => {
 
 	const getStatus = () => {
 		if (loading || !status || status.discord_status == "offline")
-			return parser.get("offline") as string;
+			return parser.get("offline");
 
 		const filtered = status.activities
 			?.filter((activity) => activity.type !== 4)
 			?.pop();
-		if (!filtered) return parser.get("online") as string;
+		if (!filtered) return parser.get("online");
 
 		switch (filtered.name) {
 			case "Spotify":
@@ -53,18 +53,18 @@ export const Status: FC = () => {
 					song: filtered.details,
 					author: filtered.state,
 					album: filtered.assets.large_text,
-				}) as string;
+				});
 			case "Visual Studio Code":
 				return parser.get("vscode_status", {
 					doing: filtered.details,
 					workspace: filtered.state,
-				}) as string;
+				});
 			default:
 				if (filtered.name)
 					return parser.get("playing", {
 						game: filtered.name,
-					}) as string;
-				return parser.get("online") as string;
+					});
+				return parser.get("online");
 		}
 	};
 
