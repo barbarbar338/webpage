@@ -5,7 +5,6 @@ import tr from "@locales/tr.yaml";
 import constants from "@locales/constants.yaml";
 import { CONFIG } from "./config";
 
-
 const locales = { en, tr };
 const tokens = {
 	purple: "<span class='text-purple-500'>",

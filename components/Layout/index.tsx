@@ -5,6 +5,7 @@ import { Navbar } from "@components/Layout/Navbar";
 import { CONFIG } from "@libs/config";
 import { useRouter } from "next/router";
 import { NextSeo } from "next-seo";
+import { GithubSponsorsAlert } from "./GithubSponsorsAlert";
 
 export interface ILayout {
 	title: string;
@@ -22,7 +23,10 @@ export const Layout: FC<ILayout> = ({ title, children }) => {
 			/>
 			<>
 				<Navbar />
-				<DomainAlert />				
+				<div className="container mx-auto">
+					<GithubSponsorsAlert />
+					<DomainAlert />
+				</div>
 				{children}
 				<Footer />
 			</>

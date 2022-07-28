@@ -11,7 +11,7 @@ export const DomainAlert: FC = () => {
 	const [show, setShow] = useState(false);
 
 	useEffect(() => {
-		if (!window.location.hostname.includes("338.rocks") && !check) {
+		if (!window.location.hostname.includes(CONFIG.SEO.domain) && !check) {
 			setShow(true);
 		}
 	}, [check]);
@@ -19,19 +19,18 @@ export const DomainAlert: FC = () => {
 	const handleClose = () => {
 		setCheck(true);
 		setShow(false);
+		window.open(CONFIG.SEO.publishDomain);
 	};
 	return (
 		show && (
-			<div className="container mx-auto">
-				<Alert
-					type="warning"
-					title={parser.get("new_domain")}
-					onClose={handleClose}
-					html={parser.get("new_domain_alert", {
-						link: `<a rel='noreferrer' target='_blank' href='${CONFIG.SEO.publishDomain}' class='cursor-pointer hover:underline'>${CONFIG.SEO.publishDomain}</a>`,
-					})}
-				></Alert>
-			</div>
+			<Alert
+				type="warning"
+				title={parser.get("new_domain")}
+				onClose={handleClose}
+				html={parser.get("new_domain_alert", {
+					link: `<a rel='noreferrer' target='_blank' href='${CONFIG.SEO.publishDomain}' class='cursor-pointer hover:underline'>${CONFIG.SEO.publishDomain}</a>`,
+				})}
+			></Alert>
 		)
 	);
 };
