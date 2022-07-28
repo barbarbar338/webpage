@@ -40,10 +40,6 @@ export const Navbar: FC = () => {
 			href: "/#projects",
 		},
 		{
-			name: parser.get("resume"),
-			href: "/resume",
-		},
-		{
 			name: parser.get("accounts"),
 			href: "/accounts",
 		},
