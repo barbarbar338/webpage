@@ -10,6 +10,7 @@ const nextConfig = {
 	reactStrictMode: true,
 	poweredByHeader: false,
 	trailingSlash: true,
+	swcMinify: true,
 	i18n: {
 		locales: ["en", "tr"],
 		defaultLocale: "en",

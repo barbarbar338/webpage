@@ -31,3 +31,6 @@ package-lock.json
 # sitemap
 sitemap*.xml
 robots.txt
+
+# swv output
+.swc
