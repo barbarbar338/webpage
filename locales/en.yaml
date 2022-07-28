@@ -24,7 +24,7 @@ drop: drop
 restart: restart
 game_over: Game Over
 winner: "%{player} won!"
-new_domain_alert: I have migrated to a new domain name. Now when entering this site, make sure it says %{link} in the address bar!
+new_domain_alert: I have migrated to a new domain name. Now when entering this site, make sure it says <blue>%{link}</blue> in the address bar!
 new_domain: New Domain
 home: Home
 about: About

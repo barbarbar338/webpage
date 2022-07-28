@@ -5,21 +5,11 @@ import tr from "@locales/tr.yaml";
 import constants from "@locales/constants.yaml";
 import { CONFIG } from "./config";
 
-export interface IToken {
-	key: string;
-	value: string;
-}
-
-export interface ITokens {
-	[key: string]: IToken;
-}
 
 const locales = { en, tr };
-const tokens: ITokens = {
-	purple: {
-		key: "purple",
-		value: "<span class='text-purple-500'>",
-	},
+const tokens = {
+	purple: "<span class='text-purple-500'>",
+	blue: "<span class='text-blue-500'>",
 };
 
 class LocaleParser {
@@ -66,11 +56,11 @@ class LocaleParser {
 	}
 
 	private replaceColors(str: string) {
-		for (const t in tokens) {
-			const token = tokens[t];
+		for (const token in tokens) {
+			const value = tokens[token];
 			str = str
-				.replace(new RegExp(`<${token.key}[^>]*>`, "gm"), token.value)
-				.replace(new RegExp(`</${token.key}[^>]*>`, "gm"), "</span>");
+				.replace(new RegExp(`<${token}[^>]*>`, "gm"), value)
+				.replace(new RegExp(`</${token}[^>]*>`, "gm"), "</span>");
 		}
 
 		return str;

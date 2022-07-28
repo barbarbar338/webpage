@@ -24,7 +24,7 @@ drop: düşür
 restart: yeniden başlat
 game_over: Oyun bitti
 winner: "%{player} kazandı!"
-new_domain_alert: Yeni bir alan adına geçiş yaptım. Artık siteye girerken adres barında %{link} yazdığından emin olun!
+new_domain_alert: Yeni bir alan adına geçiş yaptım. Artık siteye girerken adres barında <blue>%{link}</blue> yazdığından emin olun!
 new_domain: Yeni Alan Adı
 home: AnaSayfa
 about: Hakkımda
