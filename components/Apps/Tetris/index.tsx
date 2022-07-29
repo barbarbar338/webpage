@@ -11,9 +11,9 @@ export const TetrisGame: FC = () => {
 
 	const [lose, setLose] = useState(false);
 
-	useEffect(() => {
-		const handleKeyDown = (e: KeyboardEvent) => e.preventDefault();
+	const handleKeyDown = (e: KeyboardEvent) => e.preventDefault();
 
+	useEffect(() => {
 		window.addEventListener("keydown", handleKeyDown);
 
 		return () => {
