@@ -81,10 +81,7 @@ const App = ({ Component, pageProps }) => {
 			<ThemeProvider defaultTheme="dark" attribute="class">
 				<Script
 					strategy="afterInteractive"
-					data-domain={CONFIG.SEO.publishDomain.replace(
-						"https://",
-						"",
-					)}
+					data-domain={CONFIG.SEO.domain}
 					src="https://plausible.io/js/plausible.js"
 				/>
 				<Script
