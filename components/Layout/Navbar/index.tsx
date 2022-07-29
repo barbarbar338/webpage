@@ -153,10 +153,10 @@ export const Navbar: FC = () => {
 
 	return (
 		<>
-			<nav className="relative px-6 py-6 flex justify-between items-center bg-white dark:bg-gray-900">
+			<nav className="relative flex items-center justify-between bg-white px-6 py-6 dark:bg-gray-900">
 				<Link
 					href="/#"
-					className="text-white text-3xl font-bold leading-none block"
+					className="block text-3xl font-bold leading-none text-white"
 				>
 					<CustomImage
 						className="h-12 w-12"
@@ -169,12 +169,12 @@ export const Navbar: FC = () => {
 					<button
 						aria-label="Hamburger"
 						onClick={onClose}
-						className="flex items-center text-gray-900 dark:text-white p-3 focus:outline-none"
+						className="flex items-center p-3 text-gray-900 focus:outline-none dark:text-white"
 					>
 						<FiMenu className="block h-4 w-4 fill-current" />
 					</button>
 				</div>
-				<ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+				<ul className="absolute top-1/2 left-1/2 hidden -translate-y-1/2 -translate-x-1/2 transform lg:mx-auto lg:flex lg:flex lg:w-auto lg:items-center lg:space-x-6">
 					<NavbarSeperator />
 					{links.map((link, idx) => (
 						<Fragment key={idx}>
@@ -197,7 +197,7 @@ export const Navbar: FC = () => {
 					))}
 				</ul>
 				<Link underline href="/#contact">
-					<span className="hidden lg:inline-block py-2 px-6 bg-purple-700 hover:bg-purple-800 text-sm text-white font-bold round transition duration-200">
+					<span className="round hidden bg-purple-700 py-2 px-6 text-sm font-bold text-white transition duration-200 hover:bg-purple-800 lg:inline-block">
 						{parser.get("contact")}
 					</span>
 				</Link>
@@ -209,10 +209,10 @@ export const Navbar: FC = () => {
 			>
 				<div
 					onClick={onClose}
-					className="fixed inset-0 bg-white dark:bg-gray-700 opacity-25"
+					className="fixed inset-0 bg-white opacity-25 dark:bg-gray-700"
 				/>
-				<nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-gray-100 dark:bg-gray-900 overflow-y-auto">
-					<div className="flex items-center mb-8">
+				<nav className="fixed top-0 left-0 bottom-0 flex w-5/6 max-w-sm flex-col overflow-y-auto bg-gray-100 py-6 px-6 dark:bg-gray-900">
+					<div className="mb-8 flex items-center">
 						<Link
 							underline
 							href="/#"
@@ -230,7 +230,7 @@ export const Navbar: FC = () => {
 							onClick={onClose}
 							className="focus:outline-none"
 						>
-							<FiX className="h-6 w-6 cursor-pointer text-black dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-500" />
+							<FiX className="h-6 w-6 cursor-pointer text-black hover:text-gray-500 dark:text-gray-400 dark:hover:text-gray-500" />
 						</button>
 					</div>
 					<div>
@@ -265,12 +265,12 @@ export const Navbar: FC = () => {
 					<div className="mt-auto">
 						<div>
 							<Link href="/#contact">
-								<span className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-purple-600 hover:bg-purple-700 round">
+								<span className="round mb-2 block bg-purple-600 px-4 py-3 text-center text-xs font-semibold leading-loose text-white hover:bg-purple-700">
 									{parser.get("contact")}
 								</span>
 							</Link>
 						</div>
-						<p className="my-4 text-xs text-center text-gray-600 dark:text-gray-400">
+						<p className="my-4 text-center text-xs text-gray-600 dark:text-gray-400">
 							<span>
 								&copy; 2020 - {CONFIG.NOW} All rights reserved |
 								Barış DEMİRCİ
@@ -279,7 +279,7 @@ export const Navbar: FC = () => {
 						<div className="text-center">
 							{CONFIG.CONTACT.map((social, idx) => (
 								<Link underline key={idx} href={social.href}>
-									<social.icon className="inline-block text-black dark:text-white mx-2" />
+									<social.icon className="mx-2 inline-block text-black dark:text-white" />
 								</Link>
 							))}
 						</div>
@@ -315,7 +315,7 @@ export const Navbar: FC = () => {
 			<button
 				aria-label="Change Theme"
 				onClick={onTheme}
-				className="block fixed bottom-0 left-0 mx-10 lg:mx-20 my-10 z-50 text-white w-10 h-10 bg-purple-600 hover:bg-purple-700 round focus:outline-none"
+				className="round fixed bottom-0 left-0 z-50 mx-10 my-10 block h-10 w-10 bg-purple-600 text-white hover:bg-purple-700 focus:outline-none lg:mx-20"
 			>
 				{getIcon()}
 			</button>

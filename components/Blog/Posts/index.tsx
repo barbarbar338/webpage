@@ -15,7 +15,7 @@ export const Posts: FC<IPosts> = ({ posts, title }) => {
 		<div className="w-full lg:w-8/12">
 			<div className="flex items-center justify-between">
 				<h1
-					className="text-xl font-bold text-gray-700 md:text-2xl dark:text-white"
+					className="text-xl font-bold text-gray-700 dark:text-white md:text-2xl"
 					dangerouslySetInnerHTML={{
 						__html: title || parser.get("posts"),
 					}}

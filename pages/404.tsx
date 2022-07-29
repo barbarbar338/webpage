@@ -10,19 +10,19 @@ const NotFoundPage: NextPage = () => {
 
 	return (
 		<Layout title="Not Found">
-			<section className="py-8 px-4 text-center bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen">
-				<h1 className="text-5xl font-semibold font-heading">
+			<section className="min-h-screen bg-white py-8 px-4 text-center text-black dark:bg-gray-900 dark:text-white">
+				<h1 className="font-heading text-5xl font-semibold">
 					{parser.get("error_404")}
 				</h1>
 				<p className="text-gray-400">{parser.get("page_not_found")}</p>
 				<CustomImage
-					className="max-w-auto md:max-w-sm my-12 mx-auto"
+					className="max-w-auto my-12 mx-auto md:max-w-sm"
 					src={ErrorSVG}
 					alt="Error"
 				/>
 				<div>
 					<Link href="/">
-						<span className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200">
+						<span className="round mb-3 inline-block w-full bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
 							{parser.get("go_home")}
 						</span>
 					</Link>

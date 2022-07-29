@@ -7,7 +7,7 @@ export interface ITicTacToeBoard {
 }
 
 export const TicTacToeBoard: FC<ITicTacToeBoard> = ({ squares, onClick }) => (
-	<div className="bg-white border-white border-4 gap-1 w-96 h-96 grid grid-rows-3 grid-cols-3">
+	<div className="grid h-96 w-96 grid-cols-3 grid-rows-3 gap-1 border-4 border-white bg-white">
 		{squares.map((square, i) => (
 			<Square key={i} value={square} onClick={() => onClick(i)} />
 		))}

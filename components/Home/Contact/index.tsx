@@ -38,21 +38,21 @@ export const Contact: FC = () => {
 	return (
 		<section
 			id="contact"
-			className="py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white"
+			className="bg-white py-10 px-4 text-black dark:bg-gray-900 dark:text-white"
 		>
 			<h1
-				className="text-4xl mb-10 text-center font-semibold font-heading"
+				className="mb-10 text-center font-heading text-4xl font-semibold"
 				dangerouslySetInnerHTML={{
 					__html: parser.get("contact_me"),
 				}}
 			/>
-			<div className="w-full max-w-2xl mx-auto mb-12">
+			<div className="mx-auto mb-12 w-full max-w-2xl">
 				<form onSubmit={onSubmit}>
-					<div className="flex mb-4 -mx-2">
+					<div className="-mx-2 mb-4 flex">
 						<div className="w-1/2 px-2">
 							<input
 								onChange={onMailChange}
-								className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
+								className="round block w-full appearance-none border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
 								type="email"
 								placeholder={parser.get("email")}
 							/>
@@ -60,7 +60,7 @@ export const Contact: FC = () => {
 						<div className="w-1/2 px-2">
 							<input
 								onChange={onNameChange}
-								className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
+								className="round block w-full appearance-none border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
 								type="text"
 								placeholder={parser.get("name")}
 							/>
@@ -69,7 +69,7 @@ export const Contact: FC = () => {
 					<div className="mb-4">
 						<textarea
 							onChange={onMessageChange}
-							className="appearance-none block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
+							className="round block w-full appearance-none border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
 							placeholder={parser.get("write_something")}
 							rows={5}
 						></textarea>
@@ -77,22 +77,22 @@ export const Contact: FC = () => {
 					<div>
 						<button
 							aria-label="Submit"
-							className="inline-block w-full py-4 px-8 leading-none text-white bg-purple-600 hover:bg-purple-700 font-semibold round"
+							className="round inline-block w-full bg-purple-600 py-4 px-8 font-semibold leading-none text-white hover:bg-purple-700"
 						>
 							{parser.get("submit")}
 						</button>
 					</div>
 				</form>
 			</div>
-			<div className="flex flex-col lg:flex-row justify-center -mx-4">
+			<div className="-mx-4 flex flex-col justify-center lg:flex-row">
 				{CONFIG.CONTACT.map((social, idx) => (
 					<Link
 						underline
 						key={idx}
 						href={social.href}
-						className="px-4 flex items-center"
+						className="flex items-center px-4"
 					>
-						<social.icon className="inline-block w-6 h-6 mr-3 text-purple-600" />
+						<social.icon className="mr-3 inline-block h-6 w-6 text-purple-600" />
 						{social.value}
 					</Link>
 				))}

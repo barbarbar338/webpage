@@ -15,15 +15,15 @@ const IndexPage: NextPage<ISponsorsPage> = ({ sponsors }) => {
 
 	return (
 		<Layout title={parser.get("sponsors")}>
-			<section className="py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white text-center">
+			<section className="bg-white py-10 px-4 text-center text-black dark:bg-gray-900 dark:text-white">
 				<h1
-					className="text-4xl mb-5 font-semibold font-heading"
+					className="mb-5 font-heading text-4xl font-semibold"
 					dangerouslySetInnerHTML={{
 						__html: parser.get("my_sponsors"),
 					}}
 				/>
 				<p
-					className="text-xl mb-10 text-gray-500"
+					className="mb-10 text-xl text-gray-500"
 					dangerouslySetInnerHTML={{
 						__html: parser.get("github_sponsors_description", {
 							link: `<a rel='noreferrer' target='_blank' href='https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}' class='cursor-pointer hover:underline'>https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}</a>`,
@@ -31,14 +31,14 @@ const IndexPage: NextPage<ISponsorsPage> = ({ sponsors }) => {
 					}}
 				/>
 				<div className="container mx-auto mb-12">
-					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 text-left">
+					<div className="grid grid-cols-1 gap-4 text-left sm:grid-cols-2 md:grid-cols-3">
 						{sponsors.map((sponsor, idx) => (
 							<SponsorCard key={idx} sponsor={sponsor} />
 						))}
 					</div>
 					<div className="pt-10">
 						<Link href="/">
-							<span className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200">
+							<span className="round mb-3 inline-block w-full bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
 								{parser.get("go_home")}
 							</span>
 						</Link>

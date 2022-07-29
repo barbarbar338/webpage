@@ -10,13 +10,13 @@ export interface IPinnedCard {
 
 export const PinnedCard: FC<IPinnedCard> = ({ post }) => (
 	<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
-		<div className="flex flex-col max-w-sm px-8 py-6 mx-auto my-5 bg-white dark:bg-gray-800 round shadow-md">
+		<div className="round mx-auto my-5 flex max-w-sm flex-col bg-white px-8 py-6 shadow-md dark:bg-gray-800">
 			<div className="flex items-center justify-center">
 				{post.labels.map((label, idx) => (
 					<Link
 						key={idx}
 						href={`/blog/category/${label.id}`}
-						className="m-1 p-1 text-sm text-black round"
+						className="round m-1 p-1 text-sm text-black"
 						style={{
 							backgroundColor: `#${label.color}`,
 						}}
@@ -29,17 +29,17 @@ export const PinnedCard: FC<IPinnedCard> = ({ post }) => (
 				<Link
 					href={`/blog/post/${post.number}`}
 					underline
-					className="text-lg font-medium text-gray-700 dark:text-white hover:underline"
+					className="text-lg font-medium text-gray-700 hover:underline dark:text-white"
 				>
 					{post.title}
 				</Link>
 			</div>
-			<div className="flex items-center justify-between mt-4">
+			<div className="mt-4 flex items-center justify-between">
 				<div className="flex items-center">
 					<CustomImage
 						src={post.author.avatarUrl}
 						alt="avatar"
-						className="object-cover w-8 h-8 rounded-full"
+						className="h-8 w-8 rounded-full object-cover"
 					/>
 					<Link
 						href={`https://github.com/${post.author.login}`}

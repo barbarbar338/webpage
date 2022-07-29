@@ -14,20 +14,20 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 
 	return (
 		<Layout title={parser.get("changelog")}>
-			<div className="leading-normal tracking-normal min-h-screen">
-				<div className="container w-full md:max-w-3xl mx-auto">
-					<div className="w-full text-xl text-gray-800 leading-normal">
+			<div className="min-h-screen leading-normal tracking-normal">
+				<div className="container mx-auto w-full md:max-w-3xl">
+					<div className="w-full text-xl leading-normal text-gray-800">
 						<div className="font-sans">
-							<h1 className="font-bold font-sans break-normal text-black dark:text-white pt-6 pb-2 text-3xl md:text-4xl">
+							<h1 className="break-normal pt-6 pb-2 font-sans text-3xl font-bold text-black dark:text-white md:text-4xl">
 								{parser.get("changelog")}
 							</h1>
-							<p className="text-sm md:text-base font-normal text-gray-500">
+							<p className="text-sm font-normal text-gray-500 md:text-base">
 								{parser.get("last_commit", {
 									date: commitsData.latest,
 								})}
 							</p>
 						</div>
-						<div className="container text-black dark:text-white prose">
+						<div className="container prose text-black dark:text-white">
 							<p
 								dangerouslySetInnerHTML={{
 									__html: parser.get(

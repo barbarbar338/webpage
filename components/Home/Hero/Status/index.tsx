@@ -69,7 +69,7 @@ export const Status: FC = () => {
 	};
 
 	return (
-		<span className="rounded-md flex space-x-2 text-gray-700 items-center dark:text-gray-300">
+		<span className="rounded-md flex items-center space-x-2 text-gray-700 dark:text-gray-300">
 			<Tippy tooltip={getColor().status}>
 				<span
 					className={classnames(
@@ -82,7 +82,7 @@ export const Status: FC = () => {
 				/>
 			</Tippy>
 			<Tippy tooltip={getStatus()}>
-				<span className="text-sm truncate">{getStatus()}</span>
+				<span className="truncate text-sm">{getStatus()}</span>
 			</Tippy>
 		</span>
 	);

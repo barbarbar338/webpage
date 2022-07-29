@@ -38,11 +38,11 @@ export const TicTacToeGame = () => {
 	};
 
 	return (
-		<div className="flex flex-col min-h-screen">
-			<div className="flex justify-center mb-4">
+		<div className="flex min-h-screen flex-col">
+			<div className="mb-4 flex justify-center">
 				<button
 					onClick={restart}
-					className="inline-block mb-3 mx-5 lg:mb-0 lg:mr-3 w-full lg:w-1/5 py-2 px-6 leading-loose bg-blue-600 hover:bg-blue-700 text-white font-semibold round transition duration-200"
+					className="round mx-5 mb-3 inline-block w-full bg-blue-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0 lg:mr-3 lg:w-1/5"
 				>
 					{parser.get("restart")}
 				</button>

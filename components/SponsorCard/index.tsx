@@ -16,17 +16,17 @@ export const SponsorCard: FC<ISponsorCardProps> = ({
 	const parser = useLocaleParser();
 
 	const Card: FC = () => (
-		<div className="cursor-pointer px-4 pt-4 bg-gray-200 dark:bg-gray-800 round h-full text-black dark:text-white">
+		<div className="round h-full cursor-pointer bg-gray-200 px-4 pt-4 text-black dark:bg-gray-800 dark:text-white">
 			<div className="flex items-center justify-center">
 				<CustomImage alt={sponsor.name} src={sponsor.avatarUrl} />
 			</div>
-			<span className="line-clamp-2 text-center h-12 text-xl">
+			<span className="h-12 text-center text-xl line-clamp-2">
 				{sponsor.name}
 			</span>
-			<span className="line-clamp-2 text-center h-12 text-lg text-gray-500">
+			<span className="h-12 text-center text-lg text-gray-500 line-clamp-2">
 				@{sponsor.login}
 			</span>
-			<span className="line-clamp-2 text-center h-12 text-lg">
+			<span className="h-12 text-center text-lg line-clamp-2">
 				{tierName}
 			</span>
 		</div>

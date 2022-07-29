@@ -2,7 +2,7 @@ import type { FC } from "react";
 
 export const Dot: FC = () => (
 	<svg
-		className="mr-2 w-6 h-6 text-green-400"
+		className="mr-2 h-6 w-6 text-green-400"
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 20 20"
 		fill="currentColor"

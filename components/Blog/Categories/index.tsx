@@ -11,7 +11,7 @@ export const Categories: FC<ICategories> = ({ categories }) => {
 	const parser = useLocaleParser();
 
 	return (
-		<div className="px-8 mt-10">
+		<div className="mt-10 px-8">
 			<h1 className="mb-4 text-xl font-bold text-gray-700 dark:text-white">
 				{parser.get("categories")}
 			</h1>

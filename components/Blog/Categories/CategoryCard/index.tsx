@@ -10,7 +10,7 @@ export interface ICategoryCard {
 export const CategoryCard: FC<ICategoryCard> = ({ category }) => (
 	<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 		<li
-			className="m-1 flex flex-col max-w-sm p-2 mx-auto bg-white round shadow-md dark:bg-gray-800"
+			className="round m-1 mx-auto flex max-w-sm flex-col bg-white p-2 shadow-md dark:bg-gray-800"
 			style={{
 				backgroundColor: `#${category.color}`,
 			}}

@@ -21,23 +21,23 @@ export const About: FC = () => {
 	return (
 		<section
 			id="about"
-			className="py-10 min-h-screen bg-white dark:bg-gray-900"
+			className="min-h-screen bg-white py-10 dark:bg-gray-900"
 		>
 			<div className="container mx-auto px-4">
 				<div className="flex flex-wrap items-center">
-					<div className="w-full lg:w-1/2 mb-12 lg:mb-0">
+					<div className="mb-12 w-full lg:mb-0 lg:w-1/2">
 						<div className="max-w-md lg:mx-auto">
-							<span className="text-purple-600 font-bold">
+							<span className="font-bold text-purple-600">
 								{parser.get("being_a_title")}
 							</span>
 							<h2
-								className="my-2 text-4xl lg:text-5xl font-bold font-heading text-black dark:text-white"
+								className="my-2 font-heading text-4xl font-bold text-black dark:text-white lg:text-5xl"
 								dangerouslySetInnerHTML={{
 									__html: parser.get("about_title"),
 								}}
 							/>
 							<p
-								className="mb-6 text-gray-500 leading-loose"
+								className="mb-6 leading-loose text-gray-500"
 								dangerouslySetInnerHTML={{
 									__html: parser.get("bio", {
 										startedAt: CONFIG.STARTED_AT.toString(),
@@ -46,9 +46,9 @@ export const About: FC = () => {
 									}),
 								}}
 							/>
-							<ul className="text-gray-500 font-bold">
+							<ul className="font-bold text-gray-500">
 								{CONFIG.IMPORTANT_SKILLS.map((skill, idx) => (
-									<li key={idx} className="flex mb-4">
+									<li key={idx} className="mb-4 flex">
 										<Dot />
 										<span>{skill}</span>
 									</li>
@@ -56,9 +56,9 @@ export const About: FC = () => {
 							</ul>
 						</div>
 					</div>
-					<div className="w-full lg:w-1/2 flex space-x-4">
-						<div className="mb-8 lg:mb-0 w-1/2">{left}</div>
-						<div className="w-1/2 lg:mt-20 md:px-4">{right}</div>
+					<div className="flex w-full space-x-4 lg:w-1/2">
+						<div className="mb-8 w-1/2 lg:mb-0">{left}</div>
+						<div className="w-1/2 md:px-4 lg:mt-20">{right}</div>
 					</div>
 				</div>
 			</div>

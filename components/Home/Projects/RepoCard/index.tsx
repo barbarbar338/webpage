@@ -20,7 +20,7 @@ export const RepoCard: FC<IStarredRepo> = ({
 			<div>
 				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 					<Link href={url}>
-						<div className="p-4 bg-gray-200 dark:bg-gray-800 round h-full text-black dark:text-white">
+						<div className="round h-full bg-gray-200 p-4 text-black dark:bg-gray-800 dark:text-white">
 							<div className="flex items-center space-x-1">
 								<span className="flex-grow space-x-2 truncate text-purple-600 dark:text-purple-300">
 									{name}
@@ -28,21 +28,21 @@ export const RepoCard: FC<IStarredRepo> = ({
 								<div className="flex items-center space-x-1">
 									<div className="flex items-center space-x-1">
 										<span>{stargazerCount}</span>{" "}
-										<FiStar className="w-6 h-6 text-yellow-600" />
+										<FiStar className="h-6 w-6 text-yellow-600" />
 									</div>
 								</div>
 							</div>
-							<p className="line-clamp-2 text-base h-12">
+							<p className="h-12 text-base line-clamp-2">
 								{description}
 							</p>
-							<div className="flex mt-3">
+							<div className="mt-3 flex">
 								<span
-									className="mt-1 block h-4 w-4 bg-gray-400 rounded-full"
+									className="mt-1 block h-4 w-4 rounded-full bg-gray-400"
 									style={{
 										backgroundColor: primaryLanguage.color,
 									}}
 								></span>
-								<p className="ml-1 mt-1 text-gray-600 dark:text-gray-400 text-xs">
+								<p className="ml-1 mt-1 text-xs text-gray-600 dark:text-gray-400">
 									{primaryLanguage.name}
 								</p>
 							</div>

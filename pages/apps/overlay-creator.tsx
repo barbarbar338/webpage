@@ -44,25 +44,25 @@ const OverlayCreatorAppPage: NextPage = () => {
 
 	return (
 		<Layout title={parser.get("apps_overlay_creator")}>
-			<section className="min-h-screen py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white">
+			<section className="min-h-screen bg-white py-10 px-4 text-black dark:bg-gray-900 dark:text-white">
 				<h1
-					className="text-4xl mb-10 text-center font-semibold font-heading"
+					className="mb-10 text-center font-heading text-4xl font-semibold"
 					dangerouslySetInnerHTML={{
 						__html: parser.get("overlay_creator"),
 					}}
 				/>
-				<div className="w-full max-w-2xl mx-auto mb-12">
+				<div className="mx-auto mb-12 w-full max-w-2xl">
 					<form onSubmit={onSubmit}>
 						<div className="mb-5">
 							<input
 								onChange={onURLChange}
-								className="appearance-none my-2 block w-full py-3 px-4 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 round focus:outline-none"
+								className="round my-2 block w-full appearance-none border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
 								type="text"
 								placeholder={parser.get("avatar")}
 							/>
 							<select
 								onChange={onSelectChange}
-								className="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+								className="form-select m-0 block w-full appearance-none rounded border border-solid border-gray-300 bg-white bg-clip-padding bg-no-repeat px-3 py-1.5 text-base font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
 							>
 								{overlays.map((overlay, idx) => (
 									<option key={idx} value={overlay}>
@@ -74,13 +74,13 @@ const OverlayCreatorAppPage: NextPage = () => {
 						<div>
 							<button
 								aria-label="Submit"
-								className="inline-block w-full py-4 px-8 leading-none text-white bg-purple-600 hover:bg-purple-700 font-semibold round"
+								className="round inline-block w-full bg-purple-600 py-4 px-8 font-semibold leading-none text-white hover:bg-purple-700"
 							>
 								{parser.get("submit")}
 							</button>
 						</div>
 					</form>
-					<div className="h-96 w-96 bg-gray-500 m-auto mt-5">
+					<div className="m-auto mt-5 h-96 w-96 bg-gray-500">
 						{product && (
 							<CustomImage
 								alt="Overlay"

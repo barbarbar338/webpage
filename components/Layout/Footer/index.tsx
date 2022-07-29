@@ -5,10 +5,10 @@ import { FiHeart } from "react-icons/fi";
 
 export const Footer: FC = () => (
 	<div className="bg-white dark:bg-gray-900">
-		<div className="flex pb-5 px-3  items-center text-center m-auto pt-5 text-gray-600 dark:text-gray-300 text-sm flex-col md:flex-row max-w-6xl">
+		<div className="m-auto flex max-w-6xl  flex-col items-center px-3 pb-5 pt-5 text-center text-sm text-gray-600 dark:text-gray-300 md:flex-row">
 			<div className="mt-2">
 				&copy; 2020 - {CONFIG.NOW} All rights reserved. Made with{" "}
-				<FiHeart className="text-red-500 inline" /> by{" "}
+				<FiHeart className="inline text-red-500" /> by{" "}
 				<Link
 					underline
 					href="https://github.com/barbarbar338"
@@ -33,13 +33,13 @@ export const Footer: FC = () => (
 					TailwindCSS
 				</Link>
 			</div>
-			<div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
+			<div className="mt-2 flex flex-row md:flex-auto md:flex-row-reverse">
 				{CONFIG.CONTACT.map((social, idx) => (
 					<Link
 						underline
 						key={idx}
 						href={social.href}
-						className="w-6 mx-1 text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-500"
+						className="mx-1 w-6 text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-500"
 					>
 						<social.icon />
 					</Link>

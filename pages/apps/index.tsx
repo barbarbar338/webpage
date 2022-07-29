@@ -42,15 +42,15 @@ const AppsPage: NextPage = () => {
 
 	return (
 		<Layout title={parser.get("apps")}>
-			<section className="min-h-screen py-10 px-4 bg-white dark:bg-gray-900 text-black dark:text-white text-center">
+			<section className="min-h-screen bg-white py-10 px-4 text-center text-black dark:bg-gray-900 dark:text-white">
 				<h1
-					className="text-4xl mb-10 font-semibold font-heading"
+					className="mb-10 font-heading text-4xl font-semibold"
 					dangerouslySetInnerHTML={{
 						__html: parser.get("all_apps"),
 					}}
 				/>
 				<div className="container mx-auto mb-12">
-					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 text-left">
+					<div className="grid grid-cols-1 gap-4 text-left sm:grid-cols-2 md:grid-cols-3">
 						{apps.map((app, idx) => (
 							<AppsCard
 								key={idx}
@@ -64,7 +64,7 @@ const AppsPage: NextPage = () => {
 					</div>
 					<div className="pt-10">
 						<Link href="/">
-							<span className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200">
+							<span className="round mb-3 inline-block w-full bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
 								{parser.get("go_home")}
 							</span>
 						</Link>

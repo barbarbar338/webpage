@@ -59,7 +59,7 @@ export const Alert: FC<IAlertProps> = ({
 			)}
 			role="alert"
 		>
-			<Icon className="w-5 h-5 inline mr-3" />
+			<Icon className="mr-3 inline h-5 w-5" />
 			<div>
 				<span className="font-medium">{title}:</span>{" "}
 				{html ? (
@@ -77,7 +77,7 @@ export const Alert: FC<IAlertProps> = ({
 					onClick={onClose}
 					className="flex flex-auto flex-row-reverse"
 				>
-					<FiX className="w-5 h-5 cursor-pointer" />
+					<FiX className="h-5 w-5 cursor-pointer" />
 				</div>
 			)}
 		</div>

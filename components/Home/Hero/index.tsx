@@ -17,20 +17,20 @@ export const Hero: FC = () => {
 	const lastElement = CONFIG.INTERESTS[lastIDX];
 
 	return (
-		<section className="bg-white dark:bg-gray-900 pt-12 lg:pt-20 pb-12 md:pb-24">
+		<section className="bg-white pt-12 pb-12 dark:bg-gray-900 md:pb-24 lg:pt-20">
 			<div className="container mx-auto px-4">
-				<div className="flex flex-wrap -mx-4 flex-col-reverse md:flex-row">
-					<div className="w-full lg:w-1/2 px-4 mb-12 md:mb-20 lg:mb-0 flex items-center">
+				<div className="-mx-4 flex flex-col-reverse flex-wrap md:flex-row">
+					<div className="mb-12 flex w-full items-center px-4 md:mb-20 lg:mb-0 lg:w-1/2">
 						<div className="w-full text-center lg:text-left">
-							<div className="max-w-md mx-auto lg:mx-0">
-								<h1 className="my-3 md:mt-0 text-4xl lg:text-5xl text-black dark:text-white font-bold">
+							<div className="mx-auto max-w-md lg:mx-0">
+								<h1 className="my-3 text-4xl font-bold text-black dark:text-white md:mt-0 lg:text-5xl">
 									{parser.constants["name"]}{" "}
 									{parser.constants["surname"]}
 								</h1>
 							</div>
-							<div className="max-w-sm mx-auto lg:mx-0">
+							<div className="mx-auto max-w-sm lg:mx-0">
 								<p
-									className="mb-6 text-gray-700 dark:text-gray-300 leading-loose"
+									className="mb-6 leading-loose text-gray-700 dark:text-gray-300"
 									dangerouslySetInnerHTML={{
 										__html: parser.get("hero_title", {
 											experience:
@@ -60,12 +60,12 @@ export const Hero: FC = () => {
 								<Status />
 								<div>
 									<Link underline href="#about">
-										<span className="inline-block mb-3 lg:mb-0 lg:mr-3 w-full lg:w-auto py-2 px-6 leading-loose bg-purple-600 hover:bg-purple-700 text-white font-semibold round transition duration-200">
+										<span className="round mb-3 inline-block w-full bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
 											{parser.get("about_me")}
 										</span>
 									</Link>
 									<Link underline href="#contact">
-										<span className="inline-block w-full lg:w-auto py-2 px-6 leading-loose text-white font-semibold bg-gray-900 border-2 border-gray-700 hover:border-gray-600 round transition duration-200">
+										<span className="round inline-block w-full border-2 border-gray-700 bg-gray-900 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:border-gray-600 lg:w-auto">
 											{parser.get("contact")}
 										</span>
 									</Link>
@@ -73,7 +73,7 @@ export const Hero: FC = () => {
 							</div>
 						</div>
 					</div>
-					<div className="w-full lg:w-1/2 px-4 flex items-center justify-center">
+					<div className="flex w-full items-center justify-center px-4 lg:w-1/2">
 						<div
 							className="relative"
 							style={{
@@ -86,13 +86,13 @@ export const Hero: FC = () => {
 								tiltMaxAngleY={10}
 							>
 								<CustomImage
-									className="md:h-128 md:w-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none"
+									className="w-full max-w-lg rounded-3xl object-cover md:h-128 md:w-128 md:rounded-br-none"
 									src={CONFIG.AVATAR_URL}
 									alt="Avatar"
 								/>
 							</Tilt>
 							<CustomImage
-								className="hidden md:block absolute"
+								className="absolute hidden md:block"
 								style={{
 									top: "-2rem",
 									right: "3rem",
@@ -102,7 +102,7 @@ export const Hero: FC = () => {
 								alt="UpSVGElement"
 							/>
 							<CustomImage
-								className="hidden md:block absolute"
+								className="absolute hidden md:block"
 								style={{
 									bottom: "-2rem",
 									right: "-2rem",
@@ -112,7 +112,7 @@ export const Hero: FC = () => {
 								alt="DownSVGElement"
 							/>
 							<CustomImage
-								className="hidden md:block absolute"
+								className="absolute hidden md:block"
 								style={{
 									top: "3rem",
 									right: "-3rem",
@@ -122,7 +122,7 @@ export const Hero: FC = () => {
 								alt="RightSVGElement"
 							/>
 							<CustomImage
-								className="hidden md:block absolute"
+								className="absolute hidden md:block"
 								style={{
 									bottom: "2.5rem",
 									left: "-4.5rem",

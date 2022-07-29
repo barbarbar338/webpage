@@ -14,7 +14,7 @@ export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => {
 
 	return (
 		<Tilt scale={1.05} tiltMaxAngleX={25} tiltMaxAngleY={25}>
-			<div className="mb-4 md:mb-8 py-6 pl-6 pr-4 shadow-md round bg-gray-200 dark:bg-gray-800">
+			<div className="round mb-4 bg-gray-200 py-6 pl-6 pr-4 shadow-md dark:bg-gray-800 md:mb-8">
 				<span
 					className={classNames(
 						"mb-4",
@@ -26,14 +26,14 @@ export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => {
 				>
 					<CustomImage
 						src={framework.icon}
-						className="w-10 h-10"
+						className="h-10 w-10"
 						alt={framework.name}
 					/>
 				</span>
-				<h3 className="mb-2 text-xl sm:text-2xl font-bold font-heading text-black dark:text-white">
+				<h3 className="mb-2 font-heading text-xl font-bold text-black dark:text-white sm:text-2xl">
 					{framework.name}
 				</h3>
-				<p className="text-gray-700 dark:text-gray-300 leading-loose">
+				<p className="leading-loose text-gray-700 dark:text-gray-300">
 					{parser.get("framework_year", {
 						experience: framework.experience.toString(),
 					})}

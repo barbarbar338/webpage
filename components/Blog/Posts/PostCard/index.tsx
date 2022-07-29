@@ -15,7 +15,7 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 	return (
 		<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 			<div className="mt-6">
-				<div className="max-w-4xl px-10 py-6 mx-auto bg-white dark:bg-gray-800 round shadow-md">
+				<div className="round mx-auto max-w-4xl bg-white px-10 py-6 shadow-md dark:bg-gray-800">
 					<div className="flex items-center justify-between">
 						<span className="font-light text-gray-600 dark:text-white">
 							{post.createdAt}
@@ -30,7 +30,7 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 							{post.title}
 						</Link>
 					</div>
-					<div className="flex items-center justify-between mt-4">
+					<div className="mt-4 flex items-center justify-between">
 						<Link
 							underline
 							href={`/blog/post/${post.number}`}
@@ -47,7 +47,7 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 								<CustomImage
 									src={post.author.avatarUrl}
 									alt="avatar"
-									className="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
+									className="mx-4 hidden h-10 w-10 rounded-full object-cover sm:block"
 								/>
 								<h1 className="font-bold text-gray-700 dark:text-white">
 									{post.author.login}
@@ -60,7 +60,7 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 							<Link
 								key={idx}
 								href={`/blog/category/${label.id}`}
-								className="p-1 m-1 text-sm text-black round"
+								className="round m-1 p-1 text-sm text-black"
 								style={{
 									backgroundColor: `#${label.color}`,
 								}}
