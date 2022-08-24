@@ -4,10 +4,10 @@ import { Status } from "@components/Home/Hero/Status";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import { CONFIG } from "@libs/config";
-import Up from "@assets/elements/up.svg";
+import Right from "@assets/elements/right.svg";
 import Down from "@assets/elements/down.svg";
 import Left from "@assets/elements/left.svg";
-import Right from "@assets/elements/right.svg";
+import Up from "@assets/elements/up.svg";
 import Tilt from "react-parallax-tilt";
 
 export const Hero: FC = () => {

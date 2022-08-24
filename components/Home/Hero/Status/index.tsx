@@ -1,8 +1,8 @@
 import type { FC } from "react";
 import { useLocaleParser } from "@libs/localeParser";
 import { Tippy } from "@components/Utils/Tippy";
-import { CONFIG } from "@libs/config";
 import { useLanyard } from "react-use-lanyard";
+import { CONFIG } from "@libs/config";
 import classnames from "classnames";
 
 export const Status: FC = () => {

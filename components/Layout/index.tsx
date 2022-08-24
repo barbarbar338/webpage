@@ -1,11 +1,11 @@
 import { type FC, type ReactNode } from "react";
+import { GithubSponsorsAlert } from "@components/Layout/GithubSponsorsAlert";
 import { DomainAlert } from "@components/Layout/DomainAlert";
 import { Footer } from "@components/Layout/Footer";
 import { Navbar } from "@components/Layout/Navbar";
-import { CONFIG } from "@libs/config";
 import { useRouter } from "next/router";
+import { CONFIG } from "@libs/config";
 import { NextSeo } from "next-seo";
-import { GithubSponsorsAlert } from "./GithubSponsorsAlert";
 
 export interface ILayout {
 	title: string;

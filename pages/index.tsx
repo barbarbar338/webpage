@@ -5,12 +5,12 @@ import { Contact } from "@components/Home/Contact";
 import { About } from "@components/Home/About";
 import { Hero } from "@components/Home/Hero";
 import { Layout } from "@components/Layout";
+import { CONFIG } from "@libs/config";
 import {
 	getMostStarredRepos,
 	getPinnedRepos,
 	IStarredRepo,
 } from "@libs/graphql";
-import { CONFIG } from "@libs/config";
 
 export interface IIndexPage {
 	repos: IStarredRepo[];

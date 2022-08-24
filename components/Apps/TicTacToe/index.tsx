@@ -1,10 +1,10 @@
+import { type FC, useState } from "react";
 import { calculateWinner } from "@libs/apps/tictactoe/calculateWinner";
 import { TicTacToeBoard } from "@components/Apps/TicTacToe/Board";
 import { useLocaleParser } from "@libs/localeParser";
 import { toast } from "react-toastify";
-import { useState } from "react";
 
-export const TicTacToeGame = () => {
+export const TicTacToeGame: FC = () => {
 	const parser = useLocaleParser();
 
 	const [history, setHistory] = useState([Array(9).fill(null)]);

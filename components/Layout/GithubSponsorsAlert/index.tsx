@@ -1,8 +1,8 @@
 import type { FC } from "react";
 import { useLocaleParser } from "@libs/localeParser";
 import { Alert } from "@components/Utils/Alert";
-import { CONFIG } from "@libs/config";
 import { useLocalStorage } from "react-use";
+import { CONFIG } from "@libs/config";
 
 export const GithubSponsorsAlert: FC = () => {
 	const parser = useLocaleParser();

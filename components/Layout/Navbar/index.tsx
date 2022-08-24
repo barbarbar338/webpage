@@ -4,8 +4,8 @@ import { NavbarSeperator } from "@components/Layout/NavbarSeperator";
 import { CustomImage } from "@components/Utils/CustomImage";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
-import { CONFIG } from "@libs/config";
 import { useTheme } from "next-themes";
+import { CONFIG } from "@libs/config";
 import {
 	FiArrowUp,
 	FiMenu,

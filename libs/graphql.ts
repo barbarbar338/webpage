@@ -1,5 +1,5 @@
-import { CONFIG } from "@libs/config";
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { CONFIG } from "@libs/config";
 import moment from "moment";
 
 export const apollo = new ApolloClient({

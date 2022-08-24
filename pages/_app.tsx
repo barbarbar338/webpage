@@ -1,12 +1,12 @@
-import { CONFIG } from "@libs/config";
-import { pageview } from "@libs/ga";
 import { ToastContainer } from "react-toastify";
 import { ThemeProvider } from "next-themes";
 import { useRouter } from "next/router";
+import { CONFIG } from "@libs/config";
 import { DefaultSeo } from "next-seo";
+import { pageview } from "@libs/ga";
 import { useEffect } from "react";
-import Favicon from "@assets/icon.svg";
 import NextProgress from "nextjs-progressbar";
+import Favicon from "@assets/icon.svg";
 import Script from "next/script";
 import Head from "next/head";
 

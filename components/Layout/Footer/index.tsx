@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import { Link } from "@components/Utils/Link";
-import { CONFIG } from "@libs/config";
 import { FiHeart } from "react-icons/fi";
+import { CONFIG } from "@libs/config";
 
 export const Footer: FC = () => (
 	<div className="bg-white dark:bg-gray-900">

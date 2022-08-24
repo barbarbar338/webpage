@@ -2,8 +2,8 @@ import type { FC } from "react";
 import type { IStarredRepo } from "@libs/graphql";
 import { useLocaleParser } from "@libs/localeParser";
 import { Tippy } from "@components/Utils/Tippy";
-import { FiStar } from "react-icons/fi";
 import { Link } from "@components/Utils/Link";
+import { FiStar } from "react-icons/fi";
 import Tilt from "react-parallax-tilt";
 
 export const RepoCard: FC<IStarredRepo> = ({

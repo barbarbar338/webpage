@@ -8,13 +8,9 @@ import {
 } from "react-icons/fi";
 import classNames from "classnames";
 
-export interface IAlertProps {
-	type: "success" | "warning" | "error" | "info";
-	title: string;
-	onClose?: () => void;
-	children?: ReactNode;
-	html?: string;
-}
+export type IType<T> = {
+	[key in keyof typeof icons]: T;
+};
 
 const icons = {
 	success: FiCheckCircle,
@@ -23,14 +19,22 @@ const icons = {
 	info: FiInfo,
 };
 
-const bgColors = {
+export interface IAlertProps {
+	type: keyof typeof icons;
+	title: string;
+	onClose?: () => void;
+	children?: ReactNode;
+	html?: string;
+}
+
+const bgColors: IType<string> = {
 	success: "bg-green-100",
 	warning: "bg-yellow-100",
 	error: "bg-red-100",
 	info: "bg-blue-100",
 };
 
-const textColors = {
+const textColors: IType<string> = {
 	success: "text-green-700",
 	warning: "text-yellow-700",
 	error: "text-red-700",

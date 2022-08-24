@@ -1,9 +1,8 @@
 import { useRouter } from "next/router";
-
+import { CONFIG } from "@libs/config";
+import constants from "@locales/constants.yaml";
 import en from "@locales/en.yaml";
 import tr from "@locales/tr.yaml";
-import constants from "@locales/constants.yaml";
-import { CONFIG } from "./config";
 
 const locales = { en, tr };
 const tokens = {

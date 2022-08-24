@@ -1,8 +1,8 @@
 import { type ChangeEvent, type FC, type FormEvent, useState } from "react";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
-import { CONFIG } from "@libs/config";
 import { toast } from "react-toastify";
+import { CONFIG } from "@libs/config";
 
 export const Contact: FC = () => {
 	const parser = useLocaleParser();

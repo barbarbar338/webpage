@@ -1,8 +1,8 @@
+import { type ChangeEvent, type FormEvent, useState } from "react";
 import type { NextPage } from "next";
+import { CustomImage } from "@components/Utils/CustomImage";
 import { useLocaleParser } from "@libs/localeParser";
 import { Layout } from "@components/Layout";
-import { ChangeEvent, FormEvent, useState } from "react";
-import { CustomImage } from "@components/Utils/CustomImage";
 
 const overlays = [
 	"balance",
