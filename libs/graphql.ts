@@ -118,6 +118,53 @@ export const getPostData = async (no: number): Promise<IPostData> => {
 	return post;
 };
 
+export interface ISponsor {
+	name?: string;
+	login: string;
+	avatarUrl: string;
+	tier: string;
+	isOneTime: boolean;
+}
+
+export const getSponsors = async (): Promise<ISponsor[]> => {
+	const { data } = await apollo.query({
+		query: gql`
+			{
+				user(login: "${CONFIG.GITHUB_USERNAME}") {
+					sponsorshipsAsMaintainer(first: 100) {
+						nodes {
+							privacyLevel
+							isOneTimePayment
+							tier {
+								monthlyPriceInDollars
+							}
+							sponsorEntity {
+								... on User {
+									name
+									login
+									avatarUrl
+								}
+							}
+						}
+					}
+				}
+			}
+		`,
+	});
+
+	const sponsors: ISponsor[] = data.user.sponsorshipsAsMaintainer.nodes
+		.filter((node) => node.privacyLevel == "PUBLIC")
+		.map((node) => ({
+			name: node.sponsorEntity.name,
+			login: node.sponsorEntity.login,
+			avatarUrl: node.sponsorEntity.avatarUrl,
+			tier: node.tier.monthlyPriceInDollars,
+			isOneTime: node.isOneTimePayment,
+		}));
+
+	return sponsors;
+};
+
 export const getPinnedRepos = async (): Promise<IStarredRepo[]> => {
 	const { data } = await apollo.query({
 		query: gql`

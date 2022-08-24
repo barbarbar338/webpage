@@ -84,3 +84,5 @@ github_sponsors_title: Artık Bana Github Aracılığıyla Destekte Bulunabilirs
 github_sponsors_description: "Github sponsorluk sistemi sayesinde projelerime ve bana kolayca destekte bulunabilirsiniz! Sponsorluk için şu linki takip edebilirsiniz: <blue>%{link}</blue>"
 sponsors: Destekle
 my_sponsors: Beni <purple>Destekleyenler</purple>
+one_time: Tek seferlik $%{price}
+monthly: Aylık $%{price}

@@ -1,5 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
-import { type ISponsor, getSponsors } from "@libs/rest";
+import { type ISponsor, getSponsors } from "@libs/graphql";
 import { SponsorCard } from "@components/SponsorCard";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";

@@ -84,3 +84,5 @@ github_sponsors_title: Now You Can Sponsor Me Via Github
 github_sponsors_description: "You can easily support my projects and me via Github sponsors system! You can follow this link for sponsorship: <blue>%{link}</blue>"
 sponsors: Sponsors
 my_sponsors: My <purple>Sponsors</purple>
+one_time: $%{price} one time
+monthly: $%{price} monthly
