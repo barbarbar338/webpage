@@ -37,7 +37,7 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	const Card: FC = () => (
 		<div
 			onClick={onCopy}
-			className="round h-full cursor-pointer bg-gray-200 px-4 pt-4 text-black dark:bg-gray-800 dark:text-white"
+			className="h-full cursor-pointer rounded-xl bg-gray-200 px-4 pt-4 text-black dark:bg-gray-800 dark:text-white"
 		>
 			<div className="flex items-center justify-center">
 				<Icon className={classnames("text-6xl", color)} />

@@ -29,6 +29,7 @@ export interface IPost {
 	createdAt: string;
 	author: IAuthor;
 	labels: ILabel[];
+	body: string;
 }
 
 export interface IStarredRepo {
@@ -284,6 +285,7 @@ export const getPosts = async (): Promise<IPost[]> => {
 								id
 								createdAt
 								number
+								body
 								author {
 									avatarUrl
 									login
@@ -321,6 +323,7 @@ export const getPosts = async (): Promise<IPost[]> => {
 			createdAt: moment(e.node.createdAt).calendar(),
 			labels,
 			number: e.node.number,
+			body: e.node.body,
 		} as IPost;
 	});
 
@@ -340,6 +343,7 @@ export const getPinnedPosts = async (): Promise<IPost[]> => {
 									id
 									createdAt
 									number
+									body
 									author {
 										avatarUrl
 										login
@@ -378,6 +382,7 @@ export const getPinnedPosts = async (): Promise<IPost[]> => {
 			createdAt: moment(e.node.discussion.createdAt).calendar(),
 			labels,
 			number: e.node.discussion.number,
+			body: e.node.discussion.body,
 		} as IPost;
 	});
 

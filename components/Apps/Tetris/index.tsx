@@ -64,7 +64,7 @@ export const TetrisGame: FC = () => {
 								<div className="md:w-1/5">
 									<button
 										onClick={controller.moveLeft}
-										className="round mb-3 inline-block w-full bg-blue-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0"
+										className="mb-3 inline-block w-full rounded-xl bg-blue-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0"
 									>
 										{parser.get("left")}
 									</button>
@@ -72,7 +72,7 @@ export const TetrisGame: FC = () => {
 								<div className="md:w-1/5">
 									<button
 										onClick={controller.moveRight}
-										className="round mb-3 inline-block w-full bg-blue-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0"
+										className="mb-3 inline-block w-full rounded-xl bg-blue-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0"
 									>
 										{parser.get("right")}
 									</button>
@@ -80,7 +80,7 @@ export const TetrisGame: FC = () => {
 								<div className="md:w-1/5">
 									<button
 										onClick={controller.flipClockwise}
-										className="round mb-3 inline-block w-full bg-blue-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0"
+										className="mb-3 inline-block w-full rounded-xl bg-blue-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0"
 									>
 										{parser.get("rotate")}
 									</button>
@@ -88,7 +88,7 @@ export const TetrisGame: FC = () => {
 								<div className="md:w-1/5">
 									<button
 										onClick={controller.hardDrop}
-										className="round mb-3 inline-block w-full bg-blue-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0"
+										className="mb-3 inline-block w-full rounded-xl bg-blue-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0"
 									>
 										{parser.get("drop")}
 									</button>
@@ -99,7 +99,7 @@ export const TetrisGame: FC = () => {
 											setLose(false);
 											controller.restart();
 										}}
-										className="round mb-3 inline-block w-full bg-blue-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0 lg:w-auto"
+										className="mb-3 inline-block w-full rounded-xl bg-blue-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0 lg:w-auto"
 									>
 										{parser.get("restart")}
 									</button>

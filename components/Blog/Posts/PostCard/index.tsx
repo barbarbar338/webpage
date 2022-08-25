@@ -3,7 +3,9 @@ import type { IPost } from "@libs/graphql";
 import { CustomImage } from "@components/Utils/CustomImage";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
+import { calculate } from "calculate-readtime";
 import Tilt from "react-parallax-tilt";
+import { FiCalendar, FiClock } from "react-icons/fi";
 
 export interface IPostCard {
 	post: IPost;
@@ -11,14 +13,21 @@ export interface IPostCard {
 
 export const PostCard: FC<IPostCard> = ({ post }) => {
 	const parser = useLocaleParser();
+	const time = calculate(post.body, {
+		lessThanOne: parser.get("lessThanOne"),
+		singular: parser.get("singular"),
+		plural: parser.get("plural"),
+		wpm: 150,
+	});
 
 	return (
 		<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 			<div className="mt-6">
-				<div className="round mx-auto max-w-4xl bg-white px-10 py-6 shadow-md dark:bg-gray-800">
+				<div className="mx-auto max-w-4xl rounded-xl bg-white px-10 py-6 shadow-md dark:bg-gray-800">
 					<div className="flex items-center justify-between">
-						<span className="font-light text-gray-600 dark:text-white">
-							{post.createdAt}
+						<span className="flex items-center font-light text-gray-600 dark:text-white">
+							<FiCalendar className="mx-2" /> {post.createdAt} -{" "}
+							<FiClock className="mx-2" /> {time}
 						</span>
 					</div>
 					<div className="mt-2">
@@ -60,7 +69,7 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 							<Link
 								key={idx}
 								href={`/blog/category/${label.id}`}
-								className="round m-1 p-1 text-sm text-black"
+								className="m-1 rounded-xl p-1 text-sm text-black"
 								style={{
 									backgroundColor: `#${label.color}`,
 								}}

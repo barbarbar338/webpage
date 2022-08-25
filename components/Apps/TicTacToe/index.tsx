@@ -42,7 +42,7 @@ export const TicTacToeGame: FC = () => {
 			<div className="mb-4 flex justify-center">
 				<button
 					onClick={restart}
-					className="round mx-5 mb-3 inline-block w-full bg-blue-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0 lg:mr-3 lg:w-1/5"
+					className="mx-5 mb-3 inline-block w-full rounded-xl bg-blue-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mb-0 lg:mr-3 lg:w-1/5"
 				>
 					{parser.get("restart")}
 				</button>

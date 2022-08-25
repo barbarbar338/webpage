@@ -86,3 +86,6 @@ sponsors: Sponsors
 my_sponsors: My <purple>Sponsors</purple>
 one_time: $%{price} one time
 monthly: $%{price} monthly
+lessThanOne: Less than a minute
+singular: "%{minute} minute"
+plural: "%{minute} minutes"

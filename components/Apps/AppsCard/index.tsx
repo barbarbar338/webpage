@@ -30,7 +30,7 @@ export const AppsCard: FC<IAppsCardProps> = ({
 			<div>
 				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 					<Link href={href}>
-						<div className="round h-full cursor-pointer bg-gray-200 p-4 text-black dark:bg-gray-800 dark:text-white">
+						<div className="h-full cursor-pointer rounded-xl bg-gray-200 p-4 text-black dark:bg-gray-800 dark:text-white">
 							<div className="flex items-center justify-center">
 								<Icon
 									className={classnames("text-6xl", color)}

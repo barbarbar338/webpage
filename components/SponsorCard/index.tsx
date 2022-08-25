@@ -19,12 +19,12 @@ export const SponsorCard: FC<ISponsorCardProps> = ({ sponsor }) => {
 			<div>
 				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
 					<Link href={`https://github.com/${sponsor.login}`}>
-						<div className="round h-full cursor-pointer bg-gray-200 px-4 pt-4 text-black dark:bg-gray-800 dark:text-white">
+						<div className="h-full cursor-pointer rounded-xl bg-gray-200 px-4 pt-4 text-black dark:bg-gray-800 dark:text-white">
 							<div className="flex items-center justify-center">
 								<CustomImage
 									alt={sponsor.name || sponsor.login}
 									src={sponsor.avatarUrl}
-									className="round"
+									className="rounded-xl"
 								/>
 							</div>
 							<span className="mt-2 h-12 text-center text-xl line-clamp-2">

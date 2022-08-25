@@ -38,7 +38,7 @@ const IndexPage: NextPage<ISponsorsPage> = ({ sponsors }) => {
 					</div>
 					<div className="pt-10">
 						<Link href="/">
-							<span className="round mb-3 inline-block w-full bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
+							<span className="mb-3 inline-block w-full rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
 								{parser.get("go_home")}
 							</span>
 						</Link>

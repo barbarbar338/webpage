@@ -77,7 +77,7 @@ export const MinesweeperBoard: FC = () => {
 				<div className="w-1/3 px-2">
 					<input
 						onChange={(e) => setX(parseInt(e.target.value))}
-						className="round hidden w-full appearance-none border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none md:block"
+						className="hidden w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none md:block"
 						type="number"
 						placeholder="X"
 						value={x}
@@ -87,7 +87,7 @@ export const MinesweeperBoard: FC = () => {
 				<div className="w-1/3 px-2">
 					<input
 						onChange={(e) => setY(parseInt(e.target.value))}
-						className="round hidden w-full appearance-none border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none md:block"
+						className="hidden w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none md:block"
 						type="number"
 						placeholder="Y"
 						value={y}
@@ -97,7 +97,7 @@ export const MinesweeperBoard: FC = () => {
 				<div className="w-1/3 px-2">
 					<input
 						onChange={(e) => setMine(parseInt(e.target.value))}
-						className="round hidden w-full appearance-none border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none md:block"
+						className="hidden w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none md:block"
 						type="number"
 						placeholder={parser.get("mine")}
 						value={mine}
@@ -106,7 +106,7 @@ export const MinesweeperBoard: FC = () => {
 				</div>
 			</div>
 			<button
-				className="round mb-3 inline-block w-2/3 bg-blue-600 py-2 px-6 text-center font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mr-3 lg:w-96"
+				className="mb-3 inline-block w-2/3 rounded-xl bg-blue-600 py-2 px-6 text-center font-semibold leading-loose text-white transition duration-200 hover:bg-blue-700 lg:mr-3 lg:w-96"
 				onClick={restartGame}
 			>
 				Restart
@@ -134,7 +134,7 @@ export const MinesweeperBoard: FC = () => {
 			<Link
 				href="/apps"
 				underline={false}
-				className="round  mt-3 inline-block w-2/3 bg-purple-600 py-2 px-6 text-center font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mr-3 lg:w-96"
+				className="mt-3 inline-block w-2/3 rounded-xl bg-purple-600 py-2 px-6 text-center font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mr-3 lg:w-96"
 			>
 				{parser.get("go_back")}
 			</Link>

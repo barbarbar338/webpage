@@ -14,13 +14,10 @@ export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => {
 
 	return (
 		<Tilt scale={1.05} tiltMaxAngleX={25} tiltMaxAngleY={25}>
-			<div className="round mb-4 bg-gray-200 py-6 pl-6 pr-4 shadow-md dark:bg-gray-800 md:mb-8">
+			<div className="mb-4 rounded-xl bg-gray-200 py-6 pl-6 pr-4 shadow-md dark:bg-gray-800 md:mb-8">
 				<span
 					className={classNames(
-						"mb-4",
-						"inline-block",
-						"p-3",
-						"round",
+						"mb-4 inline-block rounded-xl p-3",
 						framework.color,
 					)}
 				>

@@ -86,3 +86,6 @@ sponsors: Destekle
 my_sponsors: Beni <purple>Destekleyenler</purple>
 one_time: Tek seferlik $%{price}
 monthly: Aylık $%{price}
+lessThanOne: Bir dakikadan az
+singular: "%{minute} dakika"
+plural: "%{minute} dakika"

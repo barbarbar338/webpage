@@ -27,7 +27,7 @@ export const Stack: FC = () => {
 								tiltMaxAngleY={20}
 							>
 								<Tippy tooltip={stack.alt}>
-									<div className="round flex items-center justify-around bg-gray-200 p-4 dark:bg-gray-800">
+									<div className="flex items-center justify-around rounded-xl bg-gray-200 p-4 dark:bg-gray-800">
 										<CustomImage
 											className="h-16 w-16"
 											src={stack.icon}

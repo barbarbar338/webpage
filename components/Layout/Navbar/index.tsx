@@ -197,7 +197,7 @@ export const Navbar: FC = () => {
 					))}
 				</ul>
 				<Link underline href="/#contact">
-					<span className="round hidden bg-purple-700 py-2 px-6 text-sm font-bold text-white transition duration-200 hover:bg-purple-800 lg:inline-block">
+					<span className="hidden rounded-xl bg-purple-700 py-2 px-6 text-sm font-bold text-white transition duration-200 hover:bg-purple-800 lg:inline-block">
 						{parser.get("contact")}
 					</span>
 				</Link>
@@ -240,14 +240,7 @@ export const Navbar: FC = () => {
 									<Link
 										href={link.href}
 										className={classnames(
-											"block",
-											"p-4",
-											"text-sm",
-											"font-semibold",
-											"hover:bg-purple-600",
-											"dark:hover:bg-gray-800",
-											"hover:text-white",
-											"round",
+											"block rounded-xl p-4 text-sm font-semibold hover:bg-purple-600 hover:text-white dark:hover:bg-gray-800",
 											{
 												"text-black dark:text-white":
 													hash == link.href,
@@ -265,7 +258,7 @@ export const Navbar: FC = () => {
 					<div className="mt-auto">
 						<div>
 							<Link href="/#contact">
-								<span className="round mb-2 block bg-purple-600 px-4 py-3 text-center text-xs font-semibold leading-loose text-white hover:bg-purple-700">
+								<span className="mb-2 block rounded-xl bg-purple-600 px-4 py-3 text-center text-xs font-semibold leading-loose text-white hover:bg-purple-700">
 									{parser.get("contact")}
 								</span>
 							</Link>
@@ -290,20 +283,7 @@ export const Navbar: FC = () => {
 				aria-label="Go Up"
 				onClick={onUp}
 				className={classnames(
-					"fixed",
-					"bottom-0",
-					"right-0",
-					"mx-10",
-					"lg:mx-20",
-					"my-10",
-					"z-50",
-					"text-white",
-					"w-10",
-					"h-10",
-					"bg-purple-600",
-					"hover:bg-purple-700",
-					"round",
-					"focus:outline-none",
+					"fixed bottom-0 right-0 z-50 mx-10 my-10 h-10 w-10 rounded-xl bg-purple-600 text-white hover:bg-purple-700 focus:outline-none lg:mx-20",
 					{
 						block: top,
 						hidden: !top,
@@ -315,7 +295,7 @@ export const Navbar: FC = () => {
 			<button
 				aria-label="Change Theme"
 				onClick={onTheme}
-				className="round fixed bottom-0 left-0 z-50 mx-10 my-10 block h-10 w-10 bg-purple-600 text-white hover:bg-purple-700 focus:outline-none lg:mx-20"
+				className="fixed bottom-0 left-0 z-50 mx-10 my-10 block h-10 w-10 rounded-xl bg-purple-600 text-white hover:bg-purple-700 focus:outline-none lg:mx-20"
 			>
 				{getIcon()}
 			</button>

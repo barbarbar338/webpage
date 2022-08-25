@@ -10,13 +10,13 @@ export interface IPinnedCard {
 
 export const PinnedCard: FC<IPinnedCard> = ({ post }) => (
 	<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
-		<div className="round mx-auto my-5 flex max-w-sm flex-col bg-white px-8 py-6 shadow-md dark:bg-gray-800">
+		<div className="mx-auto my-5 flex max-w-sm flex-col rounded-xl bg-white px-8 py-6 shadow-md dark:bg-gray-800">
 			<div className="flex items-center justify-center">
 				{post.labels.map((label, idx) => (
 					<Link
 						key={idx}
 						href={`/blog/category/${label.id}`}
-						className="round m-1 p-1 text-sm text-black"
+						className="m-1 rounded-xl p-1 text-sm text-black"
 						style={{
 							backgroundColor: `#${label.color}`,
 						}}
