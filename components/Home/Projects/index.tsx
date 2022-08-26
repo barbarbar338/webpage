@@ -14,7 +14,7 @@ export const Projects: FC<IProjects> = ({ repos, pinned }) => {
 	return (
 		<section
 			id="projects"
-			className="min-h-screen bg-white py-10 px-4 text-black dark:bg-gray-900 dark:text-white"
+			className="bg-white py-10 px-4 text-black dark:bg-gray-900 dark:text-white"
 		>
 			<h1
 				className="mb-10 text-center font-heading text-4xl font-semibold"

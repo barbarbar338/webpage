@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import { FrameworkCard } from "@components/Home/About/FrameworkCard";
 import { useLocaleParser } from "@libs/localeParser";
-import { Stack } from "@components/Home/About/Stack";
 import { Dot } from "@components/Home/About/Dot";
 import { CONFIG } from "@libs/config";
 
@@ -19,10 +18,7 @@ export const About: FC = () => {
 	}
 
 	return (
-		<section
-			id="about"
-			className="min-h-screen bg-white py-10 dark:bg-gray-900"
-		>
+		<section id="about" className="bg-white py-10 dark:bg-gray-900">
 			<div className="container mx-auto px-4">
 				<div className="flex flex-wrap items-center">
 					<div className="mb-12 w-full lg:mb-0 lg:w-1/2">
@@ -62,7 +58,6 @@ export const About: FC = () => {
 					</div>
 				</div>
 			</div>
-			<Stack />
 		</section>
 	);
 };

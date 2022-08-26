@@ -1,5 +1,4 @@
 import { CONTACT, DISCORD_ID, SOCIALS } from "@libs/config/accounts";
-import { STACKS } from "@libs/config/stack";
 import TailwindSVG from "@assets/elements/tailwind.svg";
 import MongoDBSVG from "@assets/elements/mongodb.svg";
 import NestSVG from "@assets/elements/nest.svg";
@@ -112,7 +111,6 @@ export const CONFIG = {
 	],
 	CONTACT,
 	SOCIALS,
-	STACKS,
 	BLOG: {
 		discussions: {
 			username: "barbarbar338",
