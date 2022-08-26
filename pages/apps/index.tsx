@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import { AppsCard } from "@components/Apps/AppsCard";
 import { useLocaleParser } from "@libs/localeParser";
 import { FiBox, FiCrop, FiX } from "react-icons/fi";
-import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import { FaBomb } from "react-icons/fa";
 
@@ -61,13 +60,6 @@ const AppsPage: NextPage = () => {
 								color={app.color}
 							/>
 						))}
-					</div>
-					<div className="pt-10">
-						<Link href="/">
-							<span className="mb-3 inline-block w-full rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
-								{parser.get("go_home")}
-							</span>
-						</Link>
 					</div>
 				</div>
 			</section>

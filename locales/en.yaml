@@ -80,11 +80,12 @@ apps_overlay_creator: Overlay Creator - Apps
 avatar: Avatar URL
 playing: Playing %{game}
 github_sponsors_title: Now You Can Sponsor Me Via Github
-github_sponsors_description: "You can easily support my projects and me via Github sponsors system! You can follow this link for sponsorship: <blue>%{link}</blue>"
+github_sponsors_description: You can easily support my projects and me via Github sponsors system! You can follow this link for sponsorship
 sponsors: Sponsors
 my_sponsors: My <purple>Sponsors</purple>
-one_time: $%{price} one time
-monthly: $%{price} monthly
+one_time: "$%{price}/one time"
+monthly: "$%{price}/monthly"
 lessThanOne: Less than a minute
 singular: "%{minute} minute"
 plural: "%{minute} minutes"
+support_me: Support Me

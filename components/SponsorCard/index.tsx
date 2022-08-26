@@ -13,22 +13,25 @@ export const SponsorCard: FC<ISponsorCardProps> = ({ sponsor }) => {
 	const parser = useLocaleParser();
 
 	return (
-		<Link href={`https://github.com/${sponsor.login}`}>
-			<div className="h-full cursor-pointer rounded-xl bg-gray-200 px-4 pt-4 text-black dark:bg-gray-800 dark:text-white">
-				<div className="flex items-center justify-center">
-					<CustomImage
-						alt={sponsor.name || sponsor.login}
-						src={sponsor.avatarUrl}
-						className="rounded-xl"
-					/>
+		<div className="mx-auto mb-3 flex w-full items-center rounded-xl bg-gray-200 text-black dark:bg-gray-800 dark:text-white lg:w-1/3">
+			<CustomImage
+				alt={sponsor.name || sponsor.login}
+				src={sponsor.avatarUrl}
+				className="h-32 w-32 rounded-xl"
+			/>
+			<div className="ml-5 flex flex-col justify-between">
+				<div className="flex flex-col">
+					<span className="text-xl leading-tight">
+						{sponsor.name || sponsor.login}
+					</span>
+					<Link
+						href={`https://github.com/${sponsor.login}`}
+						className="text-md text-gray-500 hover:underline"
+					>
+						@{sponsor.login}
+					</Link>
 				</div>
-				<span className="mt-2 h-12 text-center text-xl line-clamp-2">
-					{sponsor.name || sponsor.login}
-				</span>
-				<span className="h-12 text-center text-lg text-gray-500 line-clamp-2">
-					@{sponsor.login}
-				</span>
-				<span className="h-12 text-center text-lg line-clamp-2">
+				<span className="mt-2 text-sm">
 					{sponsor.isOneTime
 						? parser.get("one_time", {
 								price: sponsor.tier,
@@ -38,6 +41,6 @@ export const SponsorCard: FC<ISponsorCardProps> = ({ sponsor }) => {
 						  })}
 				</span>
 			</div>
-		</Link>
+		</div>
 	);
 };

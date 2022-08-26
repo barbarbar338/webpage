@@ -189,7 +189,11 @@ export const Navbar: FC = () => {
 											hash != link.href,
 									})}
 								>
-									{link.name}
+									<span
+										dangerouslySetInnerHTML={{
+											__html: link.name,
+										}}
+									/>
 								</Link>
 							</li>
 							<NavbarSeperator />

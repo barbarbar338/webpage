@@ -9,7 +9,7 @@ pinned_posts: Sabitlenen Yazılar
 read_more: Devamını Oku
 url_copied: "✨ URL panoya kopyalandı!"
 bookmarked: "%{date} tarihinde kaydedildi"
-bookmarks: Yerİmleri
+bookmarks: Yer&nbsp;İmleri
 mine_and_cells_doesnt_matches: Mayın sayısı hücre sayısından fazla olamaz.
 lose: Kaybettin!
 win: Kazandın!
@@ -80,11 +80,12 @@ apps_overlay_creator: Çerçeve Oluşturucu - Uygulamalar
 avatar: Avatar URL'si
 playing: "%{game} oynuyor"
 github_sponsors_title: Artık Bana Github Aracılığıyla Destekte Bulunabilirsiniz
-github_sponsors_description: "Github sponsorluk sistemi sayesinde projelerime ve bana kolayca destekte bulunabilirsiniz! Sponsorluk için şu linki takip edebilirsiniz: <blue>%{link}</blue>"
+github_sponsors_description: Github sponsorluk sistemi sayesinde projelerime ve bana kolayca destekte bulunabilirsiniz!
 sponsors: Destekle
 my_sponsors: Beni <purple>Destekleyenler</purple>
-one_time: Tek seferlik $%{price}
-monthly: Aylık $%{price}
+one_time: "$%{price}/tek seferlik"
+monthly: "$%{price}/aylık"
 lessThanOne: Bir dakikadan az
 singular: "%{minute} dakika"
 plural: "%{minute} dakika"
+support_me: Beni Destekle
