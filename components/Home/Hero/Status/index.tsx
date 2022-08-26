@@ -1,6 +1,5 @@
 import type { FC } from "react";
 import { useLocaleParser } from "@libs/localeParser";
-import { Tippy } from "@components/Utils/Tippy";
 import { useLanyard } from "react-use-lanyard";
 import { CONFIG } from "@libs/config";
 import classnames from "classnames";
@@ -70,20 +69,19 @@ export const Status: FC = () => {
 
 	return (
 		<span className="rounded-md mb-4 flex items-center space-x-2 text-gray-700 dark:text-gray-300">
-			<Tippy tooltip={getColor().status}>
-				<span
-					className={classnames(
-						"h-3",
-						"w-3",
-						"rounded-full",
-						"flex-shrink-0",
-						getColor().color,
-					)}
-				/>
-			</Tippy>
-			<Tippy tooltip={getStatus()}>
-				<span className="truncate text-sm">{getStatus()}</span>
-			</Tippy>
+			<span
+				title={getColor().status}
+				className={classnames(
+					"h-3",
+					"w-3",
+					"rounded-full",
+					"flex-shrink-0",
+					getColor().color,
+				)}
+			/>
+			<span className="truncate text-sm" title={getStatus()}>
+				{getStatus()}
+			</span>
 		</span>
 	);
 };

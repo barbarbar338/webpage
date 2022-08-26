@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import type { IconType } from "react-icons";
 import { useLocaleParser } from "@libs/localeParser";
-import { Tippy } from "@components/Utils/Tippy";
 import { useCopyToClipboard } from "react-use";
 import { Link } from "@components/Utils/Link";
 import { toast } from "react-toastify";
@@ -51,16 +50,14 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	);
 
 	return (
-		<Tippy tooltip={parser.get("click_me")}>
-			<div>
-				{href ? (
-					<Link href={href}>
-						<Card />
-					</Link>
-				) : (
+		<div>
+			{href ? (
+				<Link href={href}>
 					<Card />
-				)}
-			</div>
-		</Tippy>
+				</Link>
+			) : (
+				<Card />
+			)}
+		</div>
 	);
 };
