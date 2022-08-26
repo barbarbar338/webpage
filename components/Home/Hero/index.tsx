@@ -8,7 +8,6 @@ import Right from "@assets/elements/right.svg";
 import Down from "@assets/elements/down.svg";
 import Left from "@assets/elements/left.svg";
 import Up from "@assets/elements/up.svg";
-import Tilt from "react-parallax-tilt";
 
 export const Hero: FC = () => {
 	const parser = useLocaleParser();
@@ -80,17 +79,11 @@ export const Hero: FC = () => {
 								zIndex: 0,
 							}}
 						>
-							<Tilt
-								scale={1.05}
-								tiltMaxAngleX={10}
-								tiltMaxAngleY={10}
-							>
-								<CustomImage
-									className="w-full max-w-lg rounded-3xl object-cover md:h-128 md:w-128 md:rounded-br-none"
-									src={CONFIG.AVATAR_URL}
-									alt="Avatar"
-								/>
-							</Tilt>
+							<CustomImage
+								className="w-full max-w-lg rounded-3xl object-cover md:h-128 md:w-128"
+								src={CONFIG.AVATAR_URL}
+								alt="Avatar"
+							/>
 							<CustomImage
 								className="absolute hidden md:block"
 								style={{

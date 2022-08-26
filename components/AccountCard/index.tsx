@@ -5,7 +5,6 @@ import { Tippy } from "@components/Utils/Tippy";
 import { useCopyToClipboard } from "react-use";
 import { Link } from "@components/Utils/Link";
 import { toast } from "react-toastify";
-import Tilt from "react-parallax-tilt";
 import classnames from "classnames";
 
 export interface IAccountCardProps {
@@ -54,15 +53,13 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	return (
 		<Tippy tooltip={parser.get("click_me")}>
 			<div>
-				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
-					{href ? (
-						<Link href={href}>
-							<Card />
-						</Link>
-					) : (
+				{href ? (
+					<Link href={href}>
 						<Card />
-					)}
-				</Tilt>
+					</Link>
+				) : (
+					<Card />
+				)}
 			</div>
 		</Tippy>
 	);

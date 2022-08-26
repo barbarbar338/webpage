@@ -69,7 +69,7 @@ export const Status: FC = () => {
 	};
 
 	return (
-		<span className="rounded-md flex items-center space-x-2 text-gray-700 dark:text-gray-300">
+		<span className="rounded-md mb-4 flex items-center space-x-2 text-gray-700 dark:text-gray-300">
 			<Tippy tooltip={getColor().status}>
 				<span
 					className={classnames(

@@ -4,7 +4,6 @@ import { useLocaleParser } from "@libs/localeParser";
 import { Tippy } from "@components/Utils/Tippy";
 import { Link } from "@components/Utils/Link";
 import classnames from "classnames";
-import Tilt from "react-parallax-tilt";
 
 export interface IAppsCardProps {
 	icon: IconType;
@@ -28,23 +27,19 @@ export const AppsCard: FC<IAppsCardProps> = ({
 	return (
 		<Tippy tooltip={parser.get("click_me")}>
 			<div>
-				<Tilt scale={1.05} tiltMaxAngleX={10} tiltMaxAngleY={10}>
-					<Link href={href}>
-						<div className="h-full cursor-pointer rounded-xl bg-gray-200 p-4 text-black dark:bg-gray-800 dark:text-white">
-							<div className="flex items-center justify-center">
-								<Icon
-									className={classnames("text-6xl", color)}
-								/>
-							</div>
-							<span className="h-12 text-center text-xl line-clamp-2">
-								{name}
-							</span>
-							<span className="h-12 text-center text-lg line-clamp-2">
-								{value}
-							</span>
+				<Link href={href}>
+					<div className="h-full cursor-pointer rounded-xl bg-gray-200 p-4 text-black dark:bg-gray-800 dark:text-white">
+						<div className="flex items-center justify-center">
+							<Icon className={classnames("text-6xl", color)} />
 						</div>
-					</Link>
-				</Tilt>
+						<span className="h-12 text-center text-xl line-clamp-2">
+							{name}
+						</span>
+						<span className="h-12 text-center text-lg line-clamp-2">
+							{value}
+						</span>
+					</div>
+				</Link>
 			</div>
 		</Tippy>
 	);
