@@ -14,7 +14,7 @@ const BookmarksPage: NextPage<IBookmarksPage> = ({ bookmarks }) => {
 	const parser = useLocaleParser();
 
 	return (
-		<Layout title={parser.get("bookmarks")}>
+		<Layout title={parser.get("bookmarks_title")}>
 			<Bookmarks bookmarks={bookmarks} />
 		</Layout>
 	);

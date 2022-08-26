@@ -24,7 +24,6 @@ export const Navbar: FC = () => {
 	const [hash, setHash] = useState("");
 	const [top, setTop] = useState(false);
 	const { theme, setTheme } = useTheme();
-	const [color, setColor] = useState<"yellow" | "gray" | "blue">("yellow");
 
 	const links = [
 		{
@@ -78,15 +77,7 @@ export const Navbar: FC = () => {
 				Icon = FiMonitor;
 				break;
 		}
-		return (
-			<Icon
-				className={classnames("text-bold", "h-full", "w-full", "p-2", {
-					"text-yellow-400": color === "yellow",
-					"text-gray-400": color === "gray",
-					"text-blue-400": color === "blue",
-				})}
-			/>
-		);
+		return <Icon className={classnames("text-bold h-full w-full p-2")} />;
 	};
 
 	const onClose = () => {
@@ -97,39 +88,18 @@ export const Navbar: FC = () => {
 		switch (theme) {
 			case "light":
 				setTheme("dark");
-				setColor("blue");
 				break;
 			case "dark":
 				setTheme("system");
-				setColor("gray");
 				break;
 			case "system":
 				setTheme("light");
-				setColor("yellow");
 				break;
 			default:
 				setTheme("system");
-				setColor("gray");
 				break;
 		}
 	};
-
-	useEffect(() => {
-		switch (theme) {
-			case "light":
-				setColor("yellow");
-				break;
-			case "dark":
-				setColor("blue");
-				break;
-			case "system":
-				setColor("gray");
-				break;
-			default:
-				setColor("yellow");
-				break;
-		}
-	}, [theme]);
 
 	useEffect(() => {
 		window.onscroll = function () {
@@ -153,13 +123,13 @@ export const Navbar: FC = () => {
 
 	return (
 		<>
-			<nav className="relative flex items-center justify-between bg-white px-6 py-6 dark:bg-gray-900">
+			<nav className="flex items-center justify-between bg-white px-6 py-6 dark:bg-gray-900">
 				<Link
 					href="/#"
 					className="block text-3xl font-bold leading-none text-white"
 				>
 					<CustomImage
-						className="h-12 w-12"
+						className="h-16 w-16"
 						src={Favicon}
 						alt="Favicon"
 					/>
@@ -174,7 +144,7 @@ export const Navbar: FC = () => {
 						<FiMenu className="block h-4 w-4 fill-current" />
 					</button>
 				</div>
-				<ul className="absolute top-1/2 left-1/2 hidden -translate-y-1/2 -translate-x-1/2 transform lg:mx-auto lg:flex lg:w-auto lg:items-center lg:space-x-6">
+				<ul className="hidden lg:mx-auto lg:flex  lg:w-full lg:justify-between">
 					<NavbarSeperator />
 					{links.map((link, idx) => (
 						<Fragment key={idx}>
@@ -200,11 +170,22 @@ export const Navbar: FC = () => {
 						</Fragment>
 					))}
 				</ul>
-				<Link underline href="/#contact">
-					<span className="hidden rounded-xl bg-purple-700 py-2 px-6 text-sm font-bold text-white transition duration-200 hover:bg-purple-800 lg:inline-block">
+				<div className="flex ">
+					<button
+						aria-label="Change Theme"
+						onClick={onTheme}
+						className="mr-2 hidden h-10 w-10 rounded-xl bg-purple-700 text-sm text-white hover:bg-purple-800 focus:outline-none lg:block"
+					>
+						{getIcon()}
+					</button>
+					<Link
+						underline
+						href="/#contact"
+						className="hidden rounded-xl bg-purple-700 py-2 px-6 text-sm font-bold text-white hover:bg-purple-800 lg:block"
+					>
 						{parser.get("contact")}
-					</span>
-				</Link>
+					</Link>
+				</div>
 			</nav>
 			<div
 				className={classnames("relative", "z-50", {
@@ -223,7 +204,7 @@ export const Navbar: FC = () => {
 							className=" mr-auto text-3xl font-bold leading-none"
 						>
 							<CustomImage
-								className="h-10 w-10"
+								className="h-16 w-16"
 								src={Favicon}
 								alt="Favicon"
 							/>
@@ -283,26 +264,41 @@ export const Navbar: FC = () => {
 					</div>
 				</nav>
 			</div>
-			<button
-				aria-label="Go Up"
-				onClick={onUp}
-				className={classnames(
-					"fixed bottom-0 right-0 z-50 mx-10 my-10 h-10 w-10 rounded-xl bg-purple-600 text-white hover:bg-purple-700 focus:outline-none lg:mx-20",
-					{
-						block: top,
-						hidden: !top,
-					},
-				)}
-			>
-				<FiArrowUp className="h-full w-full p-2" />
-			</button>
-			<button
-				aria-label="Change Theme"
-				onClick={onTheme}
-				className="fixed bottom-0 left-0 z-50 mx-10 my-10 block h-10 w-10 rounded-xl bg-purple-600 text-white hover:bg-purple-700 focus:outline-none lg:mx-20"
-			>
-				{getIcon()}
-			</button>
+			<div className="fixed bottom-0 right-0 ">
+				<div
+					className={classnames(
+						"mx-10 my-5 flex gap-4 transition-all duration-150 ease-in-out",
+						{
+							"opacity-0": !top,
+						},
+					)}
+				>
+					<button
+						aria-label="Change Theme"
+						onClick={onTheme}
+						className={classnames(
+							"h-10 w-10 rounded-xl bg-purple-600 text-white hover:bg-purple-700 focus:outline-none",
+							{
+								hidden: !top,
+							},
+						)}
+					>
+						{getIcon()}
+					</button>
+					<button
+						aria-label="Go Up"
+						onClick={onUp}
+						className={classnames(
+							"h-10 w-10 rounded-xl bg-purple-600 text-white hover:bg-purple-700 focus:outline-none",
+							{
+								hidden: !top,
+							},
+						)}
+					>
+						<FiArrowUp className="h-full w-full p-2" />
+					</button>
+				</div>
+			</div>
 		</>
 	);
 };

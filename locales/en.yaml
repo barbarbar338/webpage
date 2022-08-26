@@ -89,3 +89,4 @@ lessThanOne: Less than a minute
 singular: "%{minute} minute"
 plural: "%{minute} minutes"
 support_me: Support Me
+bookmarks_title: Bookmarks

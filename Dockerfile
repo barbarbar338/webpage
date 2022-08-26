@@ -6,4 +6,4 @@ WORKDIR /app
 
 COPY . .
 
-CMD ["yarn", "start"]
+CMD ["yarn start"]
