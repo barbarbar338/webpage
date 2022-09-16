@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import type { IconType } from "react-icons";
+import type { IconType } from "react-icons/lib";
 import { useLocaleParser } from "@libs/localeParser";
 import { useCopyToClipboard } from "react-use";
 import { Link } from "@components/Utils/Link";
