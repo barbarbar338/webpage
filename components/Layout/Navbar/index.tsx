@@ -1,5 +1,5 @@
 import { type FC, Fragment, useEffect, useState } from "react";
-import type { IconType } from "react-icons";
+import type { IconType } from "react-icons/lib";
 import { NavbarSeperator } from "@components/Layout/NavbarSeperator";
 import { CustomImage } from "@components/Utils/CustomImage";
 import { useLocaleParser } from "@libs/localeParser";
@@ -144,7 +144,7 @@ export const Navbar: FC = () => {
 						<FiMenu className="block h-4 w-4 fill-current" />
 					</button>
 				</div>
-				<ul className="hidden lg:mx-auto lg:flex  lg:w-full lg:justify-between">
+				<ul className="hidden gap-2 lg:mx-auto lg:flex lg:w-full lg:items-center lg:justify-center">
 					<NavbarSeperator />
 					{links.map((link, idx) => (
 						<Fragment key={idx}>

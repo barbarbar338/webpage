@@ -1,7 +1,7 @@
 import type { FC } from "react";
 
 export const NavbarSeperator: FC = () => (
-	<li className="text-gray-800">
+	<li className="text-gray-400 dark:text-gray-600">
 		<svg
 			className="current-fill h-4 w-4"
 			xmlns="http://www.w3.org/2000/svg"
