@@ -21,7 +21,6 @@
 	},
 	"dependencies": {
 		"@apollo/client": "^3.6.9",
-		"@formkit/auto-animate": "^1.0.0-beta.3",
 		"@giscus/react": "^2.2.0",
 		"@tailwindcss/line-clamp": "^0.4.2",
 		"@tailwindcss/typography": "^0.5.7",

@@ -234,7 +234,11 @@ export const Navbar: FC = () => {
 											},
 										)}
 									>
-										{link.name}
+										<span
+											dangerouslySetInnerHTML={{
+												__html: link.name,
+											}}
+										/>
 									</Link>
 								</li>
 							))}
