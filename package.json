@@ -9,6 +9,8 @@
 	},
 	"license": "GPL-3.0",
 	"scripts": {
+		"pull": "git pull github master && git pull gitlab master",
+		"push": "git push github master && git push gitlab master",
 		"dev": "next-remote-watch",
 		"build": "next build",
 		"postbuild": "next-sitemap --config sitemap.config.js",
