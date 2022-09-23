@@ -3,8 +3,8 @@ import { type ICell, reveal } from "@libs/apps/minesweeper/reveal";
 import { createMinesweeperBoard } from "@libs/apps/minesweeper/createMinesweeperBoard";
 import { MinesweeperCell } from "@components/Apps/Minesweeper/MinesweeperCell";
 import { useLocaleParser } from "@libs/localeParser";
-import { Link } from "@components/Utils/Link";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 export const MinesweeperBoard: FC = () => {
 	const parser = useLocaleParser();
@@ -133,8 +133,7 @@ export const MinesweeperBoard: FC = () => {
 			<br />
 			<Link
 				href="/apps"
-				underline={false}
-				className="mt-3 inline-block w-2/3 rounded-xl bg-purple-600 py-2 px-6 text-center font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mr-3 lg:w-96"
+				className="mt-3 inline-block w-2/3 cursor-pointer rounded-xl bg-purple-600 py-2 px-6 text-center font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mr-3 lg:w-96"
 			>
 				{parser.get("go_back")}
 			</Link>

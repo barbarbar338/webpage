@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import type { IStarredRepo } from "@libs/graphql";
-import { Link } from "@components/Utils/Link";
 import { FiStar } from "react-icons/fi";
+import Link from "next/link";
 
 export const RepoCard: FC<IStarredRepo> = ({
 	name,
@@ -12,7 +12,7 @@ export const RepoCard: FC<IStarredRepo> = ({
 }) => {
 	return (
 		<div>
-			<Link href={url}>
+			<Link className="cursor-pointer" href={url}>
 				<div className="h-full rounded-xl bg-gray-200 p-4 text-black dark:bg-gray-800 dark:text-white">
 					<div className="flex items-center space-x-1">
 						<span className="flex-grow space-x-2 truncate text-purple-600 dark:text-purple-300">

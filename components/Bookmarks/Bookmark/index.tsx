@@ -1,8 +1,8 @@
 import type { FC } from "react";
 import { useLocaleParser } from "@libs/localeParser";
-import { Link } from "@components/Utils/Link";
 import moment from "moment";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface IBookmark {
 	id: number;
@@ -34,9 +34,8 @@ export const Bookmark: FC<IBookmark> = ({
 						alt={title}
 					/>
 					<Link
-						underline
 						href={url}
-						className="ml-4 text-3xl font-semibold text-gray-800 dark:text-white"
+						className="ml-4 cursor-pointer text-3xl font-semibold text-gray-800 hover:underline dark:text-white"
 					>
 						<h2> {title}</h2>
 					</Link>

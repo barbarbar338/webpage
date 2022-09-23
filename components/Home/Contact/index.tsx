@@ -1,8 +1,8 @@
 import { type ChangeEvent, type FC, type FormEvent, useState } from "react";
 import { useLocaleParser } from "@libs/localeParser";
-import { Link } from "@components/Utils/Link";
 import { toast } from "react-toastify";
 import { CONFIG } from "@libs/config";
+import Link from "next/link";
 
 export const Contact: FC = () => {
 	const parser = useLocaleParser();
@@ -87,13 +87,14 @@ export const Contact: FC = () => {
 			<div className="-mx-4 flex flex-col justify-center lg:flex-row">
 				{CONFIG.CONTACT.map((social, idx) => (
 					<Link
-						underline
 						key={idx}
 						href={social.href}
-						className="flex items-center px-4"
+						className="flex cursor-pointer items-center px-4 hover:underline"
 					>
-						<social.icon className="mr-3 inline-block h-6 w-6 text-purple-600" />
-						{social.value}
+						<div className="mx-2">
+							<social.icon className="mr-2 inline-block h-6 w-6 text-purple-600" />
+							{social.value}
+						</div>
 					</Link>
 				))}
 			</div>

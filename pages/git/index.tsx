@@ -3,7 +3,7 @@ import { useLocaleParser } from "@libs/localeParser";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
 import { getRepos } from "@libs/rest";
-import { Link } from "@components/Utils/Link";
+import Link from "next/link";
 
 export interface IGitPage {
 	repos: string[];
@@ -21,8 +21,7 @@ const GitPage: NextPage<IGitPage> = ({ repos }) => {
 							<h1 className="break-normal pt-6 pb-2 font-sans text-3xl font-bold text-black dark:text-white md:text-4xl">
 								<Link
 									href="/git"
-									className="text-purple-600 hover:text-purple-500"
-									underline
+									className="cursor-pointer text-purple-600 hover:text-purple-500 hover:underline"
 								>
 									{parser.get("repos")}
 								</Link>
@@ -35,8 +34,7 @@ const GitPage: NextPage<IGitPage> = ({ repos }) => {
 									<li key={idx}>
 										<Link
 											href={`/git/${repo}`}
-											className="text-purple-600 hover:text-purple-500"
-											underline
+											className="cursor-pointer text-purple-600 hover:text-purple-500 hover:underline"
 										>
 											{repo}
 										</Link>

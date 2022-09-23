@@ -1,4 +1,4 @@
-import { IRepo } from "@lib/rest";
+import { IRepo } from "@libs/rest";
 
 export interface IState {
 	name: string;

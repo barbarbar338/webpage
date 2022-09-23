@@ -1,6 +1,6 @@
-import { Link } from "@components/Utils/Link";
 import { useLocaleParser } from "@libs/localeParser";
 import { IRepo } from "@libs/rest";
+import Link from "next/link";
 import { FC, ReactNode } from "react";
 import { FiCopy } from "react-icons/fi";
 import { toast } from "react-toastify";
@@ -28,8 +28,7 @@ export const GitLayout: FC<IGitLayout> = ({ children, repo }) => {
 						<h1 className="break-normal pt-6 pb-2 font-sans text-3xl font-bold text-black dark:text-white md:text-4xl">
 							<Link
 								href="/git"
-								className="text-purple-600 hover:text-purple-500"
-								underline
+								className="cursor-pointer text-purple-600 hover:text-purple-500 hover:underline"
 							>
 								{parser.get("repos")}
 							</Link>
@@ -47,8 +46,7 @@ export const GitLayout: FC<IGitLayout> = ({ children, repo }) => {
 						<h2>
 							<Link
 								href={`/git/${repo.repo}`}
-								className="text-purple-600 hover:text-purple-500"
-								underline
+								className="cursor-pointer text-purple-600 hover:text-purple-500 hover:underline"
 							>
 								{repo.repo} - {repo.branch}
 							</Link>

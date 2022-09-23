@@ -3,8 +3,8 @@ import type { IPost } from "@libs/graphql";
 import { FiCalendar, FiClock } from "react-icons/fi";
 import { useLocaleParser } from "@libs/localeParser";
 import { calculate } from "calculate-readtime";
-import { Link } from "@components/Utils/Link";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface IPostCard {
 	post: IPost;
@@ -30,26 +30,23 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 				</div>
 				<div className="mt-2">
 					<Link
-						underline
 						href={`/blog/post/${post.number}`}
-						className="text-2xl font-bold text-gray-700 dark:text-white"
+						className="cursor-pointer text-2xl font-bold text-gray-700 hover:underline dark:text-white"
 					>
 						{post.title}
 					</Link>
 				</div>
 				<div className="mt-4 flex items-center justify-between">
 					<Link
-						underline
 						href={`/blog/post/${post.number}`}
-						className="text-blue-500"
+						className="cursor-pointer text-blue-500 hover:underline"
 					>
 						{parser.get("read_more")}
 					</Link>
 					<div>
 						<Link
-							underline
 							href={`https://github.com/${post.author.login}`}
-							className="flex items-center"
+							className="flex cursor-pointer items-center hover:underline"
 						>
 							<Image
 								width={32}
@@ -69,7 +66,7 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 						<Link
 							key={idx}
 							href={`/blog/category/${label.id}`}
-							className="m-1 rounded-xl p-1 text-sm text-black"
+							className="m-1 cursor-pointer rounded-xl p-1 text-sm text-black"
 							style={{
 								backgroundColor: `#${label.color}`,
 							}}

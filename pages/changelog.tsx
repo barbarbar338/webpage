@@ -1,9 +1,9 @@
 import type { GetStaticProps, NextPage } from "next";
 import { type ICommitsData, getCommits } from "@libs/graphql";
 import { useLocaleParser } from "@libs/localeParser";
-import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
+import Link from "next/link";
 
 export interface IChangelogProps {
 	commitsData: ICommitsData;
@@ -56,6 +56,7 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 														(commit, idx) => (
 															<li key={idx}>
 																<Link
+																	className="cursor-pointer"
 																	href={
 																		commit.commitUrl
 																	}

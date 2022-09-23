@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import type { IconType } from "react-icons/lib";
-import { Link } from "@components/Utils/Link";
 import classnames from "classnames";
+import Link from "next/link";
 
 export interface IAppsCardProps {
 	icon: IconType;
@@ -22,7 +22,7 @@ export const AppsCard: FC<IAppsCardProps> = ({
 
 	return (
 		<div>
-			<Link href={href}>
+			<Link className="cursor-pointer" href={href}>
 				<div className="h-full cursor-pointer rounded-xl bg-gray-200 p-4 text-black dark:bg-gray-800 dark:text-white">
 					<div className="flex items-center justify-center">
 						<Icon className={classnames("text-6xl", color)} />

@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import type { IPost } from "@libs/graphql";
-import { Link } from "@components/Utils/Link";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface IPinnedCard {
 	post: IPost;
@@ -26,8 +26,7 @@ export const PinnedCard: FC<IPinnedCard> = ({ post }) => (
 		<div className="mt-4">
 			<Link
 				href={`/blog/post/${post.number}`}
-				underline
-				className="text-lg font-medium text-gray-700 hover:underline dark:text-white"
+				className="cursor-pointer text-lg font-medium text-gray-700 hover:underline dark:text-white"
 			>
 				{post.title}
 			</Link>
@@ -43,8 +42,7 @@ export const PinnedCard: FC<IPinnedCard> = ({ post }) => (
 				/>
 				<Link
 					href={`https://github.com/${post.author.login}`}
-					underline
-					className="mx-3 text-sm text-gray-700 dark:text-white"
+					className="mx-3 cursor-pointer text-sm text-gray-700 hover:underline dark:text-white"
 				>
 					{post.author.login}
 				</Link>

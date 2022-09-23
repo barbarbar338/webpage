@@ -2,7 +2,6 @@ import { type FC, Fragment, useEffect, useState } from "react";
 import type { IconType } from "react-icons/lib";
 import { NavbarSeperator } from "@components/Layout/NavbarSeperator";
 import { useLocaleParser } from "@libs/localeParser";
-import { Link } from "@components/Utils/Link";
 import { useTheme } from "next-themes";
 import { CONFIG } from "@libs/config";
 import {
@@ -16,6 +15,7 @@ import {
 import Favicon from "@assets/icon.svg";
 import classnames from "classnames";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Navbar: FC = () => {
 	const parser = useLocaleParser();
@@ -130,7 +130,7 @@ export const Navbar: FC = () => {
 			<nav className="flex items-center justify-between bg-white px-6 py-6 dark:bg-gray-900">
 				<Link
 					href="/#"
-					className="block text-3xl font-bold leading-none text-white"
+					className="block cursor-pointer text-3xl font-bold leading-none text-white"
 				>
 					<Image
 						width={64}
@@ -156,14 +156,16 @@ export const Navbar: FC = () => {
 						<Fragment key={idx}>
 							<li>
 								<Link
-									underline
 									href={link.href}
-									className={classnames("text-sm", {
-										"text-purple-600 hover:text-purple-500 dark:text-purple-300 dark:hover:text-purple-200":
-											hash == link.href,
-										"text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white":
-											hash != link.href,
-									})}
+									className={classnames(
+										"cursor-pointer text-sm hover:underline",
+										{
+											"text-purple-600 hover:text-purple-500 dark:text-purple-300 dark:hover:text-purple-200":
+												hash == link.href,
+											"text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white":
+												hash != link.href,
+										},
+									)}
 								>
 									<span
 										dangerouslySetInnerHTML={{
@@ -185,9 +187,8 @@ export const Navbar: FC = () => {
 						{getIcon()}
 					</button>
 					<Link
-						underline
 						href="/#contact"
-						className="hidden rounded-xl bg-purple-700 py-2 px-6 text-sm font-bold text-white hover:bg-purple-800 lg:block"
+						className="hidden cursor-pointer rounded-xl bg-purple-700 py-2 px-6 text-sm font-bold text-white hover:bg-purple-800 hover:underline lg:block"
 					>
 						{parser.get("contact")}
 					</Link>
@@ -205,9 +206,8 @@ export const Navbar: FC = () => {
 				<nav className="fixed top-0 left-0 bottom-0 flex w-5/6 max-w-sm flex-col overflow-y-auto bg-gray-100 py-6 px-6 dark:bg-gray-900">
 					<div className="mb-8 flex items-center">
 						<Link
-							underline
 							href="/#"
-							className=" mr-auto text-3xl font-bold leading-none"
+							className="mr-auto cursor-pointer text-3xl font-bold leading-none hover:underline"
 						>
 							<Image
 								width={64}
@@ -233,7 +233,7 @@ export const Navbar: FC = () => {
 									<Link
 										href={link.href}
 										className={classnames(
-											"block rounded-xl p-4 text-sm font-semibold hover:bg-purple-600 hover:text-white dark:hover:bg-gray-800",
+											"block cursor-pointer rounded-xl p-4 text-sm font-semibold hover:bg-purple-600 hover:text-white dark:hover:bg-gray-800",
 											{
 												"text-black dark:text-white":
 													hash == link.href,
@@ -254,10 +254,11 @@ export const Navbar: FC = () => {
 					</div>
 					<div className="mt-auto">
 						<div>
-							<Link href="/#contact">
-								<span className="mb-2 block rounded-xl bg-purple-600 px-4 py-3 text-center text-xs font-semibold leading-loose text-white hover:bg-purple-700">
-									{parser.get("contact")}
-								</span>
+							<Link
+								href="/#contact"
+								className="mb-2 block cursor-pointer rounded-xl bg-purple-600 px-4 py-3 text-center text-xs font-semibold leading-loose text-white hover:bg-purple-700"
+							>
+								{parser.get("contact")}
 							</Link>
 						</div>
 						<p className="my-4 text-center text-xs text-gray-600 dark:text-gray-400">
@@ -268,7 +269,11 @@ export const Navbar: FC = () => {
 						</p>
 						<div className="text-center">
 							{CONFIG.CONTACT.map((social, idx) => (
-								<Link underline key={idx} href={social.href}>
+								<Link
+									className="cursor-pointer hover:underline"
+									key={idx}
+									href={social.href}
+								>
 									<social.icon className="mx-2 inline-block text-black dark:text-white" />
 								</Link>
 							))}

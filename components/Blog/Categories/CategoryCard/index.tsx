@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import type { ILabel } from "@libs/graphql";
-import { Link } from "@components/Utils/Link";
+import Link from "next/link";
 
 export interface ICategoryCard {
 	category: ILabel;
@@ -13,7 +13,10 @@ export const CategoryCard: FC<ICategoryCard> = ({ category }) => (
 			backgroundColor: `#${category.color}`,
 		}}
 	>
-		<Link href={`/blog/category/${category.id}`} className="text-black">
+		<Link
+			href={`/blog/category/${category.id}`}
+			className="cursor-pointer text-black"
+		>
 			{category.name}
 		</Link>
 	</li>

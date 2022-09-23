@@ -2,8 +2,8 @@
 import type { FC } from "react";
 import type { ISponsor } from "@libs/graphql";
 import { useLocaleParser } from "@libs/localeParser";
-import { Link } from "@components/Utils/Link";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface ISponsorCardProps {
 	sponsor: ISponsor;
@@ -28,7 +28,7 @@ export const SponsorCard: FC<ISponsorCardProps> = ({ sponsor }) => {
 					</span>
 					<Link
 						href={`https://github.com/${sponsor.login}`}
-						className="text-md text-gray-500 hover:underline"
+						className="text-md cursor-pointer text-gray-500 hover:underline"
 					>
 						@{sponsor.login}
 					</Link>

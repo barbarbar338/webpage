@@ -2,7 +2,6 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { type IPostData, getPostData, getPosts } from "@libs/graphql";
 import { useLocaleParser } from "@libs/localeParser";
-import { Link } from "@components/Utils/Link";
 import { FiArrowLeft } from "react-icons/fi";
 import { Layout } from "@components/Layout";
 import { useTheme } from "next-themes";
@@ -10,6 +9,7 @@ import { CONFIG } from "@libs/config";
 import { useEffect } from "react";
 import Giscus from "@giscus/react";
 import hljs from "highlight.js";
+import Link from "next/link";
 
 export interface IPostProps {
 	post: IPostData;
@@ -41,7 +41,7 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 							<p className="text-base font-bold text-purple-500 md:text-sm">
 								<Link
 									href="/blog"
-									className="text-base font-bold uppercase text-purple-500 no-underline hover:underline md:text-sm"
+									className="cursor-pointer text-base font-bold uppercase text-purple-500 no-underline hover:underline md:text-sm"
 								>
 									<FiArrowLeft className="inline" />{" "}
 									{parser.get("back_to_blog")}
@@ -68,7 +68,7 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 									<Link
 										key={idx}
 										href={`/blog/category/${label.id}`}
-										className="mx-2 rounded-xl p-1 text-black md:text-sm"
+										className="mx-2 cursor-pointer rounded-xl p-1 text-black md:text-sm"
 										style={{
 											backgroundColor: `#${label.color}`,
 										}}

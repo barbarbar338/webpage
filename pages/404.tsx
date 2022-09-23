@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import { useLocaleParser } from "@libs/localeParser";
-import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import ErrorSVG from "@assets/elements/error.svg";
 import Image from "next/image";
+import Link from "next/link";
 
 const NotFoundPage: NextPage = () => {
 	const parser = useLocaleParser();
@@ -23,10 +23,11 @@ const NotFoundPage: NextPage = () => {
 					alt="Error"
 				/>
 				<div>
-					<Link href="/">
-						<span className="mb-3 inline-block w-full rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
-							{parser.get("go_home")}
-						</span>
+					<Link
+						href="/"
+						className="mb-3 inline-block w-full cursor-pointer rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto"
+					>
+						{parser.get("go_home")}
 					</Link>
 				</div>
 			</section>

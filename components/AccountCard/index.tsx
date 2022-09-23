@@ -2,9 +2,9 @@ import type { FC } from "react";
 import type { IconType } from "react-icons/lib";
 import { useLocaleParser } from "@libs/localeParser";
 import { useCopyToClipboard } from "react-use";
-import { Link } from "@components/Utils/Link";
 import { toast } from "react-toastify";
 import classnames from "classnames";
+import Link from "next/link";
 
 export interface IAccountCardProps {
 	icon: IconType;
@@ -52,7 +52,7 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	return (
 		<div>
 			{href ? (
-				<Link href={href}>
+				<Link className="cursor-pointer" href={href}>
 					<Card />
 				</Link>
 			) : (
