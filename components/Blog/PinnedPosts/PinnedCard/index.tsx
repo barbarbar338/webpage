@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import type { IPost } from "@libs/graphql";
-import { CustomImage } from "@components/Utils/CustomImage";
 import { Link } from "@components/Utils/Link";
+import Image from "next/image";
 
 export interface IPinnedCard {
 	post: IPost;
@@ -34,7 +34,9 @@ export const PinnedCard: FC<IPinnedCard> = ({ post }) => (
 		</div>
 		<div className="mt-4 flex items-center justify-between">
 			<div className="flex items-center">
-				<CustomImage
+				<Image
+					width={32}
+					height={32}
 					src={post.author.avatarUrl}
 					alt="avatar"
 					className="h-8 w-8 rounded-full object-cover"

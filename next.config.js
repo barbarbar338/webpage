@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const withImages = require("next-images");
 
 /**
  * @type {import("next").NextConfig}
@@ -12,6 +11,9 @@ const nextConfig = {
 	i18n: {
 		locales: ["en", "tr"],
 		defaultLocale: "en",
+	},
+	images: {
+		domains: ["avatars.githubusercontent.com", "api.338.rocks"],
 	},
 	async redirects() {
 		return [
@@ -44,4 +46,4 @@ const nextConfig = {
 	},
 };
 
-module.exports = withImages(nextConfig);
+module.exports = nextConfig;

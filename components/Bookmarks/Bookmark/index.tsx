@@ -1,8 +1,8 @@
 import type { FC } from "react";
-import { CustomImage } from "@components/Utils/CustomImage";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import moment from "moment";
+import Image from "next/image";
 
 export interface IBookmark {
 	id: number;
@@ -26,7 +26,9 @@ export const Bookmark: FC<IBookmark> = ({
 		<div>
 			<div className="flex max-w-md flex-col gap-5 rounded-lg bg-white py-8 px-8 shadow-lg dark:bg-gray-800">
 				<div className="flex items-center">
-					<CustomImage
+					<Image
+						width={128}
+						height={128}
 						className="flex h-20 w-20 justify-center"
 						src={imageUrl}
 						alt={title}

@@ -1,13 +1,9 @@
 import type { FC } from "react";
-import { CustomImage } from "@components/Utils/CustomImage";
 import { Status } from "@components/Home/Hero/Status";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import { CONFIG } from "@libs/config";
-import Right from "@assets/elements/right.svg";
-import Down from "@assets/elements/down.svg";
-import Left from "@assets/elements/left.svg";
-import Up from "@assets/elements/up.svg";
+import Image from "next/image";
 
 export const Hero: FC = () => {
 	const parser = useLocaleParser();
@@ -79,50 +75,12 @@ export const Hero: FC = () => {
 								zIndex: 0,
 							}}
 						>
-							<CustomImage
+							<Image
+								width={512}
+								height={512}
 								className="w-full max-w-lg rounded-3xl object-cover md:h-128 md:w-128"
 								src={CONFIG.AVATAR_URL}
 								alt="Avatar"
-							/>
-							<CustomImage
-								className="absolute hidden md:block"
-								style={{
-									top: "-2rem",
-									right: "3rem",
-									zIndex: -1,
-								}}
-								src={Up}
-								alt="UpSVGElement"
-							/>
-							<CustomImage
-								className="absolute hidden md:block"
-								style={{
-									bottom: "-2rem",
-									right: "-2rem",
-									zIndex: -1,
-								}}
-								src={Down}
-								alt="DownSVGElement"
-							/>
-							<CustomImage
-								className="absolute hidden md:block"
-								style={{
-									top: "3rem",
-									right: "-3rem",
-									zIndex: -1,
-								}}
-								src={Right}
-								alt="RightSVGElement"
-							/>
-							<CustomImage
-								className="absolute hidden md:block"
-								style={{
-									bottom: "2.5rem",
-									left: "-4.5rem",
-									zIndex: -1,
-								}}
-								src={Left}
-								alt="LeftSVGElement"
 							/>
 						</div>
 					</div>

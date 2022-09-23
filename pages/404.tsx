@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
-import { CustomImage } from "@components/Utils/CustomImage";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import { Layout } from "@components/Layout";
 import ErrorSVG from "@assets/elements/error.svg";
+import Image from "next/image";
 
 const NotFoundPage: NextPage = () => {
 	const parser = useLocaleParser();
@@ -15,7 +15,9 @@ const NotFoundPage: NextPage = () => {
 					{parser.get("error_404")}
 				</h1>
 				<p className="text-gray-400">{parser.get("page_not_found")}</p>
-				<CustomImage
+				<Image
+					width={512}
+					height={512}
 					className="max-w-auto my-12 mx-auto md:max-w-sm"
 					src={ErrorSVG}
 					alt="Error"

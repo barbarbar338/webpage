@@ -1,9 +1,9 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import type { FC } from "react";
 import type { ISponsor } from "@libs/graphql";
-import { CustomImage } from "@components/Utils/CustomImage";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
+import Image from "next/image";
 
 export interface ISponsorCardProps {
 	sponsor: ISponsor;
@@ -14,7 +14,9 @@ export const SponsorCard: FC<ISponsorCardProps> = ({ sponsor }) => {
 
 	return (
 		<div className="mx-auto mb-3 flex w-full items-center rounded-xl bg-gray-200 text-black dark:bg-gray-800 dark:text-white lg:w-1/3">
-			<CustomImage
+			<Image
+				width={128}
+				height={128}
 				alt={sponsor.name || sponsor.login}
 				src={sponsor.avatarUrl}
 				className="h-32 w-32 rounded-xl"

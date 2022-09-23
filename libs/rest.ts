@@ -1,13 +1,20 @@
 import type { IBookmark } from "@components/Bookmarks/Bookmark";
 import axios from "axios";
 
-export const getBookmarks = async () => {
-	const url = process.env.STORAGE_URL;
-	const token = process.env.STORAGE_AUTH_TOKEN;
+const storageUrl = process.env.STORAGE_URL;
+const storageAuthToken = process.env.STORAGE_AUTH_TOKEN;
+const gitUrl = process.env.GIT_SERVER_URL;
 
-	const { data } = await axios.get(`${url}/v1/bookmark`, {
+export interface IRepo {
+	branch: string;
+	repo: string;
+	files: string[];
+}
+
+export const getBookmarks = async () => {
+	const { data } = await axios.get(`${storageUrl}/v1/bookmark`, {
 		headers: {
-			Authorization: token,
+			Authorization: storageAuthToken,
 		},
 	});
 
@@ -15,9 +22,19 @@ export const getBookmarks = async () => {
 };
 
 export const getRepos = async () => {
-	const url = process.env.GIT_SERVER_URL;
-
-	const { data } = await axios.get(`${url}/api/repos`);
+	const { data } = await axios.get(`${gitUrl}/api/repos`);
 
 	return data.data as string[];
+};
+
+export const getRepo = async (repo: string) => {
+	const { data } = await axios.get(`${gitUrl}/api/repos/${repo}`);
+
+	return data.data as IRepo;
+};
+
+export const getFileContent = async (repo: string, path: string) => {
+	const { data } = await axios.get(`${gitUrl}/api/repos/${repo}/${path}`);
+
+	return data.data.file as Buffer;
 };

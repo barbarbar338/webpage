@@ -1,8 +1,8 @@
 import { type ChangeEvent, type FormEvent, useState } from "react";
 import type { NextPage } from "next";
-import { CustomImage } from "@components/Utils/CustomImage";
 import { useLocaleParser } from "@libs/localeParser";
 import { Layout } from "@components/Layout";
+import Image from "next/image";
 
 const overlays = [
 	"balance",
@@ -82,7 +82,9 @@ const OverlayCreatorAppPage: NextPage = () => {
 					</form>
 					<div className="m-auto mt-5 h-96 w-96 bg-gray-500">
 						{product && (
-							<CustomImage
+							<Image
+								width={64}
+								height={64}
 								alt="Overlay"
 								src={product}
 								className="h-full w-full"

@@ -17,6 +17,7 @@ import "@styles/tetris.scss";
 
 import "react-toastify/dist/ReactToastify.css";
 import "highlight.js/styles/tomorrow-night-bright.css";
+import "react-folder-tree/dist/style.css";
 
 const App = ({ Component, pageProps }) => {
 	const router = useRouter();

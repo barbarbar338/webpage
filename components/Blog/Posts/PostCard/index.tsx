@@ -1,10 +1,10 @@
 import type { FC } from "react";
 import type { IPost } from "@libs/graphql";
-import { CustomImage } from "@components/Utils/CustomImage";
 import { FiCalendar, FiClock } from "react-icons/fi";
 import { useLocaleParser } from "@libs/localeParser";
 import { calculate } from "calculate-readtime";
 import { Link } from "@components/Utils/Link";
+import Image from "next/image";
 
 export interface IPostCard {
 	post: IPost;
@@ -51,12 +51,14 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 							href={`https://github.com/${post.author.login}`}
 							className="flex items-center"
 						>
-							<CustomImage
+							<Image
+								width={32}
+								height={32}
 								src={post.author.avatarUrl}
 								alt="avatar"
-								className="mx-4 hidden h-10 w-10 rounded-full object-cover sm:block"
+								className="hidden h-10 w-10 rounded-full object-cover sm:block"
 							/>
-							<h1 className="font-bold text-gray-700 dark:text-white">
+							<h1 className="ml-2 font-bold text-gray-700 dark:text-white">
 								{post.author.login}
 							</h1>
 						</Link>

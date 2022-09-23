@@ -92,5 +92,7 @@
 	"support_me": "Support Me",
 	"bookmarks_title": "Bookmarks",
 	"home_title": "Home",
-	"repos": "Repos"
+	"repos": "Repos",
+	"repos_description": "Repos I've pushed to my own Git server. The repos here will be more up-to-date and active than the repos on GitHub.",
+	"copied_repo": "Repo clone URL copied."
 }

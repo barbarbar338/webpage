@@ -1,8 +1,8 @@
 import type { FC } from "react";
 import type { IFramework } from "@libs/config";
-import { CustomImage } from "@components/Utils/CustomImage";
 import { useLocaleParser } from "@libs/localeParser";
 import classNames from "classnames";
+import Image from "next/image";
 
 export interface IFrameworkCard {
 	framework: IFramework;
@@ -19,7 +19,9 @@ export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => {
 					framework.color,
 				)}
 			>
-				<CustomImage
+				<Image
+					width={32}
+					height={32}
 					src={framework.icon}
 					className="h-10 w-10"
 					alt={framework.name}

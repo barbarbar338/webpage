@@ -1,7 +1,6 @@
 import { type FC, Fragment, useEffect, useState } from "react";
 import type { IconType } from "react-icons/lib";
 import { NavbarSeperator } from "@components/Layout/NavbarSeperator";
-import { CustomImage } from "@components/Utils/CustomImage";
 import { useLocaleParser } from "@libs/localeParser";
 import { Link } from "@components/Utils/Link";
 import { useTheme } from "next-themes";
@@ -16,6 +15,7 @@ import {
 } from "react-icons/fi";
 import Favicon from "@assets/icon.svg";
 import classnames from "classnames";
+import Image from "next/image";
 
 export const Navbar: FC = () => {
 	const parser = useLocaleParser();
@@ -132,7 +132,9 @@ export const Navbar: FC = () => {
 					href="/#"
 					className="block text-3xl font-bold leading-none text-white"
 				>
-					<CustomImage
+					<Image
+						width={64}
+						height={64}
 						className="h-16 w-16"
 						src={Favicon}
 						alt="Favicon"
@@ -207,7 +209,9 @@ export const Navbar: FC = () => {
 							href="/#"
 							className=" mr-auto text-3xl font-bold leading-none"
 						>
-							<CustomImage
+							<Image
+								width={64}
+								height={64}
 								className="h-16 w-16"
 								src={Favicon}
 								alt="Favicon"
