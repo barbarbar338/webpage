@@ -62,6 +62,10 @@ export const Navbar: FC = () => {
 			name: parser.get("changelog"),
 			href: "/changelog",
 		},
+		{
+			name: parser.get("repos"),
+			href: "/git",
+		},
 	];
 
 	const getIcon = () => {

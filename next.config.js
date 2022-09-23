@@ -1,7 +1,5 @@
-/* eslint-disable */
-const { withPlugins } = require("next-compose-plugins");
+/* eslint-disable @typescript-eslint/no-var-requires */
 const withImages = require("next-images");
-const withYAML = require("next-yaml");
 
 /**
  * @type {import("next").NextConfig}
@@ -46,4 +44,4 @@ const nextConfig = {
 	},
 };
 
-module.exports = withPlugins([withImages, withYAML], nextConfig);
+module.exports = withImages(nextConfig);

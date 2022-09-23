@@ -4,7 +4,7 @@ import { useLocaleParser } from "@libs/localeParser";
 import { Bookmarks } from "@components/Bookmarks";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
-import axios from "axios";
+import { getBookmarks } from "@libs/rest";
 
 export interface IBookmarksPage {
 	bookmarks: IBookmark[];
@@ -23,18 +23,11 @@ const BookmarksPage: NextPage<IBookmarksPage> = ({ bookmarks }) => {
 export default BookmarksPage;
 
 export const getStaticProps: GetStaticProps<IBookmarksPage> = async () => {
-	const url = process.env.STORAGE_URL;
-	const token = process.env.STORAGE_AUTH_TOKEN;
-
-	const { data } = await axios.get(`${url}/v1/bookmark`, {
-		headers: {
-			Authorization: token,
-		},
-	});
+	const bookmarks = await getBookmarks();
 
 	return {
 		props: {
-			bookmarks: data.data,
+			bookmarks: bookmarks,
 		},
 		revalidate: CONFIG.REVALIDATION,
 	};
