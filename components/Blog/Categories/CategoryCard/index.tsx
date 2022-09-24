@@ -8,16 +8,11 @@ export interface ICategoryCard {
 
 export const CategoryCard: FC<ICategoryCard> = ({ category }) => (
 	<li
-		className="m-1 mx-auto flex max-w-sm flex-col rounded-xl bg-white p-2 shadow-md dark:bg-gray-800"
+		className="m-1 mx-auto flex max-w-sm cursor-pointer flex-col rounded-xl p-2 text-black shadow-md"
 		style={{
 			backgroundColor: `#${category.color}`,
 		}}
 	>
-		<Link
-			href={`/blog/category/${category.id}`}
-			className="cursor-pointer text-black"
-		>
-			{category.name}
-		</Link>
+		<Link href={`/blog/category/${category.id}`}>{category.name}</Link>
 	</li>
 );

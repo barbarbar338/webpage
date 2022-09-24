@@ -29,9 +29,14 @@ const IndexPage: NextPage<ISponsorsPage> = ({ sponsors }) => {
 					</p>
 					<Link
 						href={`https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}`}
-						className="inline-block w-full cursor-pointer rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto"
+						passHref
 					>
-						{parser.get("support_me")}
+						<a
+							target="_blank"
+							className="inline-block w-full cursor-pointer rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto"
+						>
+							{parser.get("support_me")}
+						</a>
 					</Link>
 					<div className="mt-5 flex flex-col text-left">
 						{sponsors.map((sponsor, idx) => (

@@ -54,19 +54,13 @@ export const Hero: FC = () => {
 								/>
 								<Status />
 								<div>
-									<Link
-										className="cursor-pointer hover:underline"
-										href="#about"
-									>
-										<span className="mb-3 inline-block w-full rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
+									<Link href="#about">
+										<span className="mb-3 inline-block w-full cursor-pointer rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
 											{parser.get("about_me")}
 										</span>
 									</Link>
-									<Link
-										className="cursor-pointer hover:underline"
-										href="#contact"
-									>
-										<span className="inline-block w-full rounded-xl border-2 border-gray-700 bg-gray-900 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:border-gray-600 lg:w-auto">
+									<Link href="#contact">
+										<span className="inline-block w-full cursor-pointer rounded-xl border-2 border-gray-700 bg-gray-900 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:border-gray-600 lg:w-auto">
 											{parser.get("contact")}
 										</span>
 									</Link>

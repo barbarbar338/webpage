@@ -39,12 +39,11 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 					<div className="w-full px-4 text-xl leading-normal text-gray-800 md:px-6">
 						<div className="font-sans">
 							<p className="text-base font-bold text-purple-500 md:text-sm">
-								<Link
-									href="/blog"
-									className="cursor-pointer text-base font-bold uppercase text-purple-500 no-underline hover:underline md:text-sm"
-								>
-									<FiArrowLeft className="inline" />{" "}
-									{parser.get("back_to_blog")}
+								<Link href="/blog">
+									<span className="flex cursor-pointer items-center text-base font-bold uppercase text-purple-500 no-underline hover:underline md:text-sm">
+										<FiArrowLeft className="inline text-lg" />{" "}
+										{parser.get("back_to_blog")}
+									</span>
 								</Link>
 							</p>
 							<h1 className="break-normal pt-6 pb-2 font-sans text-3xl font-bold text-black dark:text-white md:text-4xl">
@@ -68,12 +67,15 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 									<Link
 										key={idx}
 										href={`/blog/category/${label.id}`}
-										className="mx-2 cursor-pointer rounded-xl p-1 text-black md:text-sm"
-										style={{
-											backgroundColor: `#${label.color}`,
-										}}
 									>
-										{label.name}
+										<span
+											className="mx-1 cursor-pointer rounded-xl p-1 text-black md:text-sm"
+											style={{
+												backgroundColor: `#${label.color}`,
+											}}
+										>
+											{label.name}
+										</span>
 									</Link>
 							  ))
 							: parser.get("no_tags")}

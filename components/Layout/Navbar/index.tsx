@@ -21,7 +21,6 @@ export const Navbar: FC = () => {
 	const parser = useLocaleParser();
 
 	const [visible, setVisible] = useState(false);
-	const [hash, setHash] = useState("");
 	const [top, setTop] = useState(false);
 	const { theme, setTheme } = useTheme();
 
@@ -116,11 +115,6 @@ export const Navbar: FC = () => {
 		};
 	}, []);
 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	useEffect(() => {
-		setHash(window.location.hash ? window.location.hash : "#");
-	});
-
 	const onUp = () => {
 		window.location.href = "#";
 	};
@@ -128,14 +122,11 @@ export const Navbar: FC = () => {
 	return (
 		<>
 			<nav className="flex items-center justify-between bg-white px-6 py-6 dark:bg-gray-900">
-				<Link
-					href="/#"
-					className="block cursor-pointer text-3xl font-bold leading-none text-white"
-				>
+				<Link href="/#">
 					<Image
 						width={64}
 						height={64}
-						className="h-16 w-16"
+						className="cursor-pointer"
 						src={Favicon}
 						alt="Favicon"
 					/>
@@ -154,19 +145,8 @@ export const Navbar: FC = () => {
 					<NavbarSeperator />
 					{links.map((link, idx) => (
 						<Fragment key={idx}>
-							<li>
-								<Link
-									href={link.href}
-									className={classnames(
-										"cursor-pointer text-sm hover:underline",
-										{
-											"text-purple-600 hover:text-purple-500 dark:text-purple-300 dark:hover:text-purple-200":
-												hash == link.href,
-											"text-black hover:text-gray-500 dark:text-gray-300 dark:hover:text-white":
-												hash != link.href,
-										},
-									)}
-								>
+							<li className="cursor-pointer text-sm text-black hover:text-gray-500 hover:underline dark:text-gray-300 dark:hover:text-white">
+								<Link href={link.href}>
 									<span
 										dangerouslySetInnerHTML={{
 											__html: link.name,
@@ -178,7 +158,7 @@ export const Navbar: FC = () => {
 						</Fragment>
 					))}
 				</ul>
-				<div className="flex ">
+				<div className="flex">
 					<button
 						aria-label="Change Theme"
 						onClick={onTheme}
@@ -186,11 +166,10 @@ export const Navbar: FC = () => {
 					>
 						{getIcon()}
 					</button>
-					<Link
-						href="/#contact"
-						className="hidden cursor-pointer rounded-xl bg-purple-700 py-2 px-6 text-sm font-bold text-white hover:bg-purple-800 hover:underline lg:block"
-					>
-						{parser.get("contact")}
+					<Link href="/#contact">
+						<span className="hidden cursor-pointer rounded-xl bg-purple-700 py-2 px-6 text-sm font-bold text-white hover:bg-purple-800 lg:block">
+							{parser.get("contact")}
+						</span>
 					</Link>
 				</div>
 			</nav>
@@ -205,14 +184,10 @@ export const Navbar: FC = () => {
 				/>
 				<nav className="fixed top-0 left-0 bottom-0 flex w-5/6 max-w-sm flex-col overflow-y-auto bg-gray-100 py-6 px-6 dark:bg-gray-900">
 					<div className="mb-8 flex items-center">
-						<Link
-							href="/#"
-							className="mr-auto cursor-pointer text-3xl font-bold leading-none hover:underline"
-						>
+						<Link href="/#">
 							<Image
 								width={64}
 								height={64}
-								className="h-16 w-16"
 								src={Favicon}
 								alt="Favicon"
 							/>
@@ -229,19 +204,11 @@ export const Navbar: FC = () => {
 					<div>
 						<ul>
 							{links.map((link, idx) => (
-								<li key={idx} className="mb-1">
-									<Link
-										href={link.href}
-										className={classnames(
-											"block cursor-pointer rounded-xl p-4 text-sm font-semibold hover:bg-purple-600 hover:text-white dark:hover:bg-gray-800",
-											{
-												"text-black dark:text-white":
-													hash == link.href,
-												"text-gray-500":
-													hash != link.href,
-											},
-										)}
-									>
+								<li
+									key={idx}
+									className="mb-1 block cursor-pointer rounded-xl p-4 text-sm font-semibold text-gray-500 hover:bg-purple-600 hover:text-white dark:hover:bg-gray-800"
+								>
+									<Link href={link.href}>
 										<span
 											dangerouslySetInnerHTML={{
 												__html: link.name,
@@ -253,14 +220,11 @@ export const Navbar: FC = () => {
 						</ul>
 					</div>
 					<div className="mt-auto">
-						<div>
-							<Link
-								href="/#contact"
-								className="mb-2 block cursor-pointer rounded-xl bg-purple-600 px-4 py-3 text-center text-xs font-semibold leading-loose text-white hover:bg-purple-700"
-							>
+						<Link href="/#contact">
+							<div className="mb-2 block cursor-pointer rounded-xl bg-purple-600 px-4 py-3 text-center text-xs font-semibold leading-loose text-white hover:bg-purple-700">
 								{parser.get("contact")}
-							</Link>
-						</div>
+							</div>
+						</Link>
 						<p className="my-4 text-center text-xs text-gray-600 dark:text-gray-400">
 							<span>
 								&copy; 2020 - {CONFIG.NOW} All rights reserved |
@@ -269,12 +233,10 @@ export const Navbar: FC = () => {
 						</p>
 						<div className="text-center">
 							{CONFIG.CONTACT.map((social, idx) => (
-								<Link
-									className="cursor-pointer hover:underline"
-									key={idx}
-									href={social.href}
-								>
-									<social.icon className="mx-2 inline-block text-black dark:text-white" />
+								<Link key={idx} href={social.href} passHref	>
+									<a target="_blank">
+										<social.icon className="mx-2 inline-block cursor-pointer text-black dark:text-white" />
+									</a>
 								</Link>
 							))}
 						</div>

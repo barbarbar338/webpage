@@ -56,14 +56,16 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 														(commit, idx) => (
 															<li key={idx}>
 																<Link
-																	className="cursor-pointer"
+																	passHref
 																	href={
 																		commit.commitUrl
 																	}
 																>
-																	{
-																		commit.message
-																	}
+																	<a target="_blank">
+																		{
+																			commit.message
+																		}
+																	</a>
 																</Link>{" "}
 																by{" "}
 																{

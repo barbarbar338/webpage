@@ -86,15 +86,14 @@ export const Contact: FC = () => {
 			</div>
 			<div className="-mx-4 flex flex-col justify-center lg:flex-row">
 				{CONFIG.CONTACT.map((social, idx) => (
-					<Link
-						key={idx}
-						href={social.href}
-						className="flex cursor-pointer items-center px-4 hover:underline"
-					>
-						<div className="mx-2">
+					<Link key={idx} href={social.href} passHref>
+						<a
+							target="_blank"
+							className="mx-2 flex cursor-pointer items-center px-4 hover:underline"
+						>
 							<social.icon className="mr-2 inline-block h-6 w-6 text-purple-600" />
 							{social.value}
-						</div>
+						</a>
 					</Link>
 				))}
 			</div>

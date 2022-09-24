@@ -33,11 +33,10 @@ export const Bookmark: FC<IBookmark> = ({
 						src={imageUrl}
 						alt={title}
 					/>
-					<Link
-						href={url}
-						className="ml-4 cursor-pointer text-3xl font-semibold text-gray-800 hover:underline dark:text-white"
-					>
-						<h2> {title}</h2>
+					<Link href={url}>
+						<h2 className="ml-4 cursor-pointer text-3xl font-semibold text-gray-800 hover:underline dark:text-white">
+							{title}
+						</h2>
 					</Link>
 				</div>
 				<div>

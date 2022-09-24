@@ -26,11 +26,10 @@ export const GitLayout: FC<IGitLayout> = ({ children, repo }) => {
 				<div className="w-full text-xl leading-normal text-gray-800">
 					<div className="font-sans">
 						<h1 className="break-normal pt-6 pb-2 font-sans text-3xl font-bold text-black dark:text-white md:text-4xl">
-							<Link
-								href="/git"
-								className="cursor-pointer text-purple-600 hover:text-purple-500 hover:underline"
-							>
-								{parser.get("repos")}
+							<Link href="/git">
+								<span className="cursor-pointer text-purple-600 hover:text-purple-500 hover:underline">
+									{parser.get("repos")}
+								</span>
 							</Link>
 						</h1>
 					</div>
@@ -44,11 +43,10 @@ export const GitLayout: FC<IGitLayout> = ({ children, repo }) => {
 							</span>
 						</div>
 						<h2>
-							<Link
-								href={`/git/${repo.repo}`}
-								className="cursor-pointer text-purple-600 hover:text-purple-500 hover:underline"
-							>
-								{repo.repo} - {repo.branch}
+							<Link href={`/git/${repo.repo}`}>
+								<span className="cursor-pointer text-purple-600 hover:text-purple-500 hover:underline">
+									{repo.repo} - {repo.branch}
+								</span>
 							</Link>
 						</h2>
 						<div className="flex">{children}</div>

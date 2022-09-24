@@ -52,8 +52,10 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	return (
 		<div>
 			{href ? (
-				<Link className="cursor-pointer" href={href}>
-					<Card />
+				<Link href={href} passHref>
+					<a target="_blank">
+						<Card />
+					</a>
 				</Link>
 			) : (
 				<Card />

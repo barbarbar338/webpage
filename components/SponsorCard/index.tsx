@@ -26,11 +26,13 @@ export const SponsorCard: FC<ISponsorCardProps> = ({ sponsor }) => {
 					<span className="text-xl leading-tight">
 						{sponsor.name || sponsor.login}
 					</span>
-					<Link
-						href={`https://github.com/${sponsor.login}`}
-						className="text-md cursor-pointer text-gray-500 hover:underline"
-					>
-						@{sponsor.login}
+					<Link href={`https://github.com/${sponsor.login}`} passHref>
+						<a
+							target="_blank"
+							className="text-md cursor-pointer text-gray-500 hover:underline"
+						>
+							@{sponsor.login}
+						</a>
 					</Link>
 				</div>
 				<span className="mt-2 text-sm">

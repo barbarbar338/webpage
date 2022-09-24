@@ -9,35 +9,39 @@ export const Footer: FC = () => (
 			<div className="mt-2">
 				&copy; 2020 - {CONFIG.NOW} All rights reserved. Made with{" "}
 				<FiHeart className="inline text-red-500" /> by{" "}
-				<Link
-					href="https://github.com/barbarbar338"
-					className="cursor-pointer text-purple-600 hover:underline"
-				>
-					barbarbar338
+				<Link href="https://github.com/barbarbar338" passHref>
+					<a
+						target="_blank"
+						className="cursor-pointer text-purple-600 hover:underline"
+					>
+						barbarbar338
+					</a>
 				</Link>{" "}
 				using{" "}
-				<Link
-					href="https://nextjs.org/"
-					className="cursor-pointer text-gray-600 hover:underline"
-				>
-					NextJS
+				<Link href="https://nextjs.org/" passHref>
+					<a
+						target="_blank"
+						className="cursor-pointer text-gray-600 hover:underline"
+					>
+						NextJS
+					</a>
 				</Link>{" "}
 				and{" "}
-				<Link
-					href="https://tailwindcss.com/"
-					className="cursor-pointer text-green-700 hover:underline dark:text-green-400"
-				>
-					TailwindCSS
+				<Link href="https://tailwindcss.com/" passHref>
+					<a
+						target="_blank"
+						className="cursor-pointer text-green-700 hover:underline dark:text-green-400"
+					>
+						TailwindCSS
+					</a>
 				</Link>
 			</div>
 			<div className="mt-2 flex flex-row gap-2 md:flex-auto md:flex-row-reverse">
 				{CONFIG.CONTACT.map((social, idx) => (
-					<Link
-						key={idx}
-						href={social.href}
-						className="w-5 cursor-pointer text-purple-600 hover:text-purple-700 hover:underline dark:text-purple-400 dark:hover:text-purple-500"
-					>
-						<social.icon className="text-lg" />
+					<Link key={idx} href={social.href} passHref>
+						<a target="_blank">
+							<social.icon className="w-5 cursor-pointer text-purple-600 hover:text-purple-700 hover:underline dark:text-purple-500 dark:hover:text-purple-600" />
+						</a>
 					</Link>
 				))}
 			</div>

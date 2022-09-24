@@ -29,49 +29,46 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 					</span>
 				</div>
 				<div className="mt-2">
-					<Link
-						href={`/blog/post/${post.number}`}
-						className="cursor-pointer text-2xl font-bold text-gray-700 hover:underline dark:text-white"
-					>
-						{post.title}
+					<Link href={`/blog/post/${post.number}`}>
+						<span className="cursor-pointer text-2xl font-bold text-gray-700 hover:underline dark:text-white">
+							{post.title}
+						</span>
 					</Link>
 				</div>
 				<div className="mt-4 flex items-center justify-between">
-					<Link
-						href={`/blog/post/${post.number}`}
-						className="cursor-pointer text-blue-500 hover:underline"
-					>
-						{parser.get("read_more")}
+					<Link href={`/blog/post/${post.number}`}>
+						<span className="cursor-pointer text-blue-500 hover:underline">
+							{parser.get("read_more")}
+						</span>
 					</Link>
 					<div>
-						<Link
-							href={`https://github.com/${post.author.login}`}
-							className="flex cursor-pointer items-center hover:underline"
-						>
-							<Image
-								width={32}
-								height={32}
-								src={post.author.avatarUrl}
-								alt="avatar"
-								className="hidden h-10 w-10 rounded-full object-cover sm:block"
-							/>
-							<h1 className="ml-2 font-bold text-gray-700 dark:text-white">
-								{post.author.login}
-							</h1>
+						<Link href={`https://github.com/${post.author.login}`}>
+							<span className="flex cursor-pointer items-center hover:underline">
+								<Image
+									width={32}
+									height={32}
+									src={post.author.avatarUrl}
+									alt="avatar"
+									className="hidden h-10 w-10 rounded-full object-cover sm:block"
+								/>
+								<h1 className="ml-2 font-bold text-gray-700 dark:text-white">
+									{post.author.login}
+								</h1>
+							</span>
 						</Link>
 					</div>
 				</div>
 				<div>
 					{post.labels.map((label, idx) => (
-						<Link
-							key={idx}
-							href={`/blog/category/${label.id}`}
-							className="m-1 cursor-pointer rounded-xl p-1 text-sm text-black"
-							style={{
-								backgroundColor: `#${label.color}`,
-							}}
-						>
-							{label.name}
+						<Link key={idx} href={`/blog/category/${label.id}`}>
+							<span
+								className="m-1 cursor-pointer rounded-xl p-1 text-sm text-black"
+								style={{
+									backgroundColor: `#${label.color}`,
+								}}
+							>
+								{label.name}
+							</span>
 						</Link>
 					))}
 				</div>

@@ -131,11 +131,10 @@ export const MinesweeperBoard: FC = () => {
 				})}
 			</div>
 			<br />
-			<Link
-				href="/apps"
-				className="mt-3 inline-block w-2/3 cursor-pointer rounded-xl bg-purple-600 py-2 px-6 text-center font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mr-3 lg:w-96"
-			>
-				{parser.get("go_back")}
+			<Link href="/apps">
+				<span className="mt-3 inline-block w-2/3 cursor-pointer rounded-xl bg-purple-600 py-2 px-6 text-center font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mr-3 lg:w-96">
+					{parser.get("go_back")}
+				</span>
 			</Link>
 		</div>
 	);
