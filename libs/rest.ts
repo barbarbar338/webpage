@@ -33,7 +33,8 @@ export const getRepo = async (repo: string) => {
 	return data.data as IRepo;
 };
 
-export const getFileContent = async (repo: string, path: string) => {
+export const getFileContent = async (repo: string, path: string | string[]) => {
+	path = typeof path == "string" ? path : path.join("/");
 	const { data } = await axios.get(`${gitUrl}/api/repos/${repo}/${path}`);
 
 	return data.data.file as Buffer;

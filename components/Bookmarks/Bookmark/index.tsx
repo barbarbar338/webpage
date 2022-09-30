@@ -26,9 +26,13 @@ export const Bookmark: FC<IBookmark> = ({
 		<div>
 			<div className="flex max-w-md flex-col gap-5 rounded-lg bg-white py-8 px-8 shadow-lg dark:bg-gray-800">
 				<div className="flex items-center">
-					<Image
-						width={128}
-						height={128}
+					{/* 
+						TODO: I don't know how to configure next/image component for all hostnames 
+						without putting them in next.config.js file. Need find a solution for this.
+						This is just a bad workaround.
+					*/}
+					{/* eslint-disable-next-line @next/next/no-img-element */}
+					<img
 						className="flex h-20 w-20 justify-center"
 						src={imageUrl}
 						alt={title}

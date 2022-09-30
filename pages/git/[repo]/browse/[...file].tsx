@@ -11,17 +11,21 @@ export interface IBrowsePage {
 }
 
 const BrowsePage: NextPage<IBrowsePage> = ({ repo, file }) => {
-	const ref = createRef<HTMLDivElement>();
+	const content = file ? Buffer.from(file).toString() : "?";
+
 	useEffect(() => {
-		const content = ref.current.innerHTML;
+		console.log("CHANGF");
+		const contentDiv = document.getElementById("content") as HTMLDivElement;
 		const highlighted = hljs.highlightAuto(content).value;
-		ref.current.innerHTML = `<pre>${highlighted}</pre>`;
-	}, [ref]);
+		contentDiv.innerHTML = `<pre>${highlighted}</pre>`;
+	}, [content]);
 
 	return (
 		<Layout title={`${repo.repo} - ${repo.branch}`}>
 			<GitLayout repo={repo}>
-				<div ref={ref}>{Buffer.from(file).toString()}</div>
+				<div id="content" className="overflow-auto">
+					{content}
+				</div>
 			</GitLayout>
 		</Layout>
 	);
@@ -32,13 +36,13 @@ export default BrowsePage;
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	const repoParam = context.params.repo as string;
 	const repo = await getRepo(repoParam);
-	const path = (context.params.file as string[]).join("/");
+	const path = context.params.file;
 	const fileContent = await getFileContent(repo.repo, path);
 
 	return {
 		props: {
 			repo,
-			file: fileContent,
+			file: fileContent || null,
 		},
 	};
 };
