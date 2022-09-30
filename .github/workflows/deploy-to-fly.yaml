@@ -7,6 +7,7 @@ env:
     GITHUB_API_KEY: ${{ secrets.G_API_KEY }}
     STORAGE_AUTH_TOKEN: ${{ secrets.STORAGE_AUTH_TOKEN }}
     STORAGE_URL: ${{ secrets.STORAGE_URL }}
+    GIT_SERVER_URL: ${{ secrets.GIT_SERVER_URL }}
 
 jobs:
     deploy:
