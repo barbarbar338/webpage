@@ -94,5 +94,6 @@
 	"home_title": "Ana Sayfa",
 	"repos": "Repolar",
 	"repos_description": "Kendi Git sunucuma pushlamış olduğum repolar. Buradaki repolar GitHub'daki repolara göre daha güncel ve aktif olacaktır.",
-	"copied_repo": "Repo klonlama URL'si kopyalandı."
+	"copied_repo": "Repo klonlama URL'si kopyalandı.",
+	"copy": "Panoya kopyala"
 }

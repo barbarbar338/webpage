@@ -34,7 +34,11 @@ export const GitLayout: FC<IGitLayout> = ({ children, repo }) => {
 						</h1>
 					</div>
 					<div className="container prose text-black dark:text-white">
-						<div className="flex items-center" onClick={onCopy}>
+						<div
+							title={parser.get("copy")}
+							className="flex cursor-pointer items-center"
+							onClick={onCopy}
+						>
 							<span className="rounded bg-gray-600 px-3 py-1 text-white">
 								git clone https://benson.fly.dev/{repo.repo}
 							</span>
