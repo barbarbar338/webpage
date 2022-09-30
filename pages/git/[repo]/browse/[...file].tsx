@@ -2,6 +2,8 @@ import type { GetServerSideProps, NextPage } from "next";
 import { Layout } from "@components/Layout";
 import { getFileContent, getRepo, IRepo } from "@libs/rest";
 import { GitLayout } from "@components/Git/Layout";
+import { createRef, useEffect } from "react";
+import hljs from "highlight.js";
 
 export interface IBrowsePage {
 	repo: IRepo;
@@ -9,12 +11,17 @@ export interface IBrowsePage {
 }
 
 const BrowsePage: NextPage<IBrowsePage> = ({ repo, file }) => {
+	const ref = createRef<HTMLDivElement>();
+	useEffect(() => {
+		const content = ref.current.innerHTML;
+		const highlighted = hljs.highlightAuto(content).value;
+		ref.current.innerHTML = `<pre>${highlighted}</pre>`;
+	}, [ref]);
+
 	return (
 		<Layout title={`${repo.repo} - ${repo.branch}`}>
 			<GitLayout repo={repo}>
-				<pre>
-					<code>{Buffer.from(file).toString()}</code>
-				</pre>
+				<div ref={ref}>{Buffer.from(file).toString()}</div>
 			</GitLayout>
 		</Layout>
 	);
