@@ -14,7 +14,6 @@ const BrowsePage: NextPage<IBrowsePage> = ({ repo, file }) => {
 	const content = file ? Buffer.from(file).toString() : "?";
 
 	useEffect(() => {
-		console.log("CHANGF");
 		const contentDiv = document.getElementById("content") as HTMLDivElement;
 		const highlighted = hljs.highlightAuto(content).value;
 		contentDiv.innerHTML = `<pre>${highlighted}</pre>`;
