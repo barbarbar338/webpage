@@ -233,7 +233,7 @@ export const Navbar: FC = () => {
 						</p>
 						<div className="text-center">
 							{CONFIG.CONTACT.map((social, idx) => (
-								<Link key={idx} href={social.href} passHref	>
+								<Link key={idx} href={social.href} passHref>
 									<a target="_blank">
 										<social.icon className="mx-2 inline-block cursor-pointer text-black dark:text-white" />
 									</a>

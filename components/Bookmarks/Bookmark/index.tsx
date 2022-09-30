@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import { useLocaleParser } from "@libs/localeParser";
 import moment from "moment";
-import Image from "next/image";
 import Link from "next/link";
 
 export interface IBookmark {

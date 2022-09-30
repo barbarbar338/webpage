@@ -20,7 +20,7 @@ jobs:
                   node-version: "16.x"
                   registry-url: "https://registry.npmjs.org"
             - run: yarn
-            - run: yarn build
+            - run: yarn build:prod
             - uses: superfly/flyctl-actions/setup-flyctl@master
             - run: flyctl deploy --remote-only
               env:

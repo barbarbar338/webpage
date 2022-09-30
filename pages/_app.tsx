@@ -38,7 +38,7 @@ const App = ({ Component, pageProps }) => {
 			<Head>
 				<title>{CONFIG.SEO.title}</title>
 				<link rel="manifest" href="/manifest.json" />
-				<link rel="icon" href={Favicon} />
+				<link rel="icon" href={Favicon.src} />
 				<link rel="canonical" href={CONFIG.SEO.publishDomain} />
 				<meta charSet="utf-8" />
 				<meta name="HandheldFriendly" content="true" />
@@ -61,7 +61,7 @@ const App = ({ Component, pageProps }) => {
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content={CONFIG.SEO.publishDomain} />
 				<meta property="og:site_name" content={CONFIG.SEO.title} />
-				<meta property="og:image" content={Favicon} />
+				<meta property="og:image" content={Favicon.src} />
 				<meta property="og:locale" content="en_GB" />
 				<meta property="og:locale:alternate" content="tr_TR" />
 				<meta property="og:locale:alternate" content="en_US" />
@@ -74,9 +74,9 @@ const App = ({ Component, pageProps }) => {
 					property="twitter:description"
 					content={CONFIG.SEO.description}
 				/>
-				<meta property="twitter:image" content={Favicon} />
+				<meta property="twitter:image" content={Favicon.src} />
 
-				<meta property="twitter:card" content={Favicon} />
+				<meta property="twitter:card" content={Favicon.src} />
 			</Head>
 			<ThemeProvider defaultTheme="dark" attribute="class">
 				<Script
