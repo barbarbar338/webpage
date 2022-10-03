@@ -1,10 +1,10 @@
 import type { GetServerSideProps, NextPage } from "next";
-import { Layout } from "@components/Layout";
-import { getRepo, IRepo } from "@libs/rest";
-import { handleTreeData } from "@libs/handleTreeData";
-import { FC } from "react";
+import type { FC } from "react";
 import { useRouter } from "next/router";
+import { handleTreeData } from "@libs/handleTreeData";
 import { GitLayout } from "@components/Git/Layout";
+import { getRepo, IRepo } from "@libs/rest";
+import { Layout } from "@components/Layout";
 import dynamic from "next/dynamic";
 
 const FolderTree = dynamic(() => import("react-folder-tree"), {

@@ -1,10 +1,10 @@
-import { useLocaleParser } from "@libs/localeParser";
-import { IRepo } from "@libs/rest";
-import Link from "next/link";
-import { FC, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
+import type { IRepo } from "@libs/rest";
+import { useCopyToClipboard } from "react-use";
 import { FiCopy } from "react-icons/fi";
 import { toast } from "react-toastify";
-import { useCopyToClipboard } from "react-use";
+import { useLocaleParser } from "@libs/localeParser";
+import Link from "next/link";
 
 export interface IGitLayout {
 	children: ReactNode;

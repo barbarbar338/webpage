@@ -1,8 +1,8 @@
 import type { GetServerSideProps, NextPage } from "next";
-import { Layout } from "@components/Layout";
+import { useEffect } from "react";
 import { getFileContent, getRepo, IRepo } from "@libs/rest";
 import { GitLayout } from "@components/Git/Layout";
-import { useEffect } from "react";
+import { Layout } from "@components/Layout";
 import hljs from "highlight.js";
 
 export interface IBrowsePage {
