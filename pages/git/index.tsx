@@ -1,7 +1,6 @@
-import type { GetStaticProps, NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import { useLocaleParser } from "@libs/localeParser";
 import { Layout } from "@components/Layout";
-import { CONFIG } from "@libs/config";
 import { getRepos } from "@libs/rest";
 import Link from "next/link";
 
@@ -49,13 +48,12 @@ const GitPage: NextPage<IGitPage> = ({ repos }) => {
 
 export default GitPage;
 
-export const getStaticProps: GetStaticProps<IGitPage> = async () => {
+export const getServerSideProps: GetServerSideProps<IGitPage> = async () => {
 	const repos = await getRepos();
 
 	return {
 		props: {
 			repos,
 		},
-		revalidate: CONFIG.REVALIDATION,
 	};
 };
