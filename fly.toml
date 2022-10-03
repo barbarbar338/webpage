@@ -1,15 +1,11 @@
 # fly.toml file generated for barbarbar338 on 2021-05-25T14:23:50+03:00
 
 app = "barbarbar338"
+
 kill_signal = "SIGINT"
 kill_timeout = 5
-processes = []
-
-[build]
-  builder = "heroku/buildpacks:20"
 
 [env]
-PORT=8080
 
 [experimental]
   allowed_public_ports = []
@@ -18,16 +14,15 @@ PORT=8080
 [[services]]
   http_checks = []
   internal_port = 8080
-  processes = ["app"]
   protocol = "tcp"
   script_checks = []
+
   [services.concurrency]
     hard_limit = 25
     soft_limit = 20
     type = "connections"
 
   [[services.ports]]
-    force_https = true
     handlers = ["http"]
     port = 80
 
@@ -38,5 +33,5 @@ PORT=8080
   [[services.tcp_checks]]
     grace_period = "1s"
     interval = "15s"
-    restart_limit = 0
+    restart_limit = 6
     timeout = "2s"
