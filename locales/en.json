@@ -95,5 +95,6 @@
 	"repos": "Repos",
 	"repos_description": "Repos I've pushed to my own Git server. The repos here will be more up-to-date and active than the repos on GitHub.",
 	"copied_repo": "Repo clone URL copied.",
-	"copy": "Copy to clipboard"
+	"copy": "Copy to clipboard",
+	"example_sponsor_card": "This is an example card"
 }

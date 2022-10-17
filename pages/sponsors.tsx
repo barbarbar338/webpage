@@ -39,9 +39,22 @@ const IndexPage: NextPage<ISponsorsPage> = ({ sponsors }) => {
 						</a>
 					</Link>
 					<div className="mt-5 flex flex-col text-left">
-						{sponsors.map((sponsor, idx) => (
-							<SponsorCard key={idx} sponsor={sponsor} />
-						))}
+						{sponsors.length ? (
+							sponsors.map((sponsor, idx) => (
+								<SponsorCard key={idx} sponsor={sponsor} />
+							))
+						) : (
+							<SponsorCard
+								sponsor={{
+									name: parser.get("example_sponsor_card"),
+									avatarUrl:
+										"https://avatars.githubusercontent.com/u/35371155",
+									isOneTime: false,
+									login: "barbarbar338",
+									tier: "10",
+								}}
+							/>
+						)}
 					</div>
 				</div>
 			</section>
