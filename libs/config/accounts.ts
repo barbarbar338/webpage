@@ -14,6 +14,7 @@ import {
 	FaSpotify,
 	FaStackOverflow,
 	FaSteam,
+	FaBattleNet,
 } from "react-icons/fa";
 
 export const DISCORD_ID = "952574663916154960";
@@ -79,6 +80,12 @@ export const SOCIALS = [
 		color: "text-dark",
 	},
 	{
+		icon: FaBattleNet,
+		name: "Batlle.net",
+		value: "barbarbar338#2307",
+		color: "text-blue-500",
+	},
+	{
 		href: "https://open.spotify.com/user/21lczcm6m54b4dsqye4m3bx4y",
 		icon: FaSpotify,
 		name: "Spotify",
@@ -106,8 +113,20 @@ export const SOCIALS = [
 	},
 	{
 		icon: FiDollarSign,
-		name: "IBAN",
+		name: "IBAN (TL)",
 		value: "TR80 0011 1000 0000 0112 0345 53",
+		color: "text-green-500",
+	},
+	{
+		icon: FiDollarSign,
+		name: "IBAN (EUR) (FNNBTRISXXX)",
+		value: "TR62 0011 1000 0000 0115 2266 62",
+		color: "text-green-500",
+	},
+	{
+		icon: FiDollarSign,
+		name: "IBAN (USD) (FNNBTRISXXX)",
+		value: "TR43 0011 1000 0000 0115 2461 13",
 		color: "text-green-500",
 	},
 	{
