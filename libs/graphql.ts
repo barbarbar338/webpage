@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
 import { CONFIG } from "@libs/config";
 import moment from "moment";
 

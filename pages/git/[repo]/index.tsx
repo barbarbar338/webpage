@@ -1,11 +1,11 @@
-import type { GetServerSideProps, NextPage } from "next";
-import type { FC } from "react";
-import { useRouter } from "next/router";
-import { handleTreeData } from "@libs/handleTreeData";
 import { GitLayout } from "@components/Git/Layout";
-import { getRepo, IRepo } from "@libs/rest";
 import { Layout } from "@components/Layout";
+import { handleTreeData } from "@libs/handleTreeData";
+import { getRepo, IRepo } from "@libs/rest";
+import type { GetServerSideProps, NextPage } from "next";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+import type { FC } from "react";
 
 const FolderTree = dynamic(() => import("react-folder-tree"), {
 	ssr: false,
@@ -44,7 +44,12 @@ export default RepoPage;
 export const getServerSideProps: GetServerSideProps<IRepoPage> = async (
 	ctx,
 ) => {
-	const repoParam = ctx.params.repo;
+	const repoParam = ctx.params?.repo;
+	if (!repoParam)
+		return {
+			notFound: true,
+		};
+
 	const repo = await getRepo(
 		typeof repoParam === "string" ? repoParam : repoParam[0],
 	);

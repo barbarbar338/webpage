@@ -1,8 +1,8 @@
-import type { FC } from "react";
-import { useLocaleParser } from "@libs/localeParser";
 import { Alert } from "@components/Utils/Alert";
-import { useLocalStorage } from "react-use";
 import { CONFIG } from "@libs/config";
+import { useLocaleParser } from "@libs/localeParser";
+import type { FC } from "react";
+import { useLocalStorage } from "react-use";
 
 export const GithubSponsorsAlert: FC = () => {
 	const parser = useLocaleParser();
@@ -14,16 +14,16 @@ export const GithubSponsorsAlert: FC = () => {
 		window.open(`https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}`);
 	};
 
-	return (
-		!check && (
-			<Alert
-				type="success"
-				title={parser.get("github_sponsors_title")}
-				onClose={handleClose}
-				html={parser.get("github_sponsors_description", {
-					link: `<a rel='noreferrer' target='_blank' href='https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}' class='cursor-pointer hover:underline'>https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}</a>`,
-				})}
-			></Alert>
-		)
+	return !check ? (
+		<Alert
+			type="success"
+			title={parser.get("github_sponsors_title")}
+			onClose={handleClose}
+			html={parser.get("github_sponsors_description", {
+				link: `<a rel='noreferrer' target='_blank' href='https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}' class='cursor-pointer hover:underline'>https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}</a>`,
+			})}
+		></Alert>
+	) : (
+		<></>
 	);
 };

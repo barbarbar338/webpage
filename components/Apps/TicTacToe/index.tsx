@@ -1,7 +1,7 @@
-import { type FC, useState } from "react";
-import { calculateWinner } from "@libs/apps/tictactoe/calculateWinner";
 import { TicTacToeBoard } from "@components/Apps/TicTacToe/Board";
+import { calculateWinner } from "@libs/apps/tictactoe/calculateWinner";
 import { useLocaleParser } from "@libs/localeParser";
+import { useState, type FC } from "react";
 import { toast } from "react-toastify";
 
 export const TicTacToeGame: FC = () => {

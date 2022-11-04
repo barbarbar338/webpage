@@ -1,9 +1,7 @@
-import type { GetStaticProps, NextPage } from "next";
-import { useLocaleParser } from "@libs/localeParser";
-import { Projects } from "@components/Home/Projects";
-import { Contact } from "@components/Home/Contact";
 import { About } from "@components/Home/About";
+import { Contact } from "@components/Home/Contact";
 import { Hero } from "@components/Home/Hero";
+import { Projects } from "@components/Home/Projects";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
 import {
@@ -11,6 +9,8 @@ import {
 	getPinnedRepos,
 	IStarredRepo,
 } from "@libs/graphql";
+import { useLocaleParser } from "@libs/localeParser";
+import type { GetStaticProps, NextPage } from "next";
 
 export interface IIndexPage {
 	repos: IStarredRepo[];

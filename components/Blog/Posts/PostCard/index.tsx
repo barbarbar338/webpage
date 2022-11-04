@@ -1,10 +1,11 @@
-import type { FC } from "react";
 import type { IPost } from "@libs/graphql";
-import { FiCalendar, FiClock } from "react-icons/fi";
 import { useLocaleParser } from "@libs/localeParser";
+import { shimmer } from "@libs/shimmer";
 import { calculate } from "calculate-readtime";
 import Image from "next/image";
 import Link from "next/link";
+import type { FC } from "react";
+import { FiCalendar, FiClock } from "react-icons/fi";
 
 export interface IPostCard {
 	post: IPost;
@@ -45,6 +46,8 @@ export const PostCard: FC<IPostCard> = ({ post }) => {
 						<Link href={`https://github.com/${post.author.login}`}>
 							<span className="flex cursor-pointer items-center hover:underline">
 								<Image
+									placeholder="blur"
+									blurDataURL={shimmer(32, 32)}
 									width={32}
 									height={32}
 									src={post.author.avatarUrl}

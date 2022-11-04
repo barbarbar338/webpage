@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import type { FC, ReactNode } from "react";
 import {
 	FiAlertOctagon,
@@ -6,7 +7,6 @@ import {
 	FiX,
 	FiXOctagon,
 } from "react-icons/fi";
-import classNames from "classnames";
 
 export type IType<T> = {
 	[key in keyof typeof icons]: T;

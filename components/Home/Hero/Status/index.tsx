@@ -1,8 +1,8 @@
-import type { FC } from "react";
-import { useLocaleParser } from "@libs/localeParser";
-import { useLanyard } from "react-use-lanyard";
 import { CONFIG } from "@libs/config";
+import { useLocaleParser } from "@libs/localeParser";
 import classnames from "classnames";
+import type { FC } from "react";
+import { useLanyard } from "react-use-lanyard";
 
 export const Status: FC = () => {
 	const parser = useLocaleParser();
@@ -49,13 +49,13 @@ export const Status: FC = () => {
 		switch (filtered.name) {
 			case "Spotify":
 				return parser.get("spotify_status", {
-					song: filtered.details,
+					song: filtered.details || "",
 					author: filtered.state,
-					album: filtered.assets.large_text,
+					album: filtered.assets?.large_text || "",
 				});
 			case "Visual Studio Code":
 				return parser.get("vscode_status", {
-					doing: filtered.details,
+					doing: filtered.details || "",
 					workspace: filtered.state,
 				});
 			default:

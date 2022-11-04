@@ -1,8 +1,9 @@
-import type { FC } from "react";
 import type { IFramework } from "@libs/config";
 import { useLocaleParser } from "@libs/localeParser";
+import { shimmer } from "@libs/shimmer";
 import classNames from "classnames";
 import Image from "next/image";
+import type { FC } from "react";
 
 export interface IFrameworkCard {
 	framework: IFramework;
@@ -20,6 +21,8 @@ export const FrameworkCard: FC<IFrameworkCard> = ({ framework }) => {
 				)}
 			>
 				<Image
+					placeholder="blur"
+					blurDataURL={shimmer(32, 32)}
 					width={32}
 					height={32}
 					src={framework.icon}

@@ -1,7 +1,7 @@
-import type { FC } from "react";
-import type { IconType } from "react-icons/lib";
 import classnames from "classnames";
 import Link from "next/link";
+import type { FC } from "react";
+import type { IconType } from "react-icons/lib";
 
 export interface IAppsCardProps {
 	icon: IconType;

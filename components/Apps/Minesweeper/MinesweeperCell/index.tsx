@@ -1,7 +1,7 @@
-import type { FC, MouseEvent } from "react";
-import type { ICell } from "@libs/apps/minesweeper/reveal";
-import { randomColor } from "@libs/apps/minesweeper/randomColor";
 import { Circle } from "@components/Apps/Minesweeper/Circle";
+import { randomColor } from "@libs/apps/minesweeper/randomColor";
+import type { ICell } from "@libs/apps/minesweeper/reveal";
+import type { FC, MouseEvent } from "react";
 
 export interface IMinesweeperCell {
 	updateFlag: (

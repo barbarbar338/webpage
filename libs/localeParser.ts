@@ -1,8 +1,8 @@
-import { useRouter } from "next/router";
 import { CONFIG } from "@libs/config";
 import constants from "@locales/constants.json";
 import en from "@locales/en.json";
 import tr from "@locales/tr.json";
+import { useRouter } from "next/router";
 
 const locales = { en, tr };
 const tokens = {
@@ -11,11 +11,11 @@ const tokens = {
 };
 
 class LocaleParser {
-	private locale: string;
+	private locale: keyof typeof locales;
 
 	public constants = constants;
 
-	constructor(locale = "en") {
+	constructor(locale: keyof typeof locales = "en") {
 		this.locale = locale;
 	}
 
@@ -67,6 +67,6 @@ class LocaleParser {
 
 export function useLocaleParser() {
 	const router = useRouter();
-	const parser = new LocaleParser(router.locale);
+	const parser = new LocaleParser(router.locale as keyof typeof locales);
 	return parser;
 }

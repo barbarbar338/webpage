@@ -96,5 +96,6 @@
 	"repos_description": "Kendi Git sunucuma pushlamış olduğum repolar. Buradaki repolar GitHub'daki repolara göre daha güncel ve aktif olacaktır.",
 	"copied_repo": "Repo klonlama URL'si kopyalandı.",
 	"copy": "Panoya kopyala",
-	"example_sponsor_card": "Bu bir örnek karttır"
+	"example_sponsor_card": "Bu bir örnek karttır",
+	"overlay": "Çerçeve"
 }

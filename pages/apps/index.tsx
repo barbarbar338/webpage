@@ -1,9 +1,9 @@
-import type { NextPage } from "next";
 import { AppsCard } from "@components/Apps/AppsCard";
-import { useLocaleParser } from "@libs/localeParser";
-import { FiBox, FiCrop, FiX } from "react-icons/fi";
 import { Layout } from "@components/Layout";
+import { useLocaleParser } from "@libs/localeParser";
+import type { NextPage } from "next";
 import { FaBomb } from "react-icons/fa";
+import { FiBox, FiCrop, FiX } from "react-icons/fi";
 
 const AppsPage: NextPage = () => {
 	const parser = useLocaleParser();

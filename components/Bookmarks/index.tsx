@@ -1,6 +1,6 @@
-import type { FC } from "react";
-import { type IBookmark, Bookmark } from "@components/Bookmarks/Bookmark";
+import { Bookmark, type IBookmark } from "@components/Bookmarks/Bookmark";
 import { useLocaleParser } from "@libs/localeParser";
+import type { FC } from "react";
 
 export interface IBookmarks {
 	bookmarks: IBookmark[];

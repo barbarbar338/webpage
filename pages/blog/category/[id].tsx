@@ -1,6 +1,5 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { PinnedPosts } from "@components/Blog/PinnedPosts";
 import { Categories } from "@components/Blog/Categories";
+import { PinnedPosts } from "@components/Blog/PinnedPosts";
 import { Posts } from "@components/Blog/Posts";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
@@ -11,6 +10,7 @@ import {
 	ILabel,
 	IPost,
 } from "@libs/graphql";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
 export interface ICategoryProps {
 	pinned: IPost[];
@@ -55,10 +55,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<ICategoryProps> = async (ctx) => {
-	const id = ctx.params.id;
+	const id = ctx.params?.id;
+	if (!id)
+		return {
+			notFound: true,
+		};
 	const allPosts = await getPosts();
 
-	let tag: ILabel;
+	let tag: ILabel | undefined = undefined;
 
 	const posts = allPosts.filter((post) =>
 		post.labels.some((label) => label.id == id && (tag = label)),
@@ -66,10 +70,7 @@ export const getStaticProps: GetStaticProps<ICategoryProps> = async (ctx) => {
 
 	if (!tag) {
 		return {
-			redirect: {
-				permanent: false,
-				destination: "/404",
-			},
+			notFound: true,
 		};
 	} else {
 		const pinned = await getPinnedPosts();

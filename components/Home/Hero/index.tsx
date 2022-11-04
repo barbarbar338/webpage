@@ -1,9 +1,10 @@
-import type { FC } from "react";
 import { Status } from "@components/Home/Hero/Status";
-import { useLocaleParser } from "@libs/localeParser";
 import { CONFIG } from "@libs/config";
+import { useLocaleParser } from "@libs/localeParser";
+import { shimmer } from "@libs/shimmer";
 import Image from "next/image";
 import Link from "next/link";
+import type { FC } from "react";
 
 export const Hero: FC = () => {
 	const parser = useLocaleParser();
@@ -81,6 +82,8 @@ export const Hero: FC = () => {
 								className="w-full max-w-lg rounded-3xl object-cover md:h-128 md:w-128"
 								src={CONFIG.AVATAR_URL}
 								alt="Avatar"
+								placeholder="blur"
+								blurDataURL={shimmer(512, 512)}
 							/>
 						</div>
 					</div>

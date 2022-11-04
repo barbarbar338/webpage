@@ -1,7 +1,7 @@
-import type { IPost } from "@libs/graphql";
-import type { FC } from "react";
 import { PostCard } from "@components/Blog/Posts/PostCard";
+import type { IPost } from "@libs/graphql";
 import { useLocaleParser } from "@libs/localeParser";
+import type { FC } from "react";
 
 export interface IPosts {
 	posts: IPost[];

@@ -1,21 +1,14 @@
 import {
-	FiMail,
-	FiGithub,
-	FiYoutube,
-	FiInstagram,
-	FiSmartphone,
-	FiTarget,
-	FiDollarSign,
-	FiLinkedin,
-} from "react-icons/fi";
-import {
-	FaDiscord,
+	FaBattleNet, FaDiscord,
 	FaNpm,
 	FaSpotify,
 	FaStackOverflow,
-	FaSteam,
-	FaBattleNet,
+	FaSteam
 } from "react-icons/fa";
+import {
+	FiDollarSign, FiGithub, FiInstagram, FiLinkedin, FiMail, FiSmartphone,
+	FiTarget, FiYoutube
+} from "react-icons/fi";
 
 export const DISCORD_ID = "952574663916154960";
 

@@ -1,5 +1,8 @@
-import type { GetStaticProps, NextPage } from "next";
+import { Categories } from "@components/Blog/Categories";
+import { PinnedPosts } from "@components/Blog/PinnedPosts";
+import { Posts } from "@components/Blog/Posts";
 import { Layout } from "@components/Layout";
+import { CONFIG } from "@libs/config";
 import {
 	getCategories,
 	getPinnedPosts,
@@ -7,11 +10,8 @@ import {
 	ILabel,
 	IPost,
 } from "@libs/graphql";
-import { PinnedPosts } from "@components/Blog/PinnedPosts";
-import { Categories } from "@components/Blog/Categories";
 import { useLocaleParser } from "@libs/localeParser";
-import { Posts } from "@components/Blog/Posts";
-import { CONFIG } from "@libs/config";
+import type { GetStaticProps, NextPage } from "next";
 
 interface IBlogProps {
 	pinned: IPost[];

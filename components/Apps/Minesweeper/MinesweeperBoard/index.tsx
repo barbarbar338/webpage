@@ -1,10 +1,10 @@
-import { type FC, type MouseEvent, useState, useEffect } from "react";
-import { type ICell, reveal } from "@libs/apps/minesweeper/reveal";
-import { createMinesweeperBoard } from "@libs/apps/minesweeper/createMinesweeperBoard";
 import { MinesweeperCell } from "@components/Apps/Minesweeper/MinesweeperCell";
+import { createMinesweeperBoard } from "@libs/apps/minesweeper/createMinesweeperBoard";
+import { reveal, type ICell } from "@libs/apps/minesweeper/reveal";
 import { useLocaleParser } from "@libs/localeParser";
-import { toast } from "react-toastify";
 import Link from "next/link";
+import { useEffect, useState, type FC, type MouseEvent } from "react";
+import { toast } from "react-toastify";
 
 export const MinesweeperBoard: FC = () => {
 	const parser = useLocaleParser();

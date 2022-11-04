@@ -1,10 +1,10 @@
-import type { FC } from "react";
-import type { IconType } from "react-icons/lib";
 import { useLocaleParser } from "@libs/localeParser";
-import { useCopyToClipboard } from "react-use";
-import { toast } from "react-toastify";
 import classnames from "classnames";
 import Link from "next/link";
+import type { FC } from "react";
+import type { IconType } from "react-icons/lib";
+import { toast } from "react-toastify";
+import { useCopyToClipboard } from "react-use";
 
 export interface IAccountCardProps {
 	icon: IconType;
@@ -52,10 +52,8 @@ export const AccountCard: FC<IAccountCardProps> = ({
 	return (
 		<div>
 			{href ? (
-				<Link href={href} passHref>
-					<a target="_blank">
-						<Card />
-					</a>
+				<Link href={href} target="_blank">
+					<Card />
 				</Link>
 			) : (
 				<Card />

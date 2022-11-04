@@ -1,7 +1,8 @@
-import type { FC } from "react";
 import type { IPost } from "@libs/graphql";
+import { shimmer } from "@libs/shimmer";
 import Image from "next/image";
 import Link from "next/link";
+import type { FC } from "react";
 
 export interface IPinnedCard {
 	post: IPost;
@@ -38,6 +39,8 @@ export const PinnedCard: FC<IPinnedCard> = ({ post }) => (
 					src={post.author.avatarUrl}
 					alt="avatar"
 					className="h-8 w-8 rounded-full object-cover"
+					blurDataURL={shimmer(32, 32)}
+					placeholder="blur"
 				/>
 				<Link href={`https://github.com/${post.author.login}`}>
 					<span className="mx-3 cursor-pointer text-sm text-gray-700 hover:underline dark:text-white">

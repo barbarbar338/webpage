@@ -1,9 +1,9 @@
-import type { GetStaticProps, NextPage } from "next";
-import { type ISponsor, getSponsors } from "@libs/graphql";
-import { SponsorCard } from "@components/SponsorCard";
-import { useLocaleParser } from "@libs/localeParser";
 import { Layout } from "@components/Layout";
+import { SponsorCard } from "@components/SponsorCard";
 import { CONFIG } from "@libs/config";
+import { getSponsors, type ISponsor } from "@libs/graphql";
+import { useLocaleParser } from "@libs/localeParser";
+import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 
 export interface ISponsorsPage {
@@ -29,14 +29,10 @@ const IndexPage: NextPage<ISponsorsPage> = ({ sponsors }) => {
 					</p>
 					<Link
 						href={`https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}`}
-						passHref
+						target="_blank"
+						className="inline-block w-full cursor-pointer rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto"
 					>
-						<a
-							target="_blank"
-							className="inline-block w-full cursor-pointer rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto"
-						>
-							{parser.get("support_me")}
-						</a>
+						{parser.get("support_me")}
 					</Link>
 					<div className="mt-5 flex flex-col text-left">
 						{sponsors.length ? (

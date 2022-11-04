@@ -1,8 +1,9 @@
-import { type ChangeEvent, type FormEvent, useState } from "react";
-import type { NextPage } from "next";
-import { useLocaleParser } from "@libs/localeParser";
 import { Layout } from "@components/Layout";
+import { useLocaleParser } from "@libs/localeParser";
+import { shimmer } from "@libs/shimmer";
+import type { NextPage } from "next";
 import Image from "next/image";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 
 const overlays = [
 	"balance",
@@ -61,6 +62,7 @@ const OverlayCreatorAppPage: NextPage = () => {
 								placeholder={parser.get("avatar")}
 							/>
 							<select
+								title={parser.get("overlay")}
 								onChange={onSelectChange}
 								className="form-select m-0 block w-full appearance-none rounded border border-solid border-gray-300 bg-white bg-clip-padding bg-no-repeat px-3 py-1.5 text-base font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
 							>
@@ -83,8 +85,10 @@ const OverlayCreatorAppPage: NextPage = () => {
 					<div className="m-auto mt-5 h-96 w-96 bg-gray-500">
 						{product && (
 							<Image
-								width={64}
-								height={64}
+								placeholder="blur"
+								blurDataURL={shimmer(256, 256)}
+								width={256}
+								height={256}
 								alt="Overlay"
 								src={product}
 								className="h-full w-full"

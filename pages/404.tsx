@@ -1,7 +1,8 @@
-import type { NextPage } from "next";
-import { useLocaleParser } from "@libs/localeParser";
-import { Layout } from "@components/Layout";
 import ErrorSVG from "@assets/elements/error.svg";
+import { Layout } from "@components/Layout";
+import { useLocaleParser } from "@libs/localeParser";
+import { shimmer } from "@libs/shimmer";
+import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,8 +17,10 @@ const NotFoundPage: NextPage = () => {
 				</h1>
 				<p className="text-gray-400">{parser.get("page_not_found")}</p>
 				<Image
+					placeholder="blur"
 					width={512}
 					height={512}
+					blurDataURL={shimmer(512, 512)}
 					className="max-w-auto my-12 mx-auto md:max-w-sm"
 					src={ErrorSVG}
 					alt="Error"

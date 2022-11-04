@@ -1,23 +1,23 @@
-import { ToastContainer } from "react-toastify";
-import { ThemeProvider } from "next-themes";
-import { useRouter } from "next/router";
-import { CONFIG } from "@libs/config";
-import { DefaultSeo } from "next-seo";
-import { pageview } from "@libs/ga";
-import { useEffect } from "react";
-import NextProgress from "nextjs-progressbar";
 import Favicon from "@assets/icon.svg";
-import Script from "next/script";
+import { CONFIG } from "@libs/config";
+import { pageview } from "@libs/ga";
+import { DefaultSeo } from "next-seo";
+import { ThemeProvider } from "next-themes";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import Script from "next/script";
+import NextProgress from "nextjs-progressbar";
+import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 
-import "@styles/tailwind.css";
-import "@styles/index.scss";
 import "@styles/blog.scss";
+import "@styles/index.scss";
+import "@styles/tailwind.css";
 import "@styles/tetris.scss";
 
-import "react-toastify/dist/ReactToastify.css";
 import "highlight.js/styles/tomorrow-night-bright.css";
 import "react-folder-tree/dist/style.css";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = ({ Component, pageProps }) => {
 	const router = useRouter();

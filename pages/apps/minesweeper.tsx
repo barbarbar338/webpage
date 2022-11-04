@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
 import { MinesweeperBoard } from "@components/Apps/Minesweeper/MinesweeperBoard";
-import { useLocaleParser } from "@libs/localeParser";
 import { Layout } from "@components/Layout";
+import { useLocaleParser } from "@libs/localeParser";
+import type { NextPage } from "next";
 
 const MinesweeperAppPage: NextPage = () => {
 	const parser = useLocaleParser();

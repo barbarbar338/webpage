@@ -1,15 +1,15 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { type IPostData, getPostData, getPosts } from "@libs/graphql";
-import { useLocaleParser } from "@libs/localeParser";
-import { FiArrowLeft } from "react-icons/fi";
 import { Layout } from "@components/Layout";
-import { useTheme } from "next-themes";
-import { CONFIG } from "@libs/config";
-import { useEffect } from "react";
 import Giscus from "@giscus/react";
+import { CONFIG } from "@libs/config";
+import { getPostData, getPosts, type IPostData } from "@libs/graphql";
+import { useLocaleParser } from "@libs/localeParser";
 import hljs from "highlight.js";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useEffect } from "react";
+import { FiArrowLeft } from "react-icons/fi";
 
 export interface IPostProps {
 	post: IPostData;
@@ -26,7 +26,7 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 			const content = element.getAttribute(
 				"data-snippet-clipboard-copy-content",
 			);
-			const highlighted = hljs.highlightAuto(content).value;
+			const highlighted = hljs.highlightAuto(content || "").value;
 
 			element.innerHTML = `<pre>${highlighted}</pre>`;
 		}
@@ -114,7 +114,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps<IPostProps> = async (ctx) => {
-	const idParam = ctx.params.id;
+	const idParam = ctx.params?.id;
+	if (!idParam) {
+		return {
+			notFound: true,
+		};
+	}
 	const id = parseInt(typeof idParam == "string" ? idParam : idParam[0]);
 	return getPostData(id)
 		.then((post) => {
@@ -127,10 +132,7 @@ export const getStaticProps: GetStaticProps<IPostProps> = async (ctx) => {
 		})
 		.catch(() => {
 			return {
-				redirect: {
-					permanent: false,
-					destination: "/404",
-				},
+				notFound: true,
 			};
 		});
 };

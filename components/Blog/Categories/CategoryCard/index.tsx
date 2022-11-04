@@ -1,6 +1,6 @@
-import type { FC } from "react";
 import type { ILabel } from "@libs/graphql";
 import Link from "next/link";
+import type { FC } from "react";
 
 export interface ICategoryCard {
 	category: ILabel;

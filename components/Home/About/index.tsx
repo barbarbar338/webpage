@@ -1,8 +1,8 @@
-import type { FC } from "react";
-import { FrameworkCard } from "@components/Home/About/FrameworkCard";
-import { useLocaleParser } from "@libs/localeParser";
 import { Dot } from "@components/Home/About/Dot";
+import { FrameworkCard } from "@components/Home/About/FrameworkCard";
 import { CONFIG } from "@libs/config";
+import { useLocaleParser } from "@libs/localeParser";
+import type { FC } from "react";
 
 export const About: FC = () => {
 	const parser = useLocaleParser();

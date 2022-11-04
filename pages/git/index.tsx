@@ -1,7 +1,7 @@
-import type { GetServerSideProps, NextPage } from "next";
-import { useLocaleParser } from "@libs/localeParser";
 import { Layout } from "@components/Layout";
+import { useLocaleParser } from "@libs/localeParser";
 import { getRepos } from "@libs/rest";
+import type { GetServerSideProps, NextPage } from "next";
 import Link from "next/link";
 
 export interface IGitPage {

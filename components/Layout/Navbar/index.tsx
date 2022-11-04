@@ -1,9 +1,13 @@
-import { type FC, Fragment, useEffect, useState } from "react";
-import type { IconType } from "react-icons/lib";
+import Favicon from "@assets/icon.svg";
 import { NavbarSeperator } from "@components/Layout/NavbarSeperator";
-import { useLocaleParser } from "@libs/localeParser";
-import { useTheme } from "next-themes";
 import { CONFIG } from "@libs/config";
+import { useLocaleParser } from "@libs/localeParser";
+import { shimmer } from "@libs/shimmer";
+import classnames from "classnames";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import Link from "next/link";
+import { Fragment, useEffect, useState, type FC } from "react";
 import {
 	FiArrowUp,
 	FiMenu,
@@ -12,10 +16,7 @@ import {
 	FiSun,
 	FiX,
 } from "react-icons/fi";
-import Favicon from "@assets/icon.svg";
-import classnames from "classnames";
-import Image from "next/image";
-import Link from "next/link";
+import type { IconType } from "react-icons/lib";
 
 export const Navbar: FC = () => {
 	const parser = useLocaleParser();
@@ -124,6 +125,8 @@ export const Navbar: FC = () => {
 			<nav className="flex items-center justify-between bg-white px-6 py-6 dark:bg-gray-900">
 				<Link href="/#">
 					<Image
+						placeholder="blur"
+						blurDataURL={shimmer(64, 64)}
 						width={64}
 						height={64}
 						className="cursor-pointer"
@@ -190,6 +193,8 @@ export const Navbar: FC = () => {
 								height={64}
 								src={Favicon}
 								alt="Favicon"
+								blurDataURL={shimmer(64, 64)}
+								placeholder="blur"
 							/>
 						</Link>
 						<div className="flex-grow" />
@@ -233,10 +238,12 @@ export const Navbar: FC = () => {
 						</p>
 						<div className="text-center">
 							{CONFIG.CONTACT.map((social, idx) => (
-								<Link key={idx} href={social.href} passHref>
-									<a target="_blank">
-										<social.icon className="mx-2 inline-block cursor-pointer text-black dark:text-white" />
-									</a>
+								<Link
+									key={idx}
+									href={social.href}
+									target="_blank"
+								>
+									<social.icon className="mx-2 inline-block cursor-pointer text-black dark:text-white" />
 								</Link>
 							))}
 						</div>

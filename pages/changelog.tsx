@@ -1,8 +1,8 @@
-import type { GetStaticProps, NextPage } from "next";
-import { type ICommitsData, getCommits } from "@libs/graphql";
-import { useLocaleParser } from "@libs/localeParser";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
+import { getCommits, type ICommitsData } from "@libs/graphql";
+import { useLocaleParser } from "@libs/localeParser";
+import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 
 export interface IChangelogProps {
@@ -56,16 +56,14 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 														(commit, idx) => (
 															<li key={idx}>
 																<Link
-																	passHref
+																	target="_blank"
 																	href={
 																		commit.commitUrl
 																	}
 																>
-																	<a target="_blank">
-																		{
-																			commit.message
-																		}
-																	</a>
+																	{
+																		commit.message
+																	}
 																</Link>{" "}
 																by{" "}
 																{

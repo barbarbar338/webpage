@@ -1,8 +1,8 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import { type FC, useEffect, useState } from "react";
 import { useLocaleParser } from "@libs/localeParser";
-import { toast } from "react-toastify";
 import dynamic from "next/dynamic";
+import { useEffect, useState, type FC } from "react";
+import { toast } from "react-toastify";
 
 const Tetris = dynamic(() => import("react-simple-tetris"), { ssr: false });
 
