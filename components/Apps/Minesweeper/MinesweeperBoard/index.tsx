@@ -61,10 +61,10 @@ export const MinesweeperBoard: FC = () => {
 			toast.error(parser.get("lose"));
 		} else {
 			const newRevealedBoard = reveal(newGrid, x, y, nonMineCount);
-			setGrid(newRevealedBoard.arr);
-			setNonMineCount(newRevealedBoard.newNonMinesCount);
+			setGrid(newRevealedBoard?.arr ?? []);
+			setNonMineCount(newRevealedBoard?.newNonMinesCount || 0);
 
-			if (newRevealedBoard.newNonMinesCount === 0) {
+			if (newRevealedBoard?.newNonMinesCount === 0) {
 				setGameOver(true);
 				toast.success(parser.get("win"));
 			}

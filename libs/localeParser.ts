@@ -19,8 +19,11 @@ class LocaleParser {
 		this.locale = locale;
 	}
 
-	public get(name: string, args?: { [param: string]: string }): string {
-		const locale = locales[this.locale] || locales["en"];
+	public get(
+		name: keyof typeof locales.en,
+		args?: { [param: string]: string },
+	): string {
+		const locale = locales[this.locale] || locales.en;
 		let str = locale[name];
 
 		if (!str)
@@ -46,7 +49,8 @@ class LocaleParser {
 			const regToken = new RegExp(`%{${constant}}`, "gm");
 			str = str.replace(
 				regToken,
-				constants[constant] || "CONSTANT_NOT_FOUND",
+				constants[constant as keyof typeof constants] ||
+					"CONSTANT_NOT_FOUND",
 			);
 		}
 
@@ -55,7 +59,7 @@ class LocaleParser {
 
 	private replaceColors(str: string) {
 		for (const token in tokens) {
-			const value = tokens[token];
+			const value = tokens[token as keyof typeof tokens];
 			str = str
 				.replace(new RegExp(`<${token}[^>]*>`, "gm"), value)
 				.replace(new RegExp(`</${token}[^>]*>`, "gm"), "</span>");

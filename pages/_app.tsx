@@ -3,6 +3,7 @@ import { CONFIG } from "@libs/config";
 import { pageview } from "@libs/ga";
 import { DefaultSeo } from "next-seo";
 import { ThemeProvider } from "next-themes";
+import { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Script from "next/script";
@@ -19,7 +20,7 @@ import "highlight.js/styles/tomorrow-night-bright.css";
 import "react-folder-tree/dist/style.css";
 import "react-toastify/dist/ReactToastify.css";
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: AppProps) => {
 	const router = useRouter();
 
 	useEffect(() => {

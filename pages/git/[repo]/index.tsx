@@ -19,7 +19,9 @@ const RepoPage: NextPage<IRepoPage> = ({ repo }) => {
 	const router = useRouter();
 	const state = handleTreeData(repo);
 
-	const onNameClick = ({ nodeData }) => {
+	// see @types/global.d.ts
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const onNameClick = ({ nodeData }: any) => {
 		if (!nodeData.url) return;
 		router.push(nodeData.url);
 	};

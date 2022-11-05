@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
 import { CONFIG } from "@libs/config";
 import moment from "moment";
@@ -98,7 +99,7 @@ export const getPostData = async (no: number): Promise<IPostData> => {
 	});
 
 	const labels: ILabel[] = data.repository.discussion.labels.edges.map(
-		(l) => {
+		(l: any) => {
 			return {
 				color: l.node.color,
 				name: l.node.name,
@@ -154,8 +155,8 @@ export const getSponsors = async (): Promise<ISponsor[]> => {
 	});
 
 	const sponsors: ISponsor[] = data.user.sponsorshipsAsMaintainer.nodes
-		.filter((node) => node.privacyLevel == "PUBLIC")
-		.map((node) => ({
+		.filter((node: any) => node.privacyLevel == "PUBLIC")
+		.map((node: any) => ({
 			name: node.sponsorEntity.name,
 			login: node.sponsorEntity.login,
 			avatarUrl: node.sponsorEntity.avatarUrl,
@@ -190,7 +191,7 @@ export const getPinnedRepos = async (): Promise<IStarredRepo[]> => {
 		`,
 	});
 
-	const repos: IStarredRepo[] = data.user.pinnedItems.nodes.map((r) => {
+	const repos: IStarredRepo[] = data.user.pinnedItems.nodes.map((r: any) => {
 		return {
 			description: r.description,
 			name: r.name,
@@ -230,7 +231,7 @@ export const getMostStarredRepos = async (): Promise<IStarredRepo[]> => {
 		`,
 	});
 
-	const repos: IStarredRepo[] = data.user.repositories.edges.map((r) => {
+	const repos: IStarredRepo[] = data.user.repositories.edges.map((r: any) => {
 		return {
 			description: r.node.description,
 			name: r.node.name,
@@ -262,7 +263,7 @@ export const getCategories = async (): Promise<ILabel[]> => {
 		`,
 	});
 
-	const labels: ILabel[] = data.repository.labels.edges.map((l) => {
+	const labels: ILabel[] = data.repository.labels.edges.map((l: any) => {
 		return {
 			color: l.node.color,
 			name: l.node.name,
@@ -307,8 +308,8 @@ export const getPosts = async (): Promise<IPost[]> => {
 		`,
 	});
 
-	const posts: IPost[] = data.repository.discussions.edges.map((e) => {
-		const labels: ILabel[] = e.node.labels.edges.map((l) => {
+	const posts: IPost[] = data.repository.discussions.edges.map((e: any) => {
+		const labels: ILabel[] = e.node.labels.edges.map((l: any) => {
 			return {
 				color: l.node.color,
 				name: l.node.name,
@@ -366,25 +367,29 @@ export const getPinnedPosts = async (): Promise<IPost[]> => {
 		`,
 	});
 
-	const posts: IPost[] = data.repository.pinnedDiscussions.edges.map((e) => {
-		const labels: ILabel[] = e.node.discussion.labels.edges.map((l) => {
-			return {
-				color: l.node.color,
-				name: l.node.name,
-				id: l.node.id,
-			} as ILabel;
-		});
+	const posts: IPost[] = data.repository.pinnedDiscussions.edges.map(
+		(e: any) => {
+			const labels: ILabel[] = e.node.discussion.labels.edges.map(
+				(l: any) => {
+					return {
+						color: l.node.color,
+						name: l.node.name,
+						id: l.node.id,
+					} as ILabel;
+				},
+			);
 
-		return {
-			title: e.node.discussion.title,
-			author: e.node.discussion.author,
-			id: e.node.discussion.id,
-			createdAt: moment(e.node.discussion.createdAt).calendar(),
-			labels,
-			number: e.node.discussion.number,
-			body: e.node.discussion.body,
-		} as IPost;
-	});
+			return {
+				title: e.node.discussion.title,
+				author: e.node.discussion.author,
+				id: e.node.discussion.id,
+				createdAt: moment(e.node.discussion.createdAt).calendar(),
+				labels,
+				number: e.node.discussion.number,
+				body: e.node.discussion.body,
+			} as IPost;
+		},
+	);
 
 	return posts;
 };
@@ -424,7 +429,7 @@ export const getCommits = async (): Promise<ICommitsData> => {
 		latest: "Unknown",
 	};
 
-	data.repository.defaultBranchRef.target.history.edges.map((c) => {
+	data.repository.defaultBranchRef.target.history.edges.map((c: any) => {
 		const commitDate = moment(c.node.committedDate);
 		if (!commitsData.commits[commitDate.format("YYYY-MM-DD")])
 			commitsData.commits[commitDate.format("YYYY-MM-DD")] =

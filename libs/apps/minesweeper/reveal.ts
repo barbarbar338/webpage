@@ -18,6 +18,7 @@ export const reveal = (
 	flipped.push(arr[x][y]);
 	while (flipped.length !== 0) {
 		const single = flipped.pop();
+		if (!single) return { arr, newNonMinesCount };
 
 		if (!single.revealed) {
 			newNonMinesCount--;
