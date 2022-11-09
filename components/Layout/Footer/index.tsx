@@ -10,11 +10,11 @@ export const Footer: FC = () => (
 				&copy; 2020 - {CONFIG.NOW} All rights reserved. Made with{" "}
 				<FiHeart className="inline text-red-500" /> by{" "}
 				<Link
-					href="https://github.com/barbarbar338"
+					href="https://github.com/barisbored"
 					target="_blank"
 					className="cursor-pointer text-purple-600 hover:underline"
 				>
-					barbarbar338
+					barisbored
 				</Link>{" "}
 				using{" "}
 				<Link

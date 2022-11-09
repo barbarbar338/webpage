@@ -1,6 +1,7 @@
 import {
 	FaBattleNet,
 	FaDiscord,
+	FaGamepad,
 	FaNpm,
 	FaSpotify,
 	FaStackOverflow,
@@ -28,24 +29,24 @@ export const CONTACT = [
 		color: "text-red-500",
 	},
 	{
-		href: "https://github.com/barbarbar338",
+		href: "https://github.com/barisbored",
 		icon: FiGithub,
 		name: "GitHub",
-		value: "@barbarbar338",
+		value: "@barisbored",
 		color: "text-dark",
 	},
 	{
-		href: "https://www.youtube.com/channel/UC0tkTcxf5F3DdR3RJtaAuXg",
+		href: "https://www.youtube.com/@barisbored",
 		icon: FiYoutube,
 		name: "YouTube",
 		value: "Barış DEMİRCİ",
 		color: "text-red-500",
 	},
 	{
-		href: "https://instagram.com/ben_baris.d",
+		href: "https://instagram.com/barisbored",
 		icon: FiInstagram,
 		name: "Instagram",
-		value: "@ben_baris.d",
+		value: "@barisbored",
 		color: "text-pink-500",
 	},
 	{
@@ -59,37 +60,43 @@ export const CONTACT = [
 
 export const SOCIALS = [
 	{
-		href: "https://www.linkedin.com/in/barbarbar338/",
+		href: "https://www.linkedin.com/in/barisbored/",
 		icon: FiLinkedin,
 		name: "Linkedin",
-		value: "barbarbar338",
+		value: "barisbored",
 		color: "text-blue-500",
 	},
 	{
 		href: `discord://click-me/users/${DISCORD_ID}`,
 		icon: FaDiscord,
 		name: "Discord Account",
-		value: "barbarbar338#0842",
+		value: "barisbored#3892",
 		color: "text-blue-500",
 	},
 	{
-		href: "https://steamcommunity.com/id/just_jewelz/",
+		href: "https://steamcommunity.com/id/barisbored/",
 		icon: FaSteam,
 		name: "Steam",
-		value: "barbarbar338",
+		value: "barisbored",
 		color: "text-dark",
 	},
 	{
 		icon: FaBattleNet,
 		name: "Batlle.net",
-		value: "barbarbar338#2307",
+		value: "barisbored#2761",
 		color: "text-blue-500",
+	},
+	{
+		icon: FaGamepad,
+		name: "Epic Games",
+		value: "barisbored",
+		color: "text-black",
 	},
 	{
 		href: "https://open.spotify.com/user/21lczcm6m54b4dsqye4m3bx4y",
 		icon: FaSpotify,
 		name: "Spotify",
-		value: "barbarbar338",
+		value: "Barış DEMİRCİ",
 		color: "text-green-500",
 	},
 	{
@@ -142,10 +149,10 @@ export const SOCIALS = [
 		color: "text-purple-500",
 	},
 	{
-		href: "https://stackoverflow.com/users/10124281/barbarbar338",
+		href: "https://stackoverflow.com/users/10124281/barisbored",
 		icon: FaStackOverflow,
 		name: "StackOverFlow",
-		value: "barbarbar338",
+		value: "barisbored",
 		color: "text-yellow-500",
 	},
 	{

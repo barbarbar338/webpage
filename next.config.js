@@ -19,27 +19,22 @@ const nextConfig = {
 		return [
 			{
 				source: "/github",
-				destination: "https://github.com/barbarbar338",
+				destination: "https://github.com/barisbored",
 				permanent: true,
 			},
 			{
 				source: "/instagram",
-				destination: "https://www.instagram.com/ben_baris.d",
+				destination: "https://www.instagram.com/barisbored",
 				permanent: true,
 			},
 			{
 				source: "/youtube",
-				destination: "https://www.youtube.com/ProjectHammer",
+				destination: "https://www.youtube.com/@barisbored",
 				permanent: true,
 			},
 			{
 				source: "/discord",
 				destination: "https://discord.gg/BjEJFwh",
-				permanent: true,
-			},
-			{
-				source: "/pokemon",
-				destination: "https://discord.gg/CNXVAuhGGa",
 				permanent: true,
 			},
 		];
