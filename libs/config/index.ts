@@ -36,13 +36,15 @@ const SEO = {
 		"next",
 		"reactjs",
 		"nextjs",
+		"barbarbar338",
+		"barbarbar"
 	],
-	description: "Welcome to barisbored's profile!",
+	description: "Welcome to barbarbar338's profile!",
 };
 
 export const CONFIG = {
 	EMAIL: "demirci.baris38@gmail.com",
-	GITHUB_USERNAME: "barisbored",
+	GITHUB_USERNAME: "barbarbar338",
 	AVATAR_URL: "https://avatars.githubusercontent.com/u/35371155",
 	LANYARD_ID: DISCORD_ID,
 	STARTED_AT,
@@ -113,14 +115,14 @@ export const CONFIG = {
 	SOCIALS,
 	BLOG: {
 		discussions: {
-			username: "barisbored",
+			username: "barbarbar338",
 			repo: "webpage",
 			repo_id: "MDEwOlJlcG9zaXRvcnkyNjc3OTQ5NDE=",
 		},
 	},
 	SOURCE: {
 		repo: "webpage",
-		username: "barisbored",
+		username: "barbarbar338",
 	},
 	DEV: process.env.NODE_ENV != "production",
 	REVALIDATION: 60 * 5,

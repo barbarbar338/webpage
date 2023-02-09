@@ -19,17 +19,17 @@ const nextConfig = {
 		return [
 			{
 				source: "/github",
-				destination: "https://github.com/barisbored",
+				destination: "https://github.com/barbarbar338",
 				permanent: true,
 			},
 			{
 				source: "/instagram",
-				destination: "https://www.instagram.com/barisbored",
+				destination: "https://www.instagram.com/ben_baris.",
 				permanent: true,
 			},
 			{
 				source: "/youtube",
-				destination: "https://www.youtube.com/@barisbored",
+				destination: "https://www.youtube.com/@barbarbar338",
 				permanent: true,
 			},
 			{

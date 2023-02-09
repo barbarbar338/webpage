@@ -16,7 +16,7 @@ export const GitLayout: FC<IGitLayout> = ({ children, repo }) => {
 	const [, copy] = useCopyToClipboard();
 
 	const onCopy = () => {
-		copy(`https://benson.fly.dev/${repo.repo}`);
+		copy(`git clone https://benson.fly.dev/${repo.repo}`);
 		toast.success(parser.get("copied_repo"));
 	};
 

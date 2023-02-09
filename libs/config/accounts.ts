@@ -15,6 +15,7 @@ import {
 	FiMail,
 	FiSmartphone,
 	FiTarget,
+	FiTwitch,
 	FiYoutube,
 } from "react-icons/fi";
 
@@ -29,24 +30,31 @@ export const CONTACT = [
 		color: "text-red-500",
 	},
 	{
-		href: "https://github.com/barisbored",
+		href: "https://github.com/barbarbar338",
 		icon: FiGithub,
 		name: "GitHub",
-		value: "@barisbored",
+		value: "@barbarbar338",
 		color: "text-dark",
 	},
 	{
-		href: "https://www.youtube.com/@barisbored",
+		href: "https://youtube.com/@barbarbar338",
 		icon: FiYoutube,
 		name: "YouTube",
 		value: "Barış DEMİRCİ",
 		color: "text-red-500",
 	},
 	{
-		href: "https://instagram.com/barisbored",
+		href: "https://twitch.tv/iam_barbarbar338",
+		icon: FiTwitch,
+		name: "Twitch",
+		value: "@iam_barbarbar338",
+		color: "text-purple-500",
+	},
+	{
+		href: "https://instagram.com/ben_baris.d",
 		icon: FiInstagram,
 		name: "Instagram",
-		value: "@barisbored",
+		value: "@ben_baris.d",
 		color: "text-pink-500",
 	},
 	{
@@ -60,24 +68,24 @@ export const CONTACT = [
 
 export const SOCIALS = [
 	{
-		href: "https://www.linkedin.com/in/barisbored/",
+		href: "https://www.linkedin.com/in/barbarbar338/",
 		icon: FiLinkedin,
 		name: "Linkedin",
-		value: "barisbored",
+		value: "barbarbar338",
 		color: "text-blue-500",
 	},
 	{
 		href: `discord://click-me/users/${DISCORD_ID}`,
 		icon: FaDiscord,
 		name: "Discord Account",
-		value: "barisbored#3892",
+		value: "barbarbar338#3892",
 		color: "text-blue-500",
 	},
 	{
-		href: "https://steamcommunity.com/id/barisbored/",
+		href: "https://steamcommunity.com/id/barbarbar338/",
 		icon: FaSteam,
 		name: "Steam",
-		value: "barisbored",
+		value: "barbarbar338",
 		color: "text-dark",
 	},
 	{
@@ -89,7 +97,7 @@ export const SOCIALS = [
 	{
 		icon: FaGamepad,
 		name: "Epic Games",
-		value: "barisbored",
+		value: "barbarbar338",
 		color: "text-black",
 	},
 	{
@@ -149,10 +157,10 @@ export const SOCIALS = [
 		color: "text-purple-500",
 	},
 	{
-		href: "https://stackoverflow.com/users/10124281/barisbored",
+		href: "https://stackoverflow.com/users/10124281/barbarbar338",
 		icon: FaStackOverflow,
 		name: "StackOverFlow",
-		value: "barisbored",
+		value: "barbarbar338",
 		color: "text-yellow-500",
 	},
 	{
