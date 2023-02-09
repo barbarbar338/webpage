@@ -2,7 +2,6 @@ import type { IBookmark } from "@components/Bookmarks/Bookmark";
 import axios from "axios";
 
 const storageUrl = process.env.STORAGE_URL;
-const storageAuthToken = process.env.STORAGE_AUTH_TOKEN;
 const gitUrl = process.env.GIT_SERVER_URL;
 
 export interface IRepo {
@@ -12,11 +11,7 @@ export interface IRepo {
 }
 
 export const getBookmarks = async () => {
-	const { data } = await axios.get(`${storageUrl}/v1/bookmark`, {
-		headers: {
-			Authorization: storageAuthToken,
-		},
-	});
+	const { data } = await axios.get(`${storageUrl}/bookmark/all`);
 
 	return data.data as IBookmark[];
 };
