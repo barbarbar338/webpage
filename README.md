@@ -31,4 +31,4 @@ See https://338.rocks for live demo
 
 # 🧦 My Sponsors
 
-![Sponsors](https://raw.githubusercontent.com/barisbored/.github/main/sponsors.png)
+![Sponsors](https://raw.githubusercontent.com/barbarbar338/.github/main/sponsors.png)

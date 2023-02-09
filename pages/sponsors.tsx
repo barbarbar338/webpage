@@ -46,7 +46,7 @@ const IndexPage: NextPage<ISponsorsPage> = ({ sponsors }) => {
 									avatarUrl:
 										"https://avatars.githubusercontent.com/u/35371155",
 									isOneTime: false,
-									login: "barisbored",
+									login: "barbarbar338",
 									tier: "10",
 								}}
 							/>
