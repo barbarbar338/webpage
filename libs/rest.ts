@@ -1,7 +1,9 @@
-import type { IBookmark } from "@components/Bookmarks/Bookmark";
+// TODO: Fix Cloudflare Workers bookmarks API
+//import type { IBookmark } from "@components/Bookmarks/Bookmark";
 import axios from "axios";
 
-const storageUrl = process.env.STORAGE_URL;
+// TODO: Fix Cloudflare Workers bookmarks API
+//const storageUrl = process.env.STORAGE_URL;
 const gitUrl = process.env.GIT_SERVER_URL;
 
 export interface IRepo {
@@ -10,11 +12,12 @@ export interface IRepo {
 	files: string[];
 }
 
-export const getBookmarks = async () => {
+// TODO: Fix Cloudflare Workers bookmarks API
+/* export const getBookmarks = async () => {
 	const { data } = await axios.get(`${storageUrl}/bookmark/all`);
 
 	return data.data as IBookmark[];
-};
+}; */
 
 export const getRepos = async () => {
 	const { data } = await axios.get(`${gitUrl}/api/repos`);

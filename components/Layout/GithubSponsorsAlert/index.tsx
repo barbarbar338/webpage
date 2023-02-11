@@ -20,7 +20,7 @@ export const GithubSponsorsAlert: FC = () => {
 			title={parser.get("github_sponsors_title")}
 			onClose={handleClose}
 			html={parser.get("github_sponsors_description", {
-				link: `<a rel='noreferrer' target='_blank' href='https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}' class='cursor-pointer hover:underline'>https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}</a>`,
+				link: `<a rel='noreferrer' target='_blank' href='https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}' class='cursor-pointer hover:underline text-blue-500 hover:text-blue-600'>https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}</a>`,
 			})}
 		></Alert>
 	) : (

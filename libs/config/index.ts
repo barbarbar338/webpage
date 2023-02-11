@@ -37,7 +37,7 @@ const SEO = {
 		"reactjs",
 		"nextjs",
 		"barbarbar338",
-		"barbarbar"
+		"barbarbar",
 	],
 	description: "Welcome to barbarbar338's profile!",
 };

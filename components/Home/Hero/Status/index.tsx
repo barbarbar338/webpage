@@ -10,6 +10,7 @@ export const Status: FC = () => {
 	const { loading, status } = useLanyard({
 		userId: CONFIG.LANYARD_ID,
 		socket: true,
+		apiUrl: "api.lanyard.rest", // !: Need to update react-use-lanyard package
 	});
 
 	const getColor = () => {
