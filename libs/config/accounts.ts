@@ -23,10 +23,10 @@ export const DISCORD_ID = "952574663916154960";
 
 export const CONTACT = [
 	{
-		href: "mailto:demirci.baris38@gmail.com",
+		href: "mailto:hi@338.rocks",
 		icon: FiMail,
 		name: "E-Mail",
-		value: "demirci.baris38@gmail.com",
+		value: "hi@338.rocks",
 		color: "text-red-500",
 	},
 	{
