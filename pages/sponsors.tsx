@@ -25,7 +25,9 @@ const IndexPage: NextPage<ISponsorsPage> = ({ sponsors }) => {
 
 				<div className="container mx-auto mb-12">
 					<p className="mb-5 text-xl text-gray-500">
-						{parser.get("github_sponsors_description")}
+						{parser.get("github_sponsors_description", {
+							link: `https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}`,
+						})}
 					</p>
 					<Link
 						href={`https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}`}
