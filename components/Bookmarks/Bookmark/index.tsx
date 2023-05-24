@@ -23,7 +23,7 @@ export const Bookmark: FC<IBookmark> = ({
 
 	return (
 		<div>
-			<div className="flex max-w-md flex-col gap-5 rounded-lg bg-white py-8 px-8 shadow-lg dark:bg-gray-800">
+			<div className="flex max-w-md flex-col gap-5 rounded-lg bg-white px-8 py-8 shadow-lg dark:bg-gray-800">
 				<div className="flex items-center">
 					{/* 
 						TODO: I don't know how to configure next/image component for all hostnames 
@@ -44,7 +44,7 @@ export const Bookmark: FC<IBookmark> = ({
 				</div>
 				<div>
 					<p
-						className=" h-24 text-gray-600 line-clamp-4 dark:text-gray-50"
+						className=" line-clamp-4 h-24 text-gray-600 dark:text-gray-50"
 						title={description}
 					>
 						{description}

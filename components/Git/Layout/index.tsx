@@ -25,7 +25,7 @@ export const GitLayout: FC<IGitLayout> = ({ children, repo }) => {
 			<div className="container mx-auto w-full md:max-w-3xl">
 				<div className="w-full text-xl leading-normal text-gray-800">
 					<div className="font-sans">
-						<h1 className="break-normal pt-6 pb-2 font-sans text-3xl font-bold text-black dark:text-white md:text-4xl">
+						<h1 className="break-normal pb-2 pt-6 font-sans text-3xl font-bold text-black dark:text-white md:text-4xl">
 							<Link href="/git">
 								<span className="cursor-pointer text-purple-600 hover:text-purple-500 hover:underline">
 									{parser.get("repos")}

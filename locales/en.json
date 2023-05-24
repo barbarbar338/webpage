@@ -97,5 +97,20 @@
 	"copied_repo": "Repo clone URL copied.",
 	"copy": "Copy to clipboard",
 	"example_sponsor_card": "This is an example card",
-	"overlay": "Overlay"
+	"overlay": "Overlay",
+	"contact_details": "Contact Details:",
+	"phone": "Phone",
+	"location": "Location",
+	"skills": "Skills:",
+	"education": "Education",
+	"work_experience": "Work Experiences",
+	"certificates": "Certificates",
+	"socials": "Socials",
+	"bachelors": "Bachelor's Degree",
+	"eee": "Electrical-Electronics Engineering",
+	"agu": "Abdullah Gül University",
+	"original_file_here": "To see this document's the most updated version, please go to https://338.rocks/resume",
+	"resume_footer": "This document was prepared by Barış DEMİRCİ using NextJS and TailwindCSS. The original document is at https://338.rocks/resume and this is a copy you downloaded. Please visit the specified site to see the original.",
+	"resume": "Resumê",
+	"website": "Website:"
 }

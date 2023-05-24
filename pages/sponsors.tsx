@@ -15,7 +15,7 @@ const IndexPage: NextPage<ISponsorsPage> = ({ sponsors }) => {
 
 	return (
 		<Layout title={parser.get("sponsors")}>
-			<section className="min-h-screen bg-white py-10 px-4 text-center text-black dark:bg-gray-900 dark:text-white">
+			<section className="min-h-screen bg-white px-4 py-10 text-center text-black dark:bg-gray-900 dark:text-white">
 				<h1
 					className="mb-5 font-heading text-4xl font-semibold"
 					dangerouslySetInnerHTML={{
@@ -32,7 +32,7 @@ const IndexPage: NextPage<ISponsorsPage> = ({ sponsors }) => {
 					<Link
 						href={`https://github.com/sponsors/${CONFIG.GITHUB_USERNAME}`}
 						target="_blank"
-						className="inline-block w-full cursor-pointer rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto"
+						className="inline-block w-full cursor-pointer rounded-xl bg-purple-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto"
 					>
 						{parser.get("support_me")}
 					</Link>

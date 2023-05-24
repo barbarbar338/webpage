@@ -46,7 +46,7 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 									</span>
 								</Link>
 							</p>
-							<h1 className="break-normal pt-6 pb-2 font-sans text-3xl font-bold text-black dark:text-white md:text-4xl">
+							<h1 className="break-normal pb-2 pt-6 font-sans text-3xl font-bold text-black dark:text-white md:text-4xl">
 								{post.title}
 							</h1>
 							<p className="text-sm font-normal text-gray-500 md:text-base">

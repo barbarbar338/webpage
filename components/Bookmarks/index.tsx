@@ -12,7 +12,7 @@ export const Bookmarks: FC<IBookmarks> = ({ bookmarks }) => {
 	return (
 		<section
 			id="projects"
-			className="min-h-screen bg-white py-10 px-4 text-black dark:bg-gray-900 dark:text-white"
+			className="min-h-screen bg-white px-4 py-10 text-black dark:bg-gray-900 dark:text-white"
 		>
 			<h1 className="mb-10 text-center font-heading text-4xl font-semibold">
 				<span

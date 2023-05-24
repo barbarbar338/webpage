@@ -66,6 +66,10 @@ export const Navbar: FC = () => {
 			name: parser.get("repos"),
 			href: "/git",
 		},
+		{
+			name: parser.get("resume"),
+			href: "/resume",
+		},
 	];
 
 	const getIcon = () => {
@@ -170,7 +174,7 @@ export const Navbar: FC = () => {
 						{getIcon()}
 					</button>
 					<Link href="/#contact">
-						<span className="hidden cursor-pointer rounded-xl bg-purple-700 py-2 px-6 text-sm font-bold text-white hover:bg-purple-800 lg:block">
+						<span className="hidden cursor-pointer rounded-xl bg-purple-700 px-6 py-2 text-sm font-bold text-white hover:bg-purple-800 lg:block">
 							{parser.get("contact")}
 						</span>
 					</Link>
@@ -185,7 +189,7 @@ export const Navbar: FC = () => {
 					onClick={onClose}
 					className="fixed inset-0 bg-white opacity-25 dark:bg-gray-700"
 				/>
-				<nav className="fixed top-0 left-0 bottom-0 flex w-5/6 max-w-sm flex-col overflow-y-auto bg-gray-100 py-6 px-6 dark:bg-gray-900">
+				<nav className="fixed bottom-0 left-0 top-0 flex w-5/6 max-w-sm flex-col overflow-y-auto bg-gray-100 px-6 py-6 dark:bg-gray-900">
 					<div className="mb-8 flex items-center">
 						<Link href="/#">
 							<Image

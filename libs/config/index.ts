@@ -127,4 +127,200 @@ export const CONFIG = {
 	DEV: process.env.NODE_ENV != "production",
 	REVALIDATION: 60 * 5,
 	SEO,
+	PHONE: "+905511481779",
+	LOCATION: "Kayseri, Turkey",
+	SKILLS: [
+		[
+			{
+				name: "Turkish (Native)",
+				value: 100,
+				color: "bg-red-600",
+			},
+			{
+				name: "English (B2-C1)",
+				value: 70,
+				color: "bg-blue-600",
+			},
+		],
+		[
+			{
+				name: "JavaScript",
+				value: 95,
+				color: "bg-yellow-600",
+			},
+			{
+				name: "TypeScript",
+				value: 90,
+				color: "bg-blue-600",
+			},
+			{
+				name: "GoLang",
+				value: 65,
+				color: "bg-blue-600",
+			},
+			{
+				name: "Python",
+				value: 85,
+				color: "bg-green-500",
+			},
+		],
+		[
+			{
+				name: "ReactJS",
+				value: 90,
+				color: "bg-blue-600",
+			},
+			{
+				name: "NextJS",
+				value: 85,
+				color: "bg-gray-600",
+			},
+			{
+				name: "NestJS",
+				value: 80,
+				color: "bg-red-600",
+			},
+			{
+				name: "TailwindCSS",
+				value: 70,
+				color: "bg-blue-600",
+			},
+		],
+		[
+			{
+				name: "Proxmox",
+				value: 95,
+				color: "bg-yellow-700",
+			},
+			{
+				name: "ESXi",
+				value: 70,
+				color: "bg-blue-600",
+			},
+			{
+				name: "Ansible",
+				value: 75,
+				color: "bg-red-600",
+			},
+			{
+				name: "LXC/LXD",
+				value: 80,
+				color: "bg-yellow-600",
+			},
+		],
+		[
+			{
+				name: "MongoDB",
+				value: 90,
+				color: "bg-green-600",
+			},
+			{
+				name: "Redis",
+				value: 90,
+				color: "bg-red-600",
+			},
+			{
+				name: "PostgreSQL",
+				value: 90,
+				color: "bg-blue-600",
+			},
+			{
+				name: "SQLite",
+				value: 80,
+				color: "bg-blue-600",
+			},
+		],
+		[
+			{
+				name: "System Administrator",
+				value: 70,
+				color: "bg-gray-700",
+			},
+			{
+				name: "Networking",
+				value: 65,
+				color: "bg-green-700",
+			},
+			{
+				name: "Linux",
+				value: 85,
+				color: "bg-black",
+			},
+		],
+	],
+	EDUCATION: [
+		{
+			name: "agu",
+			department: "eee",
+			era: "2022 - 2026",
+			degree: "bachelors",
+			gpa: "3.5",
+		},
+	],
+	WORK_EXPERIENCE: [
+		{
+			name: "Freelancer",
+			era: "2010 - present",
+			title: "Back-End Developer",
+			location: "Global",
+			description:
+				"Working as a freelancer since 2010. Created thousands of projects for clients.",
+		},
+		{
+			name: "Denka Metal",
+			era: "2023 - present",
+			title: "CNC Laser Cut Operator",
+			location: "Kayseri, Turkey",
+			description:
+				"Working as a CNC Laser cut operator here. This factory creates products for huge companies abroad.",
+		},
+		{
+			name: "HastePaste",
+			era: "2020 - 2022",
+			title: "Founder",
+			location: "Kayseri, Turkey",
+			description:
+				"A file-sharing application with no subscription required. Share, edit, and delete files with ease. Worked here as a back-end developer and DevOps engineer.",
+		},
+		{
+			name: "Doory",
+			era: "2020 - 2020",
+			title: "Front-End Developer",
+			location: "Ankara, Turkey",
+			description:
+				"A food delivery & deli application. Worked here as a front-end developer.",
+		},
+	],
+	CERTIFICATES: [
+		{
+			name: "Go Certificate",
+			issuer: "Hackerrank",
+			year: 2021,
+			href: "https://www.hackerrank.com/certificates/24f89f0f4d0d",
+		},
+		{
+			name: "NodeJS Certificate",
+			issuer: "Hackerrank",
+			year: 2021,
+			href: "https://www.hackerrank.com/certificates/cdae760133a7",
+		},
+		{
+			name: "Problem Solving Certificate",
+			issuer: "Hackerrank",
+			year: 2021,
+			href: "https://www.hackerrank.com/certificates/90e8f3811077",
+		},
+		{
+			name: "Python Certificate",
+			issuer: "Hackerrank",
+			year: 2021,
+			href: "https://www.hackerrank.com/certificates/5e5bb3381a30",
+		},
+		{
+			name: "ReactJS Certificate",
+			issuer: "Hackerrank",
+			year: 2021,
+			href: "https://www.hackerrank.com/certificates/e641c5282518",
+		},
+	],
 };

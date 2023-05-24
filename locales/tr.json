@@ -97,5 +97,20 @@
 	"copied_repo": "Repo klonlama URL'si kopyalandı.",
 	"copy": "Panoya kopyala",
 	"example_sponsor_card": "Bu bir örnek karttır",
-	"overlay": "Çerçeve"
+	"overlay": "Çerçeve",
+	"contact_details": "İletişim Detayları:",
+	"phone": "Telefon",
+	"location": "Konum",
+	"skills": "Yetenekler:",
+	"education": "Eğitim",
+	"work_experience": "İş Tecrübesi",
+	"certificates": "Sertifikalar",
+	"socials": "Sosyal Medya",
+	"bachelors": "Lisans",
+	"eee": "Elektrik-Elektronik Mühendisliği",
+	"agu": "Abdullah Gül Üniversitesi",
+	"original_file_here": "Bu belgenin en güncel halini görmek için lütfen şu adresi ziyaret edin: https://338.rocks/tr/resume",
+	"resume_footer": "Bu belge Barış DEMİRCİ tarafından NextJS ve TailwindCSS kullanılarak hazırlanmıştır. Bu belgenin orijinali https://338.rocks/tr/resume sayfasındadır ve bu indirdiğiniz bir kopyasıdır. Lütfen orijinalini görmek için belirtilen siteyi ziyaret ediniz.",
+	"resume": "Öz Geçmiş",
+	"website": "İnternet Sitesi:"
 }

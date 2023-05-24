@@ -9,7 +9,7 @@ const AccountsPage: NextPage = () => {
 
 	return (
 		<Layout title="My Accounts">
-			<section className="bg-white py-10 px-4 text-center text-black dark:bg-gray-900 dark:text-white">
+			<section className="bg-white px-4 py-10 text-center text-black dark:bg-gray-900 dark:text-white">
 				<h1 className="mb-10 font-heading text-4xl font-semibold">
 					{parser.get("my_accounts")}
 				</h1>

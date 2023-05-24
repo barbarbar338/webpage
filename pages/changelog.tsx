@@ -18,7 +18,7 @@ const ChangelogPage: NextPage<IChangelogProps> = ({ commitsData }) => {
 				<div className="container mx-auto w-full md:max-w-3xl">
 					<div className="w-full text-xl leading-normal text-gray-800">
 						<div className="font-sans">
-							<h1 className="break-normal pt-6 pb-2 font-sans text-3xl font-bold text-black dark:text-white md:text-4xl">
+							<h1 className="break-normal pb-2 pt-6 font-sans text-3xl font-bold text-black dark:text-white md:text-4xl">
 								{parser.get("changelog")}
 							</h1>
 							<p className="text-sm font-normal text-gray-500 md:text-base">

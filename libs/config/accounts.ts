@@ -37,6 +37,13 @@ export const CONTACT = [
 		color: "text-dark",
 	},
 	{
+		href: "https://www.linkedin.com/in/barbarbar338/",
+		icon: FiLinkedin,
+		name: "Linkedin",
+		value: "barbarbar338",
+		color: "text-blue-500",
+	},
+	{
 		href: "https://youtube.com/@barbarbar338",
 		icon: FiYoutube,
 		name: "YouTube",
@@ -67,13 +74,6 @@ export const CONTACT = [
 ];
 
 export const SOCIALS = [
-	{
-		href: "https://www.linkedin.com/in/barbarbar338/",
-		icon: FiLinkedin,
-		name: "Linkedin",
-		value: "barbarbar338",
-		color: "text-blue-500",
-	},
 	{
 		href: `discord://click-me/users/${DISCORD_ID}`,
 		icon: FaDiscord,

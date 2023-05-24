@@ -11,7 +11,7 @@ const NotFoundPage: NextPage = () => {
 
 	return (
 		<Layout title="Not Found">
-			<section className="min-h-screen bg-white py-8 px-4 text-center text-black dark:bg-gray-900 dark:text-white">
+			<section className="min-h-screen bg-white px-4 py-8 text-center text-black dark:bg-gray-900 dark:text-white">
 				<h1 className="font-heading text-5xl font-semibold">
 					{parser.get("error_404")}
 				</h1>
@@ -21,13 +21,13 @@ const NotFoundPage: NextPage = () => {
 					width={512}
 					height={512}
 					blurDataURL={shimmer(512, 512)}
-					className="max-w-auto my-12 mx-auto md:max-w-sm"
+					className="max-w-auto mx-auto my-12 md:max-w-sm"
 					src={ErrorSVG}
 					alt="Error"
 				/>
 				<div>
 					<Link href="/">
-						<span className="mb-3 inline-block w-full cursor-pointer rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
+						<span className="mb-3 inline-block w-full cursor-pointer rounded-xl bg-purple-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
 							{parser.get("go_home")}
 						</span>
 					</Link>

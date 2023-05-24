@@ -27,7 +27,7 @@ export const RepoCard: FC<IStarredRepo> = ({
 					</div>
 				</div>
 			</div>
-			<p className="h-12 text-base line-clamp-2">{description}</p>
+			<p className="line-clamp-2 h-12 text-base">{description}</p>
 			<div className="mt-3 flex">
 				<span
 					className="mt-1 block h-4 w-4 rounded-full bg-gray-400"

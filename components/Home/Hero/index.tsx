@@ -13,7 +13,7 @@ export const Hero: FC = () => {
 	const lastElement = CONFIG.INTERESTS[lastIDX];
 
 	return (
-		<section className="bg-white pt-12 pb-12 dark:bg-gray-900 md:pb-24 lg:pt-20">
+		<section className="bg-white pb-12 pt-12 dark:bg-gray-900 md:pb-24 lg:pt-20">
 			<div className="container mx-auto px-4">
 				<div className="-mx-4 flex flex-col-reverse flex-wrap md:flex-row">
 					<div className="mb-12 flex w-full items-center px-4 md:mb-20 lg:mb-0 lg:w-1/2">
@@ -56,12 +56,12 @@ export const Hero: FC = () => {
 								<Status />
 								<div>
 									<Link href="#about">
-										<span className="mb-3 inline-block w-full cursor-pointer rounded-xl bg-purple-600 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
+										<span className="mb-3 inline-block w-full cursor-pointer rounded-xl bg-purple-600 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:bg-purple-700 lg:mb-0 lg:mr-3 lg:w-auto">
 											{parser.get("about_me")}
 										</span>
 									</Link>
 									<Link href="#contact">
-										<span className="inline-block w-full cursor-pointer rounded-xl border-2 border-gray-700 bg-gray-900 py-2 px-6 font-semibold leading-loose text-white transition duration-200 hover:border-gray-600 lg:w-auto">
+										<span className="inline-block w-full cursor-pointer rounded-xl border-2 border-gray-700 bg-gray-900 px-6 py-2 font-semibold leading-loose text-white transition duration-200 hover:border-gray-600 lg:w-auto">
 											{parser.get("contact")}
 										</span>
 									</Link>

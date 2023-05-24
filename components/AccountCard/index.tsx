@@ -40,10 +40,10 @@ export const AccountCard: FC<IAccountCardProps> = ({
 			<div className="flex items-center justify-center">
 				<Icon className={classnames("text-6xl", color)} />
 			</div>
-			<span className="h-12 text-center text-xl line-clamp-2">
+			<span className="line-clamp-2 h-12 text-center text-xl">
 				{name}
 			</span>
-			<span className="h-12 text-center text-lg line-clamp-2">
+			<span className="line-clamp-2 h-12 text-center text-lg">
 				{value}
 			</span>
 		</div>

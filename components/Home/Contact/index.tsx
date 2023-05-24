@@ -38,7 +38,7 @@ export const Contact: FC = () => {
 	return (
 		<section
 			id="contact"
-			className="bg-white py-10 px-4 text-black dark:bg-gray-900 dark:text-white"
+			className="bg-white px-4 py-10 text-black dark:bg-gray-900 dark:text-white"
 		>
 			<h1
 				className="mb-10 text-center font-heading text-4xl font-semibold"
@@ -52,7 +52,7 @@ export const Contact: FC = () => {
 						<div className="w-1/2 px-2">
 							<input
 								onChange={onMailChange}
-								className="block w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
+								className="block w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
 								type="email"
 								placeholder={parser.get("email")}
 							/>
@@ -60,7 +60,7 @@ export const Contact: FC = () => {
 						<div className="w-1/2 px-2">
 							<input
 								onChange={onNameChange}
-								className="block w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
+								className="block w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
 								type="text"
 								placeholder={parser.get("name")}
 							/>
@@ -69,7 +69,7 @@ export const Contact: FC = () => {
 					<div className="mb-4">
 						<textarea
 							onChange={onMessageChange}
-							className="block w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
+							className="block w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
 							placeholder={parser.get("write_something")}
 							rows={5}
 						></textarea>
@@ -77,7 +77,7 @@ export const Contact: FC = () => {
 					<div>
 						<button
 							aria-label="Submit"
-							className="inline-block w-full rounded-xl bg-purple-600 py-4 px-8 font-semibold leading-none text-white hover:bg-purple-700"
+							className="inline-block w-full rounded-xl bg-purple-600 px-8 py-4 font-semibold leading-none text-white hover:bg-purple-700"
 						>
 							{parser.get("submit")}
 						</button>

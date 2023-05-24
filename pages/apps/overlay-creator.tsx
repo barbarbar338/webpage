@@ -45,7 +45,7 @@ const OverlayCreatorAppPage: NextPage = () => {
 
 	return (
 		<Layout title={parser.get("apps_overlay_creator")}>
-			<section className="min-h-screen bg-white py-10 px-4 text-black dark:bg-gray-900 dark:text-white">
+			<section className="min-h-screen bg-white px-4 py-10 text-black dark:bg-gray-900 dark:text-white">
 				<h1
 					className="mb-10 text-center font-heading text-4xl font-semibold"
 					dangerouslySetInnerHTML={{
@@ -57,7 +57,7 @@ const OverlayCreatorAppPage: NextPage = () => {
 						<div className="mb-5">
 							<input
 								onChange={onURLChange}
-								className="my-2 block w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 py-3 px-4 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
+								className="my-2 block w-full appearance-none rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 leading-tight text-gray-700 focus:border-gray-500 focus:bg-white focus:outline-none"
 								type="text"
 								placeholder={parser.get("avatar")}
 							/>
@@ -76,7 +76,7 @@ const OverlayCreatorAppPage: NextPage = () => {
 						<div>
 							<button
 								aria-label="Submit"
-								className="inline-block w-full rounded-xl bg-purple-600 py-4 px-8 font-semibold leading-none text-white hover:bg-purple-700"
+								className="inline-block w-full rounded-xl bg-purple-600 px-8 py-4 font-semibold leading-none text-white hover:bg-purple-700"
 							>
 								{parser.get("submit")}
 							</button>
