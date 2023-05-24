@@ -1,6 +1,5 @@
 /* eslint-disable */
 const twTypography = require("@tailwindcss/typography");
-const twLineClamp = require("@tailwindcss/line-clamp");
 
 module.exports = {
 	mode: "jit",
@@ -618,5 +617,5 @@ module.exports = {
 		zIndex: ["responsive", "focus-within", "focus"],
 	},
 	corePlugins: {},
-	plugins: [twLineClamp, twTypography],
+	plugins: [twTypography],
 };
