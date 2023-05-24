@@ -1,4 +1,4 @@
-import Photo from "@assets/resume-photo.jpg";
+import Photo from "@assets/resume-photo.png";
 import { CONFIG } from "@libs/config";
 import { useLocaleParser } from "@libs/localeParser";
 import html2canvas from "html2canvas";
