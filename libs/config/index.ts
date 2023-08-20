@@ -269,10 +269,18 @@ export const CONFIG = {
 		{
 			name: "Denka Metal",
 			era: "2023 - present",
+			title: "CNC Welding Robot Programmer",
+			location: "Kayseri, Turkey",
+			description:
+				"Working as a welding robot programmer, creating metal products globally.",
+		},
+		{
+			name: "Denka Metal",
+			era: "2023 - present",
 			title: "CNC Laser Cut Operator",
 			location: "Kayseri, Turkey",
 			description:
-				"Working as a CNC Laser cut operator here. This factory creates products for huge companies abroad.",
+				"Working as a CNC Laser cut operator here, creating metal products globally.",
 		},
 		{
 			name: "HastePaste",
