@@ -63,10 +63,6 @@ export const Navbar: FC = () => {
 			href: "/changelog",
 		},
 		{
-			name: parser.get("repos"),
-			href: "/git",
-		},
-		{
 			name: parser.get("resume"),
 			href: "/resume",
 		},
