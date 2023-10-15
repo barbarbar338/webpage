@@ -32,14 +32,7 @@ export const Footer: FC = () => (
 				>
 					TailwindCSS
 				</Link>
-				. Hosted on{" "}
-				<Link
-					href="https://fly.io/"
-					target="_blank"
-					className="cursor-pointer text-indigo-700 hover:underline dark:text-indigo-400"
-				>
-					Fly
-				</Link>
+				.
 			</div>
 			<div className="mt-2 flex flex-row gap-2 md:flex-auto md:flex-row-reverse">
 				{CONFIG.CONTACT.map((social, idx) => (
