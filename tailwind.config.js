@@ -1,4 +1,3 @@
-/* eslint-disable */
 const twTypography = require("@tailwindcss/typography");
 
 module.exports = {

@@ -17,7 +17,6 @@ import "@styles/tailwind.css";
 import "@styles/tetris.scss";
 
 import "highlight.js/styles/tomorrow-night-bright.css";
-import "react-folder-tree/dist/style.css";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
