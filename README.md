@@ -1,8 +1,6 @@
 # 🔥 My Personal Web Page Source
 
-Made with ❤ using [TypeScript](https://www.typescriptlang.org/), [NextJS](https://nextjs.org/) and [TailwindCSS](https://tailwindcss.com/)
-See https://338.rocks for live demo
-![preview](assets/preview.png)
+- WIP, see `v5` branch for latest version.
 
 # ⌚ Changelog
 
@@ -20,14 +18,14 @@ See https://338.rocks for live demo
     -   **Deprecated At:** Apr 24, 2021
 -   v5
     -   **Created At:** Apr 24, 2021
+    -  **Deprecated At:** -
+-  v6
+    -   **Created At:** -
+    -   **Deprecated At:** -
 
 # 🏃‍♀️ Running
 
--   Clone repo
--   Run `yarn` or `npm i`
--   Run `yarn build` or `npm run build`
--   Run `yarn start` or `npm run start`
--   See `http://localhost:3000/`
+-   Wait for instructions
 
 # 🧦 My Sponsors
 
