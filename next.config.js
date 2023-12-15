@@ -11,7 +11,11 @@ const nextConfig = {
 		defaultLocale: "en",
 	},
 	images: {
-		domains: ["avatars.githubusercontent.com", "api.338.rocks", "jqetijvmergeabbsbhjm.supabase.co"],
+		domains: [
+			"avatars.githubusercontent.com",
+			"api.338.rocks",
+			"jqetijvmergeabbsbhjm.supabase.co",
+		],
 	},
 	async redirects() {
 		return [
