@@ -32,11 +32,11 @@ export const RepoCard: FC<IStarredRepo> = ({
 				<span
 					className="mt-1 block h-4 w-4 rounded-full bg-gray-400"
 					style={{
-						backgroundColor: primaryLanguage.color,
+						backgroundColor: primaryLanguage?.color || "black",
 					}}
 				></span>
 				<p className="ml-1 mt-1 text-xs text-gray-600 dark:text-gray-400">
-					{primaryLanguage.name}
+					{primaryLanguage?.name || "N/A"}
 				</p>
 			</div>
 		</Link>
