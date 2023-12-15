@@ -21,7 +21,7 @@ export const ProjectCard: FC<IStarredRepo> = ({
 				<span
 					className="ml-1 rounded px-2 py-1 text-xs text-white"
 					style={{
-						backgroundColor: primaryLanguage?.color ||"black",
+						backgroundColor: primaryLanguage?.color || "black",
 					}}
 				>
 					{primaryLanguage?.name || "N/A"}

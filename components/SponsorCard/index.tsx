@@ -41,10 +41,10 @@ export const SponsorCard: FC<ISponsorCardProps> = ({ sponsor }) => {
 					{sponsor.isOneTime
 						? parser.get("one_time", {
 								price: sponsor.tier,
-						  })
+							})
 						: parser.get("monthly", {
 								price: sponsor.tier,
-						  })}
+							})}
 				</span>
 			</div>
 		</div>

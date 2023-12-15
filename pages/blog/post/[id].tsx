@@ -77,7 +77,7 @@ const PostPage: NextPage<IPostProps> = ({ post }) => {
 											{label.name}
 										</span>
 									</Link>
-							  ))
+								))
 							: parser.get("no_tags")}
 					</div>
 					<hr className="mx-4 mb-8 border-b-2 border-gray-700" />

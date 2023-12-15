@@ -5,6 +5,7 @@ import { CONFIG } from "@libs/config";
 import { useLocaleParser } from "@libs/localeParser";
 import { getBookmarks } from "@libs/rest";
 import type { GetStaticProps, NextPage } from "next";
+import { resolve } from "path";
 
 export interface IBookmarksPage {
 	bookmarks: IBookmark[];
@@ -23,12 +24,24 @@ const BookmarksPage: NextPage<IBookmarksPage> = ({ bookmarks }) => {
 export default BookmarksPage;
 
 export const getStaticProps: GetStaticProps<IBookmarksPage> = async () => {
-	const bookmarks = await getBookmarks();
+	//const bookmarks = await getBookmarks();
 
-	return {
-		props: {
-			bookmarks: bookmarks,
-		},
-		revalidate: CONFIG.REVALIDATION,
-	};
+	return new Promise((resolve) =>
+		resolve({
+			props: {
+				bookmarks: [
+					{
+						createdAt: new Date().toLocaleDateString(),
+						description: "Example",
+						id: 123,
+						imageUrl:
+							"https://jqetijvmergeabbsbhjm.supabase.co/storage/v1/object/public/uploads/branding/icon.png",
+						title: "Example",
+						url: "https://338.rocks",
+					},
+				], //bookmarks,
+			},
+			revalidate: CONFIG.REVALIDATION,
+		}),
+	);
 };
