@@ -78,7 +78,7 @@ export const SOCIALS = [
 		href: `discord://click-me/users/${DISCORD_ID}`,
 		icon: FaDiscord,
 		name: "Discord Account",
-		value: "barbarbar338#3892",
+		value: "@barbarbar338",
 		color: "text-blue-500",
 	},
 	{
