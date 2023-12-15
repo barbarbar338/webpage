@@ -117,7 +117,26 @@ export const getPostData = async (no: number): Promise<IPostData> => {
 		number: data.repository.discussion.number,
 	};
 
-	return post;
+	const postPlaceholder: IPostData = {
+		author: {
+			avatarUrl:
+				"https://jqetijvmergeabbsbhjm.supabase.co/storage/v1/object/public/uploads/branding/icon.png",
+			login: "barbarbar338",
+		},
+		bodyHTML: "<h1>Hello, world!</h1>",
+		createdAt: new Date().toLocaleDateString(),
+		labels: [
+			{
+				color: "black",
+				id: "123",
+				name: "Example",
+			},
+		],
+		number: 1,
+		title: "Example",
+	};
+
+	return CONFIG.DEV ? postPlaceholder : post;
 };
 
 export interface ISponsor {
@@ -164,7 +183,16 @@ export const getSponsors = async (): Promise<ISponsor[]> => {
 			isOneTime: node.isOneTimePayment,
 		}));
 
-	return sponsors;
+	const sponsorPlaceholder: ISponsor = {
+		avatarUrl:
+			"https://jqetijvmergeabbsbhjm.supabase.co/storage/v1/object/public/uploads/branding/icon.png",
+		isOneTime: false,
+		login: "barbarbar338",
+		tier: "$10",
+		name: "Barış DEMİRCİ",
+	};
+
+	return CONFIG.DEV ? [sponsorPlaceholder] : sponsors;
 };
 
 export const getPinnedRepos = async (): Promise<IStarredRepo[]> => {
@@ -201,7 +229,18 @@ export const getPinnedRepos = async (): Promise<IStarredRepo[]> => {
 		} as IStarredRepo;
 	});
 
-	return repos;
+	const repoPlaceholder: IStarredRepo = {
+		description: "Example",
+		name: "Example",
+		primaryLanguage: {
+			color: "black",
+			name: "Example",
+		},
+		stargazerCount: 999,
+		url: "https://338.rocks",
+	};
+
+	return CONFIG.DEV ? [repoPlaceholder] : repos;
 };
 
 export const getMostStarredRepos = async (): Promise<IStarredRepo[]> => {
@@ -241,7 +280,18 @@ export const getMostStarredRepos = async (): Promise<IStarredRepo[]> => {
 		} as IStarredRepo;
 	});
 
-	return repos;
+	const repoPlaceholder: IStarredRepo = {
+		description: "Example",
+		name: "Example",
+		primaryLanguage: {
+			color: "black",
+			name: "Example",
+		},
+		stargazerCount: 999,
+		url: "https://338.rocks",
+	};
+
+	return CONFIG.DEV ? [repoPlaceholder] : repos;
 };
 
 export const getCategories = async (): Promise<ILabel[]> => {
@@ -271,7 +321,13 @@ export const getCategories = async (): Promise<ILabel[]> => {
 		} as ILabel;
 	});
 
-	return labels;
+	const labelPlaceholder: ILabel = {
+		color: "black",
+		id: "123",
+		name: "Example",
+	};
+
+	return CONFIG.DEV ? [labelPlaceholder] : labels;
 };
 
 export const getPosts = async (): Promise<IPost[]> => {
@@ -328,7 +384,27 @@ export const getPosts = async (): Promise<IPost[]> => {
 		} as IPost;
 	});
 
-	return posts;
+	const postPlaceholder: IPost = {
+		author: {
+			avatarUrl:
+				"https://jqetijvmergeabbsbhjm.supabase.co/storage/v1/object/public/uploads/branding/icon.png",
+			login: "barbarbar338",
+		},
+		body: "<h1>Hello, world!</h1>",
+		createdAt: new Date().toLocaleDateString(),
+		id: "123",
+		labels: [
+			{
+				color: "black",
+				id: "123",
+				name: "Example",
+			},
+		],
+		number: 1,
+		title: "Example",
+	};
+
+	return CONFIG.DEV ? [postPlaceholder] : posts;
 };
 
 export const getPinnedPosts = async (): Promise<IPost[]> => {
@@ -391,7 +467,27 @@ export const getPinnedPosts = async (): Promise<IPost[]> => {
 		},
 	);
 
-	return posts;
+	const postPlaceholder: IPost = {
+		author: {
+			avatarUrl:
+				"https://jqetijvmergeabbsbhjm.supabase.co/storage/v1/object/public/uploads/branding/icon.png",
+			login: "barbarbar338",
+		},
+		body: "<h1>Hello, world!</h1>",
+		createdAt: new Date().toLocaleDateString(),
+		id: "123",
+		labels: [
+			{
+				color: "black",
+				id: "123",
+				name: "Example",
+			},
+		],
+		number: 1,
+		title: "Example",
+	};
+
+	return CONFIG.DEV ? [postPlaceholder] : posts;
 };
 
 export const getCommits = async (): Promise<ICommitsData> => {
@@ -450,5 +546,21 @@ export const getCommits = async (): Promise<ICommitsData> => {
 			Object.keys(commitsData.commits)[0]
 		][0].committedDate;
 
-	return commitsData;
+	const commitsDataPlaceholder: ICommitsData = {
+		latest: new Date().toLocaleDateString(),
+		commits: {
+			[new Date().toLocaleDateString()]: [
+				{
+					author: {
+						name: "barbarbar338",
+					},
+					committedDate: new Date().toLocaleDateString(),
+					commitUrl: "https://338.rocks",
+					message: "Example"
+				},
+			],
+		},
+	};
+
+	return CONFIG.DEV ? commitsDataPlaceholder : commitsData;
 };
