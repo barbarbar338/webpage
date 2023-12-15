@@ -3,9 +3,8 @@ import type { IBookmark } from "@components/Bookmarks/Bookmark";
 import { Layout } from "@components/Layout";
 import { CONFIG } from "@libs/config";
 import { useLocaleParser } from "@libs/localeParser";
-import { getBookmarks } from "@libs/rest";
 import type { GetStaticProps, NextPage } from "next";
-import { resolve } from "path";
+//import { getBookmarks } from "@libs/rest";
 
 export interface IBookmarksPage {
 	bookmarks: IBookmark[];
