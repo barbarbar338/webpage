@@ -50,10 +50,10 @@ export const Navbar: FC = () => {
 			name: parser.get("blog"),
 			href: "/blog",
 		},
-		{
+		/* {
 			name: parser.get("bookmarks"),
 			href: "/bookmarks",
-		},
+		}, */
 		{
 			name: parser.get("apps"),
 			href: "/apps",
