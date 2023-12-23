@@ -402,7 +402,7 @@ export const getCommits = async (): Promise<ICommitsData> => {
 					defaultBranchRef {
 						target {
 							... on Commit {
-								history(first: 30) {
+								history(first: 100) {
 									edges {
 										node {
 											... on Commit {
