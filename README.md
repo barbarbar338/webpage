@@ -1,6 +1,6 @@
 # 🔥 My Personal Web Page Source
 
-- WIP, see `v5` branch for latest version.
+-   WIP, see `v5` branch for latest version.
 
 # ⌚ Changelog
 
@@ -18,8 +18,8 @@
     -   **Deprecated At:** Apr 24, 2021
 -   v5
     -   **Created At:** Apr 24, 2021
-    -  **Deprecated At:** -
--  v6
+    -   **Deprecated At:** -
+-   v6
     -   **Created At:** -
     -   **Deprecated At:** -
 

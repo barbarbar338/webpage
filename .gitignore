@@ -2,3 +2,4 @@ node_modules
 *lock*
 *log*
 *env*
+.next
