@@ -1,0 +1,195 @@
+---
+title: "github discussions ile kendi blogunuzu yönetin!"
+description: "bu blogu nasıl yaptığını ve github discussions ile kendi blogunuzu yönetmeyi öğrenin."
+date: "2022-1-2"
+draft: false
+tags:
+    - turkish
+    - technology
+---
+
+import Callout from "@/components/Callout.astro";
+
+---
+
+## giriş
+
+<Callout type="info">
+	projeyi daha rahat kavramanız ve kendinize daha rahat uyarlamanız için bir
+	template reposu oluşturdum. repoya [bu
+	linkten](https://github.com/barbarbar338/vite-react-blog-template)
+	ulaşabilirsiniz.
+</Callout>
+
+son zamanlarda internet blogculuğu aldı başını götürüyor, malûm covid-19 virüsü sebebiyle hepimiz evlerimize tıkılı kaldık ve kaliteli zaman geçirebilmek için bir uğraş bulmamız gerekti. sonuç olarak insanlık büyük bir hızla sanal aleme adımını atmış bulunmakta ve bizler de buna ayak uydurmalıyız. işte tam da burada işin içine internet blogculuğu giriyor!
+
+internet blogculuğu insanların özgürce düşüncelerini paylaşabilmesi için oldukça güzel bir araç olsa da bu işe başlamak ve sürekliliği sağlamak oldukça göz korkutucu duruyor. ancak merak etmeyin **bu yazıdan sonra çok kolay olacak!**
+
+son zamanlarda müşterilerimdem aldığım genel taleplerden biri de "bir blog nasıl yapılır veya bana bir blog kurabilir misin?" oluyor. elbette [medium](https://medium.com/) gibi halihazırda blog yönetiminizi sağlayan bir sistem bulunmakta ve yeni başlayan kişilere kesinlikle tavsiye ederim ancak müşterilerim ve arkadaşlarım kendi alan adları altında kendi gözlerine hitap eden bir tasarım ve tamamen kendilerine ait bir sistem altında çalışmak istiyorlar. sonuç olarak bir web geliştiriciye para ödeyip bir blog satın almaları gerekiyor.
+
+elbette burada alan adı almanız ve bunu hostinginize kurmanızı anlatmayacak veya sıfırdan bir blog yapmayacağım, sadece ana fikirden bahsedecek ve birkaç örnek göstereceğim. bu örneklerden biri de [kendi websitem](https://338.rocks/blog)! bu yazıda şu anda okuduğunuz yazının nasıl yönetildiğinden detaylı bir şekilde bahsedeceğim.
+
+## github discussions nedir?
+
+github discussions, açık kaynaklı bir proje hakkında insanların birbirine soru sorabileceği ve sohbet edebileceği bir proje. insanlar birbirine sorular sorabilir ve yanıtlayabilir, güncellemeleri paylaşabilir, açık uçlu sohbetler yapabilir ve topluluğun çalışma şeklini etkileyen kararları takip edebilir.
+
+peki bu proje nasıl işimize yarayacak? projeyi biraz incelerseniz açtığımız discussionları [markdown](https://tr.wikipedia.org/wiki/Markdown) (sayfa düzeni işimizi oldukça kolaylaştıracak) kullanarak yazıyoruz, bu açtığımız discussionlara labeller ekleyebiliyoruz, ilgi çekici veya önemli discussionları sabitleyebiliyoruz ve başka insanlar bu paylaşımlarımıza yorum yapabiliyor. bir blogda olması gereken her şey burada!
+
+blog postlarımızı bir discussion olarak github repomuzda toplayacağız ve bir [graphql](https://graphql.org/) query'si ile bu discussionlara erişerek kendi tasarımlarımız ile kendi alan adımız altında paylaşacağız!
+
+## peki nasıl???
+
+![Discussions Example](https://raw.githubusercontent.com/barbarbar338/lib/master/personal_page/images/blog/discussions-blog-example.png)
+
+yukarıdaki örnekte kendi blogumun discussions sayfasını görüyorsunuz. sadece repoya erişim hakkı olanların paylaşım yapabileceği bir kategori altında paylaşımlar yapıyorum ve birkaç graphql query'si ile bu discussionlara erişiyorum. kendi sitemde görünüşü ise şu şekilde:
+
+![Blog Preview](https://raw.githubusercontent.com/barbarbar338/lib/master/personal_page/images/blog/blog-preview.png)
+
+## kullanılan queryler
+
+şimdi biraz kullandığım querylerden bahsedeyim:
+
+### post listesi
+
+paylaşılan tüm discussionları bir post gibi kabul edip bunları şu şekilde alıyoruz:
+
+```graphql
+{
+	repository(owner: "OWNER_USERNAME", name: "REPO_NAME") {
+		discussions(
+			first: 100
+			orderBy: { direction: DESC, field: CREATED_AT }
+		) {
+			edges {
+				node {
+					title
+					id
+					createdAt
+					number
+					author {
+						avatarUrl
+						login
+					}
+					labels(first: 3) {
+						edges {
+							node {
+								name
+								color
+								id
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+```
+
+Verileri aldıktan sonra ufak bir tasarım ile şu şekilde görünüyor:
+
+![Posts Preview](https://raw.githubusercontent.com/barbarbar338/lib/master/personal_page/images/blog/posts-preview.png)
+
+### sabitlenmiş postlar
+
+sabitlenen discussionları ile şu şekilde alıyoruz:
+
+```graphql
+{
+	repository(owner: "OWNER_USERNAME", name: "REPO_NAME") {
+		pinnedDiscussions(first: 10) {
+			edges {
+				node {
+					discussion {
+						title
+						id
+						createdAt
+						number
+						author {
+							avatarUrl
+							login
+						}
+						labels(first: 3) {
+							edges {
+								node {
+									name
+									color
+									id
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+```
+
+biraz şekillendirme ile şu şekilde görünüyor:
+
+![Pinned Preview](https://raw.githubusercontent.com/barbarbar338/lib/master/personal_page/images/blog/pinned-preview.png)
+
+### taglar
+
+taglar ise discussionlardaki labeller! çok mantıklı bir seçim.
+
+```graphql
+{
+	repository(owner: "OWNER_USERNAME", name: "REPO_NAME") {
+		labels(first: 20) {
+			edges {
+				node {
+					color
+					name
+					id
+				}
+			}
+		}
+	}
+}
+```
+
+verinin işlenmiş hali ise şu şekilde:
+
+![Tags Preview](https://raw.githubusercontent.com/barbarbar338/lib/master/personal_page/images/blog/tags-preview.png)
+
+### post içeriği
+
+post içeriği ise discussion içinde yazmış olduğunuz her şey.
+
+```graphql
+{
+	repository(owner: "OWNER_USERNAME", name: "REPO_NAME") {
+		discussion(number: DISCUSSION_NUMBER) {
+			title
+			author {
+				login
+				avatarUrl
+			}
+			bodyHTML
+			createdAt
+			number
+			labels(first: 3) {
+				edges {
+					node {
+						color
+						id
+						name
+					}
+				}
+			}
+		}
+	}
+}
+```
+
+Ve gelen verilen işlenmiş halini ise şu anda canlı bir şekilde okuyorsunuz!
+
+## yorum sistemi
+
+yorum sistemi ise biraz daha basit olacak, teşekkürler [giscus](https://giscus.app/)! giscus da tıpkı bizim gibi github discussions kullanarak yorum sistemini basitleştiren bir proje. sayfamıza giscus'un scriptini postumuzun discussion numarasına uygun bir şekilde ayarlayıp ekleyerek yorum sistemini de kolayca halletmiş olduk. ve artık elimizde çok güzel, kendi göz zevkimize uygun ve her şeyi eksiksiz bir blog sistemi var!
+
+## son söz
+
+yazıyı sonuna kadar okuduğunuz için teşekkürler. bu blog fikri hakkında daha fazla bilgi istiyorsanız [sitemin kaynak kodları](https://github.com/barbarbar338/webpage)na github'dan erişebilir ve ilgili bölümleri inceleyerek kendi sitenize de entegre edebilirsiniz. başka bir yazıda görüşmek üzere. ❤️

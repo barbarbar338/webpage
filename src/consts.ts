@@ -8,26 +8,42 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-	TITLE: "Home",
+	TITLE: "home",
 	DESCRIPTION: "barbarbar338's personal website.",
 };
 
 export const BLOG: Metadata = {
-	TITLE: "Blog",
-	DESCRIPTION: "Things I write about.",
+	TITLE: "blog",
+	DESCRIPTION: "things I write about.",
 };
 
 export const SOCIALS: Socials = [
 	{
-		NAME: "X (formerly Twitter)",
-		HREF: "https://twitter.com/boogerbuttcheek",
+		NAME: "github",
+		HREF: "https://github.com/barbarbar338",
 	},
 	{
-		NAME: "GitHub",
-		HREF: "https://github.com/trevortylerlee",
+		NAME: "steam",
+		HREF: "https://steamcommunity.com/id/barbarbar338/",
 	},
 	{
-		NAME: "Website",
-		HREF: "https://trevortylerlee.com",
+		NAME: "youtube",
+		HREF: "https://youtube.com/@barbarbar338",
+	},
+	{
+		NAME: "twitch",
+		HREF: "https://twitch.tv/iam_barbarbar338",
+	},
+	{
+		NAME: "discord server",
+		HREF: "https://discord.com/invite/BjEJFwh",
+	},
+	{
+		NAME: "discord profile",
+		HREF: "https://discord.com/users/952574663916154960",
+	},
+	{
+		NAME: "linkedin",
+		HREF: "https://www.linkedin.com/in/barbarbar338/",
 	},
 ];

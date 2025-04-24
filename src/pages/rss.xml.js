@@ -6,7 +6,7 @@ export async function GET(context) {
 	const blog = (await getCollection("blog")).filter(
 		(post) => !post.data.draft,
 	);
-	
+
 	const items = [...blog].sort(
 		(a, b) =>
 			new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),

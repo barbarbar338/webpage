@@ -7,10 +7,10 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
 const tags = [...new Set(posts.flatMap((post) => post.data.tags || []))].sort();
 ---
 
-<Layout title="Tags" description="List of tags used.">
+<Layout title="tags" description="list of tags used.">
 	<Container>
 		<div class="space-y-10">
-			<h1 class="animate font-semibold">All Tags</h1>
+			<h1 class="animate font-semibold">all tags</h1>
 			<div class="animate flex flex-wrap gap-2">
 				{
 					tags.map((tag) => (

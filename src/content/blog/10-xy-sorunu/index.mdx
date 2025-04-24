@@ -1,0 +1,53 @@
+---
+title: "xy sorunu"
+description: "x yapmak için y yapmaya çalışmak."
+date: "2022-11-3"
+draft: false
+tags:
+    - turkish
+    - nasıl soru sorulur
+---
+
+## giriş
+
+xy sorunu, asıl probleminize yardım aramaktansa bu problemi çözmek için denediğiniz hatalı çözüm hakkında yardım aramaktır. bu durum hem yardım isteyenler hem de yardım edecekler açısından oldukça zaman ve enerji kaybına yol açıyor. biraz daha detaylandırmak gerekirse:
+
+- john doe x yapmak istiyor.
+- john doe x'i nasıl yapacağını bilmiyor, **ancak y'yi yapmayı başarırsa** x için bir çözüme ulaşacağını <ins>**düşünüyor**</ins>.
+- john doe y'yi de nasıl yapacağını **bilmiyor**.
+- john doe y hakkında yardım ister.
+- yardım etmeye çalışan insanlar john doe'ye y hakkında yardım ederler ancak yine de bir çözüme ulaşamazlar.
+- çok fazla gereksiz sohbet, enerji kaybı ve zaman kaybından sonra john doe, **y'nin x için bir çözüm olmadığını anlar** ve **yeni bir y bularak başa döner**.
+
+böylece yardım etmeye çalışan insanlar sorunun y olduğunu ve bu soruna çözüm bulduklarını düşünür, ancak soruyu soran kişi yanıtını alamamıştır ve **tekrardan başa dönerek bu sefer farklı bir y üretmiştir**.
+
+bu kısır döngüyü engellemek için soruyu soran kişinin şu adımları takip etmesi oldukça faydalıdır:
+
+- sorunuzu sormak için bir ön prosedüre ihtiyacınız olmadığını hatırlayın.
+- gerçekten ne konusunda yardıma ihtiyacınız olduğundan emin olun. x hakkında yardıma ihtiyacınız varsa x hakkında soru sorun. **y'yi yapıp x'i elde edeceğinizi düşünüyorsanız bile direkt x'i sorun.**
+- denediğiniz çözüm yanında bu çözümü neden denediğinizi, çözümün (olumlu, olumsuz veya eksik) sonucunu, araştırdığınız kaynakları ve aklınıza gelebilecek her türlü detayı sorunuza ekleyin, yardımcı olacak kişiye yardımcı olun.
+- yardımcı olacak kişi daha fazla bilgi isterse onlara gerekli bilgileri sağlayın.
+- bazı kabul etmediğiniz olası çözümleri sebepleri ile neden kabul etmediğinizi belirtin.
+- **yaptığınız çıkarımlara güvenmeyin**, bu çıkarımlar doğru olsaydı şu an birilerine soru soruyor olmazdınız.
+
+## bu durumu örneklendirecek olursak:
+
+bu örneğimizde bir uygulama geliştiricisi belirtilen dosyanın uzantısını belirlemek istiyor, ancak sorusunu yanlış sorduğu için boş yere zaman kaybediyor:
+
+> jonh doe @ 10:00am: merhaba, acaba javascript ile bir stringin son üç harfini nasıl ayırabilirim?
+
+> Jane doe @ 10:10am: Merhaba jonh, `<String>.slice(-3)` kodu ile bir stringin son üç harfini alabilirsin.
+
+> jonh doe @ 11:20am: merhaba, acaba javascript ile bir stringi nasıl noktalarından ayırabilirim? örneğin "merhaba.dünya" şeklinde bir stringi `["merhaba", "dünya"]` gibi.
+
+> giuseppe mezzoalto @ 11:am: merhaba jonh, `<String>.split('.')` kodu işini görecektir.
+
+> Jane doe @ 11:40am: hey jonh, acaba bir dosyanın uzantısını mı almaya çalışıyorsun?
+
+> jonh doe @ 11:45am: evet jane, bir dosyanın uzantısına ulaşmak istiyorum.
+
+> Jane doe @ 11:40am: neden en başında söylemiyorsun? bütün dosyaların uzantıları üç harf ile bitmiyor olabilir. `<String>.match(/\.([0-9a-z]+)(?:[\?#]|$)/)` kodu işine yarayacaktır.
+
+> jonh doe @ 12:00am: oh, teşekkürler jane! günümü kurtardın.
+
+gördüğünüz gibi yukarıdaki örnekte x (yani jonh doe'nin yapmak istediği şey) dosya uzantısına erişmek ancak jonh doe **2 kere y üretiyor** (1. "stringin son 3 harfini alma", 2. "stringi noktalardan ayırma") ve **her ne kadar doğru cevap alsa da** işine yaramayacağı için boşa vakit harcamış oluyor. john doe sorusunu "stringin son üç harfi nasıl alınır?" gibi sormaktansa "bir dosyanın uzantısını nasıl alınır?" şeklinde sorsaydı hem cevabına daha hızlı ulaşırdı hem de birden çok kişi ile gereksiz sohbette bulunmazdı.

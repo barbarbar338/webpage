@@ -1,0 +1,425 @@
+---
+title: "react hook nedir, temel hooklar ve kendi hookunuzu yapma"
+description: "react hooklarını öğrendiğiniz ve kendi hookunuzu yapmayı öğrendiğiniz bir makale"
+date: "2022-1-15"
+draft: false
+tags:
+    - turkish
+    - technology
+    - development
+    - react
+---
+
+## giriş
+
+hooklar react'ın 16.8.0 sürümü ile bizlere tanıtılan birkaç fonksiyondan ibarettir. amacı ise en kaba tabirle [class component](https://www.w3schools.com/react/react_components.asp)leri ile yapılan her şeyi [fonksiyonel component](https://www.w3schools.com/react/react_components.asp)ler ile yaptırabilmeyi sağlamak.
+
+hookların amacı class componentleri tamamen ortadan kaldırmak değildir ancak günümüz dünyasında class componentler zaten pek de ilgi çeken bir yapı değil. ancak hook olmazsa da fonksiyonel componentlerde state yönetimi gibi birçok react nimeti çok sıkıntı yaşatır. sonuç olarak elmizde artık hook api'ı bulunmakta!
+
+hooklar genel olarak react özelliklerini fonksiyonel komponentlerde kullanmanızı sağlayan özel fonksiyonlardır. örneğin [`useState`](https://tr.reactjs.org/docs/hooks-state.html) hooku, react state'ini bir fonksiyonel componente eklemenizi sağlayan bir hooktur.
+
+## örnek bir hook kullanımı
+
+burada örnek olması adına bir state hooku kullanacağız. ilk olarak eskiden yapmanız gereken componenti ve ardından bu makaleden sonra nasıl yapmanız gerektiğini örneklendiren birkaç kod bloğu göreceğiz.
+
+klasik class component yapısıyla yapılmış bir kod alalım elimize:
+
+```jsx
+import React, { Component } from "react";
+
+class MyComponent extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			count: 0;
+		}
+	}
+}
+```
+
+gördüğünüz gibi componentimiz hem çok uzun hem de göz korkutucu. basit bir state için oldukça fazla satır yazmamız gerekiyor. şimdi bir de bu state'i güncellemeye çalışalım:
+
+```jsx
+import React, { Component } from "react";
+
+class MyComponent extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			count: 0;
+		}
+	}
+
+	render() {
+		return (
+			<div>
+				<span>{this.state.count} defa tıklandı.
+				<button onClick={
+					() => this.setState({ count: this.state.count + 1})
+				}>
+					Tıkla
+				</button>
+			</div>
+		);
+	}
+}
+```
+
+gördüğünüz gibi kod karışmaya başladı bile. artık hook örneğine geçebiliriz.
+
+```jsx
+import React, { useState } from "react";
+
+const MyComponent = () => {
+	const [count, setCount] = useState(0);
+};
+```
+
+gördüğünüz gibi hem hızımızı arttırdık hem de düzenimizi. ayrıca artık daha rahat bir state yönetimine sahibiz.
+
+şimdi bir de bu state'i güncellemeye çalışalım:
+
+```jsx
+import React, { useState } from "react";
+
+const MyComponent = () => {
+	const [count, setCount] = useState(0);
+
+	return (
+		<div>
+			<span>{count} defa tıklandı.
+			<button onClick={
+				() => setCount(count + 1)
+			}>
+				Tıkla
+			</button>
+		</div>
+		);
+}
+```
+
+gördüğünüz üzere kodumuzda inanılmaz bir kısalma var ve artık daha rahat okunabilir halde.
+
+## hookların temel kuralları
+
+hooklar her ne kadar javascript fonksiyonları olsa da bu fonksiyonları şu iki temel kurala uyarak kullanmanız gerekmektedir:
+
+- **hookları sadece kodunuzun en üstünde kullanın.** herhangi bir loop içinde veya başka bir fonksiyon içinde hook kullanmayın. sadece fonksiyonel componentinizin return kısmından önce kullanın. böylece componentimiz tekrar tekrar renderlandığında hookunuzun aktifleştiğinden emin olursunuz.
+- **sadece fonksiyonel componentlerde hook kullanın.** başka fonksiyonlar içinde veya class componentleri içerisinde hook kullanamazsınız.
+
+## temel Hooklar
+
+### 1 - `useState`
+
+`useState` hooku klasik class componentlerindeki state özelliğini fonksiyonel componentimize eklememizi sağlayan bir hooktur.
+
+```jsx
+import React, { useState } from "react";
+
+const MyComponent = () => {
+	// useState kullanım örneği
+	const [count, setCount] = useState(0);
+};
+```
+
+componentimizde bir değişiklik olduğunda tekrar renderlanmasını istiyorsak kesinlikle kullanmamız gereken bir hooktur. basitçe hooku anlamak istersek hooku çağırırken girdiğimiz argüman state'imizin başlangıç değeri olacaktır. yukarıdaki örnekte `count` state'inin varsayılan değeri olarak `0` ayarladık. Yani componentimiz ilk renderlandığında `count` değeri `0` olacaktır.
+
+hookumuzu çağırdıktan sonra bize 2 elementten oluşan bir array verecektir.
+
+```jsx
+const [count, setCount] = useState(0);
+```
+
+bu arrayın ilk elementi bizim state'imizi, ikincisi ise bu state'i güncellememizi sağlayacak fonksiyonu barındırır. state'imizi güncellemek istediğimizde bu fonksiyonu çağırmamız lazım.
+
+```jsx
+const [count, setCount] = useState(0);
+count; // >> 0
+setCount(3);
+count; // >> 3
+```
+
+Eğer `const`, `let` veya `var` kullanarak bir değer oluşturursak bu değerleri ne kadar güncellersek güncelleyelim componentimiz yeniden renderlanmaz ve güncel veriyi göremeyiz.
+
+```jsx
+import React, { useState } from "react";
+
+const MyComponent = () => {
+	// doğru kullanım
+	const [count, setCount] = useState(0);
+
+	// yanlış kullanım
+	let count = 0;
+};
+```
+
+### 2 - `useEffect`
+
+`useEffect` hookunun 4 temel işlevi vardır. bu hooku genel olarak klasik class componentlerinde bulunan `componentDidMount`, `componentDidUpdate` ve `componentWillUnMount` metotlarının yerini tutması için kullanırız. 4. işlevi ise spesifik bir state güncellenmesini takip etmektir.
+
+#### `componentDidUpdate`
+
+componentimiz her renderlandığında bir kod çalıştırmamızı sağlayan bir metottur.
+
+```jsx
+import React, { Component } from "react";
+
+class MyComponent extends Component {
+	componentDidUpdate() {
+		console.log("componentimiz yeniden renderlandı.");
+	}
+}
+```
+
+Bu özelliği fonksiyonel componentler ile şu şekilde yapıyoruz:
+
+```jsx
+import React, { useEffect } from "react";
+
+const MyComponent = () => {
+	useEffect(() => {
+		console.log("componentimiz yeniden renderlandı.");
+	});
+};
+```
+
+`useEffect` hooku gördüğünüz gibi herhangi bir veri returnlamıyor. yani sadece componentimizin renderlanması sonucu yapmamız gereken değişimleri yönettiğimiz bir hooktur.
+
+#### `componentDidMount`
+
+componentimiz ilk kez renderlandığında **sadece 1 kez** çalışmasını istediğimiz bir metottur. örneğin bir websocket bağlantısı yapacaksınız veya bir interval oluşturacaksınız. bunları component her renderlandığında tekrar tekrar yaparsanız veriler birbirine karışır. sonuç olarak sadece 1 kere yapmak istediğimiz için bu işlemleri `componentDidMount` içinde yaparız.
+
+```jsx
+import React, { Component } from "react";
+
+class MyComponent extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			interval: undefined,
+		};
+	}
+
+	componentDidMount() {
+		const i = setInterval(() => {
+			console.log("bu mesaj her 10 saniyede bir loglanacaktır.");
+		}, 1000 * 10);
+		this.setState({ interval: i });
+
+		console.log(
+			"componentimiz ilk kez renderlandı ve bu fonksiyon bir daha çağırılmayacaktır.",
+		);
+	}
+}
+```
+
+bu özelliği fonksiyonel componentler ile şu şekilde yapıyoruz:
+
+```jsx
+import React, { useState, useEffect } from "react";
+
+const MyComponent = () => {
+	const [interval, setIntervalState] = useState();
+
+	useEffect(() => {
+		const i = setInterval(() => {
+			console.log("bu mesaj her 10 saniyede bir loglanacaktır.");
+		}, 1000 * 10);
+		setIntervalState(i);
+
+		console.log(
+			"componentimiz ilk kez renderlandı ve bu fonksiyon bir daha çağırılmayacaktır.",
+		);
+
+		// ⋁⋁⋁ buraya dikkat ediniz
+	}, []);
+};
+```
+
+gördüğünüz üzere `useEffect` hookunda boş bir array belirttik. burayı şimdilik kafanıza takmayın, birazdan onun amacını tam anlamıyla anlatacağım. bilmeniz gereken tek şey oranın boş olması bu hookun yalnızca 1 kere çalışmasını sağlıyor. yani `componentDidMount` metodu gibi çalışıyor.
+
+böylece fonksiyonel componentimizde de `componentDidMount` metodunu çağırmış olduk.
+
+#### `componentWillUnMount`
+
+componentimiz görüş alanımızdan çıkacağında (yani renderlanmayacağında, dokümanımızdan kaldırılacağında) çağırılan bir metottur. bu metot sayesinde son temizlikleri yapabilir ve performansı arttırabiliriz. bu metodu daha iyi anlatabilmek için yukarıdaki `componentDidMount` örneğini biraz geliştireceğim.
+
+```jsx
+import React, { Component } from "react";
+
+class MyComponent extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			interval: undefined,
+		};
+	}
+
+	componentWillUnMount() {
+		// son temizliğimizi yaptık ve artık performans sıkıntısı yaşamayacağız.
+		clearInterval(this.state.interval);
+		console.log("component dokümandan kaldırıldı.");
+	}
+
+	componentDidMount() {
+		const i = setInterval(() => {
+			console.log("bu mesaj her 10 saniyede bir loglanacaktır.");
+		}, 1000 * 10);
+		this.setState({ interval: i });
+
+		console.log(
+			"componentimiz ilk kez renderlandı ve bu fonksiyon bir daha çağırılmayacaktır.",
+		);
+	}
+}
+```
+
+bu özelliği fonksiyonel componentler ile şu şekilde yapıyoruz:
+
+```jsx
+import React, { useState, useEffect } from "react";
+
+const MyComponent = () => {
+	const [interval, setIntervalState] = useState();
+
+	useEffect(() => {
+		const i = setInterval(() => {
+			console.log("bu mesaj her 10 saniyede bir loglanacaktır.");
+		}, 1000 * 10);
+		setIntervalState(i);
+
+		console.log(
+			"componentimiz ilk kez renderlandı ve bu fonksiyon bir daha çağırılmayacaktır.",
+		);
+
+		// burası "componentWillUnMount" metodu
+		return () => {
+			// Son temizliğimizi yaptık ve artık performans sıkıntısı yaşamayacağız.
+			clearInterval(interval);
+			console.log("component dokümandan kaldırıldı.");
+		};
+	}, []);
+};
+```
+
+`useEffect` hooku içerisinde bir fonksiyon returnlarsak bu fonksiyon, componentimiz dokümandan kaldırılırken çağırılacaktır.
+
+#### spesifik state takibi
+
+`useEffect` hookundaki favorim. bu özellik sayesinde sadece belirttiğimiz state'te bir değişim olduğu zaman bir işlem yapabiliyoruz.
+
+```jsx
+import React, { useState } from "react";
+
+const MyComponent = () => {
+	const [count, setCount] = useState();
+	const [name, setName] = useState();
+};
+```
+
+örneğin yukarıda 2 adet state verimiz bulunmakta ancak bir sadece `name` state'i değiştiği zaman bir işlem yapmak istiyoruz. o zaman işin içine **dependency array** dediğimiz bir olay giriyor. yukarıda `useEffect`'in `componentDidMount` karşılığını anlatırken boş bir array belirtmiştim. burası tam da onunla ilgili.
+
+`useEffect` hookunu çağırırken ilk parametre olarak effect fonksiyonunu belirtiyoruz, bunu geçtiğimiz birkaç örnekte anladık. ancak `useEffect` hookuna 2 adet parametre tanımlayabiliriz. ikinci parametre ise **dependency array** olarak geçiyor. bu array içine koyduğumuz veriler hookumuzun dependency'si oluyor. yani bu verilerde bir güncellenme olduğu zaman hookumuz tekrar çalıştırılıyor.
+
+```jsx
+import React, { useState, useEffect } from "react";
+
+const MyComponent = () => {
+	const [count, setCount] = useState();
+	const [name, setName] = useState();
+
+	useEffect(() => {
+		console.log("bu hook componentimiz her renderlandığında çalışacaktır.");
+	});
+
+	useEffect(() => {
+		console.log(
+			"bu hook yalnızca 1 kere (ilk renderdan sonra) çalışacaktır.",
+		);
+	}, []);
+
+	useEffect(() => {
+		console.log(
+			"bu hook yalnızca 'name' verisi güncellenince çalışacaktır.",
+		);
+	}, [name]);
+};
+```
+
+yani dependency array'i boş bırakmak demek bu hooku yalnızca 1 kere (ilk renderdan sonra) çalışmak üzere ayarlamak demek oluyor.
+
+## kendi hookumuzu oluşturma
+
+hooklar bu yazının başında da bahsettiğim gibi birer özel javascript fonksiyonlarıdır. bir fonksiyon içinde başka fonksiyonlar da çağırabilir veya aynı kodu birden çok yerde kullanıyorsak bunu fonksiyon haline getirip işimizi kolaylaştırabiliriz. yani bu demek oluyor ki fonksiyonlar için geçerli olan her şey hooklar için de geçerlidir. bir hook içinde başka hooklar da çağırabilir ve aynı hooku birden çok yerde kullanabiliriz.
+
+şimdi basit bir hook yapmaya çalışalım. bu yapacağımız hookun amacı belirttiğimiz url'ye bir request atması ve bu requestin sonucunu vermesi olsun.
+
+ilk olarak temel bir hook yapısı oluşturalım:
+
+```jsx
+import React, { useState } from "react";
+
+export const useFetch = (url) => {
+	const [body, setBody] = useState();
+	const [error, setError] = useState();
+
+	return [body, error];
+};
+```
+
+gördüğünüz gibi hookumuzun içerisinde de `useState` hookunu kullandık. böylece bir veri güncellemesi yaptığımızda componentimiz tekrar renderlanacaktır. şimdi request özelliğini entegre edelim:
+
+```jsx
+import React, { useState, useEffect } from "react";
+
+export const useFetch = (url) => {
+	const [loading, setLoading] = useState(true);
+	const [body, setBody] = useState();
+	const [error, setError] = useState();
+
+	const fetcher = async () => {
+		setLoading(true);
+
+		const res = await fetch(url);
+		if (!res.ok) {
+			setError(res.statusText);
+			setLoading(false);
+			return;
+		}
+
+		const body = await res.json();
+		setBody(body);
+		setError();
+		setLoading(false);
+	};
+
+	useEffect(fetcher, []);
+
+	return [loading, body, error, fetcher];
+};
+```
+
+ve hookumuz tamamlandı! `fetcher` fonksiyonu ile bir fetch yapıyoruz ve hata varsa `setError` ile hata state'ini güncelliyoruz, yoksa `setBody` ile body state'ini güncelliyoruz. Bu hooku artık şu şekilde kullanabiliriz:
+
+```jsx
+import React, { useState } from "react";
+import { useFetcher } from "./path/to/useFetcher";
+
+const MyComponent = () => {
+	const [loading, body, error] = useFetcher(
+		"https://pokeapi.co/api/v2/pokemon/ditto",
+	);
+
+	return loading ? (
+		<div>yükleniyor...</div>
+	) : error ? (
+		<div>bir hata oluştu.</div>
+	) : (
+		<div>pokemonun adı: {body?.name}</div>
+	);
+};
+```
+
+## son sözler
+
+yazıyı buraya kadar okuduysanız artık hookların ne demek olduğunu, nasıl çalıştıklarını ve kendi hookunuzu nasıl yapabileceğinizi anlamışsınızdır demektir. zaman ayırdığınız için teşekkürler, başka bir yazıda görüşmek üzere.

@@ -1,0 +1,43 @@
+---
+title: "discord oynuyor durumunuzu github profilinizde gösterin!"
+description: "github profilinizi süslerken kullanabileceğiniz ekstra bir kart daha"
+date: "2022-6-9"
+draft: false
+tags:
+    - turkish
+    - technology
+---
+
+## giriş
+
+bildiğiniz üzere [github](https://github.com) üyelerini profillerini güzelleştirmeleri, kendileri hakkında bilgi vermeleri ve bununla havalı şeyler yapmaları için üyelerin profillerine bir markdown dosyası koymalarına izin veriyor, işte benimki şu şekilde:
+
+![Profil Readme Dosyası](https://storage.338.rocks/blog/discord-oynuyor-durumunuzu-github-profilinizde-gosterin/307976243834388484.png)
+
+yukarıda da gördüğünüz gibi bu dosya bir markdown dosyası olduğu için istediğimiz gibi görseller, linkler, listeler vb. elementler ekleyebiliyoruz. discord oynuyor durumunu gösterme olayı işte tam da bu sayede oluyor. benim profilimde biraz aşağıya inerseniz şu şekilde bir kart görebilirsiniz (hatta bu kartı buraya da ekleyebiliyorum):
+
+[![Discord Presence](https://lanyard-profile-readme.vercel.app/api/952574663916154960)](https://discord.com/users/952574663916154960)
+
+çok havalı değil mi? discord'da anlık olarak yaptıklarınız github profilinizde veya daha havalısı **kendi sitenizde** (bunun için farklı bir post hazırlamayı düşünüyorum, takipte kalın) gösterebiliyorsunuz! şimdi bunu nasıl yapacağınızdan bahsedelim.
+
+## kurulum
+
+ilk olarak kullanacağımız kartı hazırlayan [conrad](https://github.com/cnrad)'a teşekkür ediyorum. projenin github linkine [buradan](https://github.com/cnrad/lanyard-profile-readme) ulaşabilirsiniz. bu kullanacağımız kart [phineas](https://github.com/Phineas)'ın [lanyard](https://github.com/Phineas/lanyard) adlı projesine dayanarak hazırlanmış bir sistem, phineas'a da teşekkürlerimizi iletelim!
+
+bu sistemden yararlanabilmek için ilk olarak lanyard'ın discord sunucusuna katılmanız gerekiyor böylece lanyard'ın botu sizin oynuyor durumunuzu takip edip bunu bir rest api'a gönderebilecek. lanyard'ın sunucusuna [buradan](https://discord.gg/lanyard) ([veya buradan](https://discord.gg/XnPd65VadJ)) ulaşabilirsiniz. ve neredeyse her şey tamam! şimdi ise kontrol etmek için tarayıcıdan `https://lanyard.rest/v1/users/DISCORD_IDNIZ` url'sine gidip profiliniz takip ediliyor mu diye bakabilirsiniz. eğer karşınıza aşağıdaki gibi bir çıktı geliyorsa ön hazırlıklar tamam demektir:
+
+![Çıktı](https://storage.338.rocks/blog/discord-oynuyor-durumunuzu-github-profilinizde-gosterin/307978972086534149.png)
+
+şimdi ise kartımızı profilimize eklemeye geldi sıra. aşağıdaki kodu profilinize ekledikten sonra her şey tamamdır:
+
+```
+[![Discord Presence](https://lanyard-profile-readme.vercel.app/api/DISCORD_ID)](https://discord.com/users/DISCORD_ID)
+```
+
+bu kartı profil readme dosyanıza eklediğinizde aşağıdaki gibi bir kart çıkacak:
+
+[![Discord Presence](https://lanyard-profile-readme.vercel.app/api/952574663916154960)](https://discord.com/users/952574663916154960)
+
+ve bu kadar, artık discord durumunuz anlık olarak github profilinizde sergileniyor!
+
+yukarıdaki kart en temel ve basit kart örneği. [buradan](https://github.com/cnrad/lanyard-profile-readme#options) karta ekleyebileceğiniz diğer ayarları da görebilirsiniz, örneğin arkaplan değiştirmek gibi.

@@ -1,0 +1,263 @@
+---
+title: "top 10 javascript tips & tricks"
+description: "10 awesome javascript tips & tricks that i've learned over years of experience to make your life easier."
+date: "2021-12-25"
+draft: false
+tags:
+    - technology
+    - english
+    - development
+    - javascript
+---
+
+## introduction
+
+in this post, i'm going to show you 10 awesome javascript tips & tricks that i've learned over years of experience to make your life easier. and it will help you become a better developer. so if you're interested, keep reading.
+
+## 1 - stop using "data" (or something random) as a variable name
+
+```js
+function calculate(...numbers) {
+	const data = numbers.reduce((rev, curr) => prev + curr, 0);
+	return data;
+}
+
+const data = calculate(2, 3, 6, 1);
+console.log(data); // 12
+```
+
+be a little more descriptive when naming your variables. in the example above, of course, we can see at a glance that the "data" variable is the sum of numbers, but suppose this "data" nomenclature occurs in more than one place in a larger project. everything is mixed up!
+
+use meaningful prefixes when naming your variables:
+
+- if you are creating a function that does data discovery from scratch, make sure to add the `get` prefix to the name of this function. For example `get_user()`
+- if you are using a function to update data, start the name of that function with prefixes like `set` or `update`. For example `update_user()`
+- when naming your boolean values, add prefixes like `is`, `should`, `can` to the beginning. For example `can_speak = true`
+
+in short, people should understand what your named variables mean in one reading.
+
+## 2 - pass arguments as an object rather than one at a time
+
+```js
+function save_person({ id, name, favourites }) {
+	// save person
+}
+
+const person = {
+	id: 1,
+	name: "barış",
+	favourites: ["coffee", "pasta", "pizza"],
+};
+
+save_person(person);
+```
+
+passing arguments as objects in functions is a logical move in many ways:
+
+- the order of the arguments is no longer important, you can make any order of arguments you want. This will both accelerate you and provide an environment for you to write better quality code.
+- the autocomplete will be easier and faster depending on the ide you are using.
+- it prevents you from passing unnecessary arguments when using the same function in multiple places in a large project.
+
+below is an example of bad use of arguments.
+
+```js
+function save_person(id, name, favourites) {
+	// save person
+}
+
+const person = {
+	id: 1,
+	name: "barış",
+	favourites: ["coffee", "pasta", "pizza"],
+};
+
+save_person(person.id, person.name, person.favourites);
+```
+
+as you can see, in this example we already have an object as a whole, but we need to pass all the elements of this object as arguments one by one which makes things seem messy.
+
+## 3 - use built-in features
+
+```js
+function custom(number) {
+	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/, "."); // Regexp? 🤢
+}
+
+function built_in(number) {
+	return new Intl.NumberFormat().format(number); // Built-in! 😍
+}
+
+console.log(custom(23476283)); // 23.476.283
+console.log(built_in(23476283)); // 23.476.283
+```
+
+javascript offers you quite a lot of features. using these built-in features instead of creating a new function immediately will save you time and allow you to focus on your main project faster. ehen looking for a solution to your problem, you can use existing functions instead of creating a new function.
+
+## 4 - removing duplicates from an array
+
+```js
+const array = [1, 1, 2, 3, true, true, "barış", false, "barış"];
+const filtered = [...new Set(array)];
+console.log(filtered); // [ 1, 2, 3, true, "barış", false ]
+```
+
+this trick is pretty simple. suppose you have a string containing numbers, strings and booleans and you want to make sure there are no duplicate items in this array. you can create a simple set for this and convert it to an array with the spread operator.
+
+## 5 - use generators to create sequential ids
+
+```js
+const factory = (function* generator() {
+	let id = 0;
+	while (true) {
+		yield id++;
+	}
+})();
+
+function next_id() {
+	return factory.next().value;
+}
+
+console.log(next_id()); // 1
+console.log(next_id()); // 2
+console.log(next_id()); // 3
+```
+
+generators introduced with es6 are a very useful feature that allows us to create not similar repetitive sequences.
+
+if you don't know what generators are, they are functions that employ lazy evaluation by making use of the yield keyword to process and return data, on-demand.
+
+it may look like generator functions will burn CPU cycles in an infinite loop, however, generators describe a state machine, allowing transitions to forward states to occur through provided code (through subsequent yields). These transitions occur on-demand whenever the next method is called, hence the term lazy evaluation!
+
+with this trick, you no longer have to rely on global/class-scoped variables to remember the state!
+
+## 6 - waiting for multiple promises to resolve in parallel
+
+```js
+function my_promise(ms) {
+	return new Promise((resolve) => {
+		setTimeout(() => resolve(ms), ms);
+	});
+}
+
+const promise_one = my_promise(500);
+const promise_two = my_promise(5710);
+const promise_three = my_promise(1350);
+
+Promise.all([promise_one, promise_two, promise_three]).then((result) => {
+	console.log("result of promise_one:", result[0]); // result of promise_one: 500
+	console.log("result of promise_two:", result[1]); // result of promise_two: 5710
+	console.log("result of promise_three:", result[2]); // result of promise_three: 1350
+});
+```
+
+if you need to wait for multiple asynchronous processes to finish before performing another action, do not wait for them one at a time. you can use the `Promise.all(promise_like[])` method to run all asynchronous operations at the same time and continue your operation after they are all finished.
+
+## 7 - pretty-print json
+
+```js
+const person = {
+	id: 1,
+	name: "barış",
+	favourites: ["coffee", "pasta", "pizza"],
+};
+
+console.log(person);
+/*
+    {id:1,name:"barış",favourites:["coffee","pasta","pizza"]}
+*/
+
+console.log(JSON.stringify(person, null, 4));
+/*
+    {
+        "id": 1,
+        "name": "barış",
+        "favourites": [ "coffee", "pasta", "pizza" ]
+    }
+*/
+```
+
+`JSON.stringify(object, replacer, indent)`
+
+a simple yet very effective function for exporting readable json by supplying the amount of spaces to use for indentation in the third parameter.
+
+the second parameter is the replacer and it can either be a function which controls the stringifying process, or it can be an array, in which case it indicates the name of the properties that should be included in the stringified output.
+
+## 8 - use the optional chaining operator
+
+```js
+const person = {
+	id: 1,
+	name: "barış",
+	favourites: ["coffee", "pasta", "pizza"],
+	introduce: () => `hello, my name is ${person.name}`,
+};
+
+console.log(person.introduce()); // hello, my name is barış
+console.log(person.not_existing_method()); // error!!!
+console.log(person.not_existing_method?.()); // undefined
+```
+
+with optional chaining being supported in most browsers, it is easier to parse complex objects.
+
+previously, developers would resort to using either short-circuits or nested if statements in which they would compare against undefined.
+
+now, it is even easier (and cleaner!) to accomplish the same validation with the optional chaining operator.
+
+even better, you can even use optional chaining with expressions using bracket notation, or, if you have a deeply nested object, you can stack optional chaining operators to check for deeper properties.
+
+## 9 - be modular
+
+```js
+import { generator } from "./id_generator.js";
+
+const user = {
+	id: generator.next(), // 1
+	name: "barış",
+	type: "premium",
+};
+
+const post1 = {
+	id: generator.next(), // 2
+	title: "my awesome post!",
+	author: user,
+};
+
+const post2 = {
+	id: generator.next(), // 3
+	title: "my second awesome post!",
+	author: user,
+};
+```
+
+do not create the functions to serve just one purpose, try to handle multiple tasks with a single function. you don't need to create a special function for everything you need to do, just use the old one.
+
+## 10 - time the execution of your code
+
+```js
+console.time("my_timer");
+
+const factory = (function* generator() {
+	let id = 0;
+	while (true) {
+		yield id++;
+	}
+})();
+
+let id = 0;
+
+for (let i = 0; i < 1e6; i++) {
+	id = factory.next().value;
+}
+
+console.timeEnd("my_timer"); // my_timer: 27.902ms
+```
+
+a priceless function for developers seeking to deliver high-performance code, the `.time` method takes a timer name as parameter and expects to be met with a call to `.timeEnd` in which the same timer name is supplied.
+
+the `.timeEnd` method prints the elapsed time in milliseconds between the two function calls and it allows programmers to quickly observe the bottlenecks of their code and refactor with ease.
+
+this approach is much better than calculating the elapsed execution time manually, as it is built-in and widely supported across modern browsers.
+
+## thanks for reading
+
+thank you for taking your precious time to read this post. if you want to learn more javascript tips & tricks, i recommend you to visit my blog often.

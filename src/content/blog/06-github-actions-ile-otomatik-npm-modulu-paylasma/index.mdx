@@ -1,0 +1,135 @@
+---
+title: "github actions ile otomatik npm modülü paylaşma"
+description: "npm modüllerinizi otomatik olarak buildleyip npm registryde paylaşmak için github actions kullanabilirsiniz."
+date: "2022-6-2"
+draft: false
+tags:
+    - turkish
+    - technology
+    - development
+---
+
+## giriş
+
+[npm](https://www.npmjs.com) bildiğiniz üzere [nodejs](https://nodejs.org) kullanıcılarının yaptığı paketleri paylaştığı bir sistem. burada sizler de kendi paketlerinizi paylaşabiliyorsunuz. bu yazıyı okuyorsanız zaten npm ve nodejs hakkında bilginiz vardır ve muhtemelen çoktan bir npm paketi paylaşmışsınızdır bile. ancak eğer bir paketiniz yoksa ve aklınızda da bir paket yapma fikri varsa ve nasıl başlayacağınızı bilmiyorsanız [tam da burada](https://www.youtube.com/watch?v=5aRALaIPWLI) paylaşmış olduğum videodan nasıl yapacağınızı öğrenebilirsiniz.
+
+bildiğiniz üzere github'da actions dediğimiz bir özellik var. burada repomuzdaki değişiklikleri takip edip bu değişiklikler sonucunda github'un kendi sanal bilgisayarları üzerinden işlem yaptırabiliyoruz. kısacası kodunuzu reponuza atıyorsunuz ve github bu değişiklik sonucunda kendi sistemlerinde sizin önceden belirlediğiniz birkaç komutu çalıştırıp ona göre çıktılar oluşturuyor. biz de bu sistemden faydalanarak npm paketimizi otomatik olarak güncellemeyi sağlayacağız.
+
+## action dosyası
+
+biraz hızlı geçmek adına action dosyasını direkt burada vereceğim. isterseniz direkt bu dosyayı kullanabilirsiniz ancak merak etmeyin, birazdan bu dosyanın ne işe yaradığından ve kurulum için gerekli adımlardan bahsedeceğim.
+
+```yaml
+name: "paketi npm'ye yükleme"
+
+on: [push]
+
+jobs:
+build:
+	name: "paketi buildleme ve yükleme"
+		runs-on: ubuntu-latest
+		if: "contains(github.event.head_commit.message, '(yükle)')"
+		steps:
+			- uses: actions/checkout@v3 # en son sürümü kontrol etmenizi öneririm
+			- uses: actions/setup-node@v3 # en son sürümü kontrol etmenizi öneririm
+				with:
+					node-version: "16.x" # nodejs versiyon 16 kullandım ancak kendi uygulamanıza uygun olanı da kullanabilirsiniz.
+					registry-url: "https://registry.npmjs.org"
+			- run: npm install
+			- run: npm run build
+			- run: npm publish
+				env:
+					NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+```
+
+### eee, bu dosya ne şimdi?
+
+bu dosya geliştirmiş olduğum [react-use-lanyard](https://github.com/barbarbar338/react-use-lanyard) paketinin action dosyası. bu dosya sayesinde kodlarımda bir değişiklik yaptığımda ve repoma pushladığımda paketim otomatik buildleniyor ve npm'ye yükleniyor, harika değil mi?
+
+şimdi birazcık bu dosyadaki kodlardan bahsedelim.
+
+```yaml
+name: "paketi npm'ye yükleme"
+```
+
+burası action'umuzun adı. github'da actions kısmında bu isim ile görünecek.
+
+```yaml
+on: [push]
+```
+
+bu kod ise action'umuzun ne zaman aktifleşeceğini ayarlıyor. ben actionumun her push işleminin ardından çalışmasını istiyorum.
+
+```yaml
+jobs:
+    build:
+        name: "paketi buildleme ve yükleme"
+        runs-on: ubuntu-latest
+        if: "contains(github.event.head_commit.message, '(yükle)')"
+```
+
+burada da action'umuzda yapılacak işlemi tanımladık. işlemimiz ubuntu üzerinde birkaç kod çalıştıracağı için `runs-on: ubuntu-latest` satırını ekledik. ayrıca her push işleminde de action'un çalışmasını istemiyorum. yalnızda commit mesajımda `(yükle)` yazıyorsa çalışmasını istiyorum. örneğin `🚨 linter ayarları düzeltildi (yükle)` gibi bir commit mesajı yazarsam action'umun çalışmasını istiyorum. bunun için de `if: "contains(github.event.head_commit.message, '(yükle)')"` satırını ekledik. burada commit mesajının içeriğini inceleyip istediğimiz meti barındırıyor mu diye baktık. eğer barındırıyorsa işlemi gerçekleştirecek.
+
+```yaml
+steps:
+	- uses: actions/checkout@v3 # en son sürümü kontrol etmenizi öneririm
+	- uses: actions/setup-node@v3 # en son sürümü kontrol etmenizi öneririm
+		with:
+			node-version: "16.x" # nodejs versiyon 16 kullandım ancak kendi uygulamanıza uygun olanı da kullanabilirsiniz.
+			registry-url: "https://registry.npmjs.org"
+	- run: npm install
+	- run: npm run build
+	- run: npm publish
+		env:
+			NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+```
+
+burada ise işlem adımlarını belirttik. ilk olarak sana bilgisayara nodejs 16 kurmasını istedik. elbette uygulamanıza uygun olan nodejs sürümünü kurabilirsiniz. daha sonra ise paketleri indirmesini, paketi buildlemesini ve paketi npm'ye yüklemesini söyledik. ancak bir sıkıntı var. npm'ye paket yükleyebilmek için bir npm hesabınız olmalı ve bu hesaba ait bir tokeninizin olması lazım. npm hesabını ücretsiz bir şekilde açabilirsiniz, ben size token almayı ve bu tokeni reponuza tanıtmayı göstereceğim.
+
+### npm publish tokeni alma
+
+bu token sayesinde npm'ye paket yükleyebilir, silebilir veya paketinizi güncelleyebilirsiniz. o yüzden bu tokeni kesinlikle gizli tutmanız lazım ve kimseyle paylaşmamanız lazım. annenizle bile! birisi bu tokeni eline geçirirse sizin adınıza her şeyi yapabilir, o yüzden dikkatli olun.
+
+şimdi bir npm hesabınızın olduğunu ve hesabınıza giriş yaptığınızı varsayıyorum. npm'nin sitesine giriş yapın ve ana sayfada profil kısmından `Access Tokens` kısmına basın.
+
+![Access Tokens](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305404822394372100.png)
+
+daha sonra aşağıdaki gibi bir sayfayla karşılaşacaksınız (muhtemelen sizinki boş olacaktır ancak önemli değil). buradan `Generate New Token` seçeneği ile bir access token oluşturmamız lazım.
+
+![Generate New Token](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305405453700038661.png)
+
+şimdi ise tokeninize hatırlacağınız bir isim verin ve aşağıdan `Publish` seçeneğini seçin. bu sayede bu tokeni paket paylaşmada kullanabileceğiz. daha sonra da `Generate Token` butonuna basarak tokeninizi oluşturun.
+
+![Create Token](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305405751361404934.png)
+
+ve gördüğünüz gibi tokenimiz oluşturuldu. bu tokeni yalnızca 1 kere görmenize izin veriliyor, o yüzden bir yere kaydetmeyi unutmayın!
+
+![Token](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305406644198703112.png)
+
+şimdi bu tokeni action'umuzda kullanabiliriz.
+
+### action'a token tanıtma
+
+ilk olarak repomuzun ayarlarına gelmemiz ve buradan `Secrets` kategorisi altından `Actions` sayfasına gelmemiz lazım.
+
+![Settings](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305407330416197641.png)
+
+daha sonra buradan `New Repository Secret` seçeneği ile bir `secret` oluşturmamız lazım.
+
+![Secret](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305407636550057994.png)
+
+şimdide secret adını `NPM_TOKEN` olarak ayarlayın ve alttaki boşluğa aldığınız tokeni yapıştırdıktan sonra `Add Secret` butonuna basarak kaydedin.
+
+![Add Secret](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305408101706760203.png)
+
+ve her şey hazır! artık paketimiz otomatik olarak paylaşılacak.
+
+![Done](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305408561129848844.png)
+
+## son adımlar
+
+reponuzun ana dizinine `.github/workflows/main.yaml` adlı bir dosya oluşturun ve içerisine yukarıda verdiğim action kodlarını yapıştırın. srtık mesaj içeriğinde `(yükle)` olan bir commit yaptığınızda paketiniz otomatik olarak npm'ye yüklenecektir, mükemmel!
+
+## son sözler
+
+buraya kadar okuduysanız artık yeni bir şey daha biliyorsunuz demektir. eğer yazı hoşunuza gittiyse arkadaşlarınızla da paylaşmayı unutmayın, teşekkürler! 😼👍

@@ -1,0 +1,42 @@
+---
+title: "new blog!"
+description: "new blog!"
+date: "2021-08-10"
+draft: false
+tags:
+    - english
+    - technology
+    - update
+---
+
+## say hello to my new blog!
+
+in this very secret place, i will share with you the events that i have experienced in my daily life, school life and business life and that i think are interesting. as my first post, i will talk about how i made this site.
+
+## so why do i need a blog?
+
+i experience many interesting, exciting and informative events during the day. i would like to share this information with people in some way. anyone who knows me even a little knows how much i love helping people and sharing my knowledge and experiences with them. however, sometimes page by page articles can written for the things i need to tell. and imagine if you had to tell this to several people individually... 😣 - i'm tired already! - as a solution to this situation, i plan to host the things that interest me and that i think will be of interest to you, here forever (!). i hope i will be successful in my goal. 😊
+
+## technologies used (back-end)
+
+if you take a look at the site, you'll probably understand the technologies i use, but let me talk a little bit anyway. as the server (the host where all the articles i share are collected), i didn't want to do too much. To be honest **i didn't do anyting** at all 😁. i set up a very simple [json](https://en.wikipedia.org/wiki/JSON) server and stored all my posts there. will it cause problems in the future? probably...
+
+but we will consider these issues in the future. now i would like to talk about how i set up this server. as i said at the beginning, i created a simple server with many features without writing any code. while creating this server, i used the [json-server](https://github.com/typicode/json-server) system of a developer named [@typicode](https://github.com/typicode).
+
+json-server is a fake back-end builder mostly preferred by front-end developers. when you place a simple json file on a server with this tool, it allows you to do anything you want with this file under your server's domain name (in short, you link a domain name to your json file and you can access this json file with any browser). this tool puts front-end developers at ease when building a site and allows them to quickly test everything they do. however, this does not mean that we cannot use this system as a back-end! 😎
+
+with this system that allows me to set up a back-end quite easily, i created this article with a few lines of code. however, as you can imagine, this process will be quite difficult. after all, editing a json file can be pretty tedious at times.
+
+and as a rather lazy person, i decided to use [markdown](https://en.wikipedia.org/wiki/Markdown) to simplify this process a bit. markdown, which is quite famous among bloggers, made my job very easy. however, we need to somehow convert the articles we wrote with markdown into [html](https://en.wikipedia.org/wiki/HTML) code so that browsers can recognize these contents. let it show you as a website just like it is now. for this, i prepared a small system with [javascript](https://en.wikipedia.org/wiki/JavaScript). It converts markdown files that i wrote with this system to html codes and these codes are converted to a json file named `db.json`. and ta-da! 🎉 we now have a server.
+
+## technologies used (front-end)
+
+this is where the real troublesome part was. the front-end part is an important part that everyone sees with their own eyes and comments according to what they see. for this reason, it deserves more attention. i want to give people a good experience.
+
+while doing the front-end part, i used [nextjs](https://nextjs.org/), a [react](https://reactjs.org/) framework. nextjs is a framework that i will definitely use in every project with its existing routing system and multiple data fetching features. any [css](https://en.wikipedia.org/wiki/CSS) support ([scss, sass](https://tr.wikipedia.org/wiki/SASS), [less](https://tr.wikipedia.org/wiki/LESS)), both [typescript](https://www.typescriptlang.org/) support, server-side rendering support... in short, everything you need.
+
+besides nextjs, i also handled the state container business using [redux](https://redux.js.org/) and this is how i provide data transfer between components. i also used [bootstrap](https://getbootstrap.com/) as the css framework.
+
+## final words
+
+thank you for reading this far and spending your valuable time. hope to see you again in a similar article in the future... 😘
