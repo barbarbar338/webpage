@@ -1,0 +1,78 @@
+---
+title: "what the heck is a phasor? - your introduction to ac circuit analysis"
+description: "an introduction to phasors, phase vectors."
+date: "2025-4-25"
+draft: false
+tags:
+    - english
+    - math
+    - physics
+    - engineering
+    - circuit analysis
+---
+
+import Latex from "@/components/Latex.astro";
+
+---
+
+## introduction
+
+this week, i've started covering phasors for my friends in the electrical and electronics engineering program, and every time i revisit this topic, i'm reminded just how fun the whole concept is. phasors might not seem intuitive at first glance, but once the idea clicks, it's like someone switched the lights on in an otherwise cluttered room.
+
+let me walk through how i usually approach this topic - both for my friends and for my own sanity.
+
+---
+
+## the problem with sinusoids
+
+in ac circuit analysis, we deal with voltages and currents that vary sinusoidally with time - like <Latex formula="v(t) = V_m\cos (\omega t + \theta)" />. these expressions are everywhere, and while they're not terribly complex, they get annoying fast when you're trying to add them, multiply them, or solve differential equations involving them.
+
+calculus can technically handle it all — but it becomes a slog. that's where phasors come in.
+
+---
+
+## what a phasor actually is
+
+a phasor is a complex number representation of a sinusoidal signal. but not just any sinusoid — it only works for steady-state sinusoidal signals with the same frequency.
+
+instead of thinking of a cosine wave as a time-varying function, we shift our perspective. we represent it as a rotating vector (or a "frozen" vector, depending on the point of view) in the complex plane. it's completely defined by its amplitude and phase angle, and we ignore the time part during analysis.
+
+so, something like:
+
+<p style="text-align: center;">
+	<Latex formula="v(t) = 10 \cos(1000t + 30^\circ)" />{" "}
+</p>
+
+becomes:
+
+<p style="text-align: center;">
+	<Latex formula="\vec{V} = 10 \angle 30^\circ" />{" "}
+</p>
+
+no time variable. no cosine. just a magnitude and a phase. and it works because we're assuming everything in the circuit is oscillating at the same frequency.
+
+---
+
+## why bother?
+
+the real payoff is in the math. once you're in the phasor domain, circuit laws — ohm's Law, kvl, kcl - work just like in dc circuits, but with complex numbers. differentiation becomes multiplication by <Latex formula="j\omega" />, and integration becomes division. it turns the entire analysis into algebra.
+
+it's clean, efficient, and saves a ton of time, especially once things scale up to larger systems.
+
+---
+
+## teaching this
+
+when i teach this, i don't start with the formalism. i try to let people _feel_ why we need phasors — by throwing them a few ac circuits and asking them to analyze them the hard way. then i show how phasors flatten that hill.
+
+there's always a moment when someone in the room says something like, "wait, is that _all_ we have to do?" that's when i know the idea has landed. it's a beautiful moment, and it makes all the effort worth it.
+
+so please, if you are learning this stuff, don't skip the hard work and try to analyze an ac circuit with hard way and try again with phasors. it's the best part.
+
+---
+
+## next up
+
+from here, we'll go deeper into phasor algebra — adding, subtracting, and multiplying phasors — and eventually apply them to higher-order rlc circuits. but the big mental shift has already happened: going from the time domain to the frequency domain, and learning to see oscillations not just as squiggly lines, but as geometric relationships.
+
+it's a beautiful trick. and like a lot of beautiful things in engineering, it starts with a clever reframe.
