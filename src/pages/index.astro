@@ -4,20 +4,12 @@ import Container from "@components/Container.astro";
 import Link from "@components/Link.astro";
 import { HOME, SITE, SOCIALS } from "@consts";
 import Layout from "@layouts/Layout.astro";
-import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
 const blog = (await getCollection("blog"))
 	.filter((post) => !post.data.draft)
 	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 	.slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
-
-const projects: CollectionEntry<"projects">[] = (
-	await getCollection("projects")
-)
-	.filter((project) => !project.data.draft)
-	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-	.slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 ---
 
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -88,26 +80,6 @@ const projects: CollectionEntry<"projects">[] = (
 							blog.map((post) => (
 								<li>
 									<ArrowCard entry={post} />
-								</li>
-							))
-						}
-					</ul>
-				</section>
-
-				<section class="animate space-y-6">
-					<div
-						class="flex flex-wrap items-center justify-between gap-y-2"
-					>
-						<h2 class="font-semibold text-black dark:text-white">
-							Recent projects
-						</h2>
-						<Link href="/projects"> See all projects </Link>
-					</div>
-					<ul class="not-prose flex flex-col gap-4">
-						{
-							projects.map((project) => (
-								<li>
-									<ArrowCard entry={project} />
 								</li>
 							))
 						}
