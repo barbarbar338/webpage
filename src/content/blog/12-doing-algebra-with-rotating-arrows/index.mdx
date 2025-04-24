@@ -1,0 +1,52 @@
+---
+title: "doing algebra with rotating arrows - your introduction to ac circuit analysis"
+description: "using phasors in algebra"
+date: "2025-4-26"
+draft: true
+tags:
+    - english
+    - math
+    - physics
+    - engineering
+    - circuit analysis
+---
+
+import Latex from "@/components/Latex.astro";
+
+---
+
+## introduction
+
+now that the idea of phasors is on the table, this post has been all about manipulating them. in other words: phasor algebra — or, as I like to think of it, doing math with rotating arrows.
+
+phasors are, at their core, complex numbers. and that opens the door to a neat little toolbox of operations that make ac analysis surprisingly straightforward.
+
+---
+
+## phasor notation in practice
+
+in general, we can write a phasor either in polar form:
+
+<p style="text-align: center;">
+	<Latex formula="\vec{V} = A \angle \theta" />{" "}
+</p>
+
+or in rectangular form:
+
+<p style="text-align: center;">
+	<Latex formula="\vec{V} = a + jb" />{" "}
+</p>
+
+most of the time, i'll be using the polar form since we as engineers usually have our calculators in hand and its easier to see polar form. but it's good to know that both forms are equivalent.
+
+## visualizing what's happening
+
+{/* TODO: add visuals */}
+
+i like drawing these things out. when you add two phasors together in rectangular form, what you're really doing is just vector addition in the complex plane.
+
+<p style="text-align: center;">
+	<Latex formula="(3 + j4) + (1 + j2) = (4 + j6)" />{" "}
+</p>
+
+it's so much easier to understand the _meaning_ of what's happening when you see them as arrows being placed tip-to-tail. It's not just number crunching — you're combining magnitude and direction (which, in this case, means phase).
