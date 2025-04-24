@@ -28,6 +28,7 @@
 		"astro-pagefind": "^1.8.3",
 		"classnames": "^2.5.1",
 		"clsx": "^2.1.1",
+		"katex": "^0.16.22",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"react-use-lanyard": "^0.3.2",

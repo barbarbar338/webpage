@@ -22,5 +22,5 @@ export default defineConfig({
 			enabled: true,
 		},
 	}),
-	output: "static"
+	output: "static",
 });
