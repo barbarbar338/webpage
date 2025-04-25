@@ -1,5 +1,5 @@
 ---
-title: "2 - doing algebra with rotating arrows - your introduction to ac circuit analysis"
+title: "2 - doing algebra with rotating arrows#1 - your introduction to ac circuit analysis"
 description: "using phasors in algebra"
 date: "2025-4-25"
 draft: false
@@ -44,19 +44,21 @@ most of the time, i'll be using the polar form since we as engineers usually hav
 ---
 
 ## visualizing what's happening
+
 the first thing to note is that phasors are just a way of representing sinusoids. they’re not some magical new thing. they’re just a different way of looking at the same data. the important thing is that you have to pick <Latex formula="\sin" /> or <Latex formula="\cos" /> as your base function. since <Latex formula="\sin" /> is <Latex formula="\cos" /> shifted by <Latex formula="90^{\circ}" />, you have to consider this phase shift when you're converting between the two. i usually use <Latex formula="\cos" /> as my base function, but it doesn't really matter which one you pick. just be consistent.
+
 ### sinusoids to phasors - polar form
 
 polar form is one of the way of representing the sinusoids. so, if you have a sinusoid like this:
 
 <p style="text-align: center;">
-    <Latex formula="v(t) = 5 \cos(100t + 30^\circ)" />
+	<Latex formula="v(t) = 5 \cos(100t + 30^\circ)" />
 </p>
 
 you can simply ignore the angular frequency and just put its amplitude and phase into polar form:
 
 <p style="text-align: center;">
-    <Latex formula="\vec{V} = 5 \angle 30^\circ" />
+	<Latex formula="\vec{V} = 5 \angle 30^\circ" />
 </p>
 
 this is a phasor representation of the sinusoid. it’s like a snapshot of the sinusoid at a specific moment in time, but it also captures the amplitude and phase shift. to visualize this, you can think of the phasor as a rotating arrow in the complex plane. the length of the arrow represents the amplitude, and the angle represents the phase shift.
@@ -68,17 +70,17 @@ this is a phasor representation of the sinusoid. it’s like a snapshot of the s
 the rectangular form is a bit different. it’s like taking the phasor and breaking it down into its real and imaginary components. so, for the same sinusoid:
 
 <p style="text-align: center;">
-    <Latex formula="v(t) = 5 \cos(100t + 30^\circ)" />
+	<Latex formula="v(t) = 5 \cos(100t + 30^\circ)" />
 </p>
 
 you can convert it to rectangular form like this:
 
 <p style="text-align: center;">
-    <Latex formula="\vec{V} = 5 \cos(30^\circ) + j5 \sin(30^\circ)" />
+	<Latex formula="\vec{V} = 5 \cos(30^\circ) + j5 \sin(30^\circ)" />
 </p>
 
 <p style="text-align: center;">
-    <Latex formula="\vec{V} \approx 4.33 + j2.5" />
+	<Latex formula="\vec{V} \approx 4.33 + j2.5" />
 </p>
 
 and it is easier to visualize this in the complex plane. the real part is along the x-axis, and the imaginary part is along the y-axis. so, if you were to plot this phasor in rectangular form, it would look like this:
@@ -95,7 +97,7 @@ there are a few moments where people trip:
 - **misusing different forms.** trying to add rectangular form directly to a polar form doesn't work. you've got to convert to polar first and vice versa.
 - **missing the physical meaning.** some get so deep into the math that they forget what the phasor actually represents - a sinusoid with a certain amplitude and phase. if the phase is off, the wave's peak shifts in time. simple as that.
 
-i try to emphasize that the math is only half the picture - the other half is intuition. what does it *mean* when two phasors add up to a smaller result? It means they're out of phase - partially cancelling each other.
+i try to emphasize that the math is only half the picture - the other half is intuition. what does it _mean_ when two phasors add up to a smaller result? It means they're out of phase - partially cancelling each other.
 
 ---
 
@@ -144,13 +146,13 @@ multiplication is a bit different. you can do them in either form, but it’s us
 - **rectangular form:** follow the distributive property, don't forget that <Latex formula="j^2 = -1" />. so, for example:
 
 <p style="text-align: center;">
-    <Latex formula="(3 + j4) \cdot (1 + j2) = (3 \cdot 1 - 4 \cdot 2) + j(3 \cdot 2 + 4 \cdot 1) = -5 + j10" />
+	<Latex formula="(3 + j4) \cdot (1 + j2) = (3 \cdot 1 - 4 \cdot 2) + j(3 \cdot 2 + 4 \cdot 1) = -5 + j10" />
 </p>
 
 - **polar form:** multiply the magnitudes and add the angles. so, for example:
-<p style="text-align: center;">
-    <Latex formula="5 \angle 50^\circ \cdot 2 \angle 60^\circ = (5\cdot 2) \angle (50^\circ + 60^\circ) = 10 \angle 110^\circ" />
-</p>
+    <p style="text-align: center;">
+    	<Latex formula="5 \angle 50^\circ \cdot 2 \angle 60^\circ = (5\cdot 2) \angle (50^\circ + 60^\circ) = 10 \angle 110^\circ" />
+    </p>
 
 ### division
 
@@ -159,13 +161,13 @@ division is similar to multiplication. you can do them in either form, but it’
 - **rectangular form:** Multiply the numerator and denominator by the complex conjugate of the denominator to eliminate the imaginary part in the denominator. so, for example:
 
 <p style="text-align: center;">
-    <Latex formula="\frac{3 + j4}{1 + j2} = \frac{(3 + j4)(1 - j2)}{(1 + j2)(1 - j2)} = \frac{11 - j2}{5} = 2.2 - j0.4" />
+	<Latex formula="\frac{3 + j4}{1 + j2} = \frac{(3 + j4)(1 - j2)}{(1 + j2)(1 - j2)} = \frac{11 - j2}{5} = 2.2 - j0.4" />
 </p>
 
 - **polar form:** divide the magnitudes and subtract the angles. so, for example:
 
 <p style="text-align: center;">
-    <Latex formula="\frac{5 \angle 50^\circ}{2 \angle 60^\circ} = \frac{5}{2} \angle (50^\circ - 60^\circ) = 2.5 \angle -10^\circ" />
+	<Latex formula="\frac{5 \angle 50^\circ}{2 \angle 60^\circ} = \frac{5}{2} \angle (50^\circ - 60^\circ) = 2.5 \angle -10^\circ" />
 </p>
 
 and that's it! you can do all the math you need with phasors using these simple rules. just remember to keep track of your units and be consistent with your forms.
@@ -178,6 +180,6 @@ in the next post we move into the physical side of this: how phasors interact wi
 
 but right now, we're building fluency - learning to treat phasors like second nature. because once you're comfortable with the algebra, the rest of ac circuit analysis becomes a matter of pattern recognition.
 
-it's kind of like learning to read music. at first, every note takes effort. then suddenly, one day, your brain stops "decoding" and just *sees* the melody.
+it's kind of like learning to read music. at first, every note takes effort. then suddenly, one day, your brain stops "decoding" and just _sees_ the melody.
 
 that's the goal here.
