@@ -1,0 +1,173 @@
+---
+title: "3 - doing algebra with rotating arrows#2 - your introduction to ac circuit analysis"
+description: "taking integrals and derivatives of phasors"
+date: "2025-4-25"
+draft: false
+tags:
+    - english
+    - math
+    - physics
+    - engineering
+    - circuit analysis
+    - phasors
+    - ac circuits
+---
+
+import Latex from "@/components/Latex.astro";
+import Callout from "@/components/Callout.astro";
+
+---
+
+## introduction
+
+we learned the basics of phasor algebra in the last post. now, we're going to take it a step further and learn how to take integrals and derivatives of phasors. this is where things get really interesting, because it opens up a whole new world of possibilities for analyzing ac circuits.
+
+---
+
+## derivative of a sinusoid in phasor form
+
+let's start with the derivative of a sinusoid in phasor form. if we have a sinusoid like this:
+
+<p style="text-align: center;">
+	<Latex formula="v(t) = \mathbb{R}\{V_m e^{j(\omega t + \phi)}\} = V_m \cos(\omega t + \phi)" />
+</p>
+
+<p style="text-align: center;">
+	<Latex formula="\vec{V} = V_me^{j\phi} = V_m\angle\phi" />
+</p>
+
+then the derivative of the sinusoid is:
+
+<p style="text-align: center;">
+	<Latex formula="j\omega \vec{V}" />
+</p>
+
+### proof
+
+<Callout type="info">
+	<Latex formula="\sin(x + 90^{\circ}) = \cos(x)" />
+</Callout>
+
+<p style="text-align: center;">
+	<Latex formula="\frac{d}{dt}[v(t)] = -\omega V_m \sin(\omega t + \phi) = \omega V_m \cos(\omega t + \phi + 90^{\circ})" />
+</p>
+
+<Callout type="info">
+	<Latex formula="A\cos(\omega t + \phi) = \mathbb{R}\{Ae^{j(\omega t + \phi)}\}" />
+</Callout>
+
+<p style="text-align: center;">
+	<Latex formula="\frac{d}{dt}[v(t)] = \mathbb{R}\{\omega V_me^{j(\omega t + \phi + 90^{\circ})}\}" />
+</p>
+
+<p style="text-align: center;">
+	<Latex formula="\frac{d}{dt}[v(t)] = \mathbb{R}\{\omega V_me^{j\omega t}e^{j\phi}e^{j90^{\circ}}\}" />
+</p>
+
+and we know that <Latex formula="\vec{V} = V_me^{j\phi}" /> is the phasor representation of the sinusoid, so we can write:
+
+<p style="text-align: center;">
+	<Latex formula="\frac{d}{dt}[v(t)] = \mathbb{R}\{\omega e^{j\omega t}e^{j90^{\circ}}\vec{V}\}" />
+</p>
+
+<Callout type="info">
+	<Latex formula="e^{j\phi} = \cos{\phi} + j\sin(\phi) \Rightarrow e^{j90^{\circ}} = \cos{90^{\circ}} + j\sin(90^{\circ}) = j" />
+</Callout>
+
+<p style="text-align: center;">
+	<Latex formula="\frac{d}{dt}[v(t)] = \mathbb{R}\{j\omega \vec{V}e^{j\omega t}\}" />
+</p>
+
+and if we convert this equation to phasor domain, we get:
+
+<p style="text-align: center;">
+	<Latex formula="\frac{d}{dt}[v(t)] \Leftrightarrow j\omega \vec{V}" />
+</p>
+
+---
+
+## integral of a sinusoid in phasor form
+
+again, if we have a sinusoid like this:
+
+<p style="text-align: center;">
+	<Latex formula="v(t) = \mathbb{R}\{V_m e^{j(\omega t + \phi)}\} = V_m \cos(\omega t + \phi)" />
+</p>
+
+<p style="text-align: center;">
+	<Latex formula="\vec{V} = V_me^{j\phi} = V_m\angle\phi" />
+</p>
+
+then the integral of the sinusoid is:
+
+<p style="text-align: center;">
+	<Latex formula="\frac{\vec{V}}{j\omega}" />
+</p>
+
+### proof
+
+<p style="text-align: center;">
+	<Latex formula="\int v(t) dt = V_m \int \cos(\omega t + \phi) dt" />
+</p>
+
+<p style="text-align: center;">
+	<Latex formula="\int v(t) dt = \frac{V_m}{\omega} \sin(\omega t + \phi)" />
+</p>
+
+<Callout type="info">
+	<Latex formula="\sin(x + 90^{\circ}) = \cos(x)" />
+</Callout>
+
+<p style="text-align: center;">
+	<Latex formula="\int v(t) dt = \frac{V_m}{\omega} \cos(\omega t + \phi - 90^{\circ})" />
+</p>
+
+<Callout type="info">
+	<Latex formula="A\cos(\omega t + \phi) = \mathbb{R}\{Ae^{j(\omega t + \phi)}\}" />
+</Callout>
+
+<p style="text-align: center;">
+	<Latex formula="\int v(t) dt = \mathbb{R}\{\frac{V_m}{\omega}e^{j(\omega t + \phi - 90^{\circ})}\} " />
+</p>
+
+<p style="text-align: center;">
+	<Latex formula="\int v(t) dt = \mathbb{R}\{\frac{V_m}{\omega}e^{j\omega}e^{j\phi}e^{-j90^{\circ}}\} " />
+</p>
+
+and we know that <Latex formula="\vec{V} = V_me^{j\phi}" /> is the phasor representation of the sinusoid, so we can write:
+
+<p style="text-align: center;">
+	<Latex formula="\int v(t) dt = \mathbb{R}\{\frac{1}{\omega}\vec{V}e^{j\omega}e^{-j90^{\circ}}\} " />
+</p>
+
+<Callout type="info">
+	<Latex formula="e^{j\phi} = \cos{\phi} + j\sin(\phi) \Rightarrow e^{-j90^{\circ}} = \cos{-90^{\circ}} + j\sin(-90^{\circ}) = -j" />
+</Callout>
+
+<p style="text-align: center;">
+	<Latex formula="\int v(t) dt = \mathbb{R}\{\frac{1}{j\omega}\vec{V}e^{j\omega}\} " />
+</p>
+
+and if we convert this equation to phasor domain, we get:
+
+<p style="text-align: center;">
+	<Latex formula="\int v(t) dt \Leftrightarrow \frac{1}{j\omega}\vec{V}" />
+</p>
+
+---
+
+## summary
+
+the derivative of a sinusoid in phasor form means multiplying the phasor by <Latex formula="j\omega" />.
+
+<p style="text-align: center;">
+	<Latex formula="\frac{d}{dt}[v(t)] \Leftrightarrow j\omega \vec{V}" />
+</p>
+
+the integral of a sinusoid in phasor form means dividing the phasor by <Latex formula="j\omega" />.
+
+<p style="text-align: center;">
+	<Latex formula="\int v(t) dt \Leftrightarrow \frac{1}{j\omega}\vec{V}" />
+</p>
+
+this is a powerful tool for analyzing ac circuits, and it makes it much easier to work with sinusoids in phasor form.
