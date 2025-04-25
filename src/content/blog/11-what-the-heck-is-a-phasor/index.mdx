@@ -1,5 +1,5 @@
 ---
-title: "what the heck is a phasor? - your introduction to ac circuit analysis"
+title: "1 - what the heck is a phasor? - your introduction to ac circuit analysis"
 description: "an introduction to phasors, phase vectors."
 date: "2025-4-25"
 draft: false
@@ -9,6 +9,8 @@ tags:
     - physics
     - engineering
     - circuit analysis
+    - phasors
+    - ac circuits
 ---
 
 import Latex from "@/components/Latex.astro";
@@ -40,13 +42,13 @@ instead of thinking of a cosine wave as a time-varying function, we shift our pe
 so, something like:
 
 <p style="text-align: center;">
-	<Latex formula="v(t) = 10 \cos(1000t + 30^\circ)" />{" "}
+	<Latex formula="v(t) = 10 \cos(1000t + 30^\circ)" />
 </p>
 
 becomes:
 
 <p style="text-align: center;">
-	<Latex formula="\vec{V} = 10 \angle 30^\circ" />{" "}
+	<Latex formula="\vec{V} = 10 \angle 30^\circ" />
 </p>
 
 no time variable. no cosine. just a magnitude and a phase. and it works because we're assuming everything in the circuit is oscillating at the same frequency.
