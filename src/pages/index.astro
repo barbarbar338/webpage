@@ -3,6 +3,8 @@ import ArrowCard from "@components/ArrowCard.astro";
 import Container from "@components/Container.astro";
 import { Status } from "@components/Lanyard";
 import Link from "@components/Link.astro";
+import ShinyText from "@components/ShinyText";
+import SplitText from "@components/SplitText";
 import { HOME, SITE, SOCIALS } from "@consts";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
@@ -16,9 +18,19 @@ const blog = (await getCollection("blog"))
 <Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
 	<Container>
 		<aside data-pagefind-ignore>
-			<h1 class="font-semibold text-black dark:text-white">
-				hey, i'm barbarbar338!
-			</h1>
+			<SplitText
+				text="hey, i'm barbarbar338!"
+				className="font-semibold text-black dark:text-white"
+				delay={50}
+				animationFrom={{
+					opacity: 0,
+					transform: "translate3d(0, 50px, 0)",
+				}}
+				animationTo={{ opacity: 1, transform: "translate3d(0, 0, 0)" }}
+				easing="easeOutCubic"
+				threshold={0.2}
+				client:load
+			/>
 			<Status client:load />
 			<div class="space-y-16">
 				<section>
@@ -69,7 +81,15 @@ const blog = (await getCollection("blog"))
 						<h2 class="font-semibold text-black dark:text-white">
 							latest posts
 						</h2>
-						<Link href="/blog"> see all posts </Link>
+						<Link href="/blog">
+							<ShinyText
+								text="see all posts"
+								className="underline"
+								disabled={false}
+								speed={2}
+								client:load
+							/>
+						</Link>
 					</div>
 					<ul class="not-prose flex flex-col gap-4">
 						{

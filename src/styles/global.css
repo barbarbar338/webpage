@@ -121,6 +121,12 @@ pre {
 	--astro-code-token-string-expression: #ae42a0;
 	--astro-code-token-punctuation: #8996a3;
 	--astro-code-token-link: #8d85ff;
+	--astro-code-shine-background: linear-gradient(
+		120deg,
+		rgba(255, 255, 255, 1) 40%,
+		rgba(0, 0, 0, 1) 50%,
+		rgba(255, 255, 255, 1) 60%
+	);
 }
 
 .dark {
@@ -135,6 +141,12 @@ pre {
 	--astro-code-token-string-expression: #bf7db6;
 	--astro-code-token-punctuation: #8996a3;
 	--astro-code-token-link: #8d85ff;
+	--astro-code-shine-background: linear-gradient(
+		120deg,
+		rgba(255, 255, 255, 0) 40%,
+		rgba(255, 255, 255, 0.8) 50%,
+		rgba(255, 255, 255, 0) 60%
+	);
 }
 
 /* copy code button on codeblocks */
@@ -148,4 +160,22 @@ pre {
 
 .copy-code:active {
 	@apply scale-90 transition-transform;
+}
+
+@keyframes animate-shine {
+	0% {
+		background-position: 100%;
+	}
+	100% {
+		background-position: -100%;
+	}
+}
+
+.animate-shine {
+	animation: animate-shine 5s linear infinite;
+}
+
+.bg-shine {
+	background-image: var(--astro-code-shine-background);
+	background-size: 200% 100%;
 }

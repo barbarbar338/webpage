@@ -21,6 +21,7 @@
 		"@astrojs/vercel": "^8.1.4",
 		"@fontsource/geist-mono": "^5.2.5",
 		"@fontsource/geist-sans": "^5.2.5",
+		"@react-spring/web": "^9.7.4",
 		"@tailwindcss/vite": "^4.1.4",
 		"@types/react": "^19.1.2",
 		"@types/react-dom": "^19.1.2",

@@ -1,6 +1,7 @@
 ---
 import BackToPrevious from "@components/BackToPrevious.astro";
 import Container from "@components/Container.astro";
+import FuzzyText from "@components/FuzzyText";
 import { SITE } from "@consts";
 import Layout from "@layouts/Layout.astro";
 ---
@@ -9,9 +10,16 @@ import Layout from "@layouts/Layout.astro";
 	<Container>
 		<div class="mt-16 grid place-items-center gap-3">
 			<h4
-				class="animate text-2xl font-semibold text-black dark:text-white"
+				class="animate text-center text-2xl font-semibold text-black dark:text-white"
 			>
-				404: page not found
+				<div class="hidden dark:block">
+					<FuzzyText text="404" color="#fff" client:load />
+				</div>
+				<div class="block dark:hidden">
+					<FuzzyText text="404" color="#000" client:load />
+				</div>
+
+				page not found
 			</h4>
 			<span class="animate">
 				<BackToPrevious href="/">go to home page</BackToPrevious>

@@ -1,7 +1,8 @@
 import classnames from "classnames";
+import type { FC } from "react";
 import { useLanyard } from "react-use-lanyard";
 
-export const Status = () => {
+export const Status: FC = () => {
 	const { loading, status } = useLanyard({
 		userId: "952574663916154960",
 		socket: true,
