@@ -27,7 +27,6 @@ const blog = (await getCollection("blog"))
 					transform: "translate3d(0, 50px, 0)",
 				}}
 				animationTo={{ opacity: 1, transform: "translate3d(0, 0, 0)" }}
-				easing="easeOutCubic"
 				threshold={0.2}
 				client:load
 			/>
