@@ -1,0 +1,54 @@
+\documentclass[a4paper,skipsamekey,11pt,english]{curve}
+
+\usepackage{settings}
+
+\ifxetexorluatex
+	\usepackage{fontspec} 
+	\usepackage[p,osf,swashQ]{cochineal}
+	\usepackage[medium,bold]{cabin}
+	\usepackage[varqu,varl,scale=0.9]{zi4}
+\else
+	\usepackage[T1]{fontenc}
+	\usepackage[p,osf,swashQ]{cochineal}
+	\usepackage{cabin}
+	\usepackage[varqu,varl,scale=0.9]{zi4}
+\fi
+
+
+\includecomment{fullonly}
+
+\leftheader{%
+	{\LARGE\bfseries\sffamily Barış DEMİRCİ}
+	
+	Back-end Developer | System Administrator
+
+	\makefield{\faEnvelope[regular]}{\href{mailto:hi@338.rocks}{\texttt{hi@338.rocks}}}
+	\makefield{\faGithub[regular]}{\href{https://github.com/barbarbar338}{\texttt{@barbarbar338}}}
+	\makefield{\faLinkedin[regular]}{\href{https://www.linkedin.com/in/barbarbar338/}{\texttt{in/barbarbar338}}}
+
+	\makefield{\faYoutube[regular]}{\href{https://youtube.com/@barbarbar338/}{\texttt{@barbarbar338}}}
+	\makefield{\faGlobe[solid]}{\url{https://338.rocks}}
+	\makefield{\faPhone[solid]}{\href{https://youtube.com/@barbarbar338/}{\texttt{+90 551 148 17 79}}}
+}
+
+\rightheader{~}
+\begin{fullonly}
+	\photo[r]{icon.png}
+	\photoscale{0.13}
+\end{fullonly}
+
+\title{Curriculum Vitae}
+
+\begin{document}
+\makeheaders[c]
+
+\makerubric{about}
+\makerubric{employment}
+\makerubric{education}
+\makerubric{skills}
+\makerubric{teaching}
+\makerubric{misc}
+\makerubric{projects}
+
+
+\end{document}

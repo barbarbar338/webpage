@@ -1,0 +1,99 @@
+\RequirePackage{silence}
+\RequirePackage{graphicx}
+\RequirePackage[hyphens]{url}
+\RequirePackage{babel}
+\RequirePackage[fixed]{fontawesome5}
+\RequirePackage{simpleicons}
+\RequirePackage[a4paper,nohead,nofoot,hmargin=2.25cm,vmargin=2cm]{geometry}
+\RequirePackage[colorlinks=true,allcolors=black,breaklinks=true]{hyperref}
+\RequirePackage{relsize}
+\RequirePackage[dvipsnames,svgnames]{xcolor}
+\RequirePackage{tikz}
+\RequirePackage{comment}
+\RequirePackage{csquotes}
+\RequirePackage{xpatch}
+\RequirePackage{pgffor}
+
+\WarningsOff[longtable]
+\WarningsOff[array]
+
+\usepackage{ifxetex,ifluatex}
+
+\newif\ifxetexorluatex
+\ifxetex
+    \xetexorluatextrue
+\else
+	\ifluatex
+		\xetexorluatextrue
+	\else
+		\xetexorluatexfalse
+	\fi
+\fi
+
+\raggedright
+
+\newcommand{\smallcaps}[1]{\textsc{\lowercase{#1}}}
+
+\usetikzlibrary{shapes,shadows}
+
+
+\definecolor{SwishLineColour}{HTML}{FCBA03}
+\definecolor{MarkerColour}{HTML}{8515AD}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+	\node[
+		shape=circle,
+		text=white,
+		fill=MarkerColour!80!black,
+		font=\sffamily\scriptsize\bfseries,
+		inner sep=1pt,
+		text height=1.35ex,
+		minimum width=1.5em,
+		text centered
+	] (char) {#1};
+}}
+
+\headerscale{1}
+\rubricfont{\Large\bfseries\sffamily}
+\setlength{\rubricspace}{2pt}
+\setlength{\rubricafterspace}{-3pt}
+\setlength{\subrubricspace}{3pt}
+\setlength{\subrubricbeforespace}{4pt}
+\def\@@rubrichead#1{%
+	\begin{tikzpicture}[baseline]%\
+		\shade[
+			left color=SwishLineColour!60!white, 
+			right color=white
+		] rectangle (\@almosttextwidth,2.5pt);
+		\node[
+			font={\@rubricfont},
+			inner sep=0pt,
+			text ragged,
+			anchor=south west,
+			text depth=.5ex,
+			text height=1.5ex
+		] at (1pt,2pt) {#1};
+	\end{tikzpicture}%
+	\vspace\rubricspace%
+}
+
+\subrubricfont{\large\bfseries\sffamily}
+\subrubricalignment{l}
+
+\newcommand{\makefield}[2]{\makebox[1.5em]{\color{MarkerColour!80!black}#1} #2\hspace{2em}}
+
+\keyalignment{r}
+\rubricalignment{l}
+\renewcommand{\arraystretch}{1.25}
+\urlstyle{tt}
+
+\newcommand{\prefixmarker}[1]{\def\@prefixmarker{#1}}
+\def\@prefixmarker{\relscale{.9}\faBookmark}
+
+\prefix{%
+	\hspace*{-1ex}
+	\color{MarkerColour!80!black}\@prefixmarker%
+	\hspace*{1ex}%
+}
+
+\newcommand{\makerubrichead}[1]{\vskip\baselineskip\@@rubrichead{#1}}
