@@ -94,19 +94,19 @@ bu token sayesinde npm'ye paket yükleyebilir, silebilir veya paketinizi güncel
 
 şimdi bir npm hesabınızın olduğunu ve hesabınıza giriş yaptığınızı varsayıyorum. npm'nin sitesine giriş yapın ve ana sayfada profil kısmından `Access Tokens` kısmına basın.
 
-![Access Tokens](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305404822394372100.png)
+![Access Tokens](https://zipline.338.rocks/u/208fd44d-133c-4232-87d6-68aee2d62415.png)
 
 daha sonra aşağıdaki gibi bir sayfayla karşılaşacaksınız (muhtemelen sizinki boş olacaktır ancak önemli değil). buradan `Generate New Token` seçeneği ile bir access token oluşturmamız lazım.
 
-![Generate New Token](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305405453700038661.png)
+![Generate New Token](http://zipline.338.rocks/u/bc996b18-bdca-4d58-a786-af4134d9f7bb.png)
 
 şimdi ise tokeninize hatırlacağınız bir isim verin ve aşağıdan `Publish` seçeneğini seçin. bu sayede bu tokeni paket paylaşmada kullanabileceğiz. daha sonra da `Generate Token` butonuna basarak tokeninizi oluşturun.
 
-![Create Token](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305405751361404934.png)
+![Create Token](http://zipline.338.rocks/u/4967cdf4-d2e7-4b1d-be74-4b226a65df6f.png)
 
 ve gördüğünüz gibi tokenimiz oluşturuldu. bu tokeni yalnızca 1 kere görmenize izin veriliyor, o yüzden bir yere kaydetmeyi unutmayın!
 
-![Token](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305406644198703112.png)
+![Token](http://zipline.338.rocks/u/513b352b-ad6c-48de-99f1-2b9ee613a094.png)
 
 şimdi bu tokeni action'umuzda kullanabiliriz.
 
@@ -114,19 +114,19 @@ ve gördüğünüz gibi tokenimiz oluşturuldu. bu tokeni yalnızca 1 kere görm
 
 ilk olarak repomuzun ayarlarına gelmemiz ve buradan `Secrets` kategorisi altından `Actions` sayfasına gelmemiz lazım.
 
-![Settings](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305407330416197641.png)
+![Settings](http://zipline.338.rocks/u/200ef2c2-1d9b-4003-8abc-655baf65c1a5.png)
 
 daha sonra buradan `New Repository Secret` seçeneği ile bir `secret` oluşturmamız lazım.
 
-![Secret](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305407636550057994.png)
+![Secret](http://zipline.338.rocks/u/c629e8c5-1f90-4a27-8960-5c83e9fbacd8.png)
 
 şimdide secret adını `NPM_TOKEN` olarak ayarlayın ve alttaki boşluğa aldığınız tokeni yapıştırdıktan sonra `Add Secret` butonuna basarak kaydedin.
 
-![Add Secret](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305408101706760203.png)
+![Add Secret](http://zipline.338.rocks/u/30d2e35f-e8eb-4683-8d2b-732a8de5221f.png)
 
 ve her şey hazır! artık paketimiz otomatik olarak paylaşılacak.
 
-![Done](https://storage.338.rocks/blog/github-actions-ile-otomatik-npm-modulu-paylasma/305408561129848844.png)
+![Done](http://zipline.338.rocks/u/17a03996-23dd-489f-8bc6-3086c456fddd.png)
 
 ## son adımlar
 
