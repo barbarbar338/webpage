@@ -1,24 +1,24 @@
 {
 	"redirects": [
 		{
-			"source": "/github",
 			"destination": "https://github.com/barbarbar338",
-			"permanent": true
+			"permanent": true,
+			"source": "/github"
 		},
 		{
-			"source": "/instagram",
 			"destination": "https://www.instagram.com/ben_baris.d",
-			"permanent": true
+			"permanent": true,
+			"source": "/instagram"
 		},
 		{
-			"source": "/youtube",
 			"destination": "https://www.youtube.com/@barbarbar338",
-			"permanent": true
+			"permanent": true,
+			"source": "/youtube"
 		},
 		{
-			"source": "/discord",
 			"destination": "https://discord.gg/BjEJFwh",
-			"permanent": true
+			"permanent": true,
+			"source": "/discord"
 		}
 	]
 }
