@@ -6,7 +6,7 @@
 			"source": "/github"
 		},
 		{
-			"destination": "https://www.instagram.com/ben_baris.d",
+			"destination": "https://www.instagram.com/barisdemircix",
 			"permanent": true,
 			"source": "/instagram"
 		},
@@ -19,6 +19,21 @@
 			"destination": "https://discord.gg/BjEJFwh",
 			"permanent": true,
 			"source": "/discord"
+		},
+		{
+			"destination": "/cv.pdf",
+			"permanent": true,
+			"source": "/cv"
+		},
+		{
+			"destination": "/cv.pdf",
+			"permanent": true,
+			"source": "/resume"
+		},
+		{
+			"destination": "/cv.pdf",
+			"permanent": true,
+			"source": "/resume.pdf"
 		}
 	]
 }
